@@ -1,1 +1,1 @@
-All TryHackMe writeups will be here.
+All my super doper TryHackMe writeups will be here.
