@@ -1,1 +1,1 @@
-TryHackMe writeups.
+All TryHackMe writeups will be here.
