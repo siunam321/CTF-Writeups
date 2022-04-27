@@ -110,18 +110,18 @@ Nmap done: 1 IP address (1 host up) scanned in 19.66 seconds
 According to the above scanning, I've found `2` open ports: `80` and `8080`.
 
 Port 80 is a default Apache home page.
-![default Apache home page](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/Gallery/80.png)
+![default Apache home page](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/Gallery/images/80.png)
 When I visit port 8080, it redirects me to `/gallery/login.php`.
-![Gallery login page](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/Gallery/login.png)
+![Gallery login page](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/Gallery/images/login.png)
 
 # Exploitation
 > Get a shell
 
 At here, after googling, I found the CMS is `Simple Image Gallery`. Then, I try to do a SQL Injection at the login page. Let's try the low-hanging fruit of SQLi, `' OR 1=1-- -`.
-![SQLi](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/Gallery/sqli.png)
-![adminpage](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/Gallery/adminpage.png)
+![SQLi](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/Gallery/images/sqli.png)
+![adminpage](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/Gallery/images/adminpage.png)
 Bang! We've successfully login as admin user. Then, I started to fumble around, and I found a upload page at `My Account` where I can upload an avatar.
-![upload](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/Gallery/upload.png)
+![upload](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/Gallery/images/upload.png)
 Let's click on browse, and upload a `php reverse shell`. I'll use a php reverse shell from [pentestmonkey](https://github.com/pentestmonkey/php-reverse-shell/blob/master/php-reverse-shell.php).
 ```
 ┌──(root💀nam)-[~/thm/ctf/Gallery]
