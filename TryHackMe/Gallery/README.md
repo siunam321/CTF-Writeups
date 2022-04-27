@@ -4,9 +4,8 @@ This is my first writeup, so if there are any misleading information or mistakes
 In this TryHackMe room, [Gallery](https://tryhackme.com/room/gallery666) difficulty is rated at Easy, which wonderful for beginners like me! Lol
 
 What you will learn:
-
-⋅⋅* Basic SQL Injection.
-⋅⋅* Linux Privilege Escalation.
+1. Basic SQL Injection
+2. Linux Privilege Escalation
 
 # Background
 > Our gallery is not very well secured.
@@ -118,7 +117,7 @@ When I visit port 8080, it redirects me to `/gallery/login.php`.
 # Exploitation
 > Get a shell
 
-At here, I found the CMS is `Simple Image Gallery` after googling. Then, I try to do a SQL Injection at the login page. Let's try the low-hanging fruit of SQLi, `' OR 1=1-- -`.
+At here, after googling, I found the CMS is `Simple Image Gallery`. Then, I try to do a SQL Injection at the login page. Let's try the low-hanging fruit of SQLi, `' OR 1=1-- -`.
 ![SQLi](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/Gallery/sqli.png)
 ![adminpage](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/Gallery/adminpage.png)
 Bang! We've successfully login as admin user. Then, I started to fumble around, and I found a upload page at `My Account` where I can upload an avatar.
@@ -160,7 +159,7 @@ drwx------ 2 mike mike 4096 May 24  2021 documents
 drwx------ 2 mike mike 4096 May 24  2021 images
 -rwx------ 1 mike mike   32 May 14  2021 user.txt
 ```
-However, it only readable by mike.
+However, it **only readable by mike.**
 
 Then, I discovered a initialize.php file at `/var/www/html/gallery`, which contains MySQL user credentials.
 ```
@@ -218,7 +217,7 @@ MariaDB [gallery_db]> SELECT * FROM users;
 1 row in set (0.00 sec)
 ```
 Yes! We found the admin hash!`a228b12a08b6527e7978cbe5d914531c`
-However, I found this hash is uncrackable after cracking it 20 minutes. Let's found another Privilege Escalation vector.
+However, I found this hash is **uncrackable** after cracking it 20 minutes. Let's found another Privilege Escalation vector.
 
 After a couple minutes of nonsense, I found a `backups` directory at `/var`
 Let's move to this directory.
@@ -256,7 +255,7 @@ drwxr-xr-x 2 root root 4096 May 24  2021 documents
 drwxr-xr-x 2 root root 4096 May 24  2021 images
 ```
 Inside the documents directory, I found some credentials of mike?? Oh, it's useless for Privilege Escalation. Let's go back.
-Then, I found the `.bash_history` is weird, since it's readable for us.
+Then, I found the `.bash_history` is weird, since it's **readable for us.**
 ```
 (remote) www-data@gallery:/var/backups/mike_home_backup$ cat .bash_history 
 cd ~
