@@ -212,11 +212,11 @@ MariaDB [gallery_db]> SELECT * FROM users;
 +----+--------------+----------+----------+----------------------------------+------------------------------------------+------------+------+---------------------+---------------------+
 | id | firstname    | lastname | username | password                         | avatar                                   | last_login | type | date_added          | date_updated        |
 +----+--------------+----------+----------+----------------------------------+------------------------------------------+------------+------+---------------------+---------------------+
-|  1 | Adminstrator | Admin    | admin    | a228b12a08b6527e7978cbe5d914531c | uploads/1651054320_php-reverse-shell.php | NULL       |    1 | 2021-01-20 14:02:37 | 2022-04-27 10:12:42 |
+|  1 | Adminstrator | Admin    | admin    | ---redacted---                   | uploads/1651054320_php-reverse-shell.php | NULL       |    1 | 2021-01-20 14:02:37 | 2022-04-27 10:12:42 |
 +----+--------------+----------+----------+----------------------------------+------------------------------------------+------------+------+---------------------+---------------------+
 1 row in set (0.00 sec)
 ```
-Yes! We found the admin hash!`a228b12a08b6527e7978cbe5d914531c`
+Yes! We found the admin hash!
 However, I found this hash is **uncrackable** after cracking it 20 minutes. Let's found another Privilege Escalation vector.
 
 After a couple minutes of nonsense, I found a `backups` directory at `/var`
@@ -267,13 +267,12 @@ ls
 cd html
 ls -al
 cat index.html
-sudo -lb3stpassw0rdbr0xx
+sudo -l---redacted---
 clear
 sudo -l
 exit
 ```
 Lol, we've mike credential by viewing his sudo command! Let's pivot to mike user.
-`mike:b3stpassw0rdbr0xx`
 ```
 (remote) www-data@gallery:/var/backups/mike_home_backup$ su -l mike
 Password: 
