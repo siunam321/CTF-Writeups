@@ -4,7 +4,9 @@
 In this challenge, we've 3 files, `crash_override.c`, `Makefile` and `crash_override`
 
 crash_override.c is a C language source code.
+
 Makefile is a gcc command that complies C source code.
+
 crash_override is an ELF 64-bit LSB executable.
 
 Let's connect to the instance first.
