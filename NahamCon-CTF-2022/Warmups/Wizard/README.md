@@ -1,8 +1,6 @@
 # Background
 ![background](https://github.com/siunam321/CTF-Writeups/blob/main/NahamCon-CTF-2022/Warmups/Wizard/images/background.png)
 
-![question](https://github.com/siunam321/CTF-Writeups/blob/main/NahamCon-CTF-2022/Warmups/Wizard/images/question.png)
-
 In this challenge, you'll have to use [CyberChef](https://gchq.github.io/CyberChef/) and [RapidTables](https://www.rapidtables.com/) to solve it. (If you don't know what is CyberChef and RapidTables, it basically helps you to decode, decrypt, encode and encrypt things.)
 
 # Question 1
@@ -42,10 +40,10 @@ Third Question: What is the ASCII plaintext corresponding to this octal string?
 ```
 > This question really makes so frustrating because I trusted CyberChef too much Lol.
 
-In this question, it's said we've to find the ASCII plaintext from that `octal` string, and that octal string is **encoded from ASCII plaintext -> hexadecimal -> integer(decimal) -> octal**, so we need to **decode that octal string to octal -> integer(decimal) -> hexadecimal -> ASCII plaintext.**
-I've tried using CyberChef to convert octal to integer, but it doesn't work.
+In this question, it's said we've to find the ASCII plaintext from that `octal` string, and that octal string is **encoded from ASCII plaintext -> hexadecimal -> integer(decimal) -> octal**, so we need to **decode that octal string to octal -> integer(decimal) -> hexadecimal -> ASCII plaintext.** (I've tried using CyberChef to convert octal to integer, but it doesn't work.)
 
-Then I started using [RapidTables](https://www.rapidtables.com/convert/number/octal-to-decimal.html). Copy and paste the octal string, and it outputs out `3131880780077943822552217163958175390677077601044656010262087478932193255537275603789701176597829315030644` in the Decimal number textbox
+Then I started using [RapidTables](https://www.rapidtables.com/convert/number/octal-to-decimal.html). Copy and paste the octal string, and it outputs out `3131880780077943822552217163958175390677077601044656010262087478932193255537275603789701176597829315030644` 
+in the Decimal number textbox
 
 ![question3s1](https://github.com/siunam321/CTF-Writeups/blob/main/NahamCon-CTF-2022/Warmups/Wizard/images/question3solution1.png)
 
@@ -55,7 +53,7 @@ Now, it should outputs out this hexadecimal `57652063616E20726570726573656E74206
 
 ![question3s2](https://github.com/siunam321/CTF-Writeups/blob/main/NahamCon-CTF-2022/Warmups/Wizard/images/question3solution2.png)
 
-Then, you can simply copy and paste that hexadecimal to CyberChef and start baking with the `From Charcode` recipe.(Charcode means ASCII plaintext)
+Then, you can simply copy and paste that hexadecimal to CyberChef and start baking with the `From Charcode` recipe. (Charcode means ASCII plaintext)
 
 ![question3s3](https://github.com/siunam321/CTF-Writeups/blob/main/NahamCon-CTF-2022/Warmups/Wizard/images/question3solution3.png)
 
@@ -94,6 +92,7 @@ Answer: `Bases on bases on bases on bases :)`
 > Bonus tips!
 
 **What if no one tells you that string is Base64 encoded? How would you determine that string using what encoding method?**
+
 There's a quick way to determine that string.
 
 If you saw there's a `=` or `==` in that string, that must be Base64, because that `=` or `==` is called padding in Base64! Base64 requires the length of an output-encoded string **must be a multiple of three.** So, next time if you see `=` or `==` in an encoded string, it must be Base64!
