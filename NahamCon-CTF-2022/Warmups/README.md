@@ -1,1 +1,1 @@
-This warmups category is designed for begineer!!
+This warmups category is designed for begineers!!
