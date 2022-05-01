@@ -3,7 +3,7 @@
 
 ![question](https://github.com/siunam321/CTF-Writeups/blob/main/NahamCon-CTF-2022/Warmups/Prisoner/images/question.png)
 
-In this challenge, you have to exit the python script. At that time I was asking myself, if I'm inside a python editor, how do I exit? So I pressed `Ctrl+C` to exit that script.
+In this challenge, you have to exit the python script. At that time I was asking myself, if I'm inside a python editor, how do I exit? So I pressed `Ctrl+D` to exit that script.
 
 ![question](https://github.com/siunam321/CTF-Writeups/blob/main/NahamCon-CTF-2022/Warmups/Prisoner/images/question1.png)
 
