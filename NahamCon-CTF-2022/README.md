@@ -25,7 +25,7 @@ This CTF has 15 categories:
 > Since this is my first CTF, I only ended up solving 16 challenges :(
 > However, I've learned TONS of new stuff during the CTF!!
 
-![Certs](https://github.com/siunam321/CTF-Writeups/blob/main/NahamCon-CTF-2022/images/certs)
-![Certs](https://github.com/siunam321/CTF-Writeups/blob/main/NahamCon-CTF-2022/images/catebreakdown.png)
-![Certs](https://github.com/siunam321/CTF-Writeups/blob/main/NahamCon-CTF-2022/images/score.png)
-![Certs](https://github.com/siunam321/CTF-Writeups/blob/main/NahamCon-CTF-2022/images/solves.png)
+![certs](https://github.com/siunam321/CTF-Writeups/blob/main/NahamCon-CTF-2022/images/certs.png)
+![breakdown](https://github.com/siunam321/CTF-Writeups/blob/main/NahamCon-CTF-2022/images/catebreakdown.png)
+![score](https://github.com/siunam321/CTF-Writeups/blob/main/NahamCon-CTF-2022/images/score.png)
+![solves](https://github.com/siunam321/CTF-Writeups/blob/main/NahamCon-CTF-2022/images/solves.png)
