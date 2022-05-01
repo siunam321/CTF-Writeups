@@ -7,7 +7,7 @@ In this challenge, you have to exit the python script. At that time I was asking
 
 ![question](https://github.com/siunam321/CTF-Writeups/blob/main/NahamCon-CTF-2022/Warmups/Prisoner/images/question1.png)
 
-And yes! I've successfully esacpe that python script!
+And yes! I've successfully escape that python script!
 
 Next, since the flag is in ./flag.txt, so I was googling `How to cat a file inside the python editor`, and I found this:
 ```
