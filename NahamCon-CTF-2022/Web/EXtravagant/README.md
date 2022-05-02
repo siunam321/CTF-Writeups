@@ -28,3 +28,8 @@ Upload successful!! Let's go to the `View XML` page to see is it work!
 ![flag](https://github.com/siunam321/CTF-Writeups/blob/main/NahamCon-CTF-2022/Web/EXtravagant/images/flag.png)
 
 Yes!! We've the flag!
+
+
+# Trivia
+
+Before I realized it's a XXE, I've tried to upload a php reverse shell, but it doesn't work. Lol
