@@ -26,7 +26,7 @@ console.log(d == (d + 1)); // 1 is not equal to 2 (1 + 1)
 false // Output:
 ```
 
-But, what if we want it to return `True`? It's possible? Then, I started to google `Javascript maximum integer`, as I remember one YouTube video was talking about the  Year 2038 problem.(32-bit systems time formatting bug)
+But, what if we want it to return `True`? It's possible? Then, I started to google `Javascript maximum integer`, as I remember one YouTube video was talking about the  **Year 2038 problem**.(32-bit systems time formatting bug)
 
 ![solution1](https://github.com/siunam321/CTF-Writeups/blob/main/NahamCon-CTF-2022/Miscellaneous/One-Mantissa-Please/images/solution1.png)
 
