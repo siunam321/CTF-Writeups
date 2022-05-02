@@ -7,7 +7,7 @@ As usual, start the instance and connect to it via netcat!
 ![question](https://github.com/siunam321/CTF-Writeups/blob/main/NahamCon-CTF-2022/Miscellaneous/One-Mantissa-Please/images/question.png)
 
 Hmm... It's said the shell will run this Javascript if we type something.
-```js
+```javascript
 console.log(%d == (%d + 1));
 ```
 
@@ -18,10 +18,10 @@ Looks like it's comparing an output.
 That Javascript will always return `False` boolean.(Boolean means True and False, True = 1, False = 0)
 
 Example:
-```js
-d = 1
+```javascript
+d = 1 // Set d is 1
 
-console.log(d == (d + 1));
+console.log(d == (d + 1)); // 1 is not equal to 2 (1 + 1)
 
 false // Output:
 ```
