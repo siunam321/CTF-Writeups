@@ -5,7 +5,7 @@ In this challenge we'll have to use our OSINT skills!
 
 According to the challenge's description, we need to investigate the `Keeber Security Group`! The first thing we need to do is **find the person who registered their domain.**
 
-Next, I googled `Keeber Security Group`, and we indeed see their company's website!
+Next, I googled `Keeber Security Group`, and we indeed found their company's website!
 
 ![google1](https://github.com/siunam321/CTF-Writeups/blob/main/NahamCon-CTF-2022/OSINT/Keeber/images/1/google1.png)
 
@@ -17,7 +17,7 @@ In order to find their domain register, we can use `whois` command.
 
 ![solution2](https://github.com/siunam321/CTF-Writeups/blob/main/NahamCon-CTF-2022/OSINT/Keeber/images/1/solution2.png)
 
-Wow! we see the flag!! Let's pipe it to `grep` command, so we can see the flag better.
+Wow! we can see the flag!! Let's pipe it to `grep` command, so we can see the flag better.
 
 ![flag](https://github.com/siunam321/CTF-Writeups/blob/main/NahamCon-CTF-2022/OSINT/Keeber/images/1/flag.png)
 
@@ -51,7 +51,7 @@ Let's use google to find their github page!
 
 ![solution3](https://github.com/siunam321/CTF-Writeups/blob/main/NahamCon-CTF-2022/OSINT/Keeber/images/3/solution3.png)
 
-Yes!! We found their secret commits, `added .gitignore`, in their repositories!
+Yes!! We found their secret commits, `added .gitignore`, in their `security-evaluation-workflow repository`!
 
 Looks like `keeber-tiffany` uploaded a file called `asana_secret.txt` and inside the file, it has a key? `1/1202152286661684:f136d320deefe730f6c71a91b2e4f7b1`
 
