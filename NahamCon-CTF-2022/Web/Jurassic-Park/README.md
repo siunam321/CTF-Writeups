@@ -15,14 +15,16 @@ Now, let's check the robots.txt on the instance's website.
 
 As you can see, there are 2 things here. `User-agent:` and `Disallow:`
 
-> User-agent
+> User-agent:
+
 User-agent **tells you information about your device and operating system**. Like it tells you about your browser's version, which browser you're using, your operating system, your CPU architecture. You can google `What is my user agent` if you're interested.
 
 Example of my user agent: `Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101 Firefox/91.0`
 
 In the above image, we can see `User-agent: *`, the * means **all user agents are allowed, all crawlers can access to the site.**
 
-> Disallow
+> Disallow:
+
 Disallow means **disallowing crawlers to access a specific directory**. In this challenge, we can see `/ingen/` is disallow, which means crawlers can't access to /ingen/ directory. **BUT we can access to that directory, except crawlers.**
 
 So now why not go to `/ingen/` to see are there any sensitive information?
