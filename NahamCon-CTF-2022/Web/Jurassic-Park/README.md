@@ -25,7 +25,7 @@ In the above image, we can see `User-agent: *`, the * means **all user agents ar
 
 > Disallow:
 
-Disallow means **disallowing crawlers to access a specific directory**. In this challenge, we can see `/ingen/` is disallow, which means crawlers can't access to /ingen/ directory. **BUT we can access to that directory, except crawlers.**
+Disallow means **disallowing crawlers to access a specific directory**. In this challenge, we can see `/ingen/` is disallowed, which means crawlers can't access to /ingen/ directory. **BUT we can access to that directory, except crawlers.**
 
 So now why not go to `/ingen/` to see are there any sensitive information?
 
