@@ -37,4 +37,4 @@ hewozuoai
 
 > Overall difficulty for me: Brainfuck. Lol
 
-![certs](https://github.com/siunam321/CTF-Writeups/blob/main/Cyber-Apocalypse-CTF-2022/images/certs.png)
+![certs](https://github.com/siunam321/CTF-Writeups/blob/main/Cyber-Apocalypse-CTF-2022/images/cert.png)
