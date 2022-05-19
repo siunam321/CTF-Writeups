@@ -31,7 +31,7 @@ This CTF has 8 categories and 60 + 1 challenges:
 ```
 alexislingad	(Captain)
 joriki
-siunam			(me)
+siunam		(me)
 hewozuoai
 ```
 

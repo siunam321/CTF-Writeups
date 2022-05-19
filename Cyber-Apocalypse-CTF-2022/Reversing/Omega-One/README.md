@@ -10,6 +10,7 @@ As usual, download the [downloadable file](https://github.com/siunam321/CTF-Writ
 After unzip that zip file, we see 2 files: `omega-one` and `output.txt`.
 
 omega-one: 64-bit ELF executable
+
 output.txt: A list of name??
 
 ![solution1](https://github.com/siunam321/CTF-Writeups/blob/main/Cyber-Apocalypse-CTF-2022/Reversing/Omega-One/images/solution1.png)

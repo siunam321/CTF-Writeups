@@ -11,7 +11,7 @@ Now, please note that, sometimes **challenge info could has some valuable inform
 
 # Solution
 
-As the challenge has a [downloadable file](https://github.com/siunam321/CTF-Writeups/blob/main/Cyber-Apocalypse-CTF-2022/Misc/Matrioshka-Brain/misc_matrioshka_brain.zip), and unzip it.
+As the challenge has a [downloadable file](https://github.com/siunam321/CTF-Writeups/blob/main/Cyber-Apocalypse-CTF-2022/Misc/Matrioshka-Brain/misc_matrioshka_brain.zip). Let's download it and unzip it.
 
 ![solution1](https://github.com/siunam321/CTF-Writeups/blob/main/Cyber-Apocalypse-CTF-2022/Misc/Matrioshka-Brain/images/solution1.png)
 
