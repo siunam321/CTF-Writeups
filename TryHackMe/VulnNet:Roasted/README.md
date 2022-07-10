@@ -226,7 +226,7 @@ Now, let's use `smbmap` to list the permission of all the shared folder:
 
 ### Enumerate SMB users:
 
-According to the result, we have a read access to `IPC$` without authentication. Now we able to list the domain users as anonymous via `lookupsid.py` in `Impacket`:
+According to the result, we have a read access to `IPC$` without authentication. Now we able to list the domain users as `anonymous` via `lookupsid.py` in `Impacket`:
 
 ```
 ┌──(impacket-env)─(root💀nam)-[~/ctf/thm/ctf/VulnNet_Roasted]
@@ -329,7 +329,7 @@ We've found `t-skid`’s hash. Let’s crack it with `John The Ripper`!:
 
 Password cracked!
 
-`t-skid:tj072889*`
+`t-skid:[Redacted]`
 
 ### SMB Authenticated Access:
 
@@ -364,7 +364,7 @@ Another credential!
 
 `a-whitehat:[Redacted]`
 
-# Initial Shell:
+# Initial Access:
 
 Since now we have a set of credential for user a-whitehat, we may try to login to `RDC` with `evil-winrm`:
 
@@ -405,7 +405,7 @@ THM{Redacted}
 
 Since user a-whitehat is in `Domain Admins` group, we can dump the entire SAM database and get access to all the hashes from any user whose on the box, such Administrator who has higher privilege.
 
-To do so, I will use `secretsdump.py` in `Impacket`:
+To do so, I'll use `secretsdump.py` in `Impacket`:
 
 ```
 ┌──(impacket-env)─(root💀nam)-[~/ctf/thm/ctf/VulnNet_Roasted]
