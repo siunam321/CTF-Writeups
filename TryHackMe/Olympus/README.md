@@ -797,7 +797,7 @@ Hope you liked the room ;)
 What we've learned:
 
 1. Directory Enumeration
-2. MySQL SQL Injection
+2. MySQL Union Based SQL Injection
 3. Subdomain Enumeration
 4. Cracking Hashes and Passphrase
 5. Arbitrary File Upload
