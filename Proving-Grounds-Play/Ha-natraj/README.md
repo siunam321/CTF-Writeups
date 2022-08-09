@@ -8,7 +8,8 @@ Welcome to my another writeup! In this Offensive Security's Proving Grounds **Ha
 
 > Who is dancing now?
 
-Author: Hacking Articles [view original submission](https://www.vulnhub.com/entry/ha-natraj,489/)
+Author: [Hacking Articles](https://www.vulnhub.com/entry/ha-natraj,489/)
+
 Released on: Sep 01, 2020
 
 ## Difficulty
@@ -56,7 +57,7 @@ Looks like we found a LFI (Local File Inclusion) vulnerability, as I can read `/
 
 # Initial Foothold
 
-**Local File Inclusion Log Posioning:**
+**Log Posioning via LFI:**
 
 Since we have a LFI vulnerability, we could leverage this to do **log posioning**.
 
@@ -68,11 +69,11 @@ To do so, I'll fuzz the value of `file` GET parameter via `ffuf` to see is there
 
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/Proving-Grounds-Play/Ha-natraj/images/a8.png)
 
-Looks like we can read the `/var/log/auth.log`, which is SSH service logs!
+Looks like we can read the `/var/log/auth.log`, which is SSH service log!
 
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/Proving-Grounds-Play/Ha-natraj/images/a9.png)
 
-Since we can read SSH service logs, we can now try to inject a PHP code via `ssh`.
+Since we can read SSH service log, we can now try to inject a PHP code via `ssh`.
 
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/Proving-Grounds-Play/Ha-natraj/images/a10.png)
 
@@ -90,7 +91,7 @@ As we can see, the system has `python3` installed. Let's have a python reverse s
 
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/Proving-Grounds-Play/Ha-natraj/images/a13.png)
 
-2. Use a python reverse shell and trigger it:
+2. Use a python reverse shell and trigger it: (Generated from https://www.revshells.com/)
 
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/Proving-Grounds-Play/Ha-natraj/images/a14.png)
 
@@ -103,8 +104,6 @@ We're now in `www-data`!
 **local.txt:**
 
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/Proving-Grounds-Play/Ha-natraj/images/a17.png)
-
-`1b491ea5a66b6f041f937c2b8f7fca0f`
 
 # Privilege Escalation
 
@@ -184,15 +183,13 @@ Let's copy and paste to our reverse shell session!
 
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/Proving-Grounds-Play/Ha-natraj/images/a34.png)
 
-Wow!! We're root now! Let's `cat` the root flag!
+Wow!! We're root now! Let's `cat` the proof flag!
 
 # Rooted
 
 **proof.txt:**
 
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/Proving-Grounds-Play/Ha-natraj/images/a35.png)
-
-`2efc3f4c4cfa7cf92290433828b1f545`
 
 # Conclusion
 
