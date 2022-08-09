@@ -1,0 +1,5 @@
+All my super doper great Offensive Security's Proving Grounds Play writeups will be here.
+
+Date		| Room Title
+------------|------------------------
+9/8/2022	| Ha-natraj
