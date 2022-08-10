@@ -3,3 +3,4 @@ All my super doper great Offensive Security's Proving Grounds Play writeups will
 Date		| Room Title
 ------------|------------------------
 9/8/2022	| Ha-natraj
+10/8/2022	| BBSCute
