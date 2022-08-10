@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Welcome to my another writeup! In this Offensive Security's Proving Grounds **BBSCute** machine, there are tons of stuff that's worth learning! Without further ado, let's dive in.
+Welcome to my another writeup! In this Offensive Security's Proving Grounds Play **BBSCute** machine, there are tons of stuff that's worth learning! Without further ado, let's dive in.
 
 ## Background
 
@@ -46,7 +46,7 @@ In the `index.html`, nothing seems to be interesting for us, thus we can enumera
 
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/Proving-Grounds-Play/BBSCute/images/a5.png)
 
-As we can see, we found two index page: `index.html` and `index.php`. The `php` one seems funny.
+As we can see, we found two index page: `index.html` and `index.php`. The `php` one seems weird.
 
 **http://192.168.145.128/index.php:**
 
@@ -66,7 +66,7 @@ We found 4 exploits for `CuteNews 2.1.2`, the `CuteNews 2.1.2 - Remote Code Exec
 
 > I'll do the exploit in manully, as it's easier to do.
 
-According to the 48800 python exploit, we need an authenticated user in order to have a remote code execution. Let's register a new user first.
+According to the `48800` python exploit, we need an authenticated user in order to have a remote code execution. Let's register a new user first.
 
 1. Register a new user:
 
@@ -80,7 +80,7 @@ However, we see the captcha is missing. If we inspect the form in Page Source, w
 
 Looks like it's the captcha's value!
 
-We can use the generate captcha button to refresh it's value.
+We can use the `Refresh captcha` button to refresh it's value, and using Firefox's "Inspect" -> "Network" feature to see the GET response.
 
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/Proving-Grounds-Play/BBSCute/images/a11.png)
 
@@ -106,7 +106,7 @@ In the exploit script, we can see it's sending a POST request to avatar PHP to u
 
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/Proving-Grounds-Play/BBSCute/images/a17.png)
 
-**Select our "image" and click "Save Changes":**
+**Browse our "image" and click "Save Changes":**
 
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/Proving-Grounds-Play/BBSCute/images/a18.png)
 
@@ -124,7 +124,7 @@ We can use this webshell to gain an initial foothold to the machine!
 
 Looks like the machine has python installed! We can use a python reverse shell to gain initial foothold!
 
-**Generate a python3 reverse shell:**
+**Generate a python3 reverse shell:** (From https://www.revshells.com/)
 
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/Proving-Grounds-Play/BBSCute/images/a21.png)
 
@@ -162,7 +162,7 @@ We can also see that `hping3` has **SUID bit set**!
 
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/Proving-Grounds-Play/BBSCute/images/a28.png)
 
-According to [GTFOBins](https://gtfobins.github.io/gtfobins/hping3/#suid), if `hping3` has SUID bit set, we can escalate our privilege! However, we can't use `sudo` to escalate our privilege, as we can only run `sudo hping` **with** the `--icmp` option.
+According to [GTFOBins](https://gtfobins.github.io/gtfobins/hping3/#suid), if `hping3` has SUID bit set, we can escalate our privilege! However, we can't use `sudo` to escalate our privilege, as we can only run `sudo hping` **AND** the `--icmp` option.
 
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/Proving-Grounds-Play/BBSCute/images/a29.png)
 
