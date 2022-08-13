@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Welcome to my another writeup! In this Offensive Security's Proving Grounds Play **Sumo** machine, there are tons of stuff that's worth learning! Without further ado, let's dive in.
+Welcome to my another writeup! In this Offensive Security's Proving Grounds Play **Pwned1** machine, there are tons of stuff that's worth learning! Without further ado, let's dive in.
 
 ## Background
 
