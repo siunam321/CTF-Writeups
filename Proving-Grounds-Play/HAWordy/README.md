@@ -24,7 +24,7 @@ As usual, scan the machine for open ports via `rustscan`!
 
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/Proving-Grounds-Play/HAWordy/images/a2.png)
 
-According to `rustscan` result, we have one port is open:
+According to `rustscan` result, we have one port is opened:
 
 Ports Open        | Service
 ------------------|------------------------
@@ -39,6 +39,8 @@ Always brute force hidden directory in a web server via `gobuster`!
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/Proving-Grounds-Play/HAWordy/images/a3.png)
 
 Found `/wordpress` directory.
+
+***WordPress Enumeration:***
 
 **WPScan Result:**
 
