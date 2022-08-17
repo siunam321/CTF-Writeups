@@ -10,7 +10,7 @@
 
 - Difficulty: Intermediate
 
-> Overall Difficulty for Me: Very Hard
+> Overall difficulty for me: Very Hard
 
 # Service Enumeration
 
@@ -56,7 +56,7 @@ Found `/admin` directory!
 
 Found a passphrase: `harder`.
 
-At this point, I tried harder to enumerate hidden directories, finding what the `index.php` does, and figuring what does the passphrase do. Turns out, those images are not exactly an image:
+At this point, I tried harder to enumerate hidden directories, finding what the `index.php` does, and figuring what does the passphrase do. Turns out, one of those images are not an image:
 
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/Proving-Grounds-Play/NoName/images/a9.png)
 
@@ -65,6 +65,8 @@ At this point, I tried harder to enumerate hidden directories, finding what the 
 Nice! We found `superadmin.php`!
 
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/Proving-Grounds-Play/NoName/images/a11.png)
+
+**View Source:**
 
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/Proving-Grounds-Play/NoName/images/a12.png)
 
@@ -178,7 +180,7 @@ And I'm root! :D. But what does the `flag1.txt` saying? Am I missing something?
 
 ## www-data to haclabs
 
-In the `yash`'s home directory, the `flag1.txt` said `yash` saved `haclabs` in somewhere.
+In the `yash`'s home directory, the `flag1.txt` said `yash` has saved `haclabs` in somewhere.
 
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/Proving-Grounds-Play/NoName/images/a34.png)
 
