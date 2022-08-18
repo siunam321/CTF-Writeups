@@ -92,6 +92,8 @@ Looks like it suffers to SQL Injection!
 
 # Initial Foothold
 
+> After I rooted this machine, I found that there are 2 ways to gain initial foothold. In below I'll do the harder one, because why not try harder? :D
+
 **48122.txt:**
 
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/Proving-Grounds-Play/Election1/images/a18.png)
