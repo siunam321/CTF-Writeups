@@ -10,3 +10,4 @@ Aug 13, 2022	| Pwned1
 Aug 14, 2022	| HAWordy
 Aug 15, 2022	| Loly
 Aug 17, 2022	| NoName
+Aug 18, 2022	| Election1
