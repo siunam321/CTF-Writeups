@@ -53,7 +53,7 @@ Found this website is running WordPress.
 
 Some hint in the `index.php`.
 
-We can also see that this site is using WordPress, we can use `wpscan` to enumerate this WordPress site!
+Next, since the website is running WordPress, we can use `wpscan` to enumerate this WordPress website!
 
 **WPScan Result:**
 
