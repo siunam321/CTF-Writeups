@@ -43,9 +43,11 @@ We also see there is a `robots.txt` that contains a `/secret/` directory!
 
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/Proving-Grounds-Play/FunBox/images/a5.png)
 
-Nothing in it...
+Nothing in there...
 
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/Proving-Grounds-Play/FunBox/images/a6.png)
+
+Found this website is running WordPress.
 
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/Proving-Grounds-Play/FunBox/images/a7.png)
 
@@ -133,7 +135,7 @@ To escape `rbash`, we can use the `-t "bash --noprofile"` trick in `ssh`!
 
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/Proving-Grounds-Play/FunBox/images/a22.png)
 
-It seems like there is a backup script in `funny`'s home directory, and it's running as a cronjob.
+It seems like there is a backup script in `funny`'s home directory, and it's running via a cronjob.
 
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/Proving-Grounds-Play/FunBox/images/a23.png)
 
@@ -153,7 +155,7 @@ In the above image, we can see that user `funny` is inside the `lxd` group.
 
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/Proving-Grounds-Play/FunBox/images/a26.png)
 
-If the user is belong to `lxd` or `lxc` group, you can become **root**! (Similar to `docker` privilege escalation)
+If the user is belong to `lxd` or `lxc` group, you can become **root**! (Similar to `docker` privilege escalation where you can mount a root container.)
 
 > A walkthrough can be found in [HackTricks](https://book.hacktricks.xyz/linux-hardening/privilege-escalation/interesting-groups-linux-pe/lxd-privilege-escalation) article.
 
@@ -189,7 +191,7 @@ If the user is belong to `lxd` or `lxc` group, you can become **root**! (Similar
 
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/Proving-Grounds-Play/FunBox/images/a32.png)
 
-6. Mount the /root into the image:
+6. Mount the `/root` into the image:
 
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/Proving-Grounds-Play/FunBox/images/a33.png)
 
