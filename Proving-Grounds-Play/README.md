@@ -12,3 +12,4 @@ Aug 15, 2022	| Loly
 Aug 17, 2022	| NoName
 Aug 18, 2022	| Election1
 Aug 19, 2022	| FunBox
+Aug 20, 2022	| SoSimple
