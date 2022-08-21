@@ -54,6 +54,8 @@ I tried to brute force the login page via `hydra`, but no dice.
 
 **How about MySQL??**
 
+## MySQL on Port 3306
+
 Let's use `hydra` to brute force it!
 
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/Proving-Grounds-Play/SunsetMidnight/images/a7.png)
