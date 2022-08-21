@@ -85,21 +85,23 @@ Server IP Address | Ports Open
 
 **Rustscan Result:**
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/Relevant/images/a1.png)
+![](https://raw.githubusercontent.com/siunam321/CTF-Writeups/main/TryHackMe/Relevant/images/a1.png)
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/Relevant/images/a2.png)
+![](https://raw.githubusercontent.com/siunam321/CTF-Writeups/main/TryHackMe/Relevant/images/a2.png)
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/Relevant/images/a5.png)
+![](https://raw.githubusercontent.com/siunam321/CTF-Writeups/main/TryHackMe/Relevant/images/a5.png)
 
 ##### SMB on Port 139, 445
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/Relevant/images/a3.png)
+In SMB, we can use `smbclient` to enumerate SMB shares:
+
+![](https://raw.githubusercontent.com/siunam321/CTF-Writeups/main/TryHackMe/Relevant/images/a3.png)
 
 Found `nt4wrksv` share, and it has `passwords.txt` file.
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/Relevant/images/a4.png)
+![](https://raw.githubusercontent.com/siunam321/CTF-Writeups/main/TryHackMe/Relevant/images/a4.png)
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/Relevant/images/a6.png)
+![](https://raw.githubusercontent.com/siunam321/CTF-Writeups/main/TryHackMe/Relevant/images/a6.png)
 
 Found 2 users and their passwords:
 
@@ -135,7 +137,7 @@ We also see that the client's virtual environment is vulnerable to `EternalBlue`
 
 **Nmap Script Scan Result:**
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/Relevant/images/a7.png)
+![](https://raw.githubusercontent.com/siunam321/CTF-Writeups/main/TryHackMe/Relevant/images/a7.png)
 
 #### First Initial Foothold
 
@@ -143,18 +145,18 @@ We also see that the client's virtual environment is vulnerable to `EternalBlue`
 
 We can use a python exploit from https://github.com/3ndG4me/AutoBlue-MS17-010 to gain an initial foothold to the client's virtual environment.
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/Relevant/images/a8.png)
+![](https://raw.githubusercontent.com/siunam321/CTF-Writeups/main/TryHackMe/Relevant/images/a8.png)
 
 **Executing the python exploit using the following options:**
 
 - `-port` to specify the SMB port
 - The credential to connect. In this case I will use the `Bob` user’s credential
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/Relevant/images/a9.png)
+![](https://raw.githubusercontent.com/siunam321/CTF-Writeups/main/TryHackMe/Relevant/images/a9.png)
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/Relevant/images/a10.png)
+![](https://raw.githubusercontent.com/siunam321/CTF-Writeups/main/TryHackMe/Relevant/images/a10.png)
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/Relevant/images/a11.png)
+![](https://raw.githubusercontent.com/siunam321/CTF-Writeups/main/TryHackMe/Relevant/images/a11.png)
 
 As we can see, we are `nt authority\system`, which is have the administrator privilege in Windows. Since I am already have the administrator privilege in Windows, there is no need to do privilege escalation.
 
@@ -186,29 +188,29 @@ Disable SMBv1.
 
 In HTTP on port 49663, we can find that the SMB share named `nt4wrksv` is open in the HTTP port on 49663.
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/Relevant/images/a12.png)
+![](https://raw.githubusercontent.com/siunam321/CTF-Writeups/main/TryHackMe/Relevant/images/a12.png)
 
 Which could allow attacker to upload malicious file on the SMB share, and gain an initial foothold.
 
 First, I will check the `nt4wrksv` SMB share is allow upload any file or not:
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/Relevant/images/a13.png)
+![](https://raw.githubusercontent.com/siunam321/CTF-Writeups/main/TryHackMe/Relevant/images/a13.png)
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/Relevant/images/a14.png)
+![](https://raw.githubusercontent.com/siunam321/CTF-Writeups/main/TryHackMe/Relevant/images/a14.png)
 
 If the SMB share allows anyone to upload any file, attackers can gain an initial foothold on the target machine.
 
 Next, I will first generate a `ASPX` reverse shell, setup a `nc` listener, and upload it to the `nt4wrksv` SMB share:
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/Relevant/images/a15.png)
+![](https://raw.githubusercontent.com/siunam321/CTF-Writeups/main/TryHackMe/Relevant/images/a15.png)
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/Relevant/images/a16.png)
+![](https://raw.githubusercontent.com/siunam321/CTF-Writeups/main/TryHackMe/Relevant/images/a16.png)
 
 Finally, trigger the reverse shell via `curl`:
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/Relevant/images/a17.png)
+![](https://raw.githubusercontent.com/siunam321/CTF-Writeups/main/TryHackMe/Relevant/images/a17.png)
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/Relevant/images/a18.png)
+![](https://raw.githubusercontent.com/siunam321/CTF-Writeups/main/TryHackMe/Relevant/images/a18.png)
 
 **Vulnerability Explanation:**
 
@@ -234,17 +236,17 @@ HTTP on port 49663 should be visible internally, not publicly. Also, SMB share `
 
 **user.txt Contents**
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/Relevant/images/a19.png)
+![](https://raw.githubusercontent.com/siunam321/CTF-Writeups/main/TryHackMe/Relevant/images/a19.png)
 
 #### Privilege Escalation
 
 **System info:**
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/Relevant/images/a20.png)
+![](https://raw.githubusercontent.com/siunam321/CTF-Writeups/main/TryHackMe/Relevant/images/a20.png)
 
 By viewing the system info, we can see that the client's virtual environment machine is using `Windows Server 2016 Standard Evaluation 10.0.14393 N/A Build 14393`. 
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/Relevant/images/a21.png)
+![](https://raw.githubusercontent.com/siunam321/CTF-Writeups/main/TryHackMe/Relevant/images/a21.png)
 
 Since `iis apppool\defaultapppool` is a service account, it has privilege called `SeImpersonatePrivilege`, which could be abused for privilege escalation to `NT AUTHORITY\SYSTEM`, who has administrator privilege.
 
@@ -254,13 +256,13 @@ Armed with the above information, we can use [PrintSpoofer](https://github.com/i
 
 First, upload [`PrintSpoofer64.exe`](https://github.com/itm4n/PrintSpoofer/releases/tag/v1.0) to the target machine:
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/Relevant/images/a22.png)
+![](https://raw.githubusercontent.com/siunam321/CTF-Writeups/main/TryHackMe/Relevant/images/a22.png)
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/Relevant/images/a23.png)
+![](https://raw.githubusercontent.com/siunam321/CTF-Writeups/main/TryHackMe/Relevant/images/a23.png)
 
 Then, run the exploit binary:
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/Relevant/images/a24.png)
+![](https://raw.githubusercontent.com/siunam321/CTF-Writeups/main/TryHackMe/Relevant/images/a24.png)
 
 Now I am `nt authority\system`, who has administrator privilege.
 
@@ -288,7 +290,7 @@ You can specify that you don’t want to be impersonated or, at least, that you 
 
 **root.txt Contents:**
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/Relevant/images/a25.png)
+![](https://raw.githubusercontent.com/siunam321/CTF-Writeups/main/TryHackMe/Relevant/images/a25.png)
 
 ## Maintaining Access
 

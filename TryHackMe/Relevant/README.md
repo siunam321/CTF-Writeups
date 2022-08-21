@@ -76,6 +76,8 @@ Server IP Address | Ports Open
 
 ##### SMB on Port 139, 445
 
+In SMB, we can use `smbclient` to enumerate SMB shares:
+
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/Relevant/images/a3.png)
 
 Found `nt4wrksv` share, and it has `passwords.txt` file.
