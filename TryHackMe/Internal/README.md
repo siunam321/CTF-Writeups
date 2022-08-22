@@ -195,6 +195,8 @@ To do so, I will use `socat` to achieve this:
 
 ##### www-data to aubreanna
 
+By enumerating the system manaully, I found there is a file that contains MySQL credentials:
+
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/Internal/images/a20.png)
 
 **MySQL:**
@@ -243,9 +245,9 @@ Saved critical file securely, such as set it to not world-readable, encrypt it i
 
 ##### aubreanna to root
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/Internal/images/a24.png)
-
 In the home directory of the user `aubreanna`, there is a file called `jenkins.txt`, and it said `Jenkins` is running on port 8080 in localhost. We can confirm that by issuing command `netstat`.
+
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/Internal/images/a24.png)
 
 **Local Port Forwarding:**
 
