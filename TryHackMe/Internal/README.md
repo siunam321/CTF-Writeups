@@ -2,7 +2,7 @@
 
 ## Introduction
 
-The Internal penetration testing peport contains all efforts that were conducted in order to perform a penetration test on the client's virtual environment network.
+The Internal penetration testing report contains all efforts that were conducted in order to perform a penetration test on the client's virtual environment network.
 
 ## Objective
 
