@@ -10,7 +10,7 @@
 
 - Difficulty: Intermediate
 
-> Overall difficulty for me: Medium
+- Overall difficulty for me: Medium
 	- Initial foothold: Easy
 	- Privilege Escalation: Medium
 
