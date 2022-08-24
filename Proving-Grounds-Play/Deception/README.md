@@ -171,13 +171,13 @@ A=123456789
 +A[::-1]
 ```
 
-If you're familiar with python, you'll see the third item is a way to **reverse a string in python**. ([::-1])
+If you're familiar with python, you'll see the third item is a way to **reverse a string in python**. (`[::-1]`)
 
 So it basically doing:
 
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/Proving-Grounds-Play/Deception/images/a31.png)
 
-Which is `haclabs987654321`!
+We found his password!
 
 - Username:haclabs
 - Password:haclabs987654321
