@@ -141,7 +141,7 @@ As we enumerating the target machine, we can see `python2.7` has SUID sticky bit
 
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/Proving-Grounds-Play/Deception/images/a22.png)
 
-According to [GTFOBins](https://gtfobins.github.io/gtfobins/python/), we can use python to import os library, and spawn a shell!
+According to [GTFOBins](https://gtfobins.github.io/gtfobins/python/), we can use python to import the `os` library, and spawn a shell!
 
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/Proving-Grounds-Play/Deception/images/a24.png)
 
