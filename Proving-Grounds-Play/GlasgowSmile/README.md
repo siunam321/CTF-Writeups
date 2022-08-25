@@ -14,7 +14,7 @@
 	- Initial foothold: Medium
 	- Privilege Escalation: Easy
 
-> In this machine, I'm not using Offensive Security's Proving Grounds Play to interact with this machine, as I have some trouble the VPN. Hence, I downloaded the virtual machine image and imported to my VMWare Workstation.
+> In this machine, I'm not using Offensive Security's Proving Grounds Play to interact with this machine, as I have some trouble with VPN. Hence, I downloaded the virtual machine image from [VulnHub](https://www.vulnhub.com/entry/glasgow-smile-11,491/) and imported to my VMware Workstation.
 
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/Proving-Grounds-Play/GlasgowSmile/images/a0.png)
 
@@ -327,6 +327,8 @@ Now, let's wait for the cronjob runs, it'll add SUID sticky bit to `/bin/bash`.
 The cronjob runs and indeed added SUID sticky bit to `/bin/bash`! We now can spawn a bash shell with SUID privilege.
 
 And we're root! :D
+
+> I tried to copy `/bin/bash` to `/tmp`, but it doesn't work for me, weird.
 
 # Rooted
 
