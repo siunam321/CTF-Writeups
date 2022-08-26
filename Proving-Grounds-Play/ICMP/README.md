@@ -135,12 +135,6 @@ In his home directory, we also can see there is a directory called `devel`. Plus
 
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/Proving-Grounds-Play/ICMP/images/a19.png)
 
-```php
-<?php
-echo crypt('BUHNIJMONIBUVCYTTYVGBUHJNI','da');
-?>
-```
-
 Maybe the `BUHNIJMONIBUVCYTTYVGBUHJNI` is user `fox`'s password??
 
 - Username:fox
@@ -158,12 +152,7 @@ And we're `fox`!
 
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/Proving-Grounds-Play/ICMP/images/a21.png)
 
-As we can see, there are 2 commands we can run as root, and the first command could escalate our privilege to root, as it uses a wildcard:
-
-```bash
-/usr/sbin/hping3 --icmp *
-/usr/bin/killall hping3
-```
+As we can see, there are 2 commands we can run as root, and the first command could escalate our privilege to root, as it uses a wildcard.
 
 Since we must use the ICMP mode, we can't spawn a shell.
 
