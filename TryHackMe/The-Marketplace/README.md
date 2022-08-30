@@ -188,7 +188,7 @@ token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsInVzZXJuYW1lIjoibWlja
 
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/The-Marketplace/images/a29.png)
 
-7. Hard refresh(Ctrl+r) your browser:
+7. Hard refresh(`Ctrl+r`) your browser:
 
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/The-Marketplace/images/a30.png)
 
@@ -392,8 +392,10 @@ User jake may run the following commands on the-marketplace:
 ```
 jake@the-marketplace:~$ ls -lah /opt/backups/backup.sh 
 -rwxr-xr-x 1 michael michael 73 Aug 23  2020 /opt/backups/backup.sh
+```
 
-jake@the-marketplace:~$ cat /opt/backups/backup.sh 
+**/opt/backups/backup.sh:**
+```bash
 #!/bin/bash
 echo "Backing up files...";
 tar cf /opt/backups/backup.tar *
