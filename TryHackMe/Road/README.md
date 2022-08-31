@@ -12,6 +12,10 @@ As usual, obtain the user and root flag.
 
 > Difficulty: Medium
 
+- Overall difficulty for me: Medium
+    - Initial foothold: Medium
+    - Privilege Escalation: Easy
+
 # Service Enumeration
 
 As usual, scan the machine for open ports via `rustscan`!
@@ -126,8 +130,6 @@ I tried to brute force it, but no luck.
 ┌──(root💀siunam)-[~/ctf/thm/ctf/Road]
 └─# hydra -L /usr/share/seclists/Usernames/top-usernames-shortlist.txt -P /usr/share/wordlists/rockyou.txt $RHOSTS http-post-form "/v2/admin/logincheck.php:user=^USER^&pass=^PASS^:Incorrect username and/or password" -t 64
 [...]
-[DATA] max 64 tasks per 1 server, overall 64 tasks, 243854783 login tries (l:17/p:14344399), ~3810231 tries per task
-[DATA] attacking http-post-form://10.10.172.86:80/v2/admin/logincheck.php:user=^USER^&pass=^PASS^:Incorrect username and/or password
 [STATUS] 3231.00 tries/min, 3231 tries in 00:01h, 243851552 to do in 1257:53h, 64 active
 [STATUS] 3337.00 tries/min, 10011 tries in 00:03h, 243844772 to do in 1217:54h, 64 active
 ```
@@ -326,9 +328,9 @@ I tried SQL Injection, LFI, but no dice.
 
 Again. Take a step back.
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/Road/images/a14.png)
-
 We also see the "Users" -> "ResetUser" is the only thing we can interactive with, and the "Username" field is greyed out.
+
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/Road/images/a14.png)
 
 So, **what if we can control the "Username" field??** Let's capture this POST request in Burp Suite:
 
@@ -574,9 +576,6 @@ user
 ```
 
 Found crentenials for user `webdeveloper`!
-
-- Username: webdeveloper
-- Password: BahamasChapp123!@#
 
 Let's **Switch User** to `webdeveloper`:
 
