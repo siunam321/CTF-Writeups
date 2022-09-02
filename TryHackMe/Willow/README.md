@@ -10,6 +10,10 @@ Welcome to my another writeup! In this TryHackMe [Willow](https://tryhackme.com/
 
 > Difficulty: Medium
 
+- Overall difficulty for me: Medium
+    - Initial foothold: Medium
+    - Privilege Escalation: Easy
+
 # Service Enumeration
 
 As usual, scan the machine for open ports via `rustscan`!
