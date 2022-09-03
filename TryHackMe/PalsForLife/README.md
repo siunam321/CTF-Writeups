@@ -1,5 +1,9 @@
 # PalsForLife
 
+## Introduction:
+
+Welcome to my another writeup! In this TryHackMe [PalsForLife](https://tryhackme.com/room/palsforlife) room, there are tons of stuff that's worth learning! Without further ado, let's dive in.
+
 ## Background
 
 > Abuse a misconfigured Kubernetes cluster
