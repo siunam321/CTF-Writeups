@@ -941,7 +941,7 @@ And we're root! :D
 
 # Rooted
 
-**da_king_flek.txt :**
+**Flag4:**
 ```
 bash-4.4# cat /root/da_king_flek.txt
 fL4G{Redacted}
