@@ -10,8 +10,6 @@ Welcome to my another writeup! In this TryHackMe [Minotaur's Labyrinth](https://
 
 > Difficulty: Medium
 
-> Difficulty: Medium
-
 - Overall difficulty for me: Medium
     - Initial foothold: Medium
     - Privilege Escalation: Easy
@@ -521,10 +519,10 @@ Maybe we should crack `M!n0taur`'s password hash? Because he is an admin:
 
 ```
 ┌──(root🌸siunam)-[~/ctf/thm/ctf/Minotaur's_Labyrinth]
-└─# nano m\!n0taur  
+└─# nano m\!n0taur.hash
                                                                                                                          
 ┌──(root🌸siunam)-[~/ctf/thm/ctf/Minotaur's_Labyrinth]
-└─# john --wordlist=/usr/share/wordlists/rockyou.txt --format=Raw-MD5 m\!n0taur
+└─# john --wordlist=/usr/share/wordlists/rockyou.txt --format=Raw-MD5 m\!n0taur.hash
 [...]
 {Redcated}       (M!n0taur)
 ```
