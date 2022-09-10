@@ -679,9 +679,9 @@ if select == 0:
 	time.sleep(1)
 	ex = str(input("are you sure you want to quit ? yes : "))
 	if ex == ".":
-		print(os.system(input("\nRunning....")))
+        print(os.system(input("\nRunning....")))
 	if ex == "yes " or "y":
-	   sys.exit()    
+	   sys.exit()
 ```
 
 If we run the **option 0**, it'll prompt me to input: "Want to quit?". If I type `yes` or `y`, It'll exit normally.
