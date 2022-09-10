@@ -388,16 +388,7 @@ I created the condor password. don't forget the beers on saturday
 842004
 1617534
 465318
-1617534
-509634
-1152216
-753372
-265896
-265896
-15355494
-24617538
-3567438
-15355494
+[...]
 ```
 
 Not sure what's that, let's move on.
@@ -690,7 +681,7 @@ if select == 0:
 	if ex == ".":
 		print(os.system(input("\nRunning....")))
 	if ex == "yes " or "y":
-	sys.exit()    
+	   sys.exit()    
 ```
 
 If we run the **option 0**, it'll prompt me to input: "Want to quit?". If I type `yes` or `y`, It'll exit normally.
