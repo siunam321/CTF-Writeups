@@ -12,7 +12,7 @@ Welcome to my another writeup! In this TryHackMe [Sweettooth Inc.](https://tryha
 
 - Overall difficulty for me: Medium
     - Initial foothold: Easy
-    - Privilege Escalation: Medium
+    - Privilege escalation: Medium
 
 # Service Enumeration
 
