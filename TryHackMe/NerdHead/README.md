@@ -108,7 +108,7 @@ Host script results:
 
 According to `rustscan` result, we have 5 ports are opened:
 
-Ports Open        | Service
+Open Ports        | Service
 ------------------|------------------------
 21                | vsftpd 3.0.3
 22                | OpenSSH 7.2p2 Ubuntu
