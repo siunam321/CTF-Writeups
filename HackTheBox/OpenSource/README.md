@@ -611,7 +611,7 @@ def backdoor():
 
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/HackTheBox/OpenSource/images/a12.png)
 
-**You'll see an `TypeError`, but don't afraid. We can test is it working by pinging ourself:**
+**You'll see an `TypeError`, but don't freak out! We can test is it working by pinging ourself:**
 
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/HackTheBox/OpenSource/images/a13.png)
 
@@ -868,7 +868,7 @@ PORT     STATE SERVICE VERSION
 [...]
 ``` 
 
-in the HTML's title tag, it reveals this is a **Gitea**!
+In the HTML's title tag, it reveals this is a **Gitea**!
 
 Let's go to `http://localhost:3001`!
 
@@ -894,7 +894,7 @@ It has a directory called `.ssh`! **Maybe there is a private SSH key?**
 
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/HackTheBox/OpenSource/images/a20.png)
 
-Yes!! **Let's copy and paste it to our attacker machine, and set it to be read/write only by our current user.**
+Yes!! **Let's copy and paste it to our attacker machine, and set it to be read/write only by current user.**
 
 ```
 ┌──(root🌸siunam)-[~/ctf/htb/Machines/OpenSource]
@@ -904,7 +904,7 @@ Yes!! **Let's copy and paste it to our attacker machine, and set it to be read/w
 └─# chmod 600 dev01_id_rsa
 ```
 
-**Since we have a private SSH key for user `dev01`, we can login as `dev01` via `ssh`:**
+**Since we have a private SSH key for user `dev01`, we can login as `dev01` via `ssh` with the private key:**
 ```
 ┌──(root🌸siunam)-[~/ctf/htb/Machines/OpenSource]
 └─# ssh -i dev01_id_rsa dev01@$RHOSTS
