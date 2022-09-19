@@ -263,7 +263,7 @@ rld
 
 **Hmm... What if we generate a MD5 hash that the last 3 characters are `001`?**
 
-***I'll write a simple python script to do that:***
+***I'll write a [simple python script](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/biteme/gen_md5hash.py) to do that:***
 
 **gen_md5hash.py:**
 ```py
@@ -327,7 +327,7 @@ A 4 digit code has been sent to your device
 fred we need to put some brute force protection on here remind me in the morning jason
 ```
 
-***Again, I'll write a simple python script to bruteforce it:***
+***Again, I'll write a [simple python script](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/biteme/mfa_brute.py) to bruteforce it:***
 
 **mfa_brute.py:**
 ```py
