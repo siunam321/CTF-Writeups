@@ -363,6 +363,7 @@ for number in code:
 Found it!
 
 > Note1: Each time the machine started, the code will be regenerated.
+
 > Note2: Since I'm still learning python, I'm not good at building a multithreading script, so the bruteforce script is kinda slow.
 
 **Armed with this information, we now finally can login into the login page!**
