@@ -68,15 +68,15 @@ In the above `gobuster` output, we can see that there is a `/console/` directory
 
 **`/console/`:**
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/Develpy/images/a1.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/biteme/images/a1.png)
 
 It's a login page.
 
 Let's try SQL injection to bypass authentication:
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/Develpy/images/a2.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/biteme/images/a2.png)
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/Develpy/images/a3.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/biteme/images/a3.png)
 
 Nope. It might not vulnerable to SQL injection.
 
@@ -85,7 +85,7 @@ Nope. It might not vulnerable to SQL injection.
 <img style="float: left; padding-right: 5px" id="captcha_image" src="/console/securimage/securimage_show.php?e4f478dc25617c492b0c8e4713b29ff7" alt="CAPTCHA Image" /><div id="captcha_image_audio_div">
 ```
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/Develpy/images/a4.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/biteme/images/a4.png)
 
 **`/console/securimage/README.txt`:**
 ```
@@ -301,9 +301,9 @@ while True:
 - Username: jason_test_account
 - Password: muhuo
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/Develpy/images/a5.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/biteme/images/a5.png)
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/Develpy/images/a6.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/biteme/images/a6.png)
 
 Yes!! We sort of logged in. As what we just found in `/console/index.phps`, after sending a POST request in `/console/index.php`, we'll be redirected to `/console/mfa.php`.
 
@@ -367,9 +367,9 @@ Found it!
 
 **Armed with this information, we now finally can login into the login page!**
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/Develpy/images/a7.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/biteme/images/a7.png)
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/Develpy/images/a8.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/biteme/images/a8.png)
 
 # Initial Foothold
 
@@ -377,13 +377,13 @@ Found it!
 
 **File viewer:**
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/Develpy/images/a9.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/biteme/images/a9.png)
 
 I can read everything in the system.
 
 **File browser:**
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/Develpy/images/a10.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/biteme/images/a10.png)
 
 I can list everything in the system.
 
@@ -391,19 +391,19 @@ I can list everything in the system.
 
 Hmm... **What if their home directory has private SSH key??**
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/Develpy/images/a11.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/biteme/images/a11.png)
 
 Nothing in `fred`. How about `jason`?
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/Develpy/images/a12.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/biteme/images/a12.png)
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/Develpy/images/a13.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/biteme/images/a13.png)
 
 It has a `.ssh` directory and **found a private SSH key**!
 
 **Let's read that private key via `File viewer`!**
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/Develpy/images/a14.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/biteme/images/a14.png)
 
 **Copy and paste it to your attacker machine, and mark it as read/write by root (or your current user):**
 ```
