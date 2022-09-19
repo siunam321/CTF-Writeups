@@ -24,3 +24,4 @@ Sept 14, 2022| Dear QA
 Sept 15, 2022| NerdHead
 Sept 16, 2022| Break It
 Sept 17, 2022| Musical Stego
+Sept 19, 2022| Intermediate Nmap
