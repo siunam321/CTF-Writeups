@@ -251,7 +251,7 @@ Hmm... What if I can modify my HTTP User-Agent header to XSS payload?
 
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/NahamStore/images/a5.png)
 
-- Modify the `User-Agent` to a XSS payload:
+- Modify the `User-Agent` to a XSS payload via Burp Suite:
 
 ```
 User-Agent: <script>alert(1)</script>
@@ -845,7 +845,7 @@ Somewhere in the application. there is an endpoint that is vulnerable to an XXE 
 
 Invalid X-Token...
 
-**When I fuzzed the GET parameter in `/product/1`, I successfully fuzzed a hidden GET parameter:**
+**When I fuzzed the GET parameter in `/product/1`, I successfully found a hidden GET parameter:**
 ```
 ┌──(root🌸siunam)-[~/ctf/thm/ctf/NahamStore]
 └─# ffuf -w /usr/share/seclists/Fuzzing/extensions-skipfish.fuzz.txt -u http://stock.nahamstore.thm/product/1?FUZZ -fs 41 
@@ -919,7 +919,7 @@ X-Token: 1337
 
 **We can see that the `X-Token` is being reflected, which means it's vulnerable to XXE, or XML external entity injection.**
 
-**I'll try a XXE payload in [PayloadAllTheThings](https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/XXE%20Injection/README.md):**
+**I'll try a XXE payload in [PayloadAllTheThings](https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/XXE%20Injection/README.md#detect-the-vulnerability):**
 
 **Burp Suite Request:**
 ```
@@ -990,7 +990,9 @@ X-Token: 1337
 
 > XLSX is a spreadsheet file that zipped with XML file inside.
 
-**To exploit blind XXE, we can:**
+According to [PayloadAllTheThings](https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/XXE%20Injection/README.md#xxe-inside-xlsx-file), we can use `XXE inside XLSX file`.
+
+**To exploit it, we can:**
 
 - Create a new spreadsheet file via LibreOffice Calc or Microsoft Excel:
 
@@ -1008,8 +1010,6 @@ blind_xxe.xlsx: Microsoft Excel 2007+
 ```
 
 - Add the XXE payload into `xl/workbook.xml`.
-
-According to [PayloadAllTheThings](https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/XXE%20Injection/README.md#xxe-inside-xlsx-file), we can use `XXE inside XLSX file`.
 
 **workbook.xml:**
 ```xml
@@ -1031,7 +1031,7 @@ According to [PayloadAllTheThings](https://github.com/swisskyrepo/PayloadsAllThe
 
 - Build a `xxe.dtd` file:
 
-> Using a remote DTD will save us the time to rebuild a document each time we want to retrieve a different file. Instead we build the document once and then change the DTD. And using FTP instead of HTTP allows to retrieve much larger files. (Source: [https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/XXE%20Injection/README.md#xxe-inside-xlsx-file](https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/XXE%20Injection/README.md#xxe-inside-xlsx-file))
+> Using a remote DTD will save us the time to rebuild a document each time we want to retrieve a different file. Instead we build the document once and then change the DTD. And using FTP instead of HTTP allows to retrieve much larger files. (Source: [PayloadAllTheThings](https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/XXE%20Injection/README.md#xxe-inside-xlsx-file))
 
 ```dtd
 <!ENTITY % d SYSTEM "file:///etc/passwd">
