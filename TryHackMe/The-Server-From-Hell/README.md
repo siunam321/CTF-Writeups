@@ -49,6 +49,7 @@ The trollface is hiding in **the first 100 ports**...
 └─# nc -nv $RHOSTS 1          
 (UNKNOWN) [10.10.184.23] 1 (tcpmux) open
 550 12345 0000000000000000000000000000000000000000000000000000000                                                                                               
+
 ┌──(root🌸siunam)-[~/ctf/thm/ctf/The-Server-From-Hell]
 └─# nc -nv $RHOSTS 2   
 (UNKNOWN) [10.10.184.23] 2 (?) open
