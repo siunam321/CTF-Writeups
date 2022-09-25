@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Welcome to my another writeup! In this TryHackMe [Lunizz CTF](https://tryhackme.com/room/lunizzctfnd) room, you'll learn: subdomain enumeration, directory enumeration, WordPress enumeration, SQL injection, Memcached, exploiting relative path, and more! Without further ado, let's dive in.
+Welcome to my another writeup! In this TryHackMe [Lunizz CTF](https://tryhackme.com/room/lunizzctfnd) room, you'll learn: directory enumeration, MySQL enumeration, cracking bcrypt hash with known salt, PHP backdoor in localhost, and more! Without further ado, let's dive in.
 
 ## Background
 
