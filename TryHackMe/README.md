@@ -31,3 +31,4 @@ Sept 22, 2022| The Server From Hell
 Sept 23, 2022| Wekor
 Sept 25, 2022| Lunizz CTF
 Sept 26, 2022| The Impossible Challenge
+Sept 26, 2022| That's The Ticket
