@@ -22,7 +22,7 @@ Hint: Our HTTP & DNS Logging tool on http://10.10.10.100 may come in useful!
 
 # Task 1 - Lab Informaion
 
-- Question: What is IT Supports email address?
+- Question 1: What is IT Supports email address?
 
 As usual, scan the machine for open ports via `rustscan`!
 
