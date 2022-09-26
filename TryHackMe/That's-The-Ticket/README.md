@@ -185,7 +185,7 @@ Armed with admin's email, **we can bruteforce his password via Burp Suite Intrud
 
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/That's-The-Ticket/images/a25.png)
 
-- After loaded, click `Start Attack`:
+- After loaded the wordlist, click `Start Attack`:
 
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/That's-The-Ticket/images/a26.png)
 
