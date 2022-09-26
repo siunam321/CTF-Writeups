@@ -38,7 +38,7 @@ Archive:  Impossible.zip
    skipping: flag.txt                incorrect password
 ```
 
-However, when I copy this room's descript, I saw bunch of **unicodes**.
+However, when I copy this room's description, I saw bunch of **unicodes**.
 
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/The-Impossible-Challenge/images/a1.png)
 
