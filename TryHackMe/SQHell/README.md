@@ -9,7 +9,7 @@ Welcome to my another writeup! In this TryHackMe [SQHell](https://tryhackme.com/
 > Difficulty: Medium
 
 ```
-Give the machine a minute to boot and then connect to [http://10.10.166.35](http://10.10.166.35/)
+Give the machine a minute to boot and then connect to http://<MACHINE_IP>
 
 There are 5 flags to find but you have to defeat the different SQL injection types.
 
@@ -97,7 +97,7 @@ A common way to log a client IP is to adding a **HTTP header** to the web reques
 
 In this example, it may vulnerable to **time-based SQL injection**!
 
-**I'll use a time-based SQL injection payload from [payloadbox](https://github.com/payloadbox/sql-injection-payload-list#generic-time-based-sql-injection-payloads)**
+**I'll use a time-based SQL injection payload from [payloadbox](https://github.com/payloadbox/sql-injection-payload-list#generic-time-based-sql-injection-payloads):**
 ```
 ┌──(root🌸siunam)-[~/ctf/thm/ctf/SQHell]
 └─# curl -vv -H "X-Forwarded-For: 127.0.0.1' AND (SELECT * FROM (SELECT(SLEEP(5)))bAKL)-- -" http://$RHOSTS/terms-and-conditions
@@ -129,7 +129,7 @@ After some guessing, I found that there is a database called `flag`, and table n
 
 This payload indeed slept for 5 seconds, and the first character of the `flag` table is `T`.
 
-**Since we know TryHackMe's flag format is: `THM{...}`, we can automate this process via a simple python script:**
+**Since we know TryHackMe's flag format is: `THM{...}`, we can automate this process via a [simple python script](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/SQHell/time-based-sqli.py):**
 ```py
 #!/usr/bin/env python3
 
@@ -264,7 +264,7 @@ admin' AND (substr((SELECT flag FROM flag LIMIT 0,1),1,1)) = 'T'-- -
 - if the first character is matched to the data from table `flag`, returns `False`
 - If the first character is NOT matched to the data from table `flag`, returns `True`
 
-**Now, we can again write a simple python script to automate this process!**
+**Now, we can again write a [simple python script](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/SQHell/boolean-based-sqli.py) to automate this process!**
 ```py
 #!/usr/bin/env python3
 
@@ -430,8 +430,6 @@ It's vulnerable to **Union-based SQL injection**! Let's do enumeration!
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/SQHell/images/a18.png)
 
 - Database name: `sqhell_5`
-
-> Note: Since we already know the database structure from Flag 2, I'll skip the enumeration process, like finding table name and column name.
 
 **Flag 5:**
 ```sql
