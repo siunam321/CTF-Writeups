@@ -33,3 +33,4 @@ Sept 25, 2022| Lunizz CTF
 Sept 26, 2022| The Impossible Challenge
 Sept 26, 2022| That's The Ticket
 Sept 28, 2022| Lumberjack Turtle
+Oct 1, 2022  | SQHell
