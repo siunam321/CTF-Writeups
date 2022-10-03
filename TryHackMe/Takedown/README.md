@@ -38,7 +38,7 @@ Cyber Criminal operations cell RISOTTO GROUP is suspected to be active in Area o
 
 #### BACKGROUND
 
-INFINITY was a digital design firm active in the mid 2010s before the company’s dissolution in 2022. The INFINITY website was hosted at http://takedown\[.\]thm\[.\]local and included a description of the company and some of the company’s digital portfolio. The website was decommissioned and retired on March 22nd, 2022.
+INFINITY was a digital design firm active in the mid 2010s before the company’s dissolution in 2022. The INFINITY website was hosted at http://takedown[.]thm[.]local and included a description of the company and some of the company’s digital portfolio. The website was decommissioned and retired on March 22nd, 2022.
 
 Reconnaissance operations report that the INFINITY website is now back online. Intel reports indicate the website is now serviceable as recently as \~24 hours prior to the release of this OPORD. Intelligence reports with high confidence that this is the work of RISOTTO GROUP, an active cyber criminal ring in this AO.
 
