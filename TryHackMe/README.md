@@ -35,3 +35,4 @@ Sept 26, 2022| That's The Ticket
 Sept 28, 2022| Lumberjack Turtle
 Oct 1, 2022  | SQHell
 Oct 3, 2022  | Takedown
+Oct 3, 2022  | Corridor
