@@ -373,15 +373,6 @@ The `rabbit_hole.png` looks interesting. Let's `wget` that picture!
 
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/One-Piece/images/a6.png)
 
-**rabbit_hole.png:**
-```
-6b 65 79 3a 69 6d 20 6f 6e 20 6f 74 69 20 6f 74 69
-
-m5.J`/{{#F%&!5Gl}+n<a
-
-Lhtttavbsw ql gbbzy gfivwwvz
-```
-
 **In the first string, we can decode it via `xxd -r -p`:**
 
 ```
