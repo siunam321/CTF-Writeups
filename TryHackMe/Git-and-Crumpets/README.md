@@ -151,7 +151,7 @@ After I tried to guess user `scones` a few times, looks like there is a **brutef
 
 ## Initial Foothold
 
-And then I realized, it says the **avatar**, not description lul.
+And then I realized, it says the **avatar**, not the description lul.
 
 **Then, I downloaded the his avatar, and use `exiftool` to view metadata inside that picture:**
 
