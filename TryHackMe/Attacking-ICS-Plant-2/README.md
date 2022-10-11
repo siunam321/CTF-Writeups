@@ -202,8 +202,6 @@ Mind that the simulation should be reset before starting by pressing the ESC but
 
 **To figure out the `Outlet Valve`, `Separator Vessel Valve` and `Waste Water Valve`, I'll:**
 
-- Find the `Outlet Valve` register:
-
 According to my observation, it seems like the **third one is the `Outlet Valve` register (0 = stop, 1 = open),** the **sixth one is the `Separator Vessel Valve` register(0 = open, 1 = close)**, the **seventh one is the amount of drops that went through the `Waste Water Valve`.**
 
 **Armed with this information, we can obtain the flag in 2 ways:**
