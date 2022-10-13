@@ -256,7 +256,9 @@ export default {
 
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/The-Great-Escape/images/a12.png)
 
-500 Internal Server Error... **Maybe it also need a GET parameter `url`?**
+**Oh! we can reach `api-dev-backup:8080`, which is a SSRF, or Server-Side Request Forgery vulnerability!**
+
+Now, it shows a 500 Internal Server Error, **maybe it also need a GET parameter `url`?**
 
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/The-Great-Escape/images/a13.png)
 
@@ -545,7 +547,8 @@ What we've learned:
 1. Web Crawler (`robots.txt`)
 2. Site-Wide Metadata (`/.well-known/`)
 3. Command Injection
-4. Git Repository Enumeration
-5. Port Knocking
-6. Enumerating Exposed Docker Port
-7. Docker Container Escape
+4. SSRF (Server-Side Request Forgery)
+5. Git Repository Enumeration
+6. Port Knocking
+7. Enumerating Exposed Docker Port
+8. Docker Container Escape
