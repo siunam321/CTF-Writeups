@@ -720,7 +720,7 @@ Ethernet adapter Ethernet0:
 ip = '10.10.192.183' # The target IP
 ```
 
-**Full exploit script:**
+**[Full exploit script](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/Gatekeeper/exploit.py):**
 ```py
 #!/usr/bin/env python3
 
