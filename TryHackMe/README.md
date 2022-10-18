@@ -44,3 +44,4 @@ Oct 11, 2022 | Attacking ICS Plant #2
 Oct 13, 2022 | The Great Escape
 Oct 16, 2022 | Gatekeeper
 Oct 17, 2022 | Surfer
+Oct 18, 2022 | Daily Bugle
