@@ -104,7 +104,7 @@ Open Ports        | Service
 
 **The `js` directory sometimes will contain some juicy information:**
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/Bookstore/images/a4png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/Bookstore/images/a4.png)
 
 **After checking other legit thrid-part JavaScript library, the `api.js` stood out:**
 
@@ -256,10 +256,6 @@ sid:x:1000:1000:Sid,,,:/home/sid:/bin/bash
 **Let's find the debugger pin in his bash history file!**
 
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/Bookstore/images/a11.png)
-
-```
-cd /home/sid whoami export WERKZEUG_DEBUG_PIN={Redacted} echo $WERKZEUG_DEBUG_PIN python3 /home/sid/api.py ls exit
-```
 
 **Found it!! Let's go to `http://bookstore.thm:5000/console` to unlock the Werkzeug Debugger console!**
 
@@ -460,7 +456,7 @@ Serving HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8000/) ...
 **Let's break it down:**
 
 - If `local_14` is equal to `0x5dcd21f4` (1573724660), then spawn a bash shell with SUID privilege
-- The `local_14` is the value of `local_1c` XOR `0x1116` (4374) XOR `local_18` (23987)
+- The `local_14` is the value of `local_1c` XOR `0x1116` (0x1116 = 4374) XOR `local_18` (0x5db3 = 23987)
 - The `local_1c` is the value of our input (`__isoc99_scanf`)
 
 > Note: You can convert hex value to decimal in ghidra.
