@@ -453,6 +453,36 @@ Serving HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8000/) ...
 
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/Bookstore/images/a16.png)
 
+```c
+void main(void)
+
+{
+  long in_FS_OFFSET;
+  uint local_1c;
+  uint local_18;
+  uint local_14;
+  long local_10;
+  
+  local_10 = *(long *)(in_FS_OFFSET + 0x28);
+  setuid(0);
+  local_18 = 0x5db3;
+  puts("What\'s The Magic Number?!");
+  __isoc99_scanf(&DAT_001008ee,&local_1c);
+  local_14 = local_1c ^ 0x1116 ^ local_18;
+  if (local_14 == 0x5dcd21f4) {
+    system("/bin/bash -p");
+  }
+  else {
+    puts("Incorrect Try Harder");
+  }
+  if (local_10 != *(long *)(in_FS_OFFSET + 0x28)) {
+                    /* WARNING: Subroutine does not return */
+    __stack_chk_fail();
+  }
+  return;
+}
+```
+
 **Let's break it down:**
 
 - If `local_14` is equal to `0x5dcd21f4` (1573724660), then spawn a bash shell with SUID privilege
