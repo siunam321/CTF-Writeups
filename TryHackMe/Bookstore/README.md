@@ -248,7 +248,7 @@ Oh!! We found a LFI vulnerability!
 <!--Still Working on this page will add the backend support soon, also the debugger pin is inside sid's bash history file -->
 ```
 
-**And we indeed found a user called `sid` in `/etc/passwd`! **
+**And we indeed found a user called `sid` in `/etc/passwd`!**
 ```
 sid:x:1000:1000:Sid,,,:/home/sid:/bin/bash
 ```
