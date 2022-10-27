@@ -2,6 +2,8 @@
 
 > CTF event link: [https://ctf.hackthebox.com/event/details/hack-the-boo-637](https://ctf.hackthebox.com/event/details/hack-the-boo-637)
 
+![](https://github.com/siunam321/CTF-Writeups/blob/main/HackTheBoo/banner.png)
+
 ## Background
 
 Have you ever wanted to play a halloween themed CTF?
@@ -19,7 +21,7 @@ For all these questions, we have the answer: **Hack The Boo CTF**.
 
 - Solved: 16/25
 - Points: 3200
-- Rank: 246th/6360
+- Rank: 250th/6360
 - Total Players: 6356
 - Overall Difficulty: Very hard
 
