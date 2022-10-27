@@ -21,8 +21,8 @@ For all these questions, we have the answer: **Hack The Boo CTF**.
 
 - Solved: 16/25
 - Points: 3200
-- Rank: 250th/6360
-- Total Players: 6356
+- Rank: 250th/6367
+- Total Players: 6367
 - Overall Difficulty: Very hard
 
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/HackTheBoo/result.png)
