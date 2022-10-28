@@ -232,7 +232,7 @@ void get_flag() {
 ```
 
 **Also, if you look at the source code carefully, you'll see:**
-`4294967295`
+
 - Choosing option `T`:
 	- Option `L`: Assign our input to variable `DataStore.integer` (Datatype = unsigned long long int)
 	- Option `S`: Copy our input to variable `DataStore.string` (Datatype = string)
