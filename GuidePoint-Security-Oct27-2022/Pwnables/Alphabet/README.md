@@ -85,7 +85,7 @@ Their message: )UgnxXaoC!\u9<b~2A45E;p1^W@7GJ3Bs][%M{(w#*R?kIlQ'PKVyh6ejqNDYz|ig
 Their alphabet: )UgnxXaoC!\u9<b~2A45E;p1^W@7GJ3Bs][%M{(w#*R?kIlQ'PKVyh6ejqNDYz|i=
 ```
 
-**We found their alphabet! Let's submit that!** (Sourcecode:[https://github.com/siunam321/CTF-Writeups/blob/main/GuidePoint-Security-Oct27-2022/Pwnables/Alphabet/solve.py](https://github.com/siunam321/CTF-Writeups/blob/main/GuidePoint-Security-Oct27-2022/Pwnables/Alphabet/solve.py))
+**We found their alphabet! Let's submit that!** ([Source code](https://github.com/siunam321/CTF-Writeups/blob/main/GuidePoint-Security-Oct27-2022/Pwnables/Alphabet/solve.py))
 ```py
 #!/usr/bin/env python3
 
