@@ -48,3 +48,4 @@ Oct 18, 2022 | Daily Bugle
 Oct 20, 2022 | Binary Heaven
 Oct 22, 2022 | Bookstore
 Nov 1, 2022  | WarZone1
+Nov 2, 2022  | Epoch
