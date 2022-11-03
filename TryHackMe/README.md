@@ -49,3 +49,4 @@ Oct 20, 2022 | Binary Heaven
 Oct 22, 2022 | Bookstore
 Nov 1, 2022  | WarZone1
 Nov 2, 2022  | Epoch
+Nov 3, 2022  | Templates
