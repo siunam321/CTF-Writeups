@@ -314,7 +314,7 @@ That will be our iframe's source URL!
 
 **Now, we should recieved a GET request in Webhook.site!**
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/BuckeyeCTF-2022/images/Pasted%20image%2020221104235908.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/BuckeyeCTF-2022/images/a1.png)
 
 Boom! We got the flag!
 

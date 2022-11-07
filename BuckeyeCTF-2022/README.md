@@ -41,6 +41,10 @@ Contact [info@osucyber.club](mailto:info@osucyber.club) with any additional ques
 - Total Teams: 688
 - Overall Difficulty To Me: Very Hard
 
+![](https://github.com/siunam321/CTF-Writeups/blob/main/BuckeyeCTF-2022/images/score.png)
+
+![](https://github.com/siunam321/CTF-Writeups/blob/main/BuckeyeCTF-2022/images/challenges.png)
+
 ## What I've learned in this CTF
 
 - Web:
