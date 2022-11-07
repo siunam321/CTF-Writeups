@@ -37,7 +37,7 @@ Contact [info@osucyber.club](mailto:info@osucyber.club) with any additional ques
 
 - Solved: 9 (Not Including 1 Point Challenges)
 - Points: 972
-- Rank: 133st/688
+- Rank: 133rd/688
 - Total Teams: 688
 - Overall Difficulty To Me: Very Hard
 
