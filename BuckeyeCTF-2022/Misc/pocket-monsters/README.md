@@ -63,13 +63,9 @@ In here, we can see a box that fills with lots of Pokemons.
 
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/BuckeyeCTF-2022/images/Pasted%20image%2020221106034317.png)
 
-Hmm... The all of the pokemon's nickname looks like the flag. But it's not the flag...
+Hmm... The all of the pokemon's nickname looks like the flag!
 
-**Since the challenge description said: `Something happened to my save and now my game won't run`, maybe we can try to run this save?**
-
-To do so, I'll download an emulator called [DeSmuME](http://desmume.org/).
-
-And I stucked at here for a long time...
+Flag: `buckeye(90774-3mu1473-3m-411)`
 
 # Conclusion
 
