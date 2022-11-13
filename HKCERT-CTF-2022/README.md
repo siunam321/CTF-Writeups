@@ -15,7 +15,7 @@
 
 - Solved: 7 (Not Including 10 Point Challenges)
 - Points: 699
-- Tertiary Rank: 24/73, Overall Rank: 81/309
+- Tertiary Rank: 25/73, Overall Rank: 82/309
 - Overall Difficulty To Me: The Hardest CTF I've Ever Experienced
 
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/HKCERT-CTF-2022/images/profile.png)
