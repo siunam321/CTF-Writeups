@@ -52,3 +52,4 @@ Nov 2, 2022  | Epoch
 Nov 3, 2022  | Templates
 Nov 7, 2022  | PS Eclipse
 Nov 9, 2022  | PrintNightmare, thrice!
+Nov 15, 2022 | Neighbour
