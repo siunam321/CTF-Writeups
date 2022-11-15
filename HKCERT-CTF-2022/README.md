@@ -30,7 +30,7 @@
 5. ??? ([protoTYPE:v2 - sanityXSS](https://github.com/siunam321/CTF-Writeups/blob/main/HKCERT-CTF-2022/Web/protoTYPEv2-sanityXSS/README.md)) ***(Unsolved)***
 
 - Forensics:
-1. Disk Forensics & Recovery Corrupted Image ([SD Card](https://github.com/siunam321/CTF-Writeups/blob/main/HKCERT-CTF-2022/Forensics/SD-Card/README.md))
+1. Disk Forensics & Recovering Corrupted Image ([SD Card](https://github.com/siunam321/CTF-Writeups/blob/main/HKCERT-CTF-2022/Forensics/SD-Card/README.md))
 
 - Misc:
 1. Leaking Sensitive Information via Bad Operation Security (Physical Security) ([Zoonn Recording](https://github.com/siunam321/CTF-Writeups/blob/main/HKCERT-CTF-2022/Misc/Zoonn-Recording/README.md))

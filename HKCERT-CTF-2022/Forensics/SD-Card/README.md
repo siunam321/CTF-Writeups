@@ -109,4 +109,4 @@ We got the flag!
 
 What we've learned:
 
-1. Disk Forensics & Recovery Corrupted Image
+1. Disk Forensics & Recovering Corrupted Image

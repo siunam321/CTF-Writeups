@@ -121,9 +121,9 @@ This web server has 1 location: `/flag`, and **it's missing the trailling slash*
 
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/HKCERT-CTF-2022/images/Pasted%20image%2020221112045711.png)
 
-**In Hack.lu 2018, a researcher [Orange Tsai](https://twitter.com/orange_8361) from TaiWan discovered a Nginx off-by-slash vulnerability!**
+**In Hack.lu 2018, a researcher [Orange Tsai](https://twitter.com/orange_8361) from Taiwan talked about the Nginx off-by-slash vulnerability!**
 
-**Since we know the flag is in `/var/www/html/flag.txt` according to the challenge's description, we can just `curl` the flag!**
+**Since we know the flag is in `/var/www/html/flag.txt` according to the challenge description, we can just `curl` the flag!**
 ```
 ┌──(root🌸siunam)-[~/ctf/HKCERT-CTF-2022/Web/Secured-Web-Service]
 └─# curl 'http://chal.hkcert22.pwnable.hk:28308/flag../flag.txt'   

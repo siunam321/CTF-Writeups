@@ -97,7 +97,7 @@ Some XSS exploits? That's not helpful, as I don't see any account that I can hij
 
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/HKCERT-CTF-2022/images/Pasted%20image%2020221111054905.png)
 
-**Hmm... Looks like the `path` GET parameter is vulnerable to Local File Inclusion (LFI)!**
+**Hmm... Looks like the `path` GET parameter might vulnerable to Local File Inclusion (LFI)!**
 
 ```
 %2Fhome%2Fspwnce%2Fwww%2Fdocs%2Fexamples%2Fhello.spy

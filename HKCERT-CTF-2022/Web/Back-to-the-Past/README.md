@@ -38,7 +38,7 @@ Solution: [https://hackmd.io/@blackb6a/hkcert-ctf-2022-ii-en-6a196795](https://h
 
 When I click the door, it brings me to a YouTube video, which is not helpful.
 
-**However, when I go to `/img` directory, I see a picture:**
+**However, when I go to `/img` directory, I see a picture file:**
 
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/HKCERT-CTF-2022/images/Pasted%20image%2020221111220053.png)
 
@@ -46,7 +46,7 @@ When I click the door, it brings me to a YouTube video, which is not helpful.
 
 403 Forbidden...
 
-Since the challenge's name is `Back to the Past`, this got me thinking: **Is this website being push via `git`?**
+Since the challenge's name is `Back to the Past`, this got me thinking: **Is this website being pushed via `git`?**
 
 **If so, it might have a directory call `.git`**
 
@@ -70,7 +70,7 @@ drwxr-xr-x 2 root root 4.0K Nov 11 22:03 img
 -rw-r--r-- 1 root root 1.8K Oct 25 10:34 index.html
 ```
 
-**Since it's a `.git` directory, we can view its logs and commits!**
+**Since it's a `.git` directory, we can view it's logs and commits!**
 ```
 ┌──(root🌸siunam)-[~/…/Web/Back-to-the-Past/.git/chal.hkcert22.pwnable.hk:28222]
 └─# git log
