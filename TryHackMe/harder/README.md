@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Welcome to my another writeup! In this TryHackMe [harder](https://tryhackme.com/room/harder) room, you'll learn: Directory enumeration, dumping publicly exposed `.git` repository, HTTP header `X-Forwared-For` bypass, PHP `hash_hmac()` bypass, and more! Without further ado, let's dive in.
+Welcome to my another writeup! In this TryHackMe [harder](https://tryhackme.com/room/harder) room, you'll learn: Directory enumeration, dumping publicly exposed `.git` repository, HTTP header `X-Forwarded-For` bypass, PHP `hash_hmac()` bypass, and more! Without further ado, let's dive in.
 
 - Overall difficulty for me (From 1-10 stars): ★★★★★☆☆☆☆☆
 
@@ -1082,7 +1082,7 @@ harder:/home/evs# ^[[23;19Rcat /root/root.txt
 What we've learned:
 
 1. Directory Enumeration
-2. HTTP Header `X-Forwared-For` Bypass
+2. HTTP Header `X-Forwarded-For` Bypass
 3. Dumping Publicly Exposed `.git` Repository
 4. PHP `hash_hmac()` Bypass
 5. Privilege Escalation via Plaintext Password in a File
