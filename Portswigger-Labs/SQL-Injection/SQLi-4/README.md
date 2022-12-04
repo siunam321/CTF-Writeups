@@ -16,13 +16,13 @@ The lab will provide a random value that you need to make appear within the quer
 
 **Home page:**
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/SQL-Injection/SQLi-3/images/Pasted%20image%2020221204015431.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/SQL-Injection/SQLi-4/images/Pasted%20image%2020221204015431.png)
 
 - **Objective: Retrieve the string `F46d4g` from the database.**
 
 In the previous lab, we found **a SQL injection vulnerability in the `filter` page:**
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/SQL-Injection/SQLi-3/images/Pasted%20image%2020221204015820.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/SQL-Injection/SQLi-4/images/Pasted%20image%2020221204015820.png)
 
 **And we found the number of columns is 3 via this payload: `' ORDER BY 3-- -`.**
 
@@ -33,7 +33,7 @@ Now, we need to output the string `F46d4g`.
 ' UNION SELECT NULL,NULL,'a'-- -
 ```
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/SQL-Injection/SQLi-3/images/Pasted%20image%2020221204020257.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/SQL-Injection/SQLi-4/images/Pasted%20image%2020221204020257.png)
 
 **If the datatype doesn't allow strings, it returns a `500 Internal Server Error` HTTP status.**
 
@@ -42,7 +42,7 @@ Now, we need to output the string `F46d4g`.
 ' UNION SELECT NULL,'SQL Injection',NULL-- -
 ```
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/SQL-Injection/SQLi-3/images/Pasted%20image%2020221204020424.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/SQL-Injection/SQLi-4/images/Pasted%20image%2020221204020424.png)
 
 **It has no error!**
 
@@ -51,7 +51,7 @@ Now, we need to output the string `F46d4g`.
 ' UNION SELECT NULL,'F46d4g',NULL-- -
 ```
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/SQL-Injection/SQLi-3/images/Pasted%20image%2020221204020627.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/SQL-Injection/SQLi-4/images/Pasted%20image%2020221204020627.png)
 
 **Now, not only we can display what string we want, but also we can enumerate the database much further! Or even exfiltrating data!**
 
@@ -60,7 +60,7 @@ Now, we need to output the string `F46d4g`.
 ' UNION SELECT NULL,version(),NULL-- -
 ```
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/SQL-Injection/SQLi-3/images/Pasted%20image%2020221204021005.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/SQL-Injection/SQLi-4/images/Pasted%20image%2020221204021005.png)
 
 **We found that it's using `PostgreSQL` for DBMS (Database Management System), and it's version is `12.12`!**
 
