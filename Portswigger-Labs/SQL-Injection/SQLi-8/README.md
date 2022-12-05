@@ -16,13 +16,13 @@ To solve the lab, display the database version string.
 
 **Home page:**
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/SQL-Injection/SQLi-8/images/%2020221205054653.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/SQL-Injection/SQLi-8/images/Pasted%20image%2020221205054653.png)
 
 **In the previous labs, we found that there is an SQL injection vulnerability in the product category filter:**
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/SQL-Injection/SQLi-8/images/%2020221205054946.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/SQL-Injection/SQLi-8/images/Pasted%20image%2020221205054946.png)
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/SQL-Injection/SQLi-8/images/%2020221205055007.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/SQL-Injection/SQLi-8/images/Pasted%20image%2020221205055007.png)
 
 And we found that **there are 2 columns in this table.**
 
@@ -34,7 +34,7 @@ And we found that **there are 2 columns in this table.**
 ' UNION SELECT 'string1','string2'-- -
 ```
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/SQL-Injection/SQLi-8/images/%2020221205055111.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/SQL-Injection/SQLi-8/images/Pasted%20image%2020221205055111.png)
 
 Both are accepting string data type.
 
@@ -44,10 +44,8 @@ Both are accepting string data type.
 ' UNION SELECT NULL,version()-- -
 ```
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/SQL-Injection/SQLi-8/images/%2020221205055228.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/SQL-Injection/SQLi-8/images/Pasted%20image%2020221205055228.png)
 
-# Conclusion
-
-What we've learned:
+# What we've learned:
 
 1. SQL injection attack, querying the database type and version on MySQL and Microsoft
