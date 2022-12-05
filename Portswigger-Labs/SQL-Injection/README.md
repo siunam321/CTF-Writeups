@@ -10,3 +10,4 @@ Dec 4, 2022  | SQL Injection | SQLi-5         | SQL injection UNION attack, retr
 Dec 4, 2022  | SQL Injection | SQLi-6         | SQL injection UNION attack, retrieving multiple values in a single column
 Dec 4, 2022  | SQL Injection | SQLi-7         | SQL injection attack, querying the database type and version on Oracle
 Dec 5, 2022  | SQL Injection | SQLi-8         | SQL injection attack, querying the database type and version on MySQL and Microsoft
+Dec 5, 2022  | SQL Injection | SQLi-9         | SQL injection attack, listing the database contents on non-Oracle databases
