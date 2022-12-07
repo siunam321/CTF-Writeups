@@ -60,7 +60,7 @@ We indeed triggered an error.
 3UMSejaDQcnYpBjx'||(SELECT '')||'
 ```
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/SQL-Injection/SQLi-12/images/Pasted%20image%2020221207045351.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/SQL-Injection/SQLi-12/images/Pasted%20image%2020221207055814.png)
 
 Still error?? Looks like it's using Oracle database. In SQL injection [lab 7](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/SQL-Injection/SQLi-7/README.md), we found that Oracle database **must have `FROM` clause in `SELECT` statement.**
 
@@ -70,7 +70,7 @@ To solve this problem, **we can use the `dual` in-memory table:**
 3UMSejaDQcnYpBjx'||(SELECT '' FROM dual)||'
 ```
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/SQL-Injection/SQLi-12/images/Pasted%20image%2020221207045557.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/SQL-Injection/SQLi-12/images/Pasted%20image%2020221207055839.png)
 
 No error this time!
 
