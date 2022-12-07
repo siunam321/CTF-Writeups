@@ -13,3 +13,4 @@ Dec 5, 2022  | SQL Injection | SQLi-8         | SQL injection attack, querying t
 Dec 5, 2022  | SQL Injection | SQLi-9         | SQL injection attack, listing the database contents on non-Oracle databases
 Dec 5, 2022  | SQL Injection | SQLi-10        | SQL injection attack, listing the database contents on Oracle
 Dec 6, 2022  | SQL Injection | SQLi-11        | Blind SQL injection with conditional responses
+Dec 7, 2022  | SQL Injection | SQLi-12        | Blind SQL injection with conditional errors
