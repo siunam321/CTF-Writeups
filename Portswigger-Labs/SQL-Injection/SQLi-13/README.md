@@ -319,7 +319,8 @@ payload = f"""';SELECT CASE WHEN (LENGTH(password) > 20) THEN pg_sleep(3) ELSE p
 
 **Armed with above information, we can finally brute force the first row data in `username` and `password` column:**
 
-- **`username`:**
+- **Column `username`:**
+
 ```py
 #!/usr/bin/env python3
 
@@ -381,7 +382,7 @@ if __name__ == '__main__':
 
 - **Found username: `administrator`**
 
-- **`password`:**
+- **Column `password`:**
 
 ```py
 #!/usr/bin/env python3
