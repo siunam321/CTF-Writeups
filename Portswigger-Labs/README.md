@@ -18,3 +18,4 @@ Dec 9, 2022   | SQL Injection       | SQLi-13        | Blind SQL injection with 
 Dec 8, 2022   | SQL Injection       | SQLi-14        | Blind SQL injection with time delays and information retrieval
 Dec 11, 2022  | SQL Injection       | SQLi-17        | SQL injection with filter bypass via XML encoding
 Dec 12, 2022  | Directory Traversal | DT-1           | File path traversal, simple case
+Dec 12, 2022  | Directory Traversal | DT-2           | File path traversal, traversal sequences blocked with absolute path bypass
