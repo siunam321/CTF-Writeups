@@ -24,3 +24,4 @@ Dec 12, 2022  | Directory Traversal | DT-4           | File path traversal, trav
 Dec 12, 2022  | Directory Traversal | DT-5           | File path traversal, validation of start of path
 Dec 12, 2022  | Directory Traversal | DT-6           | File path traversal, validation of file extension with null byte bypass
 Dec 12, 2022  | Access Control      | AC-1           | Unprotected admin functionality
+Dec 12, 2022  | Access Control      | AC-2           | Unprotected admin functionality with unpredictable URL
