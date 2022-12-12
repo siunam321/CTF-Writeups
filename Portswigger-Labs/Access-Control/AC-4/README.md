@@ -50,7 +50,7 @@ You can log in to your own account using the following credentials: `wiener:pete
 }
 ```
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/Access-Control/AC-4/images/Pasted%20image%2020221212050654.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/Access-Control/AC-4/images/Pasted%20image%2020221212051310.png)
 
 **Now, let's try to go to the admin panel (`/admin`):**
 
