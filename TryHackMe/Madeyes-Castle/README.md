@@ -110,7 +110,7 @@ getting file \spellnames.txt of size 874 as spellnames.txt (0.9 KiloBytes/sec) (
 getting file \.notes.txt of size 147 as .notes.txt (0.1 KiloBytes/sec) (average 0.5 KiloBytes/sec)
 ```
 
-**`spellnames.txt`**
+**`spellnames.txt`:**
 ```
 ┌──(root🌸siunam)-[~/ctf/thm/ctf/Madeye's_Castle]
 └─# head -n 10 spellnames.txt                                                       
