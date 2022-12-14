@@ -6,3 +6,4 @@ Dec 12, 2022  | Access Control      | AC-1           | Unprotected admin functio
 Dec 12, 2022  | Access Control      | AC-2           | Unprotected admin functionality with unpredictable URL
 Dec 12, 2022  | Access Control      | AC-3           | User role controlled by request parameter
 Dec 12, 2022  | Access Control      | AC-4           | User role can be modified in user profile
+Dec 14, 2022  | Access Control      | AC-5           | User ID controlled by request parameter
