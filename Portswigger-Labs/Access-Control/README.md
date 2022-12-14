@@ -12,3 +12,4 @@ Dec 14, 2022  | Access Control      | AC-7           | User ID controlled by req
 Dec 14, 2022  | Access Control      | AC-8           | User ID controlled by request parameter with password disclosure
 Dec 14, 2022  | Access Control      | AC-9           | Insecure direct object references
 Dec 14, 2022  | Access Control      | AC-10          | URL-based access control can be circumvented
+Dec 14, 2022  | Access Control      | AC-11          | Method-based access control can be circumvented
