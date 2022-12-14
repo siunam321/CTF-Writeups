@@ -9,3 +9,4 @@ Dec 12, 2022  | Access Control      | AC-4           | User role can be modified
 Dec 14, 2022  | Access Control      | AC-5           | User ID controlled by request parameter
 Dec 14, 2022  | Access Control      | AC-6           | User ID controlled by request parameter, with unpredictable user IDs
 Dec 14, 2022  | Access Control      | AC-7           | User ID controlled by request parameter with data leakage in redirect
+Dec 14, 2022  | Access Control      | AC-8           | User ID controlled by request parameter with password disclosure
