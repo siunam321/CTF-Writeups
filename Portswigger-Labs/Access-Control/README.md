@@ -10,3 +10,4 @@ Dec 14, 2022  | Access Control      | AC-5           | User ID controlled by req
 Dec 14, 2022  | Access Control      | AC-6           | User ID controlled by request parameter, with unpredictable user IDs
 Dec 14, 2022  | Access Control      | AC-7           | User ID controlled by request parameter with data leakage in redirect
 Dec 14, 2022  | Access Control      | AC-8           | User ID controlled by request parameter with password disclosure
+Dec 14, 2022  | Access Control      | AC-9           | Insecure direct object references
