@@ -36,3 +36,4 @@ Dec 14, 2022  | Access Control      | AC-10          | URL-based access control 
 Dec 14, 2022  | Access Control      | AC-11          | Method-based access control can be circumvented
 Dec 14, 2022  | Access Control      | AC-12          | Multi-step process with no access control on one step
 Dec 14, 2022  | Access Control      | AC-13          | Referer-based access control
+Dec 15, 2022  | CSRF                | CSRF-1         | CSRF vulnerability with no defenses
