@@ -46,3 +46,4 @@ Dec 15, 2022  | CSRF                          | CSRF-7         | CSRF where Refe
 Dec 15, 2022  | CSRF                          | CSRF-8         | CSRF with broken Referer validation
 Dec 16, 2022  | File Upload Vulnerabilities   | FUV-1          | Remote code execution via web shell upload
 Dec 16, 2022  | File Upload Vulnerabilities   | FUV-2          | Web shell upload via Content-Type restriction bypass
+Dec 16, 2022  | File Upload Vulnerabilities   | FUV-3          | Web shell upload via path traversal
