@@ -44,4 +44,4 @@ Found a backup file! `ProductTemplate.java.bak`.
 
 # What we've learned:
 
-1. Information disclosure on debug page
+1. Source code disclosure via backup files
