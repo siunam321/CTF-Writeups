@@ -6,3 +6,4 @@ Dec 16, 2022  | File Upload Vulnerabilities   | FUV-1          | Remote code exe
 Dec 16, 2022  | File Upload Vulnerabilities   | FUV-2          | Web shell upload via Content-Type restriction bypass
 Dec 16, 2022  | File Upload Vulnerabilities   | FUV-3          | Web shell upload via path traversal
 Dec 16, 2022  | File Upload Vulnerabilities   | FUV-4          | Web shell upload via extension blacklist bypass
+Dec 16, 2022  | File Upload Vulnerabilities   | FUV-5          | Web shell upload via obfuscated file extension
