@@ -52,3 +52,4 @@ Dec 16, 2022  | File Upload Vulnerabilities   | FUV-5          | Web shell uploa
 Dec 16, 2022  | File Upload Vulnerabilities   | FUV-6          | Remote code execution via polyglot web shell upload
 Dec 16, 2022  | File Upload Vulnerabilities   | FUV-7          | Web shell upload via race condition
 Dec 16, 2022  | Information Disclosure        | ID-1           | Information disclosure in error messages
+Dec 16, 2022  | Information Disclosure        | ID-2           | Information disclosure on debug page
