@@ -6,3 +6,4 @@ Dec 16, 2022  | Information Disclosure        | ID-1           | Information dis
 Dec 16, 2022  | Information Disclosure        | ID-2           | Information disclosure on debug page
 Dec 16, 2022  | Information Disclosure        | ID-3           | Source code disclosure via backup files
 Dec 16, 2022  | Information Disclosure        | ID-4           | Authentication bypass via information disclosure
+Dec 16, 2022  | Information Disclosure        | ID-5           | Information disclosure in version control history
