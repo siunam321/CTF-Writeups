@@ -104,4 +104,4 @@ Oh!! We leaked the flag!
 
 What we've learned:
 
-1. Leaking The Flag via No Validation
+1. Leaking The Flag via No Input Validation

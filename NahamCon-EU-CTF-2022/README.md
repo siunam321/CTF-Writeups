@@ -50,4 +50,4 @@
 3. Linux Reading File via `cat` ([catscii](https://github.com/siunam321/CTF-Writeups/blob/main/NahamCon-EU-CTF-2022/Warmups/catscii/README.md))
 4. Converting RGB Color To Hexadecimal ([Arjeebee](https://github.com/siunam321/CTF-Writeups/blob/main/NahamCon-EU-CTF-2022/Warmups/Arjeebee/README.md))
 5. Linux List Strings via `strings` ([Banjo](https://github.com/siunam321/CTF-Writeups/blob/main/NahamCon-EU-CTF-2022/Warmups/Banjo/README.md))
-6. Leaking The Flag via No Validation ([Baby's First Heartbleed](https://github.com/siunam321/CTF-Writeups/blob/main/NahamCon-EU-CTF-2022/Warmups/Babys-First-Heartbleed/README.md))
+6. Leaking The Flag via No Input Validation ([Baby's First Heartbleed](https://github.com/siunam321/CTF-Writeups/blob/main/NahamCon-EU-CTF-2022/Warmups/Babys-First-Heartbleed/README.md))
