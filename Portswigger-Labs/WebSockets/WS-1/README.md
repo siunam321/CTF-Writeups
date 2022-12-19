@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Welcome to my another writeup! In this Portswigger Labs [lab](https://portswigger.net/web-security/information-disclosure/exploiting/lab-infoleak-in-error-messages), you'll learn: Manipulating WebSocket messages to exploit vulnerabilities! Without further ado, let's dive in.
+Welcome to my another writeup! In this Portswigger Labs [lab](https://portswigger.net/web-security/websockets/lab-manipulating-messages-to-exploit-vulnerabilities), you'll learn: Manipulating WebSocket messages to exploit vulnerabilities! Without further ado, let's dive in.
 
 - Overall difficulty for me (From 1-10 stars): ★☆☆☆☆☆☆☆☆☆
 
