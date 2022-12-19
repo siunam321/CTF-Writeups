@@ -62,3 +62,4 @@ Dec 19, 2022  | WebSockets                     | WS-3           | Cross-site Web
 Dec 19, 2022  | Business Logic Vulnerabilities | BLV-1          | Excessive trust in client-side controls
 Dec 19, 2022  | Business Logic Vulnerabilities | BLV-2          | High-level logic vulnerability
 Dec 19, 2022  | Business Logic Vulnerabilities | BLV-3          | Inconsistent security controls
+Dec 19, 2022  | Business Logic Vulnerabilities | BLV-4          | Flawed enforcement of business rules
