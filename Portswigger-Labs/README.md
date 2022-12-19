@@ -60,3 +60,4 @@ Dec 19, 2022  | WebSockets                     | WS-1           | Manipulating W
 Dec 19, 2022  | WebSockets                     | WS-2           | Manipulating the WebSocket handshake to exploit vulnerabilities
 Dec 19, 2022  | WebSockets                     | WS-3           | Cross-site WebSocket hijacking
 Dec 19, 2022  | Business Logic Vulnerabilities | BLV-1          | Excessive trust in client-side controls
+Dec 19, 2022  | Business Logic Vulnerabilities | BLV-2          | High-level logic vulnerability
