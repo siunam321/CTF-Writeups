@@ -56,3 +56,4 @@ Dec 16, 2022  | Information Disclosure        | ID-2           | Information dis
 Dec 16, 2022  | Information Disclosure        | ID-3           | Source code disclosure via backup files
 Dec 16, 2022  | Information Disclosure        | ID-4           | Authentication bypass via information disclosure
 Dec 16, 2022  | Information Disclosure        | ID-5           | Information disclosure in version control history
+Dec 19, 2022  | WebSockets                    | WS-1           | Manipulating WebSocket messages to exploit vulnerabilities
