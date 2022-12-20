@@ -6,3 +6,4 @@ Dec 19, 2022  | Business Logic Vulnerabilities | BLV-1          | Excessive trus
 Dec 19, 2022  | Business Logic Vulnerabilities | BLV-2          | High-level logic vulnerability
 Dec 19, 2022  | Business Logic Vulnerabilities | BLV-3          | Inconsistent security controls
 Dec 19, 2022  | Business Logic Vulnerabilities | BLV-4          | Flawed enforcement of business rules
+Dec 20, 2022  | Business Logic Vulnerabilities | BLV-5          | Low-level logic flaw
