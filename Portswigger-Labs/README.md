@@ -66,3 +66,4 @@ Dec 19, 2022  | Business Logic Vulnerabilities | BLV-4          | Flawed enforce
 Dec 20, 2022  | Business Logic Vulnerabilities | BLV-5          | Low-level logic flaw
 Dec 20, 2022  | Business Logic Vulnerabilities | BLV-6          | Inconsistent handling of exceptional input
 Dec 20, 2022  | Business Logic Vulnerabilities | BLV-7          | Weak isolation on dual-use endpoint
+Dec 20, 2022  | Business Logic Vulnerabilities | BLV-8          | Insufficient workflow validation
