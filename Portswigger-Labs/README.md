@@ -69,3 +69,4 @@ Dec 20, 2022  | Business Logic Vulnerabilities | BLV-7          | Weak isolation
 Dec 20, 2022  | Business Logic Vulnerabilities | BLV-8          | Insufficient workflow validation
 Dec 20, 2022  | Business Logic Vulnerabilities | BLV-9          | Authentication bypass via flawed state machine
 Dec 20, 2022  | Business Logic Vulnerabilities | BLV-10         | Infinite money logic flaw
+Dec 21, 2022  | Business Logic Vulnerabilities | BLV-11         | Authentication bypass via encryption oracle
