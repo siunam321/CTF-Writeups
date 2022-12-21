@@ -70,3 +70,4 @@ Dec 20, 2022  | Business Logic Vulnerabilities | BLV-8          | Insufficient w
 Dec 20, 2022  | Business Logic Vulnerabilities | BLV-9          | Authentication bypass via flawed state machine
 Dec 20, 2022  | Business Logic Vulnerabilities | BLV-10         | Infinite money logic flaw
 Dec 21, 2022  | Business Logic Vulnerabilities | BLV-11         | Authentication bypass via encryption oracle
+Dec 21, 2022  | Authentication                 | Auth-1         | Username enumeration via different responses
