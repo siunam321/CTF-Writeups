@@ -15,3 +15,4 @@ Dec 22, 2022  | Authentication                 | Auth-10        | Offline passwo
 Dec 22, 2022  | Authentication                 | Auth-11        | Password reset poisoning via middleware
 Dec 22, 2022  | Authentication                 | Auth-12        | Password brute-force via password change
 Dec 22, 2022  | Authentication                 | Auth-13        | Broken brute-force protection, multiple credentials per request
+Dec 22, 2022  | Authentication                 | Auth-14        | 2FA bypass using a brute-force attack
