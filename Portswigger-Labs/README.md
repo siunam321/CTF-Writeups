@@ -80,3 +80,4 @@ Dec 22, 2022  | Authentication                 | Auth-7         | Username enume
 Dec 22, 2022  | Authentication                 | Auth-8         | 2FA broken logic
 Dec 22, 2022  | Authentication                 | Auth-9         | Brute-forcing a stay-logged-in cookie
 Dec 22, 2022  | Authentication                 | Auth-10        | Offline password cracking
+Dec 22, 2022  | Authentication                 | Auth-11        | Password reset poisoning via middleware
