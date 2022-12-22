@@ -77,3 +77,4 @@ Dec 21, 2022  | Authentication                 | Auth-4         | Username enume
 Dec 21, 2022  | Authentication                 | Auth-5         | Username enumeration via response timing
 Dec 21, 2022  | Authentication                 | Auth-6         | Broken brute-force protection, IP block
 Dec 22, 2022  | Authentication                 | Auth-7         | Username enumeration via account lock
+Dec 22, 2022  | Authentication                 | Auth-8         | 2FA broken logic
