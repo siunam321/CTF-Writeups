@@ -20,15 +20,15 @@ To solve the lab, brute-force Carlos's cookie to gain access to his "My account"
 
 **Login page:**
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/Authentication/Auth-9/images/%2020221222032100.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/Authentication/Auth-9/images/Pasted%20image%2020221222032100.png)
 
 In here, we can see that there is a **`Stay logged in` checkbox**.
 
 **Let's try to login as user `wiener`:**
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/Authentication/Auth-9/images/%2020221222032341.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/Authentication/Auth-9/images/Pasted%20image%2020221222032341.png)
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/Authentication/Auth-9/images/%2020221222032405.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/Authentication/Auth-9/images/Pasted%20image%2020221222032405.png)
 
 When we click the `Log in` button, **it'll send a POST request to `/login`, with parameter `username`, `password`, and `stay-logged-in`.**
 
@@ -59,7 +59,7 @@ How about cracking it?
 
 **An online tool called [CrackStation](https://crackstation.net/) may help us:**
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/Authentication/Auth-9/images/%2020221222032829.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/Authentication/Auth-9/images/Pasted%20image%2020221222032829.png)
 
 Nice! The MD5 hash is the `wiener`'s password!
 
@@ -124,11 +124,11 @@ if __name__ == '__main__':
 
 **Let's change our `stay-logged-in` cookie value to that:**
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/Authentication/Auth-9/images/%2020221222040631.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/Authentication/Auth-9/images/Pasted%20image%2020221222040631.png)
 
 **Then go to `/my-account`:**
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/Authentication/Auth-9/images/%2020221222040705.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/Authentication/Auth-9/images/Pasted%20image%2020221222040705.png)
 
 We're user `carlos`!
 
