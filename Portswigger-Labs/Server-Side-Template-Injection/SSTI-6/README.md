@@ -66,7 +66,7 @@ Hmm... It displays an error message.
 
 In the first line of our sandbox bypass, it's loading a class, and it's loading class `article`, which doesn't exist in this lab.
 
-**If remember at the beginning, we have an object called `article`:**
+**If remember at the beginning, we have an object called `product`:**
 
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/Server-Side-Template-Injection/SSTI-6/images/Pasted%20image%2020221223054956.png)
 
