@@ -90,3 +90,4 @@ Dec 23, 2022  | OS Command Injection           | OSCI-3         | Blind OS comma
 Dec 23, 2022  | Server-Side Template Injection | SSTI-1         | Basic server-side template injection
 Dec 23, 2022  | Server-Side Template Injection | SSTI-2         | Basic server-side template injection (code context)
 Dec 23, 2022  | Server-Side Template Injection | SSTI-3         | Server-side template injection using documentation
+Dec 23, 2022  | Server-Side Template Injection | SSTI-4         | Server-side template injection in an unknown language with a documented exploit
