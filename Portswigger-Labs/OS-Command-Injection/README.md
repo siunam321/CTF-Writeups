@@ -4,3 +4,4 @@ Date	 	  | Category                       | Directory Name | Lab Title
 --------------|--------------------------------|----------------|----------------------
 Dec 23, 2022  | OS Command Injection           | OSCI-1         | OS command injection, simple case
 Dec 23, 2022  | OS Command Injection           | OSCI-2         | Blind OS command injection with time delays
+Dec 23, 2022  | OS Command Injection           | OSCI-3         | Blind OS command injection with output redirection
