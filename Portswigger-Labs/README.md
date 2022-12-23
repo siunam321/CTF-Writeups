@@ -85,3 +85,4 @@ Dec 22, 2022  | Authentication                 | Auth-12        | Password brute
 Dec 22, 2022  | Authentication                 | Auth-13        | Broken brute-force protection, multiple credentials per request
 Dec 22, 2022  | Authentication                 | Auth-14        | 2FA bypass using a brute-force attack
 Dec 23, 2022  | OS Command Injection           | OSCI-1         | OS command injection, simple case
+Dec 23, 2022  | OS Command Injection           | OSCI-2         | Blind OS command injection with time delays
