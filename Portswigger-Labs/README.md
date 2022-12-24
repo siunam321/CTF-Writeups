@@ -96,3 +96,4 @@ Dec 23, 2022  | Server-Side Template Injection | SSTI-6         | Server-side te
 Dec 24, 2022  | Server-Side Template Injection | SSTI-7         | Server-side template injection with a custom exploit
 Dec 24, 2022  | Server-Side Request Forgery    | SSRF-1         | Basic SSRF against the local server
 Dec 24, 2022  | Server-Side Request Forgery    | SSRF-2         | Basic SSRF against another back-end system
+Dec 24, 2022  | Server-Side Request Forgery    | SSRF-3         | SSRF with blacklist-based input filter

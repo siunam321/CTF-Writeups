@@ -4,3 +4,4 @@ Date	 	  | Category                       | Directory Name | Lab Title
 --------------|--------------------------------|----------------|----------------------
 Dec 24, 2022  | Server-Side Request Forgery    | SSRF-1         | Basic SSRF against the local server
 Dec 24, 2022  | Server-Side Request Forgery    | SSRF-2         | Basic SSRF against another back-end system
+Dec 24, 2022  | Server-Side Request Forgery    | SSRF-3         | SSRF with blacklist-based input filter
