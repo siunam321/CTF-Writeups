@@ -93,3 +93,4 @@ Dec 23, 2022  | Server-Side Template Injection | SSTI-3         | Server-side te
 Dec 23, 2022  | Server-Side Template Injection | SSTI-4         | Server-side template injection in an unknown language with a documented exploit
 Dec 23, 2022  | Server-Side Template Injection | SSTI-5         | Server-side template injection with information disclosure via user-supplied objects
 Dec 23, 2022  | Server-Side Template Injection | SSTI-6         | Server-side template injection in a sandboxed environment
+Dec 24, 2022  | Server-Side Template Injection | SSTI-7         | Server-side template injection with a custom exploit
