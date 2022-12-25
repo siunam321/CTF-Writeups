@@ -105,3 +105,4 @@ Dec 25, 2022  | XXE Injection                  | XXE-5          | Exploiting bli
 Dec 25, 2022  | XXE Injection                  | XXE-6          | Exploiting blind XXE to retrieve data via error messages
 Dec 25, 2022  | XXE Injection                  | XXE-7          | Exploiting XInclude to retrieve files
 Dec 25, 2022  | XXE Injection                  | XXE-8          | Exploiting XXE via image file upload
+Dec 25, 2022  | XXE Injection                  | XXE-9          | Exploiting XXE to retrieve data by repurposing a local DTD
