@@ -99,3 +99,4 @@ Dec 24, 2022  | Server-Side Request Forgery    | SSRF-2         | Basic SSRF aga
 Dec 24, 2022  | Server-Side Request Forgery    | SSRF-3         | SSRF with blacklist-based input filter
 Dec 24, 2022  | Server-Side Request Forgery    | SSRF-4         | SSRF with filter bypass via open redirection vulnerability
 Dec 24, 2022  | Server-Side Request Forgery    | SSRF-6         | SSRF with whitelist-based input filter
+Dec 25, 2022  | XXE Injection                  | XXE-1          | Exploiting XXE using external entities to retrieve files
