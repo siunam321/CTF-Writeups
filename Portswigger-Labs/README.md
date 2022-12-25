@@ -101,3 +101,4 @@ Dec 24, 2022  | Server-Side Request Forgery    | SSRF-4         | SSRF with filt
 Dec 24, 2022  | Server-Side Request Forgery    | SSRF-6         | SSRF with whitelist-based input filter
 Dec 25, 2022  | XXE Injection                  | XXE-1          | Exploiting XXE using external entities to retrieve files
 Dec 25, 2022  | XXE Injection                  | XXE-2          | Exploiting XXE to perform SSRF attacks
+Dec 25, 2022  | XXE Injection                  | XXE-5          | Exploiting blind XXE to exfiltrate data using a malicious external DTD
