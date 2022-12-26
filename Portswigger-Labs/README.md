@@ -109,3 +109,4 @@ Dec 25, 2022  | XXE Injection                  | XXE-9          | Exploiting XXE
 Dec 26, 2022  | JWT                            | JWT-1          | JWT authentication bypass via unverified signature
 Dec 26, 2022  | JWT                            | JWT-2          | JWT authentication bypass via flawed signature verification
 Dec 26, 2022  | JWT                            | JWT-3          | JWT authentication bypass via weak signing key
+Dec 26, 2022  | JWT                            | JWT-4          | JWT authentication bypass via jwk header injection
