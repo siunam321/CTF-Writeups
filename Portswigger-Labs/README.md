@@ -106,3 +106,4 @@ Dec 25, 2022  | XXE Injection                  | XXE-6          | Exploiting bli
 Dec 25, 2022  | XXE Injection                  | XXE-7          | Exploiting XInclude to retrieve files
 Dec 25, 2022  | XXE Injection                  | XXE-8          | Exploiting XXE via image file upload
 Dec 25, 2022  | XXE Injection                  | XXE-9          | Exploiting XXE to retrieve data by repurposing a local DTD
+Dec 26, 2022  | JWT                            | JWT-1          | JWT authentication bypass via unverified signature
