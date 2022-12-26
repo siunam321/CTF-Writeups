@@ -9,3 +9,4 @@ Dec 26, 2022  | JWT                            | JWT-4          | JWT authentica
 Dec 26, 2022  | JWT                            | JWT-5          | JWT authentication bypass via jku header injection
 Dec 26, 2022  | JWT                            | JWT-6          | JWT authentication bypass via kid header path traversal
 Dec 26, 2022  | JWT                            | JWT-7          | JWT authentication bypass via algorithm confusion
+Dec 26, 2022  | JWT                            | JWT-8          | JWT authentication bypass via algorithm confusion with no exposed key
