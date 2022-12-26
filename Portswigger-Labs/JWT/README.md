@@ -6,3 +6,4 @@ Dec 26, 2022  | JWT                            | JWT-1          | JWT authentica
 Dec 26, 2022  | JWT                            | JWT-2          | JWT authentication bypass via flawed signature verification
 Dec 26, 2022  | JWT                            | JWT-3          | JWT authentication bypass via weak signing key
 Dec 26, 2022  | JWT                            | JWT-4          | JWT authentication bypass via jwk header injection
+Dec 26, 2022  | JWT                            | JWT-5          | JWT authentication bypass via jku header injection
