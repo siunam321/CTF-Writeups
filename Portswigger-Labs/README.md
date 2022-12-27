@@ -117,3 +117,4 @@ Dec 26, 2022  | JWT                            | JWT-8          | JWT authentica
 Dec 26, 2022  | JWT                            | JWT-8          | JWT authentication bypass via algorithm confusion with no exposed key
 Dec 27, 2022  | Cross-Origin Resource Sharing  | CORS-1         | CORS vulnerability with basic origin reflection
 Dec 27, 2022  | Cross-Origin Resource Sharing  | CORS-2         | CORS vulnerability with trusted null origin
+Dec 27, 2022  | Cross-Origin Resource Sharing  | CORS-3         | CORS vulnerability with trusted insecure protocols
