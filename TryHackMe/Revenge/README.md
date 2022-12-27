@@ -506,16 +506,16 @@ mysql> SELECT * FROM user;
 +----+----------+--------------------------------------------------------------+----------------------------+---------------------------------+------------------+
 | id | username | _password                                                    | credit_card                | email                           | company          |
 +----+----------+--------------------------------------------------------------+----------------------------+---------------------------------+------------------+
-|  1 | jhenry   | $2a$12$dAV7fq4KIUyUEOALi8P2dOuXRj5ptOoeRtYLHS85vd/SBDv.tYXOa | 4338736490565706           | sales@fakeinc.org               | Fake Inc         |
-|  2 | smonroe  | $2a$12$6KhFSANS9cF6riOw5C66nerchvkU9AHLVk7I8fKmBkh6P/rPGmanm | 355219744086163            | accountspayable@ecorp.org       | Evil Corp        |
-|  3 | dross    | $2a$12$9VmMpa8FufYHT1KNvjB1HuQm9LF8EX.KkDwh9VRDb5hMk3eXNRC4C | 349789518019219            | accounts.payable@mcdoonalds.org | McDoonalds Inc   |
-|  4 | ngross   | $2a$12$LMWOgC37PCtG7BrcbZpddOGquZPyrRBo5XjQUIVVAlIKFHMysV9EO | 4499108649937274           | sales@ABC.com                   | ABC Corp         |
-|  5 | jlawlor  | $2a$12$hEg5iGFZSsec643AOjV5zellkzprMQxgdh1grCW3SMG9qV9CKzyRu | 4563593127115348           | sales@threebelow.com            | Three Below      |
-|  6 | mandrews | $2a$12$reNFrUWe4taGXZNdHAhRme6UR2uX..t/XCR6UnzTK6sh1UhREd1rC | thm{Redacted}              | ap@krasco.org                   | Krasco Org       |
-|  7 | dgorman  | $2a$12$8IlMgC9UoN0mUmdrS3b3KO0gLexfZ1WvA86San/YRODIbC8UGinNm | 4905698211632780           | payable@wallyworld.com          | Wally World Corp |
-|  8 | mbutts   | $2a$12$dmdKBc/0yxD9h81ziGHW4e5cYhsAiU4nCADuN0tCE8PaEv51oHWbS | 4690248976187759           | payables@orlando.gov            | Orlando City     |
-|  9 | hmontana | $2a$12$q6Ba.wuGpch1SnZvEJ1JDethQaMwUyTHkR0pNtyTW6anur.3.0cem | 375019041714434            | sales@dollatwee.com             | Dolla Twee       |
-| 10 | csmith   | $2a$12$gxC7HlIWxMKTLGexTq8cn.nNnUaYKUpI91QaqQ/E29vtwlwyvXe36 | 364774395134471            | sales@ofamdollar                | O!  Fam Dollar   |
+|  1 | jhenry   | $2a$12${Redacted}                                            | 4338736490565706           | sales@fakeinc.org               | Fake Inc         |
+|  2 | smonroe  | $2a$12${Redacted}                                            | 355219744086163            | accountspayable@ecorp.org       | Evil Corp        |
+|  3 | dross    | $2a$12${Redacted}                                            | 349789518019219            | accounts.payable@mcdoonalds.org | McDoonalds Inc   |
+|  4 | ngross   | $2a$12${Redacted}                                            | 4499108649937274           | sales@ABC.com                   | ABC Corp         |
+|  5 | jlawlor  | $2a$12${Redacted}                                            | 4563593127115348           | sales@threebelow.com            | Three Below      |
+|  6 | mandrews | $2a$12${Redacted}                                            | thm{Redacted}              | ap@krasco.org                   | Krasco Org       |
+|  7 | dgorman  | $2a$12${Redacted}                                            | 4905698211632780           | payable@wallyworld.com          | Wally World Corp |
+|  8 | mbutts   | $2a$12${Redacted}                                            | 4690248976187759           | payables@orlando.gov            | Orlando City     |
+|  9 | hmontana | $2a$12${Redacted}                                            | 375019041714434            | sales@dollatwee.com             | Dolla Twee       |
+| 10 | csmith   | $2a$12${Redacted}                                            | 364774395134471            | sales@ofamdollar                | O!  Fam Dollar   |
 +----+----------+--------------------------------------------------------------+----------------------------+---------------------------------+------------------+
 ```
 
