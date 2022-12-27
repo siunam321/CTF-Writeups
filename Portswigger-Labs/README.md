@@ -114,3 +114,5 @@ Dec 26, 2022  | JWT                            | JWT-5          | JWT authentica
 Dec 26, 2022  | JWT                            | JWT-6          | JWT authentication bypass via kid header path traversal
 Dec 26, 2022  | JWT                            | JWT-7          | JWT authentication bypass via algorithm confusion
 Dec 26, 2022  | JWT                            | JWT-8          | JWT authentication bypass via algorithm confusion with no exposed key
+Dec 26, 2022  | JWT                            | JWT-8          | JWT authentication bypass via algorithm confusion with no exposed key
+Dec 27, 2022  | Cross-Origin Resource Sharing  | CORS-1         | CORS vulnerability with basic origin reflection
