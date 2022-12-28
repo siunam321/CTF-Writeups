@@ -120,3 +120,4 @@ Dec 27, 2022  | Cross-Origin Resource Sharing  | CORS-2             | CORS vulne
 Dec 27, 2022  | Cross-Origin Resource Sharing  | CORS-3             | CORS vulnerability with trusted insecure protocols
 Dec 27, 2022  | Cross-Origin Resource Sharing  | CORS-4             | CORS vulnerability with internal network pivot attack
 Dec 28, 2022  | HTTP Host Header Attacks       | HTTP-Host-Header-1 | Basic password reset poisoning
+Dec 28, 2022  | HTTP Host Header Attacks       | HTTP-Host-Header-2 | Host header authentication bypass
