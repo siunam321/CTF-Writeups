@@ -10,6 +10,8 @@ Welcome to my another writeup! In this TryHackMe [Madeye's Castle](https://tryha
 
 > A boot2root box that is modified from a box used in CuCTF by the team at Runcode.ninja
 
+> Difficulty: Medium
+
 ---
 
 Have fun storming Madeye's Castle! In this room you will need to fully enumerate the system, gain a foothold, and then pivot around to a few different users.

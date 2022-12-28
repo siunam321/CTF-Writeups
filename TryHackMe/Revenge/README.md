@@ -10,6 +10,8 @@ Welcome to my another writeup! In this TryHackMe [Revenge](https://tryhackme.com
 
 > You've been hired by Billy Joel to get revenge on Ducky Inc...the company that fired him. Can you break into the server and complete your mission?
 
+> Difficulty: Medium
+
 ### Task 1 - Message from Billy Joel
 
 Billy Joel has sent you a message regarding your mission. Download it, read it and continue on.
