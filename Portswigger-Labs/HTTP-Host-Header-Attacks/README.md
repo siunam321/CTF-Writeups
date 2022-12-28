@@ -4,3 +4,4 @@ Date	 	  | Category                       | Directory Name     | Lab Title
 --------------|--------------------------------|--------------------|----------------------
 Dec 28, 2022  | HTTP Host Header Attacks       | HTTP-Host-Header-1 | Basic password reset poisoning
 Dec 28, 2022  | HTTP Host Header Attacks       | HTTP-Host-Header-2 | Host header authentication bypass
+Dec 28, 2022  | HTTP Host Header Attacks       | HTTP-Host-Header-3 | Web cache poisoning via ambiguous requests
