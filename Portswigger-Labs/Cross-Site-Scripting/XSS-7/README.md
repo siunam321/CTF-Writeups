@@ -14,15 +14,15 @@ This lab contains a [reflected cross-site scripting](https://portswigger.net/web
 
 **Home page:**
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/Cross-Site-Scripting/XSS-7/images/%2020221229063403.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/Cross-Site-Scripting/XSS-7/images/Pasted%20image%2020221229063403.png)
 
 In here, we can see there is a search box.
 
 **Let's search something:**
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/Cross-Site-Scripting/XSS-7/images/%2020221229063454.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/Cross-Site-Scripting/XSS-7/images/Pasted%20image%2020221229063454.png)
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/Cross-Site-Scripting/XSS-7/images/%2020221229063517.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/Cross-Site-Scripting/XSS-7/images/Pasted%20image%2020221229063517.png)
 
 As you can see, our input is reflected to the web page.
 
@@ -31,9 +31,9 @@ As you can see, our input is reflected to the web page.
 <script>alert(document.domain)</script>
 ```
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/Cross-Site-Scripting/XSS-7/images/%2020221229063612.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/Cross-Site-Scripting/XSS-7/images/Pasted%20image%2020221229063612.png)
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/Cross-Site-Scripting/XSS-7/images/%2020221229063628.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/Cross-Site-Scripting/XSS-7/images/Pasted%20image%2020221229063628.png)
 
 **View souce page:**
 ```html
@@ -52,9 +52,9 @@ Hmm... **The angle brackets were HTML encoded!**
 
 The above payload creates an `onfocus` event that will execute JavaScript when the element receives the focus, and also adds the `autofocus` attribute to try to trigger the `onfocus` event automatically without any user interaction. Finally, it adds `x="` to gracefully repair the following markup.
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/Cross-Site-Scripting/XSS-7/images/%2020221229065234.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/Cross-Site-Scripting/XSS-7/images/Pasted%20image%2020221229065234.png)
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/Cross-Site-Scripting/XSS-7/images/%2020221229065241.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/Cross-Site-Scripting/XSS-7/images/Pasted%20image%2020221229065241.png)
 
 We did it!
 
