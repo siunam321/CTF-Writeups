@@ -6,6 +6,8 @@ Welcome to my another writeup! In this Portswigger Labs [lab](https://portswigge
 
 - Overall difficulty for me (From 1-10 stars): ★☆☆☆☆☆☆☆☆☆
 
+## Background
+
 This lab contains a simple [reflected cross-site scripting](https://portswigger.net/web-security/cross-site-scripting/reflected) vulnerability in the search functionality.
 
 To solve the lab, perform a cross-site scripting attack that calls the `alert` function.

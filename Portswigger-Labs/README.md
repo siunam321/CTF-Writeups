@@ -124,4 +124,5 @@ Dec 28, 2022  | HTTP Host Header Attacks       | HTTP-Host-Header-2 | Host heade
 Dec 28, 2022  | HTTP Host Header Attacks       | HTTP-Host-Header-3 | Web cache poisoning via ambiguous requests
 Dec 28, 2022  | HTTP Host Header Attacks       | HTTP-Host-Header-6 | Host validation bypass via connection state attack
 Dec 28, 2022  | HTTP Host Header Attacks       | HTTP-Host-Header-7 | Password reset poisoning via dangling markup
-Dec 28, 2022  | Cross-Site Scripting           | XSS-1              | Reflected XSS into HTML context with nothing encoded
+Dec 29, 2022  | Cross-Site Scripting           | XSS-1              | Reflected XSS into HTML context with nothing encoded
+Dec 29, 2022  | Cross-Site Scripting           | XSS-2              | Stored XSS into HTML context with nothing encoded
