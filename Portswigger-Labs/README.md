@@ -132,3 +132,4 @@ Dec 29, 2022  | Cross-Site Scripting           | XSS-5              | DOM XSS in
 Dec 29, 2022  | Cross-Site Scripting           | XSS-6              | DOM XSS in jQuery selector sink using a hashchange event
 Dec 29, 2022  | Cross-Site Scripting           | XSS-7              | Reflected XSS into attribute with angle brackets HTML-encoded
 Dec 29, 2022  | Cross-Site Scripting           | XSS-8              | Stored XSS into anchor `href` attribute with double quotes HTML-encoded
+Dec 29, 2022  | Cross-Site Scripting           | XSS-9              | Reflected XSS into a JavaScript string with angle brackets HTML encoded
