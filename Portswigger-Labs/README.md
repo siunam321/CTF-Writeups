@@ -126,3 +126,4 @@ Dec 28, 2022  | HTTP Host Header Attacks       | HTTP-Host-Header-6 | Host valid
 Dec 28, 2022  | HTTP Host Header Attacks       | HTTP-Host-Header-7 | Password reset poisoning via dangling markup
 Dec 29, 2022  | Cross-Site Scripting           | XSS-1              | Reflected XSS into HTML context with nothing encoded
 Dec 29, 2022  | Cross-Site Scripting           | XSS-2              | Stored XSS into HTML context with nothing encoded
+Dec 29, 2022  | Cross-Site Scripting           | XSS-3              | DOM XSS in `document.write` sink using source `location.search`
