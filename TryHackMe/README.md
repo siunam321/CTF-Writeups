@@ -60,3 +60,4 @@ Dec 13, 2022 | Madeye's Castle
 Dec 27, 2022 | Revenge
 Dec 28, 2022 | VulnNet: dotpy
 Dec 29, 2022 | Bank CTF
+Dec 30, 2022 | SafeZone
