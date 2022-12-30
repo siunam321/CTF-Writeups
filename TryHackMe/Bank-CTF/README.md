@@ -6,6 +6,17 @@ Welcome to my another writeup! In this TryHackMe [Bank CTF](https://tryhackme.co
 
 - Overall difficulty for me (From 1-10 stars): ★☆☆☆☆☆☆☆☆☆
 
+## Table of Content
+
+1. **[Service Enumeration](#service-enumeration)**
+2. **[Initial Foothold](#initial-foothold)**
+3. **[Privilege Escalation Option 1: patrick to root](#privilege-escalation)**
+4. **[Privilege Escalation Option 2: patrick to root](#2-patrick-to-root)**
+5. **[Privilege Escalation Option 3: patrick to cat](#3-patrick-to-cat)**
+6. **[Privilege Escalation Option 3.5: cat to root](#35-cat-to-root)**
+7. **[Privilege Escalation Option 3.5.5: cat to root](#355-cat-to-root)**
+8. **[Conclusion](#conclusion)**
+
 ## Background
 
 > A beginners guide to hacking a new bank
@@ -195,13 +206,13 @@ Vamos!
 
 It seems like it's a wordlist of passwords?
 
-**Let's copy that for late use:**
+**Let's copy that for later use:**
 ```
 ┌──(root🌸siunam)-[~/ctf/thm/ctf/Bank-CTF]
 └─# wget http://bankctf.thm/robots.txt
 ```
 
-**Then clean them via a python script:**
+**Then clean that up via a python script:**
 ```py
 #!/usr/bin/env python3
 
@@ -835,7 +846,7 @@ uid=0(root) gid=0(root) groups=0(root)
 
 I'm root! :D
 
-### 3.5. cat to root
+### 3.5.5. cat to root
 
 In user `cat`'s `sudo` permission, we can run `/home/patrick/.bank_work/script.sh` as root without password.
 
