@@ -14,7 +14,7 @@ Welcome to my another writeup! In this TryHackMe [Bank CTF](https://tryhackme.co
 4. **[Privilege Escalation Option 2: patrick to root](#2-patrick-to-root)**
 5. **[Privilege Escalation Option 3: patrick to cat](#3-patrick-to-cat)**
 6. **[Privilege Escalation Option 3.5: cat to root](#35-cat-to-root)**
-7. **[Privilege Escalation Option 3.5.5: cat to root](#355-cat-to-root)**
+7. **[Privilege Escalation Option 3.5: cat to root](#355-cat-to-root)**
 8. **[Conclusion](#conclusion)**
 
 ## Background
