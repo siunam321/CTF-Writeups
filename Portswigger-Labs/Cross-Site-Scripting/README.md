@@ -14,3 +14,4 @@ Dec 29, 2022  | Cross-Site Scripting           | XSS-9              | Reflected 
 Dec 29, 2022  | Cross-Site Scripting           | XSS-10             | DOM XSS in `document.write` sink using source `location.search` inside a select element
 Dec 30, 2022  | Cross-Site Scripting           | XSS-11             | DOM XSS in AngularJS expression with angle brackets and double quotes HTML-encoded
 Dec 30, 2022  | Cross-Site Scripting           | XSS-12             | Reflected DOM XSS
+Dec 30, 2022  | Cross-Site Scripting           | XSS-13             | Stored DOM XSS
