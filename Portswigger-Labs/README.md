@@ -140,3 +140,4 @@ Dec 30, 2022  | Cross-Site Scripting           | XSS-13             | Stored DOM
 Dec 30, 2022  | Cross-Site Scripting           | XSS-14             | Exploiting cross-site scripting to steal cookies
 Dec 31, 2022  | Cross-Site Scripting           | XSS-15             | Exploiting cross-site scripting to capture passwords
 Dec 31, 2022  | Cross-Site Scripting           | XSS-16             | Exploiting XSS to perform CSRF
+Dec 31, 2022  | Cross-Site Scripting           | XSS-17             | Reflected XSS into HTML context with most tags and attributes blocked
