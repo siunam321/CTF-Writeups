@@ -16,3 +16,4 @@ Dec 30, 2022  | Cross-Site Scripting           | XSS-11             | DOM XSS in
 Dec 30, 2022  | Cross-Site Scripting           | XSS-12             | Reflected DOM XSS
 Dec 30, 2022  | Cross-Site Scripting           | XSS-13             | Stored DOM XSS
 Dec 30, 2022  | Cross-Site Scripting           | XSS-14             | Exploiting cross-site scripting to steal cookies
+Dec 31, 2022  | Cross-Site Scripting           | XSS-15             | Exploiting cross-site scripting to capture passwords
