@@ -18,6 +18,7 @@ Welcome to my another writeup! In this TryHackMe [Undiscovered](https://tryhackm
 ## Background
 
 > Discovery consists not in seeking new landscapes, but in having new eyes..
+
 > Difficulty: Medium
 
 ## Service Enumeration
