@@ -142,3 +142,4 @@ Dec 31, 2022  | Cross-Site Scripting           | XSS-15             | Exploiting
 Dec 31, 2022  | Cross-Site Scripting           | XSS-16             | Exploiting XSS to perform CSRF
 Dec 31, 2022  | Cross-Site Scripting           | XSS-17             | Reflected XSS into HTML context with most tags and attributes blocked
 Dec 31, 2022  | Cross-Site Scripting           | XSS-18             | Reflected XSS into HTML context with all tags blocked except custom ones
+Dec 31, 2022  | Cross-Site Scripting           | XSS-19             | Reflected XSS with some SVG markup allowed
