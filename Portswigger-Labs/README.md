@@ -144,3 +144,4 @@ Dec 31, 2022  | Cross-Site Scripting           | XSS-17             | Reflected 
 Dec 31, 2022  | Cross-Site Scripting           | XSS-18             | Reflected XSS into HTML context with all tags blocked except custom ones
 Dec 31, 2022  | Cross-Site Scripting           | XSS-19             | Reflected XSS with some SVG markup allowed
 Dec 31, 2022  | Cross-Site Scripting           | XSS-20             | Reflected XSS in canonical link tag
+Jan 1, 2023   | Cross-Site Scripting           | XSS-21             | Reflected XSS into a JavaScript string with single quote and backslash escaped
