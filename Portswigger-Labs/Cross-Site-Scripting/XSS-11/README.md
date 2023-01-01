@@ -33,7 +33,6 @@ As you can see, our input is reflected to the web page.
 **View source page:**
 ```html
 <script type="text/javascript" src="/resources/js/angular_1-7-7.js"></script>
-<script type="text/javascript" src="[/resources/js/angular_1-7-7.js](https://0a8e004c03d8b169c3a2c4e80031004c.web-security-academy.net/resources/js/angular_1-7-7.js)"></script>
     <title>DOM XSS in AngularJS expression with angle brackets and double quotes HTML-encoded</title>
 </head>
 <body ng-app>
