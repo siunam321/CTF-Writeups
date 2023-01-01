@@ -149,3 +149,4 @@ Jan 1, 2023   | Cross-Site Scripting           | XSS-22             | Reflected 
 Jan 1, 2023   | Cross-Site Scripting           | XSS-23             | Stored XSS into `onclick` event with angle brackets and double quotes HTML-encoded and single quotes and backslash escaped
 Jan 1, 2023   | Cross-Site Scripting           | XSS-24             | Reflected XSS into a template literal with angle brackets, single, double quotes, backslash and backticks Unicode-escaped
 Jan 1, 2023   | Cross-Site Scripting           | XSS-25             | Reflected XSS with event handlers and `href` attributes blocked
+Jan 1, 2023   | Cross-Site Scripting           | XSS-26             | Reflected XSS in a JavaScript URL with some characters blocked
