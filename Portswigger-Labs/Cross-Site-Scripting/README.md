@@ -29,3 +29,4 @@ Jan 1, 2023   | Cross-Site Scripting           | XSS-24             | Reflected 
 Jan 1, 2023   | Cross-Site Scripting           | XSS-25             | Reflected XSS with event handlers and `href` attributes blocked
 Jan 1, 2023   | Cross-Site Scripting           | XSS-26             | Reflected XSS in a JavaScript URL with some characters blocked
 Jan 1, 2023   | Cross-Site Scripting           | XSS-27             | Reflected XSS with AngularJS sandbox escape without strings
+Jan 1, 2023   | Cross-Site Scripting           | XSS-28             | Reflected XSS with AngularJS sandbox escape and CSP
