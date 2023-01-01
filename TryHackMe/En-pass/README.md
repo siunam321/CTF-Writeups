@@ -488,7 +488,7 @@ uid=1002(imsau) gid=1002(imsau) groups=1002(imsau)
        valid_lft forever preferred_lft forever
 2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9001 qdisc pfifo_fast state UP group default qlen 1000
     link/ether 02:23:68:4f:7f:c9 brd ff:ff:ff:ff:ff:ff
-    inet 10.10.46.142/16 brd 10.10.255.255 scope global eth0
+    inet 10.10.153.216/16 brd 10.10.255.255 scope global eth0
        valid_lft forever preferred_lft forever
     inet6 fe80::23:68ff:fe4f:7fc9/64 scope link 
        valid_lft forever preferred_lft forever
@@ -686,7 +686,7 @@ uid=1002(imsau) gid=1002(imsau) euid=0(root) egid=0(root) groups=0(root),1002(im
        valid_lft forever preferred_lft forever
 2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9001 qdisc pfifo_fast state UP group default qlen 1000
     link/ether 02:ae:2e:91:51:3b brd ff:ff:ff:ff:ff:ff
-    inet 10.10.199.231/16 brd 10.10.255.255 scope global eth0
+    inet 10.10.153.216/16 brd 10.10.255.255 scope global eth0
        valid_lft forever preferred_lft forever
     inet6 fe80::ae:2eff:fe91:513b/64 scope link 
        valid_lft forever preferred_lft forever
