@@ -156,3 +156,4 @@ Jan 2, 2023   | Cross-Site Scripting           | XSS-29             | Reflected 
 Jan 2, 2023   | Cross-Site Scripting           | XSS-30             | Reflected XSS protected by CSP, with CSP bypass
 Jan 2, 2023   | Clickjacking                   | Clickjacking-1     | Basic clickjacking with CSRF token protection
 Jan 2, 2023   | Clickjacking                   | Clickjacking-2     | Clickjacking with form input data prefilled from a URL parameter
+Jan 2, 2023   | Clickjacking                   | Clickjacking-3     | Clickjacking with a frame buster script
