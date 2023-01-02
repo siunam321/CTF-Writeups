@@ -153,3 +153,4 @@ Jan 1, 2023   | Cross-Site Scripting           | XSS-26             | Reflected 
 Jan 1, 2023   | Cross-Site Scripting           | XSS-27             | Reflected XSS with AngularJS sandbox escape without strings
 Jan 1, 2023   | Cross-Site Scripting           | XSS-28             | Reflected XSS with AngularJS sandbox escape and CSP
 Jan 2, 2023   | Cross-Site Scripting           | XSS-29             | Reflected XSS protected by very strict CSP, with dangling markup attack
+Jan 2, 2023   | Cross-Site Scripting           | XSS-30             | Reflected XSS protected by CSP, with CSP bypass
