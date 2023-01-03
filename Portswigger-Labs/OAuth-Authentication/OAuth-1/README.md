@@ -40,7 +40,7 @@ Then, **it'll send a GET request to `/auth`, with parameter `client_id`, `redire
 
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/OAuth-Authentication/OAuth-1/images/Pasted%20image%2020230103071301.png)
 
-- 1. **Authorization request:**
+- **i. Authorization request:**
 
 Now, we've send a request to the OAuth service's `/auth` endpoint asking for permission to access specific user data.
 
@@ -63,7 +63,7 @@ Armed with above information, **we now know that our `response_type` is set to `
 
 Now, let's forward the authorization request.
 
-- 2. **User login and consent:**
+- **ii. User login and consent:**
 
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/OAuth-Authentication/OAuth-1/images/Pasted%20image%2020230103072213.png)
 
@@ -91,7 +91,7 @@ In here, this is based on the scopes defined in the authorization request. The u
 
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/OAuth-Authentication/OAuth-1/images/Pasted%20image%2020230103073833.png)
 
-- 3. **Access token grant:**
+- **iii. Access token grant:**
 
 If the user gives their consent to the requested access, the OAuth service will redirect the user's browser to the `redirect_uri` specified in the authorization request. Then, the authorization code will send the access token and other token-specific data as a URL fragment. E.g: `/oauth-callback#access_token=6WCCPFA1jHBaL0Qc7RnLhmK8Zv0J8ghNUB3Vaj6V3VW&expires_in=3600&token_type=Bearer&scope=openid%20profile%20email`.
 
@@ -99,7 +99,7 @@ If the user gives their consent to the requested access, the OAuth service will 
 
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/OAuth-Authentication/OAuth-1/images/Pasted%20image%2020230103080431.png)
 
-- **4. API call:**
+- **iv. API call:**
 
 Once the client application has successfully extracted the access token from the URL fragment, it can use it to make API calls to the OAuth service's `/me` endpoint:
 
@@ -109,7 +109,7 @@ Burp Suite's HTTP History:
 
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/OAuth-Authentication/OAuth-1/images/Pasted%20image%2020230103075050.png)
 
-- **5. Resource grant:**
+- **v. Resource grant:**
 
 The resource server should verify that the token is valid and that it belongs to the current client application. If so, it will respond by sending the requested resource i.e. the user's data based on the scope associated with the access token:
 
@@ -129,7 +129,7 @@ In this flow, the access token is sent from the OAuth service to the client appl
 
 To solve this problem, the client application will often submit this data to the server in a POST request and then assign the user a session cookie, effectively logging them in. This request is roughly equivalent to the form submission request that might be sent as part of a classic, password-based login. However, in this scenario, the server does not have any secrets or passwords to compare with the submitted data, which means that it is implicitly trusted.
 
-In the implicit flow, this POST request is exposed to attackers via their browser. As a result, this behavior can lead to a serious vulnerability if the client application doesn't properly check that the access token matches the other data in the request. In this case, an attacker can simply change the parameters sent to the server to impersonate any user:
+In the implicit flow, this POST request is exposed to attackers via their browser. As a result, this behavior can lead to a serious vulnerability **if the client application doesn't properly check that the access token** matches the other data in the request. **In this case, an attacker can simply change the parameters sent to the server to impersonate any user:**
 
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/OAuth-Authentication/OAuth-1/images/Pasted%20image%2020230103075925.png)
 
