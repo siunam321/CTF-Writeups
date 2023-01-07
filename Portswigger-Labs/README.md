@@ -161,3 +161,4 @@ Jan 2, 2023   | Clickjacking                   | Clickjacking-4     | Exploiting
 Jan 2, 2023   | Clickjacking                   | Clickjacking-5     | Multistep clickjacking
 Jan 3, 2023   | OAuth Authentication           | OAuth-1            | Authentication bypass via OAuth implicit flow
 Jan 7, 2023   | OAuth Authentication           | OAuth-2            | Forced OAuth profile linking
+Jan 7, 2023   | OAuth Authentication           | OAuth-3            | OAuth account hijacking via redirect_uri
