@@ -165,3 +165,4 @@ Jan 7, 2023   | OAuth Authentication           | OAuth-3            | OAuth acco
 Jan 7, 2023   | OAuth Authentication           | OAuth-4            | Stealing OAuth access tokens via an open redirect
 Jan 7, 2023   | OAuth Authentication           | OAuth-6            | Stealing OAuth access tokens via an open redirect
 Jan 10, 2023  | Insecure Deserialization       | Deserial-1         | Modifying serialized objects
+Jan 10, 2023  | Insecure Deserialization       | Deserial-2         | Modifying serialized data types
