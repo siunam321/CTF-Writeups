@@ -164,3 +164,4 @@ Jan 7, 2023   | OAuth Authentication           | OAuth-2            | Forced OAu
 Jan 7, 2023   | OAuth Authentication           | OAuth-3            | OAuth account hijacking via redirect_uri
 Jan 7, 2023   | OAuth Authentication           | OAuth-4            | Stealing OAuth access tokens via an open redirect
 Jan 7, 2023   | OAuth Authentication           | OAuth-6            | Stealing OAuth access tokens via an open redirect
+Jan 10, 2023  | Insecure Deserialization       | Deserial-1         | Modifying serialized objects
