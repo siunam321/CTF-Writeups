@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Welcome to my another writeup! In this Portswigger Labs [lab](https://portswigger.net/web-security/oauth/lab-oauth-authentication-bypass-via-oauth-implicit-flow), you'll learn: Modifying serialized objects! Without further ado, let's dive in.
+Welcome to my another writeup! In this Portswigger Labs [lab](https://portswigger.net/web-security/deserialization/exploiting/lab-deserialization-modifying-serialized-objects), you'll learn: Modifying serialized objects! Without further ado, let's dive in.
 
 - Overall difficulty for me (From 1-10 stars): ★☆☆☆☆☆☆☆☆☆
 
