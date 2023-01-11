@@ -28,7 +28,7 @@ Part of [Incognito 2.0 CTF](https://ctftime.org/event/1321)
 As usual, scan the machine for open ports via `rustscan`!
 
 **Rustscan:**
-```shell
+```zsh
 ┌──(root🌸siunam)-[~/ctf/thm/ctf/Metamorphosis]
 └─# export RHOSTS=10.10.14.138 
                                                                                                            
