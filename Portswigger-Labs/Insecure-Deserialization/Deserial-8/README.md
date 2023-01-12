@@ -586,4 +586,4 @@ java.io.IOException: org.postgresql.util.PSQLException: ERROR: invalid input syn
 
 # What we've learned:
 
-1. Exploiting Ruby deserialization using a documented gadget chain
+1. Developing a custom gadget chain for Java deserialization
