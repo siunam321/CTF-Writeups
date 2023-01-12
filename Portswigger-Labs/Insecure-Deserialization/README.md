@@ -9,3 +9,4 @@ Jan 10, 2023  | Insecure Deserialization       | Deserial-4         | Arbitrary 
 Jan 10, 2023  | Insecure Deserialization       | Deserial-5         | Exploiting Java deserialization with Apache Commons
 Jan 11, 2023  | Insecure Deserialization       | Deserial-6         | Exploiting PHP deserialization with a pre-built gadget chain
 Jan 12, 2023  | Insecure Deserialization       | Deserial-7         | Exploiting Ruby deserialization using a documented gadget chain
+Jan 12, 2023  | Insecure Deserialization       | Deserial-8         | Developing a custom gadget chain for Java deserialization
