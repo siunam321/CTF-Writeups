@@ -44,6 +44,7 @@ Dec 15, 2022  | CSRF                           | CSRF-5             | CSRF where
 Dec 15, 2022  | CSRF                           | CSRF-6             | CSRF where token is duplicated in cookie
 Jan 13, 2023  | CSRF                           | CSRF-7             | SameSite Lax bypass via method override
 Jan 13, 2023  | CSRF                           | CSRF-8             | SameSite Strict bypass via client-side redirect
+Jan 13, 2023  | CSRF                           | CSRF-9             | SameSite Strict bypass via sibling domain
 Dec 15, 2022  | CSRF                           | CSRF-11            | CSRF where Referer validation depends on header being present
 Dec 15, 2022  | CSRF                           | CSRF-12            | CSRF with broken Referer validation
 Dec 16, 2022  | File Upload Vulnerabilities    | FUV-1              | Remote code execution via web shell upload
