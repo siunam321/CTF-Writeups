@@ -11,3 +11,4 @@ Jan 11, 2023  | Insecure Deserialization       | Deserial-6         | Exploiting
 Jan 12, 2023  | Insecure Deserialization       | Deserial-7         | Exploiting Ruby deserialization using a documented gadget chain
 Jan 12, 2023  | Insecure Deserialization       | Deserial-8         | Developing a custom gadget chain for Java deserialization
 Jan 12, 2023  | Insecure Deserialization       | Deserial-9         | Developing a custom gadget chain for PHP deserialization
+Jan 13, 2023  | Insecure Deserialization       | Deserial-10        | Using PHAR deserialization to deploy a custom gadget chain
