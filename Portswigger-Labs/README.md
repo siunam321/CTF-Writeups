@@ -42,8 +42,9 @@ Dec 15, 2022  | CSRF                           | CSRF-3             | CSRF where
 Dec 15, 2022  | CSRF                           | CSRF-4             | CSRF where token is not tied to user session
 Dec 15, 2022  | CSRF                           | CSRF-5             | CSRF where token is tied to non-session cookie
 Dec 15, 2022  | CSRF                           | CSRF-6             | CSRF where token is duplicated in cookie
-Dec 15, 2022  | CSRF                           | CSRF-7             | CSRF where Referer validation depends on header being present
-Dec 15, 2022  | CSRF                           | CSRF-8             | CSRF with broken Referer validation
+Jan 13, 2023  | CSRF                           | CSRF-7             | SameSite Lax bypass via method override
+Dec 15, 2022  | CSRF                           | CSRF-11            | CSRF where Referer validation depends on header being present
+Dec 15, 2022  | CSRF                           | CSRF-12            | CSRF with broken Referer validation
 Dec 16, 2022  | File Upload Vulnerabilities    | FUV-1              | Remote code execution via web shell upload
 Dec 16, 2022  | File Upload Vulnerabilities    | FUV-2              | Web shell upload via Content-Type restriction bypass
 Dec 16, 2022  | File Upload Vulnerabilities    | FUV-3              | Web shell upload via path traversal
