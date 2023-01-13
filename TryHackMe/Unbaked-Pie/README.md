@@ -195,7 +195,7 @@ So this is the Django admin interface.
 
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/Unbaked-Pie/images/Pasted%20image%2020230113072938.png)
 
-Nope. How about default credentials?
+Nope. Also no luck for default credentials.
 
 Also, the GET parameter `next` maybe vulnerable to open redirect?
 
