@@ -178,3 +178,4 @@ Jan 12, 2023  | Insecure Deserialization       | Deserial-7         | Exploiting
 Jan 12, 2023  | Insecure Deserialization       | Deserial-8         | Developing a custom gadget chain for Java deserialization
 Jan 12, 2023  | Insecure Deserialization       | Deserial-9         | Developing a custom gadget chain for PHP deserialization
 Jan 13, 2023  | Insecure Deserialization       | Deserial-10        | Using PHAR deserialization to deploy a custom gadget chain
+Jan 14, 2023  | DOM-Based Vulnerabilities      | DOM-1              | DOM XSS using web messages
