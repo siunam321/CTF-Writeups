@@ -185,3 +185,4 @@ Jan 14, 2023  | DOM-Based Vulnerabilities      | DOM-4              | DOM-based 
 Jan 14, 2023  | DOM-Based Vulnerabilities      | DOM-5              | DOM-based cookie manipulation
 Jan 14, 2023  | DOM-Based Vulnerabilities      | DOM-6              | Exploiting DOM clobbering to enable XSS
 Jan 14, 2023  | DOM-Based Vulnerabilities      | DOM-7              | Clobbering DOM attributes to bypass HTML filters
+Jan 15, 2023  | Prototype Pollution            | Prototype-1        | DOM XSS via client-side prototype pollution
