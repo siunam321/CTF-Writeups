@@ -199,7 +199,7 @@ This Sigma rule will search:
 
 1. `EventID` is equal to 1
 2. `Image` (Binary/executable) name is ends with `nc.exe`
-3. The executed `CommandLine` contains ` -e ` (It has spaces)
+3. The executed `CommandLine` contains `-e` (It has spaces)
 
 ***Or***
 
@@ -287,7 +287,7 @@ This Sigma rule will search:
 
 1. `EventID` is equal to 1
 2. `Image` (Binary/executable) name is ends with `sc.exe`
-3. The executed `CommandLine` contains ` config ` and ` binPath= ` (They have spaces)
+3. The executed `CommandLine` contains `config` and `binPath=` (They have spaces)
 
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/SigHunt/images/Pasted%20image%2020230114160635.png)
 
@@ -328,7 +328,7 @@ This Sigma rule will search:
 
 1. `EventID` is equal to 1
 2. `Image` (Binary/executable) name is ends with `reg.exe`
-3. The executed `CommandLine` contains ` add ` and `RunOnce` (it has spaces)
+3. The executed `CommandLine` contains `add` and `RunOnce` (it has spaces)
 
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/SigHunt/images/Pasted%20image%2020230114160505.png)
 
@@ -369,7 +369,7 @@ This Sigma rule will search:
 
 1. `EventID` is equal to 1
 2. `Image` (Binary/executable) name is ends with `7z.exe`
-3. The executed `CommandLine` contains ` a ` and ` -p` (They have spaces)
+3. The executed `CommandLine` contains `a` and `-p` (They have spaces)
 
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/SigHunt/images/Pasted%20image%2020230114160001.png)
 
@@ -409,7 +409,7 @@ This Sigma rule will search:
 
 1. `EventID` is equal to 1
 2. `Image` (Binary/executable) name is ends with `curl.exe`
-3. The executed `CommandLine` contains ` -d ` (it has spaces)
+3. The executed `CommandLine` contains `-d` (it has spaces)
 
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/SigHunt/images/Pasted%20image%2020230114160145.png)
 
