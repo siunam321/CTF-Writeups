@@ -138,7 +138,7 @@ Armed with above information, it's Diffie-Hellman algorithm. Diffie-Hellman is a
 
 We compute the shared key this way:
 
-- $(({g}^{c})^{a})^{b} mod {p}$
+- $(({g}^{c})^{a})^{b} \bmod {p}$
 
 **To do so, I'll write a python script:**
 ```py
