@@ -11,7 +11,7 @@ Welcome to my another writeup! In this TryHackMe [StuxCTF](https://tryhackme.com
 1. **[Service Enumeration](#service-enumeration)**
 2. **[Initial Foothold](#initial-foothold)**
 3. **[Privilege Escalation: Option 1 - www to root](#privilege-escalation)**
-4. **[Privilege Escalation: Option 2 - www to root](#2-www-to-root)**
+4. **[Privilege Escalation: Option 2 - www to root](#2-www-data-to-root)**
 5. **[Conclusion](#conclusion)**
 
 ## Background
@@ -56,7 +56,7 @@ Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 
 According to `rustscan` result, we have 2 ports are opened:
 
-|Open Ports        | Service                       |
+|Open Port         | Service                       |
 |:---:             |:---:                          |
 |22                | OpenSSH 7.2p2 Ubuntu          |
 |80                | Apache httpd 2.4.18 ((Ubuntu))|
@@ -138,7 +138,7 @@ Armed with above information, it's Diffie-Hellman algorithm. Diffie-Hellman is a
 
 We compute the shared key this way:
 
-`((g^c)^a)^b mod p`
+- $(({g}^{c})^{a})^{b} mod {p}$
 
 **To do so, I'll write a python script:**
 ```py
