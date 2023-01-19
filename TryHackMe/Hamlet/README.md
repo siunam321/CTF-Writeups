@@ -666,6 +666,8 @@ www-data@66505608bd11:/var/www/html/repository/project/0/document/2/source$ cat 
 THM{4_Redacted}
 ```
 
+## Privilege Escalation
+
 ### Docker www-data to Host root
 
 Let's do some basic enumerations!
@@ -1021,7 +1023,7 @@ Nice! We have persistence access to the target machine!
 
 **Flag 6:**
 ```shell
-root@hamlet:/# cat /root/flag
+root@hamlet:~# cat /root/flag
 THM{6_Redacted}
 ```
 
