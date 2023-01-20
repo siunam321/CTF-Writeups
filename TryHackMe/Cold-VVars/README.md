@@ -11,7 +11,7 @@ Welcome to my another writeup! In this TryHackMe [Cold VVars](https://tryhackme.
 1. **[Service Enumeration](#service-enumeration)**
 2. **[Initial Foothold](#initial-foothold)**
 3. **[Privilege Escalation: www-data to ArthurMorgan](#privilege-escalation)**
-4. **[Privilege Escalation: ArthurMorgan to marston](#arthurMorgan-to-marston)**
+4. **[Privilege Escalation: ArthurMorgan to marston](#arthurmorgan-to-marston)**
 5. **[Privilege Escalation: marston to root](#marston-to-root)**
 6. **[Conclusion](#conclusion)**
 
