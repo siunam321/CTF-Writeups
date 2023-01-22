@@ -77,3 +77,4 @@ Jan 15, 2023 | SigHunt
 Jan 17, 2023 | StuxCTF
 Jan 19, 2023 | Hamlet
 Jan 20, 2023 | Cold VVars
+Jan 22, 2023 | TakeOver
