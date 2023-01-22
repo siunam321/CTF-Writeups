@@ -190,3 +190,4 @@ Jan 18, 2023  | Prototype Pollution            | Prototype-2        | DOM XSS vi
 Jan 18, 2023  | Prototype Pollution            | Prototype-3        | Client-side prototype pollution in third-party libraries
 Jan 22, 2023  | Prototype Pollution            | Prototype-4        | Client-side prototype pollution via browser APIs
 Jan 22, 2023  | Prototype Pollution            | Prototype-5        | Client-side prototype pollution via flawed sanitization
+Jan 22, 2023  | Web Cache Poisoning            | Cache-1            | Web cache poisoning with an unkeyed header
