@@ -189,3 +189,4 @@ Jan 15, 2023  | Prototype Pollution            | Prototype-1        | DOM XSS vi
 Jan 18, 2023  | Prototype Pollution            | Prototype-2        | DOM XSS via an alternative prototype pollution vector
 Jan 18, 2023  | Prototype Pollution            | Prototype-3        | Client-side prototype pollution in third-party libraries
 Jan 22, 2023  | Prototype Pollution            | Prototype-4        | Client-side prototype pollution via browser APIs
+Jan 22, 2023  | Prototype Pollution            | Prototype-5        | Client-side prototype pollution via flawed sanitization
