@@ -125,23 +125,13 @@ The default file to fetch is `WEB-INF/web.xml`, which can leak important informa
 
 **We indeed found a credentials:**
 ```xml
-  <display-name>VulnNet Entertainment</display-name>
-  <description>
-     VulnNet Dev Regulations - mandatory
- 
-1. Every VulnNet Entertainment dev is obligated to follow the rules described herein according to the contract you signed.
-2. Every web application you develop and its source code stays here and is not subject to unauthorized self-publication.
--- Your work will be reviewed by our web experts and depending on the results and the company needs a process of implementation might start.
--- Your project scope is written in the contract.
+[...]
 3. Developer access is granted with the credentials provided below:
  
     webdev:{Redacted}
  
 GUI access is disabled for security reasons.
- 
-4. All further instructions are delivered to your business mail address.
-5. If you have any additional questions contact our staff help branch.
-  </description>
+[...]
 ```
 
 ### HTTP on Port 8080
@@ -183,6 +173,8 @@ It's correct, but the `webdev` account doesn't have access to the manager app.
 It worked!!
 
 However, nothing we can do... As we can't deploy a `.war` file to execute code.
+
+## Initial Foothold
 
 Let's take a step back.
 
