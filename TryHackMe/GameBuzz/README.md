@@ -12,7 +12,7 @@ Welcome to my another writeup! In this TryHackMe [GameBuzz](https://tryhackme.co
 2. **[Initial Foothold](#initial-foothold)**
 3. **[Privilege Escalation: www-data to dev2](#privilege-escalation)**
 4. **[Privilege Escalation: dev2 to dev1](#dev2-to-dev1)**
-5. **[Privilege Escalation: dev2 to root](#dev2-to-root)**
+5. **[Privilege Escalation: dev1 to root](#dev1-to-root)**
 6. **[Conclusion](#conclusion)**
 
 ## Background
@@ -252,7 +252,7 @@ Nope. The path traversal doesn't work.
 **After some trial and error, I found that the uploaded file is in `/var/upload/<filename>`:**
 ```py
     file = {
-        'the_file': (f'../../../../../../../../../var/upload/{filename}', pickle.dumps(PickleRCE()))
+        'the_file': (f'/var/upload/{filename}', pickle.dumps(PickleRCE()))
     }
 
     pickleData = {'object': f'/var/upload/{filename}'}
@@ -390,7 +390,7 @@ uid=1000(dev2) gid=1000(dev2) groups=1000(dev2),24(cdrom),30(dip),46(plugdev),10
 
 I'm user `dev2`!
 
-### dev2 to root
+### dev2 to dev1
 
 ```shell
 dev2@incognito:/$ cat /var/mail/dev1 
@@ -566,7 +566,7 @@ dev1@incognito:/etc/init.d$ ls -lah /etc/knockd.conf
 
 We have write access to it!
 
-**Armed with above information, we can modify the `command` key to add a SUID sticky bit to `/bin/bash`:**
+**Armed with above information, we can modify the `command` key's value to add a SUID sticky bit to `/bin/bash`:**
 ```shell
 dev1@incognito:/etc/init.d$ nano /etc/knockd.conf 
 [options]
