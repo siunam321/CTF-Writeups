@@ -82,7 +82,7 @@ In the `/fetch` endpoint, we send file that's pickled (serialized) object. Then,
 
 Hmm... **If we can upload our own evil pickled object**, then we might able to gain Remote Code Execution (RCE)!
 
-**In the of the website, we found a new domain:**
+**In the bottom of the page, we found a new domain:**
 
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/GameBuzz/images/Pasted%20image%2020230124123203.png)
 
