@@ -10,3 +10,4 @@ Jan 24, 2023  | Web Cache Poisoning            | Cache-5            | Web cache 
 Jan 24, 2023  | Web Cache Poisoning            | Cache-6            | Web cache poisoning via an unkeyed query parameter
 Jan 24, 2023  | Web Cache Poisoning            | Cache-7            | Parameter cloaking
 Jan 25, 2023  | Web Cache Poisoning            | Cache-8            | Web cache poisoning via a fat GET request
+Jan 25, 2023  | Web Cache Poisoning            | Cache-9            | URL normalization
