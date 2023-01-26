@@ -14,3 +14,4 @@ Jan 25, 2023  | Web Cache Poisoning            | Cache-9            | URL normal
 Jan 25, 2023  | Web Cache Poisoning            | Cache-10           | Web cache poisoning to exploit a DOM vulnerability via a cache with strict cacheability criteria
 Jan 26, 2023  | Web Cache Poisoning            | Cache-11           | Combining web cache poisoning vulnerabilities
 Jan 26, 2023  | Web Cache Poisoning            | Cache-12           | Cache key injection
+Jan 26, 2023  | Web Cache Poisoning            | Cache-13           | Internal cache poisoning
