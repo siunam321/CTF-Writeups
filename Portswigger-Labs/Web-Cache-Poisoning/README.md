@@ -12,3 +12,4 @@ Jan 24, 2023  | Web Cache Poisoning            | Cache-7            | Parameter 
 Jan 25, 2023  | Web Cache Poisoning            | Cache-8            | Web cache poisoning via a fat GET request
 Jan 25, 2023  | Web Cache Poisoning            | Cache-9            | URL normalization
 Jan 25, 2023  | Web Cache Poisoning            | Cache-10           | Web cache poisoning to exploit a DOM vulnerability via a cache with strict cacheability criteria
+Jan 26, 2023  | Web Cache Poisoning            | Cache-11           | Combining web cache poisoning vulnerabilities
