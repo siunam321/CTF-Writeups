@@ -1176,7 +1176,7 @@ In `testing.png`, we found a username called `architect`. However, the authenica
 
 **In `Low-Level SSH-TOTP Diagram.png`, the SSH OTP code is computed via:**
 
-- CTT = (CA * CB * CC):
+- ${CTT} = ({CA} \times {CB} \times {CC})$:
 
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/M4tr1x-Exit-Denied/images/Pasted%20image%2020230126152914.png)
 
