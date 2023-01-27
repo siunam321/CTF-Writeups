@@ -1180,7 +1180,7 @@ In `testing.png`, we found a username called `architect`. However, the authenica
 
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/M4tr1x-Exit-Denied/images/Pasted%20image%2020230126152914.png)
 
-- Then, **${UC} = {CTT} \xor {SST}$**:
+- Then, **${UC} = {CTT} \oplus {SST}$**:
 
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/M4tr1x-Exit-Denied/images/Pasted%20image%2020230126153017.png)
 
