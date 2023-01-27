@@ -204,3 +204,4 @@ Jan 26, 2023  | Web Cache Poisoning            | Cache-11           | Combining 
 Jan 26, 2023  | Web Cache Poisoning            | Cache-12           | Cache key injection
 Jan 26, 2023  | Web Cache Poisoning            | Cache-13           | Internal cache poisoning
 Jan 27, 2023  | HTTP Request Smuggling         | Smuggling-1        | HTTP request smuggling, basic CL.TE vulnerability
+Jan 27, 2023  | HTTP Request Smuggling         | Smuggling-2        | HTTP request smuggling, basic TE.CL vulnerability
