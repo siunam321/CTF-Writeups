@@ -16,31 +16,31 @@ To solve the lab, smuggle a request to the back-end server, so that the next req
 
 **Home page:**
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/HTTP-Request-Smuggling/Smuggling-2/images/%2020230127190609.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/HTTP-Request-Smuggling/Smuggling-2/images/Pasted%20image%2020230127190609.png)
 
 Burp Suite HTTP history:
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/HTTP-Request-Smuggling/Smuggling-2/images/%2020230127190619.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/HTTP-Request-Smuggling/Smuggling-2/images/Pasted%20image%2020230127190619.png)
 
 We can try to test the web application is vulnerable to HTTP request smuggling.
 
 Let's send this request to Burp Suite's Repeater:
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/HTTP-Request-Smuggling/Smuggling-2/images/%2020230127190655.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/HTTP-Request-Smuggling/Smuggling-2/images/Pasted%20image%2020230127190655.png)
 
 First, we can try to test TE.CL HTTP request smuggling, which is the front-end server uses `Transfer-Encoding` header and the back-end server uses `Content-Length` header.
 
 **But before we do that, we need to ensure that the "Update Content-Length" option is unchecked, and show non-printable chars:**
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/HTTP-Request-Smuggling/Smuggling-2/images/%2020230127193636.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/HTTP-Request-Smuggling/Smuggling-2/images/Pasted%20image%2020230127193636.png)
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/HTTP-Request-Smuggling/Smuggling-2/images/%2020230127193647.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/HTTP-Request-Smuggling/Smuggling-2/images/Pasted%20image%2020230127193647.png)
 
 **Then, change the request method to POST:**
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/HTTP-Request-Smuggling/Smuggling-2/images/%2020230127193747.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/HTTP-Request-Smuggling/Smuggling-2/images/Pasted%20image%2020230127193747.png)
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/HTTP-Request-Smuggling/Smuggling-2/images/%2020230127193754.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/HTTP-Request-Smuggling/Smuggling-2/images/Pasted%20image%2020230127193754.png)
 
 **After that, we can build our smuggling request:**
 ```http
@@ -135,7 +135,7 @@ smuggled=yes\r\n
 \r\n
 ```
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/HTTP-Request-Smuggling/Smuggling-2/images/%2020230127201218.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/HTTP-Request-Smuggling/Smuggling-2/images/Pasted%20image%2020230127201218.png)
 
 We successfully smuggled the GPOST request!
 
