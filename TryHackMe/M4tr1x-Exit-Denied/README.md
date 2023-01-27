@@ -1180,11 +1180,11 @@ In `testing.png`, we found a username called `architect`. However, the authenica
 
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/M4tr1x-Exit-Denied/images/Pasted%20image%2020230126152914.png)
 
-- Then, **${UC} = {CTT} \oplus {SST}$**: ($\oplus$ means XOR operator)
+- Then, **${UC} = {CTT} \oplus {SST}$**:
 
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/M4tr1x-Exit-Denied/images/Pasted%20image%2020230126153017.png)
 
-- Finally compute **${UC} \to {HC} \to {T} \to {SSH OTP code}$**:
+- Finally compute **${UC} \to {HC} \to {T} \to {OTP}$**:
 
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/M4tr1x-Exit-Denied/images/Pasted%20image%2020230126153132.png)
 
