@@ -4,3 +4,4 @@ Date	 	  | Category                       | Directory Name     | Lab Title
 --------------|--------------------------------|--------------------|----------------------
 Jan 27, 2023  | HTTP Request Smuggling         | Smuggling-1        | HTTP request smuggling, basic CL.TE vulnerability
 Jan 27, 2023  | HTTP Request Smuggling         | Smuggling-2        | HTTP request smuggling, basic TE.CL vulnerability
+Jan 28, 2023  | HTTP Request Smuggling         | Smuggling-3        | HTTP request smuggling, obfuscating the TE header
