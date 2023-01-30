@@ -80,3 +80,5 @@ Jan 20, 2023 | Cold VVars
 Jan 22, 2023 | TakeOver
 Jan 23, 2023 | VulnNet: dotjar
 Jan 24, 2023 | GameBuzz
+Jan 27, 2023 | M4tr1x: Exit Denied
+Jan 30, 2023 | MalBuster
