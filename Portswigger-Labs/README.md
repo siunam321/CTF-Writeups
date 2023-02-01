@@ -209,3 +209,4 @@ Jan 28, 2023  | HTTP Request Smuggling         | Smuggling-3        | HTTP reque
 Jan 28, 2023  | HTTP Request Smuggling         | Smuggling-4        | HTTP request smuggling, confirming a CL.TE vulnerability via differential responses
 Jan 28, 2023  | HTTP Request Smuggling         | Smuggling-5        | HTTP request smuggling, confirming a TE.CL vulnerability via differential responses
 Feb 1, 2023   | HTTP Request Smuggling         | Smuggling-6        | Exploiting HTTP request smuggling to bypass front-end security controls, CL.TE vulnerability
+Feb 1, 2023   | HTTP Request Smuggling         | Smuggling-7        | Exploiting HTTP request smuggling to bypass front-end security controls, TE.CL vulnerability
