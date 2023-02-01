@@ -97,4 +97,4 @@ Nice! We successfully smuggled an attack 404 GET request, and can confirm the we
 
 # What we've learned:
 
-1. HTTP request smuggling, confirming a TE.CL vulnerability via differential responses
+1. Exploiting HTTP request smuggling to bypass front-end security controls, CL.TE vulnerability
