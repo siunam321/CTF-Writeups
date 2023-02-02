@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Welcome to my another writeup! In this TryHackMe [M4tr1x: Exit Denied](https://tryhackme.com/room/m4tr1xexitdenied) room, you'll learn: Exploiting and enumerating MyBB, brute forcing OTP (One-Time Password) and more! Without further ado, let's dive in.
+Welcome to my another writeup! In this TryHackMe [Different CTF](https://tryhackme.com/room/adana) room, you'll learn: Webshell upload and modifying file permission in FTP, brute forcing local user via `sucrack` and more! Without further ado, let's dive in.
 
 - Overall difficulty for me (From 1-10 stars): ★★★★★★★☆☆☆
 
