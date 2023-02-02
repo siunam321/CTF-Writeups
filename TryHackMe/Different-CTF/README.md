@@ -772,7 +772,7 @@ We can do a port forwarding in SSH, and then brute force it via `hydra`.
 
 **We can also brute force it via `sucrack`!**
 
-> sucrack is a multithreaded Linux/UNIX tool for cracking local user accounts via wordlist bruteforcing su. This tool comes in handy when you’ve gained access to a low-privilege user account but are allowed to su to other users. Many su implementations require a pseudo terminal to be attached in order to take the password from the user. This can’t be easily achieved with a simple shell script. This tool, written in C, is highly efficient and can attempt multiple logins at the same time.
+> `sucrack` is a multithreaded Linux/UNIX tool for cracking local user accounts via wordlist bruteforcing su. This tool comes in handy when you’ve gained access to a low-privilege user account but are allowed to su to other users. Many su implementations require a pseudo terminal to be attached in order to take the password from the user. This can’t be easily achieved with a simple shell script. This tool, written in C, is highly efficient and can attempt multiple logins at the same time.
 
 - Clone `sucrack` [repository](https://github.com/hemp3l/sucrack):
 
@@ -1237,11 +1237,12 @@ THM{Redacted}
 
 What we've learned:
 
-1. Enumerating SMB
-2. Enumerating Hidden Directories and Files via `gobuster`
-3. Exploiting XPath Injection In Login Page
-4. Uploading PHP Webshell Via SMB
-5. Port Forwarding
-6. Password Spraying
-7. Vertical Privilege Escalation Via `vim`
-8. Horizontal Privilege Escalation Via Hijacking Tmux Session
+1. Enumerating Hidden Directories and Files Via `gobuster`
+2. Cracking Steganography Image's Passphrase Via `stegseek`
+3. Enumerating FTP
+4. Enumerating MySQL Databases Via PHPMyAdmin
+5. Cracking Password Hash Via `john`
+6. Uploading Webshell & Modifying File Permission Via `chmod` In FTP
+7. Appending Known Password Prefix To Custom Wordlist
+8. Vertical Privilege Escalation Via Brute Forcing Local User In `su` Via `sucrack`
+9. Reverse Enigneering Linux Binary Via Ghidra
