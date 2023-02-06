@@ -41,6 +41,8 @@ You have access under `frank`, but you want to be `root`! How can you escalate p
 
 ## Service Enumeration
 
+As usual, scan the machine for open ports via `rustscan`!
+
 **Rustscan:**
 ```shell
 ┌[siunam♥earth]-(~/ctf/thm/ctf/Eavesdropper)-[2023.02.06|08:18:02(HKT)]
@@ -59,6 +61,12 @@ PORT   STATE SERVICE REASON  VERSION
 |_ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMV1OD+yqzzQjOiL+6U0m5CsDj25+iLf919tu6AdvvxB
 Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 ```
+
+According to `rustscan` result, we have 1 port is opened:
+
+Open Ports        | Service
+------------------|------------------------
+22                | OpenSSH 8.2p1 Ubuntu
 
 ## Initial Foothold
 
