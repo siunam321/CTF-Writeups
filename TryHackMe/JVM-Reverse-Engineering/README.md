@@ -8,13 +8,13 @@ Welcome to my another writeup! In this TryHackMe [JVM Reverse Engineering](https
 
 ## Table of Content
 
-1. **[Task 1 - Introduction](#task-1--introduction)**
-2. **[Task 2 - Simple Hello World](#task-2--simple-hello-world)**
-3. **[Task 3 - Cracking a password protected application](#task-3--cracking-a-password-protected-application)**
-4. **[Task 4 - Basic String Obfuscation](#task-4--basic-string-obfuscation)**
-5. **[Task 5 - Advanced bytecode manipulation](#task-5--advanced-bytecode-manipulation)**
-6. **[Task 6 - Advanced String Obfuscation](#task-6--advanced-string-obfuscation)**
-7. **[Task 7 - Extreme Obf](#task-1--extreme-obf)**
+1. **[Task 1 - Introduction](#task-1---introduction)**
+2. **[Task 2 - Simple Hello World](#task-2---simple-hello-world)**
+3. **[Task 3 - Cracking a password protected application](#task-3---cracking-a-password-protected-application)**
+4. **[Task 4 - Basic String Obfuscation](#task-4---basic-string-obfuscation)**
+5. **[Task 5 - Advanced bytecode manipulation](#task-5---advanced-bytecode-manipulation)**
+6. **[Task 6 - Advanced String Obfuscation](#task-6---advanced-string-obfuscation)**
+7. **[Task 7 - Extreme Obf](#task-7---extreme-obf)**
 
 ## Background
 
@@ -868,7 +868,7 @@ public final class c {
   }
 ```
 
-It first check the parameter length is greter or equal to 1 ($1506594314 \oplus 0x59CCCE0B = 1$).
+It first check the parameter length is greter or equal to 1 ( $1506594314 \oplus 0x59CCCE0B = 1$ ).
 
 Then, `str` looks like is the correct password from class `1` method `a`? (`1.a(0, 100)`)
 
