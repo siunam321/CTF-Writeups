@@ -868,7 +868,7 @@ public final class c {
   }
 ```
 
-It first check the parameter length is greter or equal to 1 ( $1506594314 \oplus 0x59CCCE0B = 1$ ).
+It first check the parameter length is greter or equal to 1 ( ${1506594314} \oplus {0x59CCCE0B} = {1}$ ).
 
 Then, `str` looks like is the correct password from class `1` method `a`? (`1.a(0, 100)`)
 
