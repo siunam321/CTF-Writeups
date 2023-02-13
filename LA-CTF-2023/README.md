@@ -1,4 +1,4 @@
-# DiceCTF 2023 Writeups
+# LA CTF 2023 Writeups
 
 > CTFtime event link: [https://ctftime.org/event/1732](https://ctftime.org/event/1732)
 
