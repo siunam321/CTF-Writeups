@@ -16,7 +16,7 @@ I was trying to send a flag to my friend over UDP, one character at a time, but 
 
 ## Find the flag
 
-**In this challenge, we can download a file:**
+**In this challenge, we can download a [file](https://github.com/siunam321/CTF-Writeups/blob/main/LA-CTF-2023/Misc/EBE/EBE.pcap):**
 ```shell
 ┌[siunam♥earth]-(~/ctf/LA-CTF-2023/Misc/EBE)-[2023.02.11|20:20:55(HKT)]
 └> file EBE.pcap     

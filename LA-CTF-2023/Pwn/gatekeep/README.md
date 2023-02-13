@@ -21,6 +21,11 @@ Note: The attached binary is the exact same as the one executing on the remote s
 ## Find the flag
 
 **In this challenge, we can download 3 files:**
+
+- [Dockerfile](https://github.com/siunam321/CTF-Writeups/blob/main/LA-CTF-2023/Pwn/gatekeep/Dockerfile)
+- [gatekeep](https://github.com/siunam321/CTF-Writeups/blob/main/LA-CTF-2023/Pwn/gatekeep/gatekeep)
+- [gatekeep.c](https://github.com/siunam321/CTF-Writeups/blob/main/LA-CTF-2023/Pwn/gatekeep/gatekeep.c)
+
 ```shell
 ┌[siunam♥earth]-(~/ctf/LA-CTF-2023/Pwn/gatekeep)-[2023.02.11|15:48:00(HKT)]
 └> file *                

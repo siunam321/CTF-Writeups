@@ -20,7 +20,7 @@ You can metause our fancy new [metaadmin metabot](https://admin-bot.lac.tf/metav
 
 ## Enumeration
 
-**In this challenge, we can download a file:**
+**In this challenge, we can download a [file](https://github.com/siunam321/CTF-Writeups/blob/main/LA-CTF-2023/Web/metaverse/index.js):**
 ```shell
 ┌[siunam♥earth]-(~/ctf/LA-CTF-2023/Web/metaverse)-[2023.02.11|12:21:45(HKT)]
 └> file index.js

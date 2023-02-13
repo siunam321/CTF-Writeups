@@ -20,7 +20,7 @@ Note: The attached binary is the exact same as the one executing on the remote s
 
 ## Find the flag
 
-**In this challenge, we can download a file:**
+**In this challenge, we can download a [file](https://github.com/siunam321/CTF-Writeups/blob/main/LA-CTF-2023/Rev/caterpillar/string_cheese):**
 ```shell
 ┌[siunam♥earth]-(~/ctf/LA-CTF-2023/Rev/string-cheese)-[2023.02.11|15:36:34(HKT)]
 └> file string_cheese 
