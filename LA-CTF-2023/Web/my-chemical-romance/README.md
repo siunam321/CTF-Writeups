@@ -329,6 +329,83 @@ I think this could happened is because the web server is hosting the latest vers
 
 However, I still wasn't able to retrieve the `gerard_way2001.py`...
 
+## After the CTF
+
+***After the CTF has finished, I review my `hg clone` error output:***
+```shell
+┌[siunam♥earth]-(~/ctf/LA-CTF-2023/Web/my-chemical-romance)-[2023.02.12|16:27:08(HKT)]
+└> hg clone https://my-chemical-romance.lac.tf/
+abort: empty destination path is not valid
+```
+
+Wait... "empty destination path"??? Did I just miss that for the entire CTF?!!
+
+**Umm...**
+```shell
+┌[siunam♥earth]-(~/ctf/LA-CTF-2023/Web/my-chemical-romance/after)-[2023.02.13|16:40:26(HKT)]
+└> hg clone https://my-chemical-romance.lac.tf/ mcr 
+requesting all changes
+malformed line in .hg/bookmarks: '<!DOCTYPE html>'
+malformed line in .hg/bookmarks: '<html>'
+malformed line in .hg/bookmarks: '<head>'
+malformed line in .hg/bookmarks: '<title>My Favorite Band: My Chemical Romance</title>'
+malformed line in .hg/bookmarks: '<link rel="stylesheet" href="/index.css">'
+malformed line in .hg/bookmarks: '</head>'
+malformed line in .hg/bookmarks: '<body>'
+malformed line in .hg/bookmarks: '<div class="content">'
+malformed line in .hg/bookmarks: '<h1>Error 404: Page Not Found</h1>'
+malformed line in .hg/bookmarks: '<img src="/mcr-meme.jpeg">'
+malformed line in .hg/bookmarks: '</div>'
+malformed line in .hg/bookmarks: '</body>'
+malformed line in .hg/bookmarks: '</html>'
+adding changesets
+adding manifests
+adding file changes
+added 2 changesets with 8 changes to 6 files
+new changesets 2445227b04cd:3ecb3a79e255
+updating to branch default
+6 files updated, 0 files merged, 0 files removed, 0 files unresolved
+┌[siunam♥earth]-(~/ctf/LA-CTF-2023/Web/my-chemical-romance/after)-[2023.02.13|16:46:56(HKT)]
+└> ls -lah mcr 
+total 20K
+drwxr-xr-x 4 siunam nam 4.0K Feb 13 16:40 .
+drwxr-xr-x 3 siunam nam 4.0K Feb 13 16:40 ..
+-rw-r--r-- 1 siunam nam  420 Feb 13 16:40 gerard_way2001.py
+drwxr-xr-x 5 siunam nam 4.0K Feb 13 16:40 .hg
+drwxr-xr-x 2 siunam nam 4.0K Feb 13 16:40 static
+```
+
+Gosh darn it!
+
+**Anyway, we should able to get the flag by using `checkout`:**
+```shell
+┌[siunam♥earth]-(~/ctf/LA-CTF-2023/Web/my-chemical-romance/after)-[2023.02.13|16:47:31(HKT)]
+└> cd mcr                    
+┌[siunam♥earth]-(~/ctf/LA-CTF-2023/Web/my-chemical-romance/after/mcr)-[2023.02.13|16:47:36(HKT)]
+└> hg checkout 2445227b04cd                        
+2 files updated, 0 files merged, 0 files removed, 0 files unresolved
+┌[siunam♥earth]-(~/ctf/LA-CTF-2023/Web/my-chemical-romance/after/mcr)-[2023.02.13|16:47:41(HKT)]
+└> ls -lah    
+total 20K
+drwxr-xr-x 4 siunam nam 4.0K Feb 13 16:47 .
+drwxr-xr-x 3 siunam nam 4.0K Feb 13 16:40 ..
+-rw-r--r-- 1 siunam nam  469 Feb 13 16:47 gerard_way2001.py
+drwxr-xr-x 5 siunam nam 4.0K Feb 13 16:47 .hg
+drwxr-xr-x 2 siunam nam 4.0K Feb 13 16:47 static
+┌[siunam♥earth]-(~/ctf/LA-CTF-2023/Web/my-chemical-romance/after/mcr)-[2023.02.13|16:47:43(HKT)]
+└> cat gerard_way2001.py    
+from flask import Flask, send_from_directory, Response
+
+app = Flask(__name__)
+
+# FLAG: lactf{d0nT_6r1nk_m3rCur1al_fr0m_8_f1aSk}
+[...]
+```
+
+We found the flag!
+
+- Flag: `lactf{d0nT_6r1nk_m3rCur1al_fr0m_8_f1aSk}`
+
 # Conclusion
 
 What we've learned:
