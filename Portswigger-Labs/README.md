@@ -213,3 +213,4 @@ Feb 1, 2023   | HTTP Request Smuggling         | Smuggling-7        | Exploiting
 Feb 1, 2023   | HTTP Request Smuggling         | Smuggling-8        | Exploiting HTTP request smuggling to reveal front-end request rewriting
 Feb 1, 2023   | HTTP Request Smuggling         | Smuggling-9        | Exploiting HTTP request smuggling to capture other users' requests
 Feb 1, 2023   | HTTP Request Smuggling         | Smuggling-10       | Exploiting HTTP request smuggling to deliver reflected XSS
+Feb 13, 2023  | HTTP Request Smuggling         | Smuggling-11       | Response queue poisoning via H2.TE request smuggling
