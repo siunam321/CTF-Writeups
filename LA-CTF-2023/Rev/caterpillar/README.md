@@ -16,7 +16,7 @@
 
 ## Find the flag
 
-**In this challenge, we can download a [file](https://github.com/siunam321/CTF-Writeups/raw/main/LA-CTF-2023/Rev/caterpillar/caterpillar.js):**
+**In this challenge, we can download a [file](https://github.com/siunam321/CTF-Writeups/blob/main/LA-CTF-2023/Rev/caterpillar/caterpillar.js):**
 ```shell
 ┌[siunam♥earth]-(~/ctf/LA-CTF-2023/Rev/caterpillar)-[2023.02.11|21:18:56(HKT)]
 └> file caterpillar.js 
