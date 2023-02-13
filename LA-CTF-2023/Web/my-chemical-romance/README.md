@@ -332,6 +332,7 @@ Hmm... The `.hg/store/data/gerard_way2001.py.i` seems like doesn't exist on the 
 Now, this is a really weird quirk in Mercurial SCM.
 
 > From this challenge's author -- bliutech:
+>  
 > ![](https://github.com/siunam321/CTF-Writeups/blob/main/LA-CTF-2023/images/Pasted%20image%2020230213172827.png)
 
 **So the file we had to look for was `.hg/store/data/gerard__way2001.py.i`!**
