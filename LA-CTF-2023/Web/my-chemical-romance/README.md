@@ -67,6 +67,8 @@ Hmm... So, Mercurial SCM is like Git??
 
 **That being said, the website has version control??**
 
+> If you want to read more similar CTF challenge but in Git, you can read one of my HKCERT CTF 2022 challenge writeup: [Back to the Past](https://siunam321.github.io/ctf/HKCERT-CTF-2022/Web/Back-to-the-Past/)
+
 Can we clone that repository?
 
 ```shell
@@ -323,15 +325,46 @@ drwxr-xr-x 3 siunam nam 4.0K Feb 12 20:55 ..
 </html>
 ```
 
-The `.hg/store/data/gerard_way2001.py.i` doesn't exist on the web server!
-
-I think this could happened is because the web server is hosting the latest version of the repository.
-
-However, I still wasn't able to retrieve the `gerard_way2001.py`...
+Hmm... The `.hg/store/data/gerard_way2001.py.i` seems like doesn't exist on the web server??
 
 ## After the CTF
 
-***After the CTF has finished, I review my `hg clone` error output:***
+Now, this is a really weird quirk in Mercurial SCM.
+
+> From this challenge's author -- bliutech:
+> ![](https://github.com/siunam321/CTF-Writeups/blob/main/LA-CTF-2023/images/Pasted%20image%2020230213172827.png)
+
+**So the file we had to look for was `.hg/store/data/gerard__way2001.py.i`!**
+```shell
+┌[siunam♥earth]-(~/ctf/LA-CTF-2023/Web/my-chemical-romance/.hg/store/data)-[2023.02.13|17:17:44(HKT)]
+└> wget https://my-chemical-romance.lac.tf/.hg/store/data/gerard__way2001.py.i
+[...]
+```
+
+**That way, we can finally `checkout` to the first commit:**
+```shell
+┌[siunam♥earth]-(~/ctf/LA-CTF-2023/Web/my-chemical-romance/.hg/store/data)-[2023.02.13|17:22:21(HKT)]
+└> hg checkout 2445227b04cd
+file 'gerard_way2001.py' was deleted in local [working copy] but was modified in other [destination].
+You can use (c)hanged version, leave (d)eleted, or leave (u)nresolved.
+What do you want to do? c
+updating [====================================================================================>] 2/2 01sfile 'static/index.html' was deleted in local [working copy] but was modified in other [destination].
+You can use (c)hanged version, leave (d)eleted, or leave (u)nresolved.
+What do you want to do? c
+0 files updated, 2 files merged, 0 files removed, 0 files unresolved                                     
+┌[siunam♥earth]-(~/ctf/LA-CTF-2023/Web/my-chemical-romance/.hg/store/data)-[2023.02.13|17:22:56(HKT)]
+└> cat ../../../gerard_way2001.py 
+from flask import Flask, send_from_directory, Response
+
+app = Flask(__name__)
+
+# FLAG: lactf{d0nT_6r1nk_m3rCur1al_fr0m_8_f1aSk}
+[...]
+```
+
+We found the flag!
+
+***After the CTF has finished, I also reviewed my `hg clone` error output:***
 ```shell
 ┌[siunam♥earth]-(~/ctf/LA-CTF-2023/Web/my-chemical-romance)-[2023.02.12|16:27:08(HKT)]
 └> hg clone https://my-chemical-romance.lac.tf/
