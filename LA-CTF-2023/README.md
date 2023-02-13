@@ -2,7 +2,7 @@
 
 > CTFtime event link: [https://ctftime.org/event/1732](https://ctftime.org/event/1732)
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/LA-CTF-2023/images/banner.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/LA-CTF-2023/images/banner.gif)
 
 ## Background
 
@@ -33,16 +33,16 @@ LA CTF is an annual Capture the Flag (CTF) cybersecurity competition hosted by A
 ## What I've learned in this CTF
 
 - Web:
-1. Information Gathering Via View Source Page ([college-tour](https://siunam321.github.io/ctf/LA-CTF-2023/Web/college-tour/README.md))
-2. Leveraging Stored XSS To Perform CSRF attack ([metaverse](https://siunam321.github.io/ctf/LA-CTF-2023/Web/metaverse/README.md))
-3. Predicting UUID Version 1 Via Known Nodes & Clock Sequence ([uuid-hell](https://siunam321.github.io/ctf/LA-CTF-2023/Web/uuid-hell/README.md))
-4. Leaking Mercurial SCM Repository In An Web Application ([my-chemical-romance](https://siunam321.github.io/ctf/LA-CTF-2023/Web/my-chemical-romance/README.md)) ***(Unsolved)***
-5. [california-state-police](https://siunam321.github.io/ctf/LA-CTF-2023/Web/california-state-police/README.md) ***(Unsolved)***
+1. Information Gathering Via View Source Page ([college-tour](https://github.com/siunam321/CTF-Writeups/blob/main/LA-CTF-2023/Web/college-tour/README.md))
+2. Leveraging Stored XSS To Perform CSRF attack ([metaverse](https://github.com/siunam321/CTF-Writeups/blob/main/LA-CTF-2023/Web/metaverse/README.md))
+3. Predicting UUID Version 1 Via Known Nodes & Clock Sequence ([uuid-hell](https://github.com/siunam321/CTF-Writeups/blob/main/LA-CTF-2023/Web/uuid-hell/README.md))
+4. Leaking Mercurial SCM Repository In An Web Application ([my-chemical-romance](https://github.com/siunam321/CTF-Writeups/blob/main/LA-CTF-2023/Web/my-chemical-romance/README.md)) ***(Unsolved)***
+5. [california-state-police](https://github.com/siunam321/CTF-Writeups/blob/main/LA-CTF-2023/Web/california-state-police/README.md) ***(Unsolved)***
 - Misc:
-1. View Image Metadata Via `exiftool` ([CATS!](https://siunam321.github.io/ctf/LA-CTF-2023/Misc/CATS!/README.md))
-2. Extracting Evil Bit's Hidden Data ([EBE](https://siunam321.github.io/ctf/LA-CTF-2023/Misc/EBE/README.md))
+1. View Image Metadata Via `exiftool` ([CATS!](https://github.com/siunam321/CTF-Writeups/blob/main/LA-CTF-2023/Misc/CATS!/README.md))
+2. Extracting Evil Bit's Hidden Data ([EBE](https://github.com/siunam321/CTF-Writeups/blob/main/LA-CTF-2023/Misc/EBE/README.md))
 - Rev:
-1. Using `strings` & `ltrace` To Extract Hidden String ([string-cheese](https://siunam321.github.io/ctf/LA-CTF-2023/Rev/string-cheese/README.md))
-2. Reversing Obfuscated JavaScript Code ([caterpillar](https://siunam321.github.io/ctf/LA-CTF-2023/Rev/caterpillar/README.md))
+1. Using `strings` & `ltrace` To Extract Hidden String ([string-cheese](https://github.com/siunam321/CTF-Writeups/blob/main/LA-CTF-2023/Rev/string-cheese/README.md))
+2. Reversing Obfuscated JavaScript Code ([caterpillar](https://github.com/siunam321/CTF-Writeups/blob/main/LA-CTF-2023/Rev/caterpillar/README.md))
 - Pwn:
-1. Buffer Overflow Via Dangerous `gets()` Function ([gatekeep](https://siunam321.github.io/ctf/LA-CTF-2023/Pwn/gatekeep/README.md))
+1. Buffer Overflow Via Dangerous `gets()` Function ([gatekeep](https://github.com/siunam321/CTF-Writeups/blob/main/LA-CTF-2023/Pwn/gatekeep/README.md))
