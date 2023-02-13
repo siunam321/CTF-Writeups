@@ -18,7 +18,7 @@ Answer is the domain of the website for this location. For example, if the answe
 
 ## Find the flag
 
-**In this challenge, we can download a jpeg [file](https://github.com/siunam321/CTF-Writeups/blob/main/LA-CTF-2023/Misc/CATS!/CATS.jpeg):**
+**In this challenge, we can download a jpeg [file](https://github.com/siunam321/CTF-Writeups/raw/main/LA-CTF-2023/Misc/CATS!/CATS.jpeg):**
 ```shell
 ┌[siunam♥earth]-(~/ctf/LA-CTF-2023/Misc/CAT!)-[2023.02.11|12:15:00(HKT)]
 └> file CATS.jpeg 

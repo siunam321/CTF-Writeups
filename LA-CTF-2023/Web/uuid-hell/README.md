@@ -16,7 +16,7 @@ Site: [uuid-hell.lac.tf](https://uuid-hell.lac.tf)
 
 ## Enumeration
 
-**In this challenge, we can download a [file](https://github.com/siunam321/CTF-Writeups/blob/main/LA-CTF-2023/Web/uuid-hell/uuid-hell.zip):**
+**In this challenge, we can download a [file](https://github.com/siunam321/CTF-Writeups/raw/main/LA-CTF-2023/Web/uuid-hell/uuid-hell.zip):**
 ```shell
 ┌[siunam♥earth]-(~/ctf/LA-CTF-2023/Web/uuid-hell)-[2023.02.11|16:55:39(HKT)]
 └> file uuid-hell.zip 

@@ -20,7 +20,7 @@ Stop! You're under arrest for making suggestive 3 letter acronyms!
 
 ## Enumeration
 
-**In this challenge, we can download a [file](https://github.com/siunam321/CTF-Writeups/blob/main/LA-CTF-2023/Web/california-state-police/index.js):**
+**In this challenge, we can download a [file](https://github.com/siunam321/CTF-Writeups/raw/main/LA-CTF-2023/Web/california-state-police/index.js):**
 ```shell
 ┌[siunam♥earth]-(~/ctf/LA-CTF-2023/Web/california-state-police)-[2023.02.12|15:36:12(HKT)]
 └> file index.js 
