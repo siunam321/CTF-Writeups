@@ -216,3 +216,4 @@ Feb 1, 2023   | HTTP Request Smuggling         | Smuggling-10       | Exploiting
 Feb 13, 2023  | HTTP Request Smuggling         | Smuggling-11       | Response queue poisoning via H2.TE request smuggling
 Feb 14, 2023  | HTTP Request Smuggling         | Smuggling-12       | H2.CL request smuggling
 Feb 15, 2023  | HTTP Request Smuggling         | Smuggling-13       | HTTP/2 request smuggling via CRLF injection
+Feb 15, 2023  | HTTP Request Smuggling         | Smuggling-14       | HTTP/2 request splitting via CRLF injection
