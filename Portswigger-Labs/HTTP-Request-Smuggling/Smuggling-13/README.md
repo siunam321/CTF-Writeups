@@ -104,7 +104,7 @@ This discrepancy doesn't exist with the handling of a full CRLF (`\r\n`) sequenc
 
 On the other hand, as HTTP/2 messages are binary rather than text-based, the boundaries of each header are based on explicit, predetermined offsets rather than delimiter characters. This means that `\r\n` no longer has any special significance within a header value and, therefore, can be included **inside** the value itself without causing the header to be split:
 
-`foo``bar\r\nTransfer-Encoding: chunked`
+`foo` `bar\r\nTransfer-Encoding: chunked`
 
 This may seem relatively harmless on its own, but when this is rewritten as an HTTP/1 request, the `\r\n` will once again be interpreted as a header delimiter. As a result, an HTTP/1 back-end server would see two distinct headers:
 
@@ -147,7 +147,7 @@ Burp Suite HTTP history:
 
 When we clicked the "Search" button, **it'll send a POST request to `/`, with parameter `search`.**
 
-***Most importantly, it's stored in our session!***
+***Most importantly, it's tied to our session!***
 
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/HTTP-Request-Smuggling/Smuggling-13/images/Pasted%20image%2020230215145004.png)
 
