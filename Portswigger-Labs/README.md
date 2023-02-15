@@ -217,3 +217,4 @@ Feb 13, 2023  | HTTP Request Smuggling         | Smuggling-11       | Response q
 Feb 14, 2023  | HTTP Request Smuggling         | Smuggling-12       | H2.CL request smuggling
 Feb 15, 2023  | HTTP Request Smuggling         | Smuggling-13       | HTTP/2 request smuggling via CRLF injection
 Feb 15, 2023  | HTTP Request Smuggling         | Smuggling-14       | HTTP/2 request splitting via CRLF injection
+Feb 15, 2023  | HTTP Request Smuggling         | Smuggling-15       | CL.0 request smuggling
