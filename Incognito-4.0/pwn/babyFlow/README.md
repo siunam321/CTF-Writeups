@@ -6,11 +6,11 @@
 
 ## Background
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Icognito-4.0/images/Pasted%20image%2020230218143755.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Incognito-4.0/images/Pasted%20image%2020230218143755.png)
 
 ## Enumeration
 
-**In this challenge, we can download a [file](https://github.com/siunam321/CTF-Writeups/blob/main/Icognito-4.0/pwn/babyFlow/babyFlow):**
+**In this challenge, we can download a [file](https://github.com/siunam321/CTF-Writeups/blob/main/Incognito-4.0/pwn/babyFlow/babyFlow):**
 ```shell
 ┌[siunam♥earth]-(~/ctf/Incognito-4.0/pwn/babyFlow)-[2023.02.18|14:37:24(HKT)]
 └> file babyFlow 
@@ -103,7 +103,7 @@ However, ***the `gets()` function is very, very dangerous, and vulnerable to buf
 
 **In the [Linux man page](https://man7.org/linux/man-pages/man3/gets.3.html), it said:**
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Icognito-4.0/images/Pasted%20image%2020230218144742.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Incognito-4.0/images/Pasted%20image%2020230218144742.png)
 
 That being said, the `gets()` function is the source (Attacker's controllable input).
 

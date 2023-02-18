@@ -6,11 +6,11 @@
 
 ## Background
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Icognito-4.0/images/Pasted%20image%2020230217230017.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Incognito-4.0/images/Pasted%20image%2020230217230017.png)
 
 ## Find the flag
 
-**In this challenge, we can download a [file](https://github.com/siunam321/CTF-Writeups/blob/main/Icognito-4.0/crypto/Ancient/challenge.png):**
+**In this challenge, we can download a [file](https://github.com/siunam321/CTF-Writeups/blob/main/Incognito-4.0/crypto/Ancient/challenge.png):**
 ```shell
 ┌[siunam♥earth]-(~/ctf/Incognito-4.0/Crypto/Ancient)-[2023.02.17|23:00:30(HKT)]
 └> file challenge.png   
@@ -21,7 +21,7 @@ Which should be a `png` image file.
 
 **However, when we open it:**
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Icognito-4.0/images/Pasted%20image%2020230217230105.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Incognito-4.0/images/Pasted%20image%2020230217230105.png)
 
 It said it's broken!
 
@@ -38,17 +38,17 @@ iCCPICC profile
 
 Let's google that:
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Icognito-4.0/images/Pasted%20image%2020230217230227.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Incognito-4.0/images/Pasted%20image%2020230217230227.png)
 
 Right off the bat, we found another [CTF's writeup](https://github.com/UConnSec/CyberSEED-2016-Writeups/blob/master/Missing%20Flag%20%231.md):
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Icognito-4.0/images/Pasted%20image%2020230217230259.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Incognito-4.0/images/Pasted%20image%2020230217230259.png)
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Icognito-4.0/images/Pasted%20image%2020230217230313.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Incognito-4.0/images/Pasted%20image%2020230217230313.png)
 
 [Wikipedia's magic headers](https://en.wikipedia.org/wiki/List_of_file_signatures):
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Icognito-4.0/images/Pasted%20image%2020230217230557.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Incognito-4.0/images/Pasted%20image%2020230217230557.png)
 
 **So, the `challenge.png` is missing the PNG's magic header?**
 ```shell
@@ -61,7 +61,7 @@ In our case, it's missing the first 6 bytes: `89 50 4E 47 0D 0A`.
 
 **To fix that image, we can use `hexeditor` to modify the raw bytes:**
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Icognito-4.0/images/Pasted%20image%2020230217230708.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Incognito-4.0/images/Pasted%20image%2020230217230708.png)
 
 ```shell
 ┌[siunam♥earth]-(~/ctf/Incognito-4.0/Crypto/Ancient)-[2023.02.17|23:05:08(HKT)]
@@ -73,13 +73,13 @@ It's an image now!
 
 **challenge.png:**
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Icognito-4.0/images/Pasted%20image%2020230217230730.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Incognito-4.0/images/Pasted%20image%2020230217230730.png)
 
 Hmm... I've no clue what is it...
 
 Let's upload that image:
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Icognito-4.0/images/Pasted%20image%2020230218153702.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Incognito-4.0/images/Pasted%20image%2020230218153702.png)
 
 Cistercian numerals??
 
@@ -87,15 +87,15 @@ Cistercian numerals??
 
 **[This website](https://omniglot.com/language/numbers/cistercian-numbers.htm) explained how Cistercian Number System looks like:**
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Icognito-4.0/images/Pasted%20image%2020230218153814.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Incognito-4.0/images/Pasted%20image%2020230218153814.png)
 
 **After that, I watched Numberphile's [video](https://www.youtube.com/watch?v=9p55Qgt7Ciw) about Cistercian Number System:**
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Icognito-4.0/images/Pasted%20image%2020230218154855.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Incognito-4.0/images/Pasted%20image%2020230218154855.png)
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Icognito-4.0/images/Pasted%20image%2020230218155043.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Incognito-4.0/images/Pasted%20image%2020230218155043.png)
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Icognito-4.0/images/Pasted%20image%2020230218154915.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Incognito-4.0/images/Pasted%20image%2020230218154915.png)
 
 **Armed with above information, we can find all the Cistercian numbers in decimal:**
 

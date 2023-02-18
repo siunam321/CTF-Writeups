@@ -6,13 +6,13 @@
 
 ## Background
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Icognito-4.0/images/Pasted%20image%2020230217212322.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Incognito-4.0/images/Pasted%20image%2020230217212322.png)
 
 ## Enumeration
 
 **Home page:**
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Icognito-4.0/images/Pasted%20image%2020230217212337.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Incognito-4.0/images/Pasted%20image%2020230217212337.png)
 
 In here, we can register an account and check email.
 
@@ -54,21 +54,21 @@ When we clicked on the "Check Email" account, it'll send a GET request to `/chec
 
 Let's try to register an account!
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Icognito-4.0/images/Pasted%20image%2020230217212637.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Incognito-4.0/images/Pasted%20image%2020230217212637.png)
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Icognito-4.0/images/Pasted%20image%2020230217212643.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Incognito-4.0/images/Pasted%20image%2020230217212643.png)
 
 **Then, we can go to `/login` to login:**
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Icognito-4.0/images/Pasted%20image%2020230217212704.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Incognito-4.0/images/Pasted%20image%2020230217212704.png)
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Icognito-4.0/images/Pasted%20image%2020230217212708.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Incognito-4.0/images/Pasted%20image%2020230217212708.png)
 
 **After that, we can go to `/` to test the check email function:**
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Icognito-4.0/images/Pasted%20image%2020230217212740.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Incognito-4.0/images/Pasted%20image%2020230217212740.png)
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Icognito-4.0/images/Pasted%20image%2020230217212747.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Incognito-4.0/images/Pasted%20image%2020230217212747.png)
 
 **It returns a JSON data!**
 ```json
@@ -84,13 +84,13 @@ Hmm... It seems like our goal is to let the `isAdmin`'s value to `true`?
 
 **Now, we can try to do SQL injection to perform authenication bypass:**
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Icognito-4.0/images/Pasted%20image%2020230217214204.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Incognito-4.0/images/Pasted%20image%2020230217214204.png)
 
 However, it'll be blocked by the client-side filter in `<input type="email">` .
 
 **To bypass that, we can simply use Burp Suite's Repeater:**
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Icognito-4.0/images/Pasted%20image%2020230217214320.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Incognito-4.0/images/Pasted%20image%2020230217214320.png)
 
 It seems like it doesn't vulnerable to SQL injection?
 
@@ -112,7 +112,7 @@ However, I tried to inject SQL payloads, but they couldn't work...
 
 After fumbling around, I found the login page is indeed vulnerable to ***NoSQL injection***:
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Icognito-4.0/images/Pasted%20image%2020230218180308.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Incognito-4.0/images/Pasted%20image%2020230218180308.png)
 
 ***That being said, the back-end is using some NoSQL DBMS (Database Management System) like MongoDB!***
 

@@ -6,11 +6,11 @@
 
 ## Background
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Icognito-4.0/images/Pasted%20image%2020230217203857.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Incognito-4.0/images/Pasted%20image%2020230217203857.png)
 
 ## Enumeration
 
-**In this challenge, we can download a [file](https://github.com/siunam321/CTF-Writeups/blob/main/Icognito-4.0/Rev/Meow/meow):**
+**In this challenge, we can download a [file](https://github.com/siunam321/CTF-Writeups/blob/main/Incognito-4.0/Rev/Meow/meow):**
 ```shell
 ┌[siunam♥earth]-(~/ctf/Incognito-4.0/Rev/Meow)-[2023.02.17|20:38:40(HKT)]
 └> file meow                     

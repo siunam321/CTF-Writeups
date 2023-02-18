@@ -6,7 +6,7 @@
 
 ## Background
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Icognito-4.0/images/Pasted%20image%2020230218142849.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Incognito-4.0/images/Pasted%20image%2020230218142849.png)
 
 ## Escape the jail
 
