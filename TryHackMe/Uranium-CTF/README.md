@@ -598,7 +598,7 @@ kral4@uranium:~$ cat /home/kral4/user_2.txt
 thm{Redacted}
 ```
 
-### kral4 to web
+### kral4 to root
 
 **According to the enumeration result in user `hakanbey` session, we found `/bin/dd` binary has a SUID sticky bit, and it's owned by user `web`:**
 ```shell
