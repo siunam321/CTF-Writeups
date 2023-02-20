@@ -12,7 +12,7 @@
 
 ## Enumeration
 
-**In this challenge, we can download a file:**
+**In this challenge, we can download a [file](https://github.com/siunam321/CTF-Writeups/blob/main/pbctf-2023/Web/Makima/dist.zip):**
 ```shell
 ┌[siunam♥earth]-(~/ctf/pbctf-2023/Web/Makima)-[2023.02.19|09:30:35(HKT)]
 └> file dist.zip    

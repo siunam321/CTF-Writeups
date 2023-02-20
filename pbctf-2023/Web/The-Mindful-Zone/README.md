@@ -14,7 +14,7 @@ The translated Latin is: "Who watches the watchers?"
 
 ## Enumeration
 
-**In this challenge, we can download a file:**
+**In this challenge, we can download a [file](https://github.com/siunam321/CTF-Writeups/blob/main/pbctf-2023/Web/The-Mindful-Zone/handoout.zip):**
 ```shell
 ┌[siunam♥earth]-(~/ctf/pbctf-2023/Web/The-Mindful-Zone)-[2023.02.18|22:05:40(HKT)]
 └> file handout.zip              
