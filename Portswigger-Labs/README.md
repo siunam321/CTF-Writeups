@@ -193,6 +193,7 @@ Jan 22, 2023  | Prototype Pollution            | Prototype-5        | Client-sid
 Feb 22, 2023  | Prototype Pollution            | Prototype-6        | Privilege escalation via server-side prototype pollution
 Feb 22, 2023  | Prototype Pollution            | Prototype-7        | Detecting server-side prototype pollution without polluted property reflection
 Feb 22, 2023  | Prototype Pollution            | Prototype-8        | Bypassing flawed input filters for server-side prototype pollution
+Feb 22, 2023  | Prototype Pollution            | Prototype-9        | Remote code execution via server-side prototype pollution
 Jan 22, 2023  | Web Cache Poisoning            | Cache-1            | Web cache poisoning with an unkeyed header
 Jan 23, 2023  | Web Cache Poisoning            | Cache-2            | Web cache poisoning with an unkeyed cookie
 Jan 23, 2023  | Web Cache Poisoning            | Cache-3            | Web cache poisoning with multiple headers
