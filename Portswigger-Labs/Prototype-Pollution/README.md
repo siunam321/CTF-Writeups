@@ -9,3 +9,4 @@ Jan 22, 2023  | Prototype Pollution            | Prototype-4        | Client-sid
 Jan 22, 2023  | Prototype Pollution            | Prototype-5        | Client-side prototype pollution via flawed sanitization
 Feb 22, 2023  | Prototype Pollution            | Prototype-6        | Privilege escalation via server-side prototype pollution
 Feb 22, 2023  | Prototype Pollution            | Prototype-7        | Detecting server-side prototype pollution without polluted property reflection
+Feb 22, 2023  | Prototype Pollution            | Prototype-8        | Bypassing flawed input filters for server-side prototype pollution
