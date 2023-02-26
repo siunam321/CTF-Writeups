@@ -228,3 +228,4 @@ Feb 25, 2023  | HTTP Request Smuggling         | Smuggling-18       | Bypassing 
 Feb 26, 2023  | HTTP Request Smuggling         | Smuggling-19       | Web cache poisoning via HTTP/2 request tunnelling
 Feb 26, 2023  | HTTP Request Smuggling         | Smuggling-20       | Client-side desync
 Feb 26, 2023  | HTTP Request Smuggling         | Smuggling-21       | Browser cache poisoning via client-side desync
+Feb 26, 2023  | HTTP Request Smuggling         | Smuggling-22       | Server-side pause-based request smuggling
