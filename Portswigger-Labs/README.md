@@ -226,3 +226,4 @@ Feb 24, 2023  | HTTP Request Smuggling         | Smuggling-16       | Exploiting
 Feb 24, 2023  | HTTP Request Smuggling         | Smuggling-17       | Exploiting HTTP request smuggling to perform web cache deception
 Feb 25, 2023  | HTTP Request Smuggling         | Smuggling-18       | Bypassing access controls via HTTP/2 request tunnelling
 Feb 26, 2023  | HTTP Request Smuggling         | Smuggling-19       | Web cache poisoning via HTTP/2 request tunnelling
+Feb 26, 2023  | HTTP Request Smuggling         | Smuggling-20       | Client-side desync
