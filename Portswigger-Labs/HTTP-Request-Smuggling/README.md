@@ -20,3 +20,4 @@ Feb 15, 2023  | HTTP Request Smuggling         | Smuggling-15       | CL.0 reque
 Feb 24, 2023  | HTTP Request Smuggling         | Smuggling-16       | Exploiting HTTP request smuggling to perform web cache poisoning
 Feb 24, 2023  | HTTP Request Smuggling         | Smuggling-17       | Exploiting HTTP request smuggling to perform web cache deception
 Feb 25, 2023  | HTTP Request Smuggling         | Smuggling-18       | Bypassing access controls via HTTP/2 request tunnelling
+Feb 26, 2023  | HTTP Request Smuggling         | Smuggling-19       | Web cache poisoning via HTTP/2 request tunnelling
