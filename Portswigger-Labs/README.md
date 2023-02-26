@@ -224,3 +224,4 @@ Feb 15, 2023  | HTTP Request Smuggling         | Smuggling-14       | HTTP/2 req
 Feb 15, 2023  | HTTP Request Smuggling         | Smuggling-15       | CL.0 request smuggling
 Feb 24, 2023  | HTTP Request Smuggling         | Smuggling-16       | Exploiting HTTP request smuggling to perform web cache poisoning
 Feb 24, 2023  | HTTP Request Smuggling         | Smuggling-17       | Exploiting HTTP request smuggling to perform web cache deception
+Feb 25, 2023  | HTTP Request Smuggling         | Smuggling-18       | Bypassing access controls via HTTP/2 request tunnelling
