@@ -236,3 +236,4 @@ Feb 26, 2023  | HTTP Request Smuggling         | Smuggling-19       | Web cache 
 Feb 26, 2023  | HTTP Request Smuggling         | Smuggling-20       | Client-side desync
 Feb 26, 2023  | HTTP Request Smuggling         | Smuggling-21       | Browser cache poisoning via client-side desync
 Feb 26, 2023  | HTTP Request Smuggling         | Smuggling-22       | Server-side pause-based request smuggling
+Mar 1, 2023   | Essential Skills               | Essential-Skills-1 | Discovering vulnerabilities quickly with targeted scanning
