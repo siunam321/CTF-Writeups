@@ -94,6 +94,7 @@ Dec 23, 2022  | OS Command Injection           | OSCI-1             | OS command
 Dec 23, 2022  | OS Command Injection           | OSCI-2             | Blind OS command injection with time delays
 Dec 23, 2022  | OS Command Injection           | OSCI-3             | Blind OS command injection with output redirection
 Mar 1, 2023   | OS Command Injection           | OSCI-4             | Blind OS command injection with out-of-band interaction
+Mar 1, 2023   | OS Command Injection           | OSCI-5             | Blind OS command injection with out-of-band data exfiltration
 Dec 23, 2022  | Server-Side Template Injection | SSTI-1             | Basic server-side template injection
 Dec 23, 2022  | Server-Side Template Injection | SSTI-2             | Basic server-side template injection (code context)
 Dec 23, 2022  | Server-Side Template Injection | SSTI-3             | Server-side template injection using documentation
