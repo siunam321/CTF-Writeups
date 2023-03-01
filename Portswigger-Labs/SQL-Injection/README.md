@@ -16,4 +16,5 @@ Dec 6, 2022   | SQL Injection | SQLi-11        | Blind SQL injection with condit
 Dec 7, 2022   | SQL Injection | SQLi-12        | Blind SQL injection with conditional errors
 Dec 9, 2022   | SQL Injection | SQLi-13        | Blind SQL injection with time delays
 Dec 8, 2022   | SQL Injection | SQLi-14        | Blind SQL injection with time delays and information retrieval
+Mar 1, 2023   | SQL Injection | SQLi-15        | Blind SQL injection with out-of-band interaction
 Dec 11, 2022  | SQL Injection | SQLi-17        | SQL injection with filter bypass via XML encoding	
