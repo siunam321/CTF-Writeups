@@ -108,6 +108,7 @@ Dec 24, 2022  | Server-Side Request Forgery    | SSRF-3             | SSRF with 
 Dec 24, 2022  | Server-Side Request Forgery    | SSRF-4             | SSRF with filter bypass via open redirection vulnerability
 Mar 1, 2023   | Server-Side Request Forgery    | SSRF-5             | Blind SSRF with out-of-band detection
 Dec 24, 2022  | Server-Side Request Forgery    | SSRF-6             | SSRF with whitelist-based input filter
+Mar 1, 2023   | Server-Side Request Forgery    | SSRF-7             | Blind SSRF with Shellshock exploitation
 Dec 25, 2022  | XXE Injection                  | XXE-1              | Exploiting XXE using external entities to retrieve files
 Dec 25, 2022  | XXE Injection                  | XXE-2              | Exploiting XXE to perform SSRF attacks
 Mar 1, 2023   | XXE Injection                  | XXE-3              | Blind XXE with out-of-band interaction
