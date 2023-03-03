@@ -7,3 +7,4 @@ Mar 3, 2023   | Web Exploitation               | Cookies
 Mar 3, 2023   | Web Exploitation               | Insp3ct0r
 Mar 3, 2023   | Web Exploitation               | Scavenger Hunt
 Mar 3, 2023   | Web Exploitation               | where are the robots
+Mar 3, 2023   | Web Exploitation               | logon
