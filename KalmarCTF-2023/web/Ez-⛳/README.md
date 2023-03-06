@@ -4,6 +4,8 @@
 
 - Overall difficulty for me (From 1-10 stars): ★★★★★★★★★★
 
+- 158 solves / 100 points
+
 ## Background
 
 Heard 'bout that new 🏌️-webserver? Apparently HTTPS just works(!), but seems like _someone_ managed to screw up the setup, woops. The flag.txt is deleted until I figure out that HTTPS and PHP stuff \#hacker-proof

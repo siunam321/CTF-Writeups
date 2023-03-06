@@ -4,6 +4,8 @@
 
 - Overall difficulty for me (From 1-10 stars): ★★★★★★★★★★
 
+- 394 solves / 100 points
+
 ## Background
 
 UDP - UNRELIABLE datagram protocol.
