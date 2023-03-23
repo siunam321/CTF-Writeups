@@ -64,7 +64,7 @@ Join, compete, meet, and learn from the best hackers in the world. Prizes for a 
 4. Leveraging GraphQL To Update Arbitrary User's Password ([Passman](https://github.com/siunam321/CTF-Writeups/blob/main/Cyber-Apocalypse-2023/Web/Passman/README.md))
 5. Exploiting Error-Based/Time-Based SQL Injection ([Orbital](https://github.com/siunam321/CTF-Writeups/blob/main/Cyber-Apocalypse-2023/Web/Orbital/README.md))
 6. JWT Header's `"alg": "NONE"` Authentication Bypass & RCE Via JsRender SSTI ([Didactic Octo Paddles](https://github.com/siunam321/CTF-Writeups/blob/main/Cyber-Apocalypse-2023/Web/Didactic-Octo-Paddles/README.md))
-7. SpyBug ***(Unsolved)***
+7. [SpyBug](https://github.com/siunam321/CTF-Writeups/blob/main/Cyber-Apocalypse-2023/Web/SpyBug/README.md) ***(Unsolved)***
 
 - Pwn:
 1. How To Use `nc` (NetCat) ([Initialise Connection](https://github.com/siunam321/CTF-Writeups/blob/main/Cyber-Apocalypse-2023/Pwn/Initialise-Connection/README.md))

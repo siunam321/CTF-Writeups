@@ -364,7 +364,7 @@ In that blog, it has a JsRender SSTI RCE payload.
 
 > **_“JsRender_** _is a light-weight but powerful templating engine, highly extensible, and optimized for high-performance rendering, without DOM dependency. It is designed for use in the browser or on Node.js, with or without jQuery._
 >   
->[_JsRender_](https://github.com/BorisMoore/jsrender) _and_ [_JsViews_](https://github.com/BorisMoore/jsviews) _together provide the next-generation implementation of the official jQuery plugins_ [_JQuery Templates_](https://github.com/BorisMoore/jquery-tmpl)_, and_ [_JQuery Data Link_](https://github.com/BorisMoore/jquery-datalink) _— and supersede those libraries.__“_
+> [_JsRender_](https://github.com/BorisMoore/jsrender) _and_ [_JsViews_](https://github.com/BorisMoore/jsviews) _together provide the next-generation implementation of the official jQuery plugins_ [_JQuery Templates_](https://github.com/BorisMoore/jquery-tmpl)_, and_ [_JQuery Data Link_](https://github.com/BorisMoore/jquery-datalink) _— and supersede those libraries.“_
 
 > Templating engines such as JsRender allow the developer to create a static template to render a HTML page and embed dynamic data using Template Expressions. Typically, templating engines use a variation of the curly braces closure syntax to embed dynamic data, in JsRender the “evaluate” tag can be used to render the result of a JavaScript expression.
 >  
