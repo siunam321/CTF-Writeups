@@ -58,24 +58,24 @@ Join, compete, meet, and learn from the best hackers in the world. Prizes for a 
 ## What I've learned in this CTF
 
 - Web:
-1. Viewing Source Page ([Trapped Source](https://github.com/siunam321/CTF-Writeups/blob/main/Cyber-Apocalypse-2023/Web/Trapped-Source/README.md))
-2. OS Command Injection ([Gunhead](https://github.com/siunam321/CTF-Writeups/blob/main/Cyber-Apocalypse-2023/Web/Gunhead/README.md))
-3. Authentication Bypass Via SQL Injection ([Drobots](https://github.com/siunam321/CTF-Writeups/blob/main/Cyber-Apocalypse-2023/Web/Drobots/README.md))
-4. Leveraging GraphQL To Update Arbitrary User's Password ([Passman](https://github.com/siunam321/CTF-Writeups/blob/main/Cyber-Apocalypse-2023/Web/Passman/README.md))
-5. Exploiting Error-Based/Time-Based SQL Injection ([Orbital](https://github.com/siunam321/CTF-Writeups/blob/main/Cyber-Apocalypse-2023/Web/Orbital/README.md))
-6. JWT Header's `"alg": "NONE"` Authentication Bypass & RCE Via JsRender SSTI ([Didactic Octo Paddles](https://github.com/siunam321/CTF-Writeups/blob/main/Cyber-Apocalypse-2023/Web/Didactic-Octo-Paddles/README.md))
-7. [SpyBug](https://github.com/siunam321/CTF-Writeups/blob/main/Cyber-Apocalypse-2023/Web/SpyBug/README.md) ***(Unsolved)***
+	1. Viewing Source Page ([Trapped Source](https://github.com/siunam321/CTF-Writeups/blob/main/Cyber-Apocalypse-2023/Web/Trapped-Source/README.md))
+	2. OS Command Injection ([Gunhead](https://github.com/siunam321/CTF-Writeups/blob/main/Cyber-Apocalypse-2023/Web/Gunhead/README.md))
+	3. Authentication Bypass Via SQL Injection ([Drobots](https://github.com/siunam321/CTF-Writeups/blob/main/Cyber-Apocalypse-2023/Web/Drobots/README.md))
+	4. Leveraging GraphQL To Update Arbitrary User's Password ([Passman](https://github.com/siunam321/CTF-Writeups/blob/main/Cyber-Apocalypse-2023/Web/Passman/README.md))
+	5. Exploiting Error-Based/Time-Based SQL Injection ([Orbital](https://github.com/siunam321/CTF-Writeups/blob/main/Cyber-Apocalypse-2023/Web/Orbital/README.md))
+	6. JWT Header's `"alg": "NONE"` Authentication Bypass & RCE Via JsRender SSTI ([Didactic Octo Paddles](https://github.com/siunam321/CTF-Writeups/blob/main/Cyber-Apocalypse-2023/Web/Didactic-Octo-Paddles/README.md))
+	7. [SpyBug](https://github.com/siunam321/CTF-Writeups/blob/main/Cyber-Apocalypse-2023/Web/SpyBug/README.md) ***(Unsolved)***
 
 - Pwn:
-1. How To Use `nc` (NetCat) ([Initialise Connection](https://github.com/siunam321/CTF-Writeups/blob/main/Cyber-Apocalypse-2023/Pwn/Initialise-Connection/README.md))
-2. Basic Binary Exploitation Concept ([Questionnaire](https://github.com/siunam321/CTF-Writeups/blob/main/Cyber-Apocalypse-2023/Pwn/Questionnaire/README.md))
-3. Basic Stack Buffer Overflow ([Getting Started](https://github.com/siunam321/CTF-Writeups/blob/main/Cyber-Apocalypse-2023/Pwn/Getting-Started/README.md))
+	1. How To Use `nc` (NetCat) ([Initialise Connection](https://github.com/siunam321/CTF-Writeups/blob/main/Cyber-Apocalypse-2023/Pwn/Initialise-Connection/README.md))
+	2. Basic Binary Exploitation Concept ([Questionnaire](https://github.com/siunam321/CTF-Writeups/blob/main/Cyber-Apocalypse-2023/Pwn/Questionnaire/README.md))
+	3. Basic Stack Buffer Overflow ([Getting Started](https://github.com/siunam321/CTF-Writeups/blob/main/Cyber-Apocalypse-2023/Pwn/Getting-Started/README.md))
 
 - Misc:
-1. Writing A Python Script To Send HTTP Request ([Persistence](https://github.com/siunam321/CTF-Writeups/blob/main/Cyber-Apocalypse-2023/Misc/Persistence/README.md))
-2. RBash escape ([Restricted](https://github.com/siunam321/CTF-Writeups/blob/main/Cyber-Apocalypse-2023/Misc/Restricted/README.md))
-3. Insecure Deserialization In Python's YAML Library ([Hijack](https://github.com/siunam321/CTF-Writeups/blob/main/Cyber-Apocalypse-2023/Misc/Hijack/README.md))
+	1. Writing A Python Script To Send HTTP Request ([Persistence](https://github.com/siunam321/CTF-Writeups/blob/main/Cyber-Apocalypse-2023/Misc/Persistence/README.md))
+	2. RBash escape ([Restricted](https://github.com/siunam321/CTF-Writeups/blob/main/Cyber-Apocalypse-2023/Misc/Restricted/README.md))
+	3. Insecure Deserialization In Python's YAML Library ([Hijack](https://github.com/siunam321/CTF-Writeups/blob/main/Cyber-Apocalypse-2023/Misc/Hijack/README.md))
 
 - Reversing:
-1. Listing Strings In A File Via `strings` ([Needle in a Haystack](https://github.com/siunam321/CTF-Writeups/blob/main/Cyber-Apocalypse-2023/Reversing/Needle-in-a-Haystack/README.md))
-2. Basic Reverse Engineering ([Hunting License](https://github.com/siunam321/CTF-Writeups/blob/main/Cyber-Apocalypse-2023/Reversing/Hunting-License/README.md))
+	1. Listing Strings In A File Via `strings` ([Needle in a Haystack](https://github.com/siunam321/CTF-Writeups/blob/main/Cyber-Apocalypse-2023/Reversing/Needle-in-a-Haystack/README.md))
+	2. Basic Reverse Engineering ([Hunting License](https://github.com/siunam321/CTF-Writeups/blob/main/Cyber-Apocalypse-2023/Reversing/Hunting-License/README.md))
