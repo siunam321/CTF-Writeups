@@ -54,7 +54,7 @@ picoCTF 2023 is open to anyone, with prizes available to eligible middle school,
     2. Matching Regular Expression Pattern ([MatchTheRegex](https://github.com/siunam321/CTF-Writeups/blob/main/picoCTF-2023/Web-Exploitation/MatchTheRegex/README.md))
     3. XXE Injection ([SOAP](https://github.com/siunam321/CTF-Writeups/blob/main/picoCTF-2023/Web-Exploitation/SOAP/README.md))
     4. Authentication Bypass Via SQL Injection & Union-Based SQLite SQL Injection ([More SQLi](https://github.com/siunam321/CTF-Writeups/blob/main/picoCTF-2023/Web-Exploitation/More-SQLi/README.md))
-    5. Privilege Escalation Via Weak JWT Secret ([Java Code Analysis!?!](https://github.com/siunam321/CTF-Writeups/blob/main/picoCTF-2023/Web-Exploitation/Java-Code-Analysis!?!/README.md))
+    5. Privilege Escalation Via Weak JWT Secret ([Java Code Analysis!?!](https://github.com/siunam321/CTF-Writeups/blob/main/picoCTF-2023/Web-Exploitation/Java-Code-Analysis/README.md))
     6. [msfroggenerator2](https://github.com/siunam321/CTF-Writeups/blob/main/picoCTF-2023/Web-Exploitation/msfroggenerator2/README.md) ***(Unsolved)***
 - General Skills:
     1. Vertical Privilege Escalation Via `vi` SUID Binary ([Permissions](https://github.com/siunam321/CTF-Writeups/blob/main/picoCTF-2023/General-Skills/Permissions/README.md))
