@@ -57,6 +57,7 @@ RITSEC CTF 2023 is a security-focused competition that features the following ca
     1. Using `strings` To List Out All The Strings Inside A File ([Cats At Play](https://github.com/siunam321/CTF-Writeups/blob/main/RITSEC-CTF-2023/Reversing/Cats-At-Play/README.md))
     2. Brute Forcing SHA256 Hash With Salt ([Guess the Password?](https://github.com/siunam321/CTF-Writeups/blob/main/RITSEC-CTF-2023/Reversing/Guess-the-Password/README.md))
 - Chandi Bot:
+    [Chandi Bot 1 - 6](https://github.com/siunam321/CTF-Writeups/blob/main/RITSEC-CTF-2023/Chandi-Bot/Chandi-Bot-1-6/README.md)
     1. Extracting Hidden Information In An Image File ([Chandi Bot](https://github.com/siunam321/CTF-Writeups/blob/main/RITSEC-CTF-2023/Chandi-Bot/Chandi-Bot-1-6/README.md#chandi-bot-3))
     2. Exploiting Logic Vulnerability ([Chandi Bot](https://github.com/siunam321/CTF-Writeups/blob/main/RITSEC-CTF-2023/Chandi-Bot/Chandi-Bot-1-6/README.md#chandi-bot-4))
     3. Leaking Sensitive Information In Git Repository ([Chandi Bot](https://github.com/siunam321/CTF-Writeups/blob/main/RITSEC-CTF-2023/Chandi-Bot/Chandi-Bot-1-6/README.md#chandi-bot-6))
