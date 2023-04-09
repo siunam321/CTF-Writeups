@@ -571,7 +571,7 @@ Serving HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8000/) ...
 
 Nice!! We steal the admin bot's flag cookie!
 
-- **Flag: `flag=dam{waaatttt_t3xtc0nt3nt_n0t_always___s3cur3_bruuuhhhhhhh}`**
+- **Flag: `dam{waaatttt_t3xtc0nt3nt_n0t_always___s3cur3_bruuuhhhhhhh}`**
 
 ## Conclusion
 
