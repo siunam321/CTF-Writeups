@@ -54,7 +54,7 @@ When the "Shares Notes" button is clicked, it'll generate a share link:
 
 That being said, this challenge is a typical ***XSS*** challenge.
 
-**In this challenge, we can download a file:**
+**In this challenge, we can download a [file](https://github.com/siunam321/CTF-Writeups/blob/main/DamCTF-2023/web/url-stored-notes/url-notes.zip):**
 ```shell
 ┌[siunam♥earth]-(~/ctf/DamCTF-2023/web/url-stored-notes)-[2023.04.08|15:09:56(HKT)]
 └> file url-notes.zip 
@@ -496,6 +496,15 @@ Nice!!!
 **After some trial and error, we can import the `js` library and execute JavaScript code!!**
 ```py
     notes = '''[{\"prompt\":\"import js;print(js.alert(document.domain))\",\"answer\":\"print(2+2)\",\"tag\":\"py-script\"}]'''
+```
+
+**The reason I pick the `js` library is I saw that library executing JavaScript code in `index.html`:**
+```html
+<py-script id="python">
+import js
+    [...]
+        js.createNoteElement(note['prompt'], note['answer'], note['tag'])
+</py-script>
 ```
 
 ```shell

@@ -32,7 +32,7 @@ In here, we can play the Tic-Tac-Toe game:
 
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/DamCTF-2023/images/Pasted%20image%2020230408113519.png)
 
-**Now, let's view the source code!**
+**Now, let's view the [source code](https://github.com/siunam321/CTF-Writeups/blob/main/DamCTF-2023/web/tcl-tac-toe/tcl-tac-toe.zip)!**
 ```shell
 ┌[siunam♥earth]-(~/ctf/DamCTF-2023/web/tcl-tac-toe)-[2023.04.08|11:37:13(HKT)]
 └> file tcl-tac-toe.zip 

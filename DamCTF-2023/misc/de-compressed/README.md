@@ -20,7 +20,7 @@ The fate of national security is in your hands.
 
 ## Find the flag
 
-**In this challenge, we can download a file:**
+**In this challenge, we can download a [file](https://github.com/siunam321/CTF-Writeups/blob/main/DamCTF-2023/misc/de-compressed/message.zip):**
 ```shell
 ┌[siunam♥earth]-(~/ctf/DamCTF-2023/misc/de-compressed)-[2023.04.08|19:39:02(HKT)]
 └> file message.zip 
