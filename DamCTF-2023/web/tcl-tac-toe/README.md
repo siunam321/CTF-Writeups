@@ -355,7 +355,7 @@ I guess the reason why we beat that is the `check_win` procedure checks the foll
 {3 5 7}
 ```
 
-So I guess we won the **race condition** of the check!
+So I guess we won the check!
 
 - **Flag: `dam{7RY1N9_Tcl?_71m3_70_74k3_7W0_7YL3n01_748L37s}`**
 
@@ -363,4 +363,4 @@ So I guess we won the **race condition** of the check!
 
 What we've learned:
 
-1. Exploiting Logic Bug & Race Condition
+1. Exploiting Logic Bug
