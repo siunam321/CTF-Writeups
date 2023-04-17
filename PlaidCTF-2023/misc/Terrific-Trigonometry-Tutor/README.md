@@ -20,7 +20,7 @@ In this challenge, there's a web application:
 
 Which allows you to do some trigonometry calculations.
 
-**We can also view the source code:**
+**We can also view the [source code](https://github.com/siunam321/CTF-Writeups/blob/main/PlaidCTF-2023/misc/Terrific-Trigonometry-Tutor/ttt.0317e9c2446d934d03676d0d506d7a77bbef1f2b7f500556cd29c2af16caae8d.tar):**
 ```shell
 ┌[siunam♥earth]-(~/ctf/PlaidCTF-2023/misc/Terrific-Trigonometry-Tutor/TTT)-[2023.04.16|14:49:08(HKT)]
 └> file ttt.0317e9c2446d934d03676d0d506d7a77bbef1f2b7f500556cd29c2af16caae8d.tar    

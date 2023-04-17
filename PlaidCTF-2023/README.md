@@ -36,7 +36,7 @@ The Plaid Flag is the 2023 edition of PlaidCTF, an annual capture the flag compe
 ## What I've learned in this CTF
 
 - web:
-    1. Accessing High Privilege GraphQL Query Via Stored XSS ([Davy Jones' Putlocker: Dubs](https://github.com/siunam321/CTF-Writeups/blob/main/PlaidCTF-2023/web/Davy-Jones-Putlocker/README.md#dubs))
+    1. Accessing High Privilege GraphQL Query Via Stored XSS ([Davy Jones' Putlocker: Dubs](https://github.com/siunam321/CTF-Writeups/blob/main/PlaidCTF-2023/web/Davy-Jones-Putlocker/README.md))
     2. [Davy Jones' Putlocker: Subs](https://github.com/siunam321/CTF-Writeups/blob/main/PlaidCTF-2023/web/Davy-Jones-Putlocker/README.md#subs) ***(Unsolved)***
 - misc:
     1. [Terrific Trigonometry Tutor: TTT](https://github.com/siunam321/CTF-Writeups/blob/main/PlaidCTF-2023/misc/Terrific-Trigonometry-Tutor/README.md) ***(Unsolved)***
