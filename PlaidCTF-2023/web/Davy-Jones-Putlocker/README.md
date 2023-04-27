@@ -159,7 +159,7 @@ const Flag = process.env["FLAG"] ?? "PCTF{fake_flag}";
 [...]
 ```
 
-**And it's used in ***GraphQL***'s resolvers:**
+**And it's used in GraphQL's resolvers:**
 ```ts
 const resolvers = {
 [...]

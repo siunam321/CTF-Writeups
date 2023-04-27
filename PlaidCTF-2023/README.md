@@ -22,7 +22,7 @@ The Plaid Flag is the 2023 edition of PlaidCTF, an annual capture the flag compe
 ## Overview
 
 - Team: JHDiscord
-- Tem Member: @siunam, @fire, @sobek, @7777777, @AlwaysBeNoobing, @gls, @molten, @n00b_4bh1n4v, @oldschool125, @tangled, @WhoL3tTh3D0gsOut..?, @Pho3nix
+- Team Member: @siunam, @fire, @sobek, @7777777, @AlwaysBeNoobing, @gls, @molten, @n00b_4bh1n4v, @oldschool125, @tangled, @WhoL3tTh3D0gsOut..?, @Pho3nix
 - Team Solves: 3/22
 - Individual Solves: 1/22
 - Score: 451
