@@ -402,7 +402,7 @@ drwxr-xr-x 14 root root 4.0K Jul 26  2022 ..
 	/* Check Login form submitted */	
 	if(isset($_POST['Submit'])){
 		/* Define username and associated password array */
-		$logins = array('admin' => 'oncloud9','root' => 'oncloud9','administrator' => 'oncloud9');
+		$logins = array('admin' => '{Redacted}','root' => '{Redacted}','administrator' => '{Redacted}');
 		
 		/* Check and assign submitted Username and Password to new variable */
 		$Username = isset($_POST['Username']) ? $_POST['Username'] : '';
@@ -425,7 +425,6 @@ drwxr-xr-x 14 root root 4.0K Jul 26  2022 ..
 ```
 
 - Found login credentials in `/var/www/html/login.php`
-- `admin:oncloud9`, `root:oncloud9`, `administrator:oncloud9`
 
 **Let's login in the `/login.php`!**
 
