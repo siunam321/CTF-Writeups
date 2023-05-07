@@ -29,7 +29,7 @@ Année 2600, John D. est un nostalgique. Il s'amuse à jouer sur des jeux vieux 
 - Osint
 - Crypto
 - Reverse
-- Forenics
+- Forensics
 
 ## Overview
 
@@ -53,5 +53,5 @@ Année 2600, John D. est un nostalgique. Il s'amuse à jouer sur des jeux vieux 
 - Reverse:
     1. Using `strings` To Display Strings In A File & Rotating Rotated String ([C Stands For C](https://github.com/siunam321/CTF-Writeups/blob/main/PwnMe-2023-8-bits/Reverse/C-Stands-For-C/README.md))
     2. Reversing XOR'ed Strings ([Xoxor](https://github.com/siunam321/CTF-Writeups/blob/main/PwnMe-2023-8-bits/Reverse/Xoxor/README.md))
-- Forenics:
-    1. Exporting HTTP Object & Inspecting Debian Package ([kNOCk kNOCk](https://github.com/siunam321/CTF-Writeups/blob/main/PwnMe-2023-8-bits/Forenics/kNOCk-kNOCk/README.md))
+- Forensics:
+    1. Exporting HTTP Object & Inspecting Debian Package ([kNOCk kNOCk](https://github.com/siunam321/CTF-Writeups/blob/main/PwnMe-2023-8-bits/Forensics/kNOCk-kNOCk/README.md))
