@@ -52,6 +52,6 @@ Année 2600, John D. est un nostalgique. Il s'amuse à jouer sur des jeux vieux 
     5. [Nestapp](https://github.com/siunam321/CTF-Writeups/blob/main/PwnMe-2023-8-bits/Web/Nestapp/README.md) ***(Unsolved)***
 - Reverse:
     1. Using `strings` To Display Strings In A File & Rotating Rotated String ([C Stands For C](https://github.com/siunam321/CTF-Writeups/blob/main/PwnMe-2023-8-bits/Reverse/C-Stands-For-C/README.md))
-    2. Reversing XOR'ed Strings ([Xorxor](https://github.com/siunam321/CTF-Writeups/blob/main/PwnMe-2023-8-bits/Reverse/Xorxor/README.md))
+    2. Reversing XOR'ed Strings ([Xoxor](https://github.com/siunam321/CTF-Writeups/blob/main/PwnMe-2023-8-bits/Reverse/Xoxor/README.md))
 - Forenics:
     1. Exporting HTTP Object & Inspecting Debian Package ([kNOCk kNOCk](https://github.com/siunam321/CTF-Writeups/blob/main/PwnMe-2023-8-bits/Forenics/kNOCk-kNOCk/README.md))
