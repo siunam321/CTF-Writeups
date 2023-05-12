@@ -20,7 +20,7 @@ Welcome to my another writeup! In this TryHackMe [Capture!](https://tryhackme.co
 
 ### Task 1 - General information
 
-![](https://tryhackme-images.s3.amazonaws.com/user-uploads/5e3943bd2445e65e56afb7a5/room-content/b5a647b9469643ad859ac93c27dd8e3d.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TryHackMe/Capture/images/b5a647b9469643ad859ac93c27dd8e3d.png)
 
 SecureSolaCoders has once again developed a web application. They were tired of hackers enumerating and exploiting their previous login form. They thought a Web Application Firewall (WAF) was too overkill and unnecessary, so they developed their own rate limiter and modified the code slightly**.**
 
@@ -90,7 +90,7 @@ Hmm... That being said, ***if a valid user exist, it'll response us with a diffe
 
 So, we can enumerate different valid user via brute forcing!
 
-> Note: You can read more about username enumeration via different responses in my PortSwigger Web Security Academy lab about Authentication: [https://siunam321.github.io/ctf/portswigger-labs/Authentication/auth-1/](https://siunam321.github.io/ctf/portswigger-labs/Authentication/auth-1/).
+> Note: You can read more about username enumeration via different responses in my PortSwigger Web Security Academy lab writeup about Authentication: [https://siunam321.github.io/ctf/portswigger-labs/Authentication/auth-1/](https://siunam321.github.io/ctf/portswigger-labs/Authentication/auth-1/).
 
 **However, when we have too many incorrect attempts, it requires solving a "Captcha":**
 
