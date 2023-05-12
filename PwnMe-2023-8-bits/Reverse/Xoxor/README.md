@@ -2,10 +2,10 @@
 
 ## Table of Contents
 
-- [Overview](#overview)
-- [Background](#background)
-- [Find the flag](#find-the-flag)
-- [Conclusion](#conclusion)
+1. [Overview](#overview)
+2. [Background](#background)
+3. [Find the flag](#find-the-flag)
+4. [Conclusion](#conclusion)
 
 ## Overview
 

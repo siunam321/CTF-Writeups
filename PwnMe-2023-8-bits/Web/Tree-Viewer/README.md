@@ -2,11 +2,11 @@
 
 ## Table of Contents
 
-- [Overview](#overview)
-- [Background](#background)
-- [Enumeration](#enumeration)
-- [Exploitation](#exploitation)
-- [Conclusion](#conclusion)
+1. [Overview](#overview)
+2. [Background](#background)
+3. [Enumeration](#enumeration)
+4. [Exploitation](#exploitation)
+5. [Conclusion](#conclusion)
 
 ## Overview
 

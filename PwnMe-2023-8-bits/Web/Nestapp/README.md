@@ -2,9 +2,9 @@
 
 ## Table of Contents
 
-- [Overview](#overview)
-- [Background](#background)
-- [Enumeration](#enumeration)
+1. [Overview](#overview)
+2. [Background](#background)
+3. [Enumeration](#enumeration)
 
 ## Overview
 
