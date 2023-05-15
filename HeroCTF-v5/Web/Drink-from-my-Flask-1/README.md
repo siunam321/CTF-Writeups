@@ -144,7 +144,7 @@ As you can see, the path is limited to 34 characters.
 
 **So... We need to craft a SSTI payload that less than 35 characters.**
 
-**To bypass that, we can **use the `config` object instance in Flask.** This object instance stores the server's configuration:**
+To bypass that, we can **use the `config` object instance in Flask.** This object instance stores the server's configuration:
 
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/HeroCTF-v5/images/Pasted%20image%2020230513213012.png)
 
