@@ -107,7 +107,7 @@ However, when I saw the flag, it shuts down my VM :(
 
 **Then, I fired up OBS to record and catch the flag:**
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/HeroCTF-v5/images/Math_Trap_solve.mp4)
+https://github.com/siunam321/CTF-Writeups/assets/104430134/54acf4a3-de31-4f1f-b550-907a51129b05
 
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/HeroCTF-v5/images/Pasted%20image%2020230513172537.png)
 
