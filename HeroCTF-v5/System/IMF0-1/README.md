@@ -3,12 +3,12 @@
 ## Table of Contents
 
 1. [IMF#0: Your mission, should you choose to accept it](#imf0:-Your mission,-should-you-choose-to-accept-it)
-	i. [Background](#background)
-	ii. [Overview](#overview)
+	1. [Background](#background)
+	2. [Overview](#overview)
 2. [IMF#1: Bug Hunting](#imf1:-Bug-Hunting)
-	i. [Background](#background)
-	ii. [Overview](#overview)
-	iii. [Enumeration](#enumeration)
+	1. [Background](#background)
+	2. [Overview](#overview)
+	3. [Enumeration](#enumeration)
 3. [Conclusion](#conclusion)
 
 ## IMF#0: Your mission, should you choose to accept it

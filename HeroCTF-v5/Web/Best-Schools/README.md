@@ -173,7 +173,7 @@ Now, we can we do to update the number of clicks in "Flag CyberSecurity School" 
 
 Since **mutation query** is used to make changes in the server-side, we could pay extra attention on the `increaseClickSchool` mutation query.
 
-**When we send the query to fast, it'll returns the following response:**
+**When we send the query too fast, it'll returns the following response:**
 
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/HeroCTF-v5/images/Pasted%20image%2020230513134140.png)
 
@@ -187,7 +187,7 @@ Hmm that's weird!!
 
 **Can we bypass that??**
 
-Yes we can, and it's a technique in GraphQL attack: ***GraphQL Batching Attack***
+Yes we can, and it's an attack in GraphQL: ***GraphQL Batching Attack***
 
 **In [Paulo A. Silva](https://checkmarx.com/blog/didnt-notice-your-rate-limiting-graphql-batching-attack/) blog, we could send multiple queries:**
 

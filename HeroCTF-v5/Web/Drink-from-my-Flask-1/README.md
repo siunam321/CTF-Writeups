@@ -116,7 +116,7 @@ After poking around, I have no idea what should I do...
 
 Ah! Wait, how do the 404 page is rendered?
 
-**You guess, Flask is using a template engine called "Jinja2":**
+**You guessed! Flask is using a template engine called "Jinja2":**
 
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/HeroCTF-v5/images/Pasted%20image%2020230513211612.png)
 
@@ -155,7 +155,7 @@ config.update(key=value)
 
 That being said, we can use the `update()` method to save some characters!
 
-However, I don't wanna go that route!
+However, I don't wanna go through that painful route!
 
 **Do you still remember we have reflected XSS in `/adminPage` with the JWT's `role` claim?**
 

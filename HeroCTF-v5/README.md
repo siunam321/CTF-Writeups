@@ -62,5 +62,5 @@ Team up to 5 players. Join us on Discord [https://discord.gg/R3tdPvDcNN](https:/
 - Web:
     1. Exploiting GraphQL Batching Attack ([Best Schools](https://github.com/siunam321/CTF-Writeups/blob/main/HeroCTF-v5/Web/Best-Schools/README.md))
     2. Exploiting Referer-based Access Control In Node.js Express ([Referrrrer](https://github.com/siunam321/CTF-Writeups/blob/main/HeroCTF-v5/Web/Referrrrer/README.md))
-    3. Cracking JWT Secret & Exploiting RCE Via SSTI ([Drink from my Flask#1](https://github.com/siunam321/CTF-Writeups/blob/main/HeroCTF-v5/Web/Drink-from-my-Flask-1/README.md)
+    3. Cracking JWT Secret & Exploiting RCE Via SSTI ([Drink from my Flask#1](https://github.com/siunam321/CTF-Writeups/blob/main/HeroCTF-v5/Web/Drink-from-my-Flask-1/README.md))
     4. [Blogodogo 1/2](https://github.com/siunam321/CTF-Writeups/blob/main/HeroCTF-v5/Web/Blogodogo-1/README.md) ***(Unsolved)***

