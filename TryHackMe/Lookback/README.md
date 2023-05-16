@@ -33,7 +33,7 @@ _Sometimes to move forward, we have to go backward._
 
 _So if you get stuck, try to look back!_
 
-## Enumeration
+## Service Enumeration
 
 As usual, scan the machine for open ports via `rustscan`!
 
