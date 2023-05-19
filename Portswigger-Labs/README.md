@@ -14,7 +14,7 @@ Dec 5, 2022   | SQL Injection                  | SQLi-9             | SQL inject
 Dec 5, 2022   | SQL Injection                  | SQLi-10            | SQL injection attack, listing the database contents on Oracle
 Dec 6, 2022   | SQL Injection                  | SQLi-11            | Blind SQL injection with conditional responses
 Dec 7, 2022   | SQL Injection                  | SQLi-12            | Blind SQL injection with conditional errors
-May 5, 2023   | SQL Injection                  | SQLi-13            | Visible error-based SQL injection
+May 19, 2023  | SQL Injection                  | SQLi-13            | Visible error-based SQL injection
 Dec 9, 2022   | SQL Injection                  | SQLi-14            | Blind SQL injection with time delays
 Dec 8, 2022   | SQL Injection                  | SQLi-15            | Blind SQL injection with time delays and information retrieval
 Mar 1, 2023   | SQL Injection                  | SQLi-16            | Blind SQL injection with out-of-band interaction
