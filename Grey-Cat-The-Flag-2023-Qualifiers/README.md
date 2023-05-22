@@ -33,7 +33,9 @@ We will host the onsite finals at the National University of Singapore (NUS), to
 
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/Grey-Cat-The-Flag-2023-Qualifiers/images/score.png)
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Grey-Cat-The-Flag-2023-Qualifiers/images/solves.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Grey-Cat-The-Flag-2023-Qualifiers/images/solves1.png)
+
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Grey-Cat-The-Flag-2023-Qualifiers/images/solves2.png)
 
 ## What I've learned in this CTF
 
