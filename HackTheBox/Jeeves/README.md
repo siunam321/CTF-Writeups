@@ -10,7 +10,7 @@ Welcome to my another writeup! In this HackTheBox [Jeeves](https://app.hackthebo
 
 1. **[Service Enumeration](#service-enumeration)**
 2. **[Initial Foothold](#initial-foothold)**
-3. **[Privilege Escalation: `secnotes\tyler` to `NT AUTHORITY\SYSTEM`](#privilege-escalation)**
+3. **[Privilege Escalation: `jeeves/kohsuke` to `NT AUTHORITY\SYSTEM`](#privilege-escalation)**
 4. **[Conclusion](#conclusion)**
 
 ## Background
@@ -158,7 +158,7 @@ Nice! We found a Jenkins application!
 
 > **Jenkins** is an [open source](https://en.wikipedia.org/wiki/Open_source "Open source") [automation](https://en.wikipedia.org/wiki/Automation "Automation") [server](https://en.wikipedia.org/wiki/Server_(computing) "Server (computing)"). It helps automate the parts of [software development](https://en.wikipedia.org/wiki/Software_development "Software development") related to [building](https://en.wikipedia.org/wiki/Software_build "Software build"), [testing](https://en.wikipedia.org/wiki/Test_automation "Test automation"), and [deploying](https://en.wikipedia.org/wiki/Software_deployment "Software deployment"), facilitating [continuous integration](https://en.wikipedia.org/wiki/Continuous_integration "Continuous integration") and [continuous delivery](https://en.wikipedia.org/wiki/Continuous_delivery "Continuous delivery"). It is a server-based system that runs in [servlet containers](https://en.wikipedia.org/wiki/Java_Servlet#Container_servers "Java Servlet") such as [Apache Tomcat](https://en.wikipedia.org/wiki/Apache_Tomcat "Apache Tomcat"). It supports [version control](https://en.wikipedia.org/wiki/Version_control "Version control") tools, including [AccuRev](https://en.wikipedia.org/wiki/AccuRev_SCM "AccuRev SCM"), [CVS](https://en.wikipedia.org/wiki/Concurrent_Versions_System "Concurrent Versions System"), [Subversion](https://en.wikipedia.org/wiki/Subversion_(software) "Subversion (software)"), [Git](https://en.wikipedia.org/wiki/Git_(software) "Git (software)"), [Mercurial](https://en.wikipedia.org/wiki/Mercurial "Mercurial"), [Perforce](https://en.wikipedia.org/wiki/Perforce "Perforce"), [ClearCase](https://en.wikipedia.org/wiki/ClearCase "ClearCase") and [RTC](https://en.wikipedia.org/wiki/Rational_Team_Concert "Rational Team Concert"), and can execute [Apache Ant](https://en.wikipedia.org/wiki/Apache_Ant "Apache Ant"), [Apache Maven](https://en.wikipedia.org/wiki/Apache_Maven) and [sbt](https://en.wikipedia.org/wiki/Sbt "Sbt") based projects as well as arbitrary [shell scripts](https://en.wikipedia.org/wiki/Shell_script "Shell script") and Windows [batch commands](https://en.wikipedia.org/wiki/Batch_file "Batch file"). (From [https://en.wikipedia.org/wiki/Jenkins_(software)](https://en.wikipedia.org/wiki/Jenkins_(software)))
 
-## Exploitation
+## Initial Foothold
 
 **We can Google "Jenkins reverse shell", and you should found [this blog](https://blog.pentesteracademy.com/abusing-jenkins-groovy-script-console-to-get-shell-98b951fa64a6).**
 
@@ -262,7 +262,7 @@ Tunnel adapter isatap.{4079B648-26D5-4A56-9108-2A55EC5CE6CA}:
 
 ## Privilege Escalation
 
-### `jeeves/kohsuke` to `SYSTEM`
+### `jeeves/kohsuke` to `NT AUTHORITY\SYSTEM`
 
 Let's enumerate!
 
