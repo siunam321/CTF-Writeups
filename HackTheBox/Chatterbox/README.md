@@ -76,7 +76,7 @@ Host script results:
 |_  System time: 2023-05-17T13:57:47-04:00
 ```
 
-According to `rustscan` result, we have 2 ports are opened:
+According to `rustscan` result, we have 11 ports are opened:
 
 |Open Port         | Service                       |
 |:---:             |:---:                          |
