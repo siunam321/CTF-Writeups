@@ -3,7 +3,7 @@
 ## Introduction
 
 Welcome to my another writeup! In this HackTheBox [Brainfuck](https://app.hackthebox.com/machines/Brainfuck) machine, you'll learn: Exploiting WordPress plugin, enumerating emails, privilege escalation via lxd/lxc group, and more! Without further ado, let's dive in.
-\
+
 - Overall difficulty for me (From 1-10 stars): ★★★★★★☆☆☆☆
 
 ## Table of Content
@@ -337,8 +337,8 @@ commonName=brainfuck.htb/organizationName=Brainfuck Ltd./stateOrProvinceName=Att
 ```
 
 **Oh! We found 2 subdomains in Subject Alternative Name (SAN):**
-- DNS:www.brainfuck.htb
-- DNS:sup3rs3cr3t.brainfuck.htb
+- DNS: www.brainfuck.htb
+- DNS: sup3rs3cr3t.brainfuck.htb
 
 **Let's add them in `/etc/hosts`!**
 ```shell
