@@ -4,7 +4,7 @@
 
 Welcome to my another writeup! In this HackTheBox [Shocker](https://app.hackthebox.com/machines/Shocker) machine, you'll learn: Exploiting Shellshock vulnerability via Apache's CGI script, Linux privilege escalation via misconfigured `perl` Sudo permission, and more! Without further ado, let's dive in.
 
-- Overall difficulty for me (From 1-10 stars): ★★☆☆☆☆☆☆☆☆
+- Overall difficulty for me (From 1-10 stars): ★★★★★★☆☆☆☆
 
 ## Table of Content
 
