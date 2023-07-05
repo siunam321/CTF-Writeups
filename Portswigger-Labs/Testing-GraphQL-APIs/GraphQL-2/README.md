@@ -20,7 +20,7 @@ For more information on using InQL, see [Working with GraphQL in Burp Suite](htt
 
 **Home page:**
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/Testing-GraphQL-APIs/GraphQL-2/images/%2020230705155317.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/Testing-GraphQL-APIs/GraphQL-2/images/Pasted%20image%20%2020230705155317.png)
 
 In here, we can view some blog posts.
 
@@ -83,7 +83,7 @@ In here, we can see that the GraphQL API endpoint is at `/graphql/v1`.
 
 Burp Suite HTTP history:
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/Testing-GraphQL-APIs/GraphQL-2/images/%2020230705155741.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/Testing-GraphQL-APIs/GraphQL-2/images/Pasted%20image%20%2020230705155741.png)
 
 When we go to the index page, it'll fetch all blog posts data via a GraphQL query `getAllBlogPosts`.
 
@@ -106,7 +106,7 @@ query {
 }
 ```
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/Testing-GraphQL-APIs/GraphQL-2/images/%2020230705160210.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/Testing-GraphQL-APIs/GraphQL-2/images/Pasted%20image%20%2020230705160210.png)
 
 As you can see, the GraphQL API's introspection is enabled.
 
@@ -196,7 +196,7 @@ fragment TypeRef on __Type {
 }
 ```
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/Testing-GraphQL-APIs/GraphQL-2/images/%2020230705160349.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/Testing-GraphQL-APIs/GraphQL-2/images/Pasted%20image%20%2020230705160349.png)
 
 **In that response, we can find some interesting types and queries:**
 
@@ -229,15 +229,15 @@ query {
 }
 ```
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/Testing-GraphQL-APIs/GraphQL-2/images/%2020230705162454.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/Testing-GraphQL-APIs/GraphQL-2/images/Pasted%20image%20%2020230705162454.png)
 
 However, nothing weird...
 
 **In this web application, we can also login an account:**
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/Testing-GraphQL-APIs/GraphQL-2/images/%2020230705162908.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/Testing-GraphQL-APIs/GraphQL-2/images/Pasted%20image%20%2020230705162908.png)
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/Testing-GraphQL-APIs/GraphQL-2/images/%2020230705162922.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/Testing-GraphQL-APIs/GraphQL-2/images/Pasted%20image%20%2020230705162922.png)
 
 **View source page:**
 ```html
@@ -307,11 +307,11 @@ const gqlLogin = (formElement, event, accountDetailsPath) => {
 
 When the "Log in" button is clicked, it'll send a GraphQL mutation query `login`, with variable `username` and `password`. The result is expected to return field `token` and `success`.
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/Testing-GraphQL-APIs/GraphQL-2/images/%2020230705163408.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/Testing-GraphQL-APIs/GraphQL-2/images/Pasted%20image%20%2020230705163408.png)
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/Testing-GraphQL-APIs/GraphQL-2/images/%2020230705163419.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/Testing-GraphQL-APIs/GraphQL-2/images/Pasted%20image%20%2020230705163419.png)
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/Testing-GraphQL-APIs/GraphQL-2/images/%2020230705163427.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/Testing-GraphQL-APIs/GraphQL-2/images/Pasted%20image%20%2020230705163427.png)
 
 **Mutation query `login`:**
 ```graphql
@@ -348,19 +348,19 @@ query {
 }
 ```
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/Testing-GraphQL-APIs/GraphQL-2/images/%2020230705163713.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/Testing-GraphQL-APIs/GraphQL-2/images/Pasted%20image%20%2020230705163713.png)
 
 Oh! It worked! And we found `administrator`'s password!
 
 **Let's login and delete user `carlos`!**
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/Testing-GraphQL-APIs/GraphQL-2/images/%2020230705163814.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/Testing-GraphQL-APIs/GraphQL-2/images/Pasted%20image%20%2020230705163814.png)
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/Testing-GraphQL-APIs/GraphQL-2/images/%2020230705163826.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/Testing-GraphQL-APIs/GraphQL-2/images/Pasted%20image%20%2020230705163826.png)
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/Testing-GraphQL-APIs/GraphQL-2/images/%2020230705163839.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/Testing-GraphQL-APIs/GraphQL-2/images/Pasted%20image%20%2020230705163839.png)
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/Testing-GraphQL-APIs/GraphQL-2/images/%2020230705163849.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Portswigger-Labs/Testing-GraphQL-APIs/GraphQL-2/images/Pasted%20image%20%2020230705163849.png)
 
 # What we've learned:
 
