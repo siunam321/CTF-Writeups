@@ -162,7 +162,7 @@ GraphQL services define a contract through which a client can communicate with a
 In GraphQL, GraphQL queries retrieve data from the data store.
 
 **In our case, the query is this:**
-```json
+```graphql
 query getBlogSummaries {
     getAllBlogPosts {
         image
@@ -184,7 +184,7 @@ Like regular queries, you can specify the fields and structure of the response y
 Introspection can represent a serious [information disclosure](https://portswigger.net/web-security/information-disclosure) risk, as it can be used to access potentially sensitive information (such as field descriptions) and help an attacker to learn how they can interact with the API. It is best practice for introspection to be disabled in production environments.
 
 **We can use the following introspection probe query:**
-```json
+```graphql
 query {__schema{queryType{name}}}
 ```
 
@@ -206,7 +206,7 @@ query {__schema{queryType{name}}}
 That being said, **introspection is enabled** in the web application!
 
 **Now, we can use the following full introspection query to enumerate the entire GraphQL schema:**
-```json
+```graphql
 query IntrospectionQuery {
     __schema {
         queryType {
@@ -528,7 +528,7 @@ Most of the types defined are object types. which define the objects available a
 In the above respond, there's a type called `BlogPost`, and it has field `id`, `image`, `title`, `author`, `date`, `summary`, `paragraphs`, `isPrivate`, and `postPassword`:
 
 **Type `BlogPost` in GraphQL:**
-```json
+```graphql
 type BlogPost {
     id: ID!
     image: String!
@@ -543,7 +543,7 @@ type BlogPost {
 ```
 
 **Also, there's 2 queries we can send to the GraphQL API: `getBlogPost` and `getAllBlogPosts`**
-```json
+```graphql
 query {
     getBlogPost(id: 1337) {
         image
@@ -565,7 +565,7 @@ query {
 
 Armed with above information, we can try to retrieve all data via `getAllBlogPosts` query **with all fields**:
 
-```json
+```graphql
 query giveMeAllTheFieldsOfAllPosts{
     getAllBlogPosts {
         id
@@ -656,7 +656,7 @@ Also, field `isPrivate` and `postPassword` is all `false` and `null`.
 With that said, **blog post id `3` must be interesting for us, maybe it is a private post**.
 
 **To do so, we can use the `getBlogPost` query with argument `id` to try to get blog post id `3`:**
-```json
+```graphql
 query privatePostPls{
     getBlogPost(id: 3) {
         id
