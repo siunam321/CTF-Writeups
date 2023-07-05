@@ -552,7 +552,9 @@ query {
         id
     }
 }
+```
 
+```graphql
 query {
     getAllBlogPosts {
         image
