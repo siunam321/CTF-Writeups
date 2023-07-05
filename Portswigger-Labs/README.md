@@ -243,3 +243,4 @@ Feb 26, 2023  | HTTP Request Smuggling         | Smuggling-20       | Client-sid
 Feb 26, 2023  | HTTP Request Smuggling         | Smuggling-21       | Browser cache poisoning via client-side desync
 Feb 26, 2023  | HTTP Request Smuggling         | Smuggling-22       | Server-side pause-based request smuggling
 Mar 1, 2023   | Essential Skills               | Essential-Skills-1 | Discovering vulnerabilities quickly with targeted scanning
+July 5, 2023  | Testing GraphQL APIs           | GraphQL-1          | Accessing private GraphQL posts
