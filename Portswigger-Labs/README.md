@@ -247,3 +247,4 @@ July 5, 2023  | Testing GraphQL APIs           | GraphQL-1          | Accessing 
 July 5, 2023  | Testing GraphQL APIs           | GraphQL-2          | Accidental exposure of private GraphQL fields
 July 7, 2023  | Testing GraphQL APIs           | GraphQL-3          | Finding a hidden GraphQL endpoint
 July 7, 2023  | Testing GraphQL APIs           | GraphQL-4          | Bypassing GraphQL brute force protections
+July 7, 2023  | Testing GraphQL APIs           | GraphQL-5          | Performing CSRF exploits over GraphQL
