@@ -245,3 +245,4 @@ Feb 26, 2023  | HTTP Request Smuggling         | Smuggling-22       | Server-sid
 Mar 1, 2023   | Essential Skills               | Essential-Skills-1 | Discovering vulnerabilities quickly with targeted scanning
 July 5, 2023  | Testing GraphQL APIs           | GraphQL-1          | Accessing private GraphQL posts
 July 5, 2023  | Testing GraphQL APIs           | GraphQL-2          | Accidental exposure of private GraphQL fields
+July 7, 2023  | Testing GraphQL APIs           | GraphQL-3          | Finding a hidden GraphQL endpoint
