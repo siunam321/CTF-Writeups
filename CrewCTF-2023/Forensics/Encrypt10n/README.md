@@ -6,7 +6,7 @@
     - [Overview](#overview)
     - [Background](#background)
     - [Find the flag](#find-the-flag)
-2. [Encrypt10n (Part 2)](##encrypt10n-part-2)
+2. [Encrypt10n (Part 2)](#encrypt10n-part-2)
     - [Overview](#overview-1)
     - [Background](#background-1)
     - [Find the flag](#find-the-flag)
