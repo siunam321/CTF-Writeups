@@ -2,11 +2,11 @@
 
 ## Table of Contents
 
-1. [Encrypt10n (Part 1)](#imf0-your-mission-should-you-choose-to-accept-it)
+1. [Encrypt10n (Part 1)](#encrypt10n-part-1)
     - [Overview](#overview)
     - [Background](#background)
     - [Find the flag](#find-the-flag)
-2. [Encrypt10n (Part 2)]
+2. [Encrypt10n (Part 2)](##encrypt10n-part-2)
     - [Overview](#overview-1)
     - [Background](#background-1)
     - [Find the flag](#find-the-flag)
