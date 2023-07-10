@@ -69,7 +69,7 @@ In here, we can found that there's a `TrueCrypt.exe` process.
 
 > **TrueCrypt** is a discontinued [source-available](https://en.wikipedia.org/wiki/Source-available "Source-available") [freeware](https://en.wikipedia.org/wiki/Freeware "Freeware") [utility](https://en.wikipedia.org/wiki/Utility_software "Utility software") used for [on-the-fly encryption](https://en.wikipedia.org/wiki/On-the-fly_encryption "On-the-fly encryption") (OTFE). It can create a virtual encrypted disk within a file, or encrypt a [partition](https://en.wikipedia.org/wiki/Disk_partitioning "Disk partitioning") or the whole [storage device](https://en.wikipedia.org/wiki/Data_storage_device "Data storage device") ([pre-boot authentication](https://en.wikipedia.org/wiki/Pre-boot_authentication "Pre-boot authentication")). (From [https://en.wikipedia.org/wiki/TrueCrypt](https://en.wikipedia.org/wiki/TrueCrypt))
 
-**In volatility2, there's a plugin called `truecryptsummary`, which will display TrueCrypt summary information:**
+**In volatility2, there's a plugin called `truecryptsummary`, which displays TrueCrypt summary information:**
 ```shell
 ┌[siunam♥Mercury]-(~/ctf/CrewCTF-2023/Forensics/Encrypt10n)-[2023.07.08|21:15:29(HKT)]
 └> python2 /opt/volatility/vol.py --profile=Win7SP1x86_23418 -f dump.raw truecryptsummary
@@ -150,7 +150,7 @@ Can confirm the password is `Strooooong_Passwword`.
 Enter passphrase for flag: 
 ```
 
-> Note: The first `flag` is the encrypted `flag`, the second one is a name of your choice.
+> Note: The first `flag` is the encrypted `flag` file, the second one is a name of your choice.
 
 - Create a folder for the volume:
 
@@ -180,9 +180,9 @@ drwxr-xr-x 3 root   root 4.0K Jul  8 21:30 ..
 Vm0wd2QyUXlVWGxWV0d4V1YwZDRXRmxVU205V01WbDNXa2M1VjFac2JETlhhMk0xVjBaS2MySkVUbGhoTWsweFZtcEJlRll5U2tWVWJHaG9UV3N3ZUZadGNFdFRNVWw1VTJ0V1ZXSkhhRzlVVmxaM1ZsWmFkR05GWkZwV01VcEpWbTEwYTFkSFNrZGpSVGxhVmpOU1IxcFZXbUZrUjA1R1UyMTRVMkpIZHpGV1ZFb3dWakZhV0ZOcmJGSmlSMmhZV1d4b2IwMHhXbGRYYlhSWFRWZDBObGxWV2xOVWJGcFlaSHBDVjAxdVVuWlZha1pYWkVaT2MxZHNhR2xTTW1oWlYxWmtNRmxXVWtkV1dHaFlZbGhTV0ZSV2FFTlNiRnBZWlVoa1YwMUVSbGRaTUZaM1ZqSktWVkpZWkZkaGExcFlXa1ZhVDJNeFpITmhSMnhUVFcxb1dsWXhaRFJWTVZsNFUydGthbEp0VWxsWmJGWmhZMVpzY2xkdFJteFdia0pIVmpKNFQxWlhTa2RqUm14aFUwaENSRlpxU2tabFZsSlpZVVprVTFKWVFrbFhXSEJIVkRKU1YxZHVUbFJpVjJoeldXeG9iMWRXV1hoYVJGSnBUV3RzTkZkclZtdFdiVXB5WTBac1dtSkhhRlJXTVZwWFkxWktjbVJHVWxkaWEwcElWbXBLZWs1V1dsaFRhMXBxVWxkb1dGUlhOVU5oUmxweFVtMUdUMkpGV2xwWlZWcGhZVWRGZUdOSE9WaGhNVnBvVmtSS1QyTXlUa1phUjJoVFRXMW9lbGRYZUc5aU1XUnpWMWhvWVZKR1NuQlVWM1J6VFRGU1ZtRkhPVmhTTUhCNVZHeGFjMWR0U2toaFJsSlhUVVp3VkZacVJuZFNWa1p5VDFkc1UwMHlhRmxXYlhCTFRrWlJlRmRzYUZSaVJuQnhWV3hrVTFsV1VsWlhiVVpPVFZad2VGVXlkREJXTVZweVkwWndXR0V4Y0hKWlZXUkdaVWRPU0U5V1pHaGhNSEJ2Vm10U1MxUnRWa2RqUld4VllsZG9WRlJYTlc5V1ZtUlhWV3M1VWsxWFVucFdNV2h2V1ZaS1IxTnNaRlZXYkZwNlZGUkdVMk15UmtaUFYyaHBVbGhDTmxkVVFtRmpNV1IwVTJ0a1dHSlhhRmhaVkVaM1ZrWmFjVkp0ZEd0U2EzQXdXbFZhYTJGV1NuTmhNMmhYWVRGd2FGWlVSbFpsUm1SMVUyczFXRkpZUW5oV1Z6QjRZakZaZUZWc2FFOVdlbXh6V1d0YWQyVkdWWGxrUkVKWFRWWndlVll5ZUhkWGJGcFhZMGhLVjJGcldreFdha3BQVWpKS1IxcEdaRTVOUlhCS1ZqRmFVMU14VlhoWFdHaFlZbXhhVjFsc2FHOVdSbXhaWTBaa1dGWnNjRmxaTUZVMVlWVXhXRlZ1Y0ZkTlYyaDJWMVphUzFJeFRuTmFSbFpYWWtadmVsWkdWbUZaVjFKR1RsWmFVRll5YUhCVmJHaENaREZrVjFadE9WVk5WbkF3VlcwMVMxWkhTbGhoUm1oYVZrVmFNMVpyV21GalZrcDFXa1pPVGxacmIzZFhiRlpyWXpGVmVWTnVTbFJoTTFKWVZGYzFiMWRHYkZWU2EzQnNVbTFTZWxsVldsTmhSVEZaVVc1b1YxWXphSEpXVkVaclVqRldjMkZGT1ZkaGVsWjVWMWQwWVdReVZrZFdibEpyVWtWS2IxbFljRWRsVmxKelZtNU9XR0pHY0ZoWk1GSlBWMnhhV0ZWclpHRldNMmhJV1RJeFIxSXlSa2hoUlRWWFYwVktSbFpxU2pSV01XeFhWVmhvWVZKWFVsWlpiWFIzWWpGV2NWTnRPVmRTYlhoNVZtMDFhMVl4V25OalNHaFdWak5vY2xaclZYaFhSbFp6WVVaa1RtRnNXazFXYWtKclV6Rk9SMVp1VWxCV2JGcFlXV3RvUTJJeFdrZFdiVVphVm14c05WVnRkRzlWUmxsNVlVWm9XbGRJUWxoVk1GcGhZMVpPY1ZWc1drNVdNVWwzVmxSS05GWXhWWGxUYTJSVVlsVmFWbFp0ZUhkTk1WcHlWMjFHYWxacmNEQlZiVEV3VmpKS2NsTnJiRmROYmxKeVdYcEdWbVF3TVVsaVIwWnNZVEZ3V1ZkWGVHOVJNVkpIVld4YVlWSldjSE5WYlRGVFYyeHNjbGRzVG1oU1ZFWjZWVEkxYjFZeFdYcGhSMmhoVWtWYVlWcFZXbXRrVmxaMFpVWk9XRkpyY0ZwV2ExcGhXVlpzVjFSclpGZGlhelZYV1cxek1WWXhXblJsUjBaWFlrWktWMVpYTlV0VlZsWlZUVVJyUFE9PQ==
 ```
 
-Uhh... The `flaaaaaaaaaaaaaaaaaaaaaaaag.txt` file is in base64 encoding. (You can tell it's base64 encoded is because the last 2 characters are `=`, which is a padding character in base64)
+Uhh... The `flaaaaaaaaaaaaaaaaaaaaaaaag.txt` file is in base64 encoding. (You can tell it's base64 encoded is because the last 2 characters are `=`, which is a padding character in base64 encoding)
 
-**Let's base64 decode it:**
+**Let's `base64` decode it:**
 ```shell
 ┌[siunam♥Mercury]-(~/ctf/CrewCTF-2023/Forensics/Encrypt10n)-[2023.07.08|21:39:58(HKT)]
 └> nano flag.b64 

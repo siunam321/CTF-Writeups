@@ -34,7 +34,7 @@ As you can see, it's a memory dump file.
 
 We can try to use a memory forensic tool called Volatility.
 
-**However, I wanna try `strings` first:**
+**However, I wanna try `strings` first, which will list out all the ASCII string in the file:**
 ```shell
 ┌[siunam♥Mercury]-(~/ctf/CrewCTF-2023/Forensics/DUMPster)-[2023.07.08|23:50:22(HKT)]
 └> strings memory | grep -nE 'crew{.*'
@@ -59,7 +59,7 @@ Wait... It actually worked? lol
 
 So the flag should be: `crew{k3yc7l_us3r_kk3y5_are7_s3cur3}`. However, I tried that, and it's wrong.
 
-**Then, I dumped the `.bash_history` in the memory dump:**
+**Then, I dumped the `.bash_history` in the memory dump with the given profile:**
 ```
 ┌[siunam♥Mercury]-(~/ctf/CrewCTF-2023/Forensics/DUMPster)-[2023.07.09|14:52:01(HKT)]
 └> python2 /opt/volatility/vol.py --plugin=. --profile=LinuxDebian_5_10_0-20-amd64_profilex64 -f memory linux_bash            
@@ -79,7 +79,7 @@ Pid      Name                 Command Time                   Command
      511 bash                 2022-12-28 10:36:12 UTC+0000   rm -rf flag.txt
 ```
 
-In here, we can see that the `flag.txt` is created, `shred`, `rm`. However, the `flag.txt.enc`, which is encrypted via AES 256 CBC mode with 1000000 iteration, didn't get `shred` or `rm`.
+In here, we can see that the `flag.txt` is created, `shred`'ed, and `rm`'ed. However, the `flag.txt.enc`, which is encrypted via AES 256 CBC mode with 1000000 iteration, didn't get `shred`'ed or `rm`'ed.
 
 **That being said, we can try to recover the `flag.txt.enc`, and decrypt it:**
 ```shell

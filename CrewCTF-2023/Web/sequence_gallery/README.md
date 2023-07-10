@@ -50,7 +50,7 @@ Archive:  sequence_gallery.zip
   inflating: dist/src/templates/index.html  
 ```
 
-**In `dist/src/main.py`, we can see the web application logic:**
+**In `dist/src/main.py`, we can see the web application's logic:**
 ```python
 import os
 import sqlite3
@@ -86,7 +86,7 @@ if __name__ == '__main__':
 
 In route `/`, when the `sequence` GET parameter is given, it'll strip out all rest of the path and ONLY extract the filename. Then, it'll append `.dc` to the filename. For example, parameter value `power` will become `power.dc`.
 
-Moreover, if the `sequence` GET parameter's value contains ` ` or `flag`, it'll return `:(`.
+Moreover, if the `sequence` GET parameter's value contains a space character (` `) or `flag`, it'll return `:(`.
 
 After that, it'll use `subprocess.run()` method to execute a Linux command called `dc`, and with the `sequence` GET parameter's value as the ***argument***. Notice that the `Shell` argument is not provided, which means **we can't inject OS command**. (Or is it :D)
 
@@ -96,7 +96,7 @@ Finally, use `render_template()` to render the `output` of the `dc` command. (`r
 
 Now, in `subprocess.run()` method it doesn't have `Shell=True`, however it doesn't mean it's not vulnerable.
 
-Our `sequence` GET parameter's value is being parsed as an argument in the `dc` command, thus it's ***vulnerable argument injection***:
+Our `sequence` GET parameter's value is being parsed as an argument in the `dc` command, thus it's very likely to be ***vulnerable to argument injection***:
 
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/CrewCTF-2023/images/Pasted%20image%2020230708150122.png)
 
@@ -152,9 +152,9 @@ Wow! So we can execute OS command? Cool!
 
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/CrewCTF-2023/images/Pasted%20image%2020230708150507.png)
 
-Uhh... I forgot the ` ` filter.
+Uhh... I forgot the space character filter.
 
-**In order to bypass the ` ` filter, we can try to replace ` ` with anything else:**
+**In order to bypass the space character filter, we can try to replace the space character with anything else:**
 ```shell
 -e"!id
 ```
@@ -179,9 +179,9 @@ Nice! We can now execute arbitrary OS commands!
 
 Uh... Wait, the filters!
 
-This time, since the ` ` is executed on the system, we need to find other bypasses.
+This time, since the space character is executed on the system, we need to find other bypasses.
 
-Based on my experience, some Bash jail CTF challenges have banned ` ` the character.
+Based on my experience, some Bash jail CTF challenges have banned space character.
 
 In Bash, **we can use the `$IFS` special shell variable**. The `$IFS` (Internal Field Separator) is used by the shell to determine how to do word splitting, the default value for `$IFS` consists of whitespace characters.
 

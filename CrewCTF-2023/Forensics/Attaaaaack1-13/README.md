@@ -154,7 +154,7 @@ Offset(V)  Name                    PID   PPID   Thds     Hnds   Sess  Wow64 Star
 0x84f3d878 conhost.exe            3664    416      2       51      1      0 2023-02-20 19:10:52 UTC+0000
 ```
 
-- Number of running processes: `47`
+- The total number of running processes: `47`
 - **Flag: `47`**
 
 ## Attaaaaack3
@@ -249,7 +249,7 @@ Author : 0xSh3rl0ck
 
 In Attaaaaack4, we found that the `runddl32.exe` is sussy.
 
-**Then, we can use its PID to track down which parent PID (PPID) is the same as the `runddl32.exe` PID:**
+**Then, we can use its PID to track down which Parent PID (PPID) is the same as the `runddl32.exe` PID:**
 ```
 0x84398998 runddl32.exe            300   2876     10     2314      1      0 2023-02-20 19:03:40 UTC+0000
 0x84390030 notepad.exe            2556    300      2       58      1      0 2023-02-20 19:03:41 UTC+0000
@@ -296,7 +296,7 @@ Command line : notepad
 
 As you can see, the `runddl32.exe`'s full path is `C:\Users\0XSH3R~1\AppData\Local\Temp\MSDCSC\runddl32.exe`.
 
-- **Flag: `C:\Users\0XSH3R~1\AppData\Local\Temp\MSDCSC\runddl32.exe`**
+- **Flag: `crew{C:\Users\0XSH3R~1\AppData\Local\Temp\MSDCSC\runddl32.exe}`**
 
 ## Attaaaaack7
 
@@ -380,7 +380,7 @@ UntKeylogger
 UntControlKey
 ```
 
-As you can see, the `GetKeyboardState` and `GetKeyState` looks promising.
+As you can see, the `GetKeyboardState` and `GetKeyState` API looks promising.
 
 - **Flag: `crew{GetKeyState}`**
 
@@ -641,7 +641,7 @@ Author : 0xSh3rl0ck
 
 ### Find the flag
 
-**Grab the SHA256 hash of the `runddl.exe` malware from [VirusTotal](https://www.virustotal.com/gui/file/9601b0c3b0991cb7ce1332a8501d79084822b3bdea1bfaac0f94b9a98be6769a/details):**
+**To find the malware's family, we can first grab the SHA256 hash of the `runddl.exe` malware from [VirusTotal](https://www.virustotal.com/gui/file/9601b0c3b0991cb7ce1332a8501d79084822b3bdea1bfaac0f94b9a98be6769a/details):**
 
 - SHA256 hash: `9601b0c3b0991cb7ce1332a8501d79084822b3bdea1bfaac0f94b9a98be6769a`
 
@@ -651,9 +651,11 @@ Author : 0xSh3rl0ck
 
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/CrewCTF-2023/images/Pasted%20image%2020230709132923.png)
 
-**According to [Microsoft](https://learn.microsoft.com/en-us/microsoft-365/security/intelligence/malware-naming?view=o365-worldwide), the naming scheme is:**
+**According to [Microsoft malware naming scheme](https://learn.microsoft.com/en-us/microsoft-365/security/intelligence/malware-naming?view=o365-worldwide), the naming scheme is:**
 
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/CrewCTF-2023/images/Pasted%20image%2020230709132958.png)
+
+In the Talos File Reputation's result, it has `Backdoor.Win32.DarkKomet`.
 
 Hence, the `runddl.exe` malware family is `DarkKomet`.
 
