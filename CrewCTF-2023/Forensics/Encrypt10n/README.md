@@ -16,6 +16,7 @@
 
 ### Overview
 
+- 73 solves / 100 points
 - Overall difficulty for me (From 1-10 stars): ★★☆☆☆☆☆☆☆☆
 
 ### Background
@@ -27,6 +28,8 @@ Q1 : crew{password}
 [Link](https://drive.google.com/file/d/1NuQXOdmXbCGVwL5HIO0DDOlFQ-ZuJnB3/view?usp=share_link)
 
 Author : 0xSh3rl0ck
+
+![](https://github.com/siunam321/CTF-Writeups/blob/main/CrewCTF-2023/images/Pasted%20image%2020230710143005.png)
 
 ### Find the flag
 
@@ -89,6 +92,7 @@ Nice! We found the password!
 
 ### Overview
 
+- 63 solves / 100 points
 - Overall difficulty for me (From 1-10 stars): ★☆☆☆☆☆☆☆☆☆
 
 ### Background
@@ -98,6 +102,8 @@ Congrats Investigator for finding the first part can you use it to get the secre
 [Link](https://drive.google.com/file/d/1x-857VSldVBR-ieF0bFqAD5cewLNuxVF/view?usp=sharing)
 
 Author : 0xSh3rl0ck
+
+![](https://github.com/siunam321/CTF-Writeups/blob/main/CrewCTF-2023/images/Pasted%20image%2020230710143015.png)
 
 ### Find the flag
 

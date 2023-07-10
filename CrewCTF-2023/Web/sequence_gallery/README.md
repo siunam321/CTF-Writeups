@@ -9,6 +9,7 @@
 
 ## Overview
 
+- 101 solves / 100 points
 - Overall difficulty for me (From 1-10 stars): ★★★★☆☆☆☆☆☆
 
 ## Background
@@ -18,6 +19,8 @@
 Author : Satoooon
 
 [http://sequence-gallery.chal.crewc.tf:8080/](http://sequence-gallery.chal.crewc.tf:8080/)
+
+![](https://github.com/siunam321/CTF-Writeups/blob/main/CrewCTF-2023/images/Pasted%20image%2020230710142650.png)
 
 ## Enumeration
 

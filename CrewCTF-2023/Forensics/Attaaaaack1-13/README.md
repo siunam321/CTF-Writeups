@@ -21,6 +21,7 @@
 
 ### Overview
 
+- 161 solves / 100 points
 - Overall difficulty for me (From 1-10 stars): ★☆☆☆☆☆☆☆☆☆
 
 ### Background
@@ -34,6 +35,8 @@ example : crew{Profile}
 [Link](https://drive.google.com/file/d/1T8__WXOPcGqmkubyH-NBokEGk3N_H5hr/view?usp=share_link)
 
 Author : 0xSh3rl0ck
+
+![](https://github.com/siunam321/CTF-Writeups/blob/main/CrewCTF-2023/images/Pasted%20image%2020230710142806.png)
 
 ### Find the flag
 
@@ -80,6 +83,7 @@ INFO    : volatility.debug    : Determining profile based on KDBG search...
 
 ### Overview
 
+- 168 solves / 100 points
 - Overall difficulty for me (From 1-10 stars): ★☆☆☆☆☆☆☆☆☆
 
 ### Background
@@ -87,6 +91,8 @@ INFO    : volatility.debug    : Determining profile based on KDBG search...
 Q2. How many processes were running ? (number)
 
 Author : 0xSh3rl0ck
+
+![](https://github.com/siunam321/CTF-Writeups/blob/main/CrewCTF-2023/images/Pasted%20image%2020230710142816.png)
 
 ### Find the flag
 
@@ -155,6 +161,7 @@ Offset(V)  Name                    PID   PPID   Thds     Hnds   Sess  Wow64 Star
 
 ### Overview
 
+- 88 solves / 100 points
 - Overall difficulty for me (From 1-10 stars): ★☆☆☆☆☆☆☆☆☆
 
 ### Background
@@ -162,6 +169,8 @@ Offset(V)  Name                    PID   PPID   Thds     Hnds   Sess  Wow64 Star
 Q3. i think the user left note on the machine. can you find it ?
 
 Author : 0xSh3rl0ck
+
+![](https://github.com/siunam321/CTF-Writeups/blob/main/CrewCTF-2023/images/Pasted%20image%2020230710142827.png)
 
 ### Find the flag
 
@@ -188,6 +197,7 @@ Nice! We found that weird text!
 
 ### Overview
 
+- 143 solves / 100 points
 - Overall difficulty for me (From 1-10 stars): ★☆☆☆☆☆☆☆☆☆
 
 ### Background
@@ -197,6 +207,8 @@ Q4. What is the name and PID of the suspicious process ?
 example : crew{abcd.exe_111}
 
 Author : 0xSh3rl0ck
+
+![](https://github.com/siunam321/CTF-Writeups/blob/main/CrewCTF-2023/images/Pasted%20image%2020230710142835.png)
 
 ### Find the flag
 
@@ -220,6 +232,7 @@ The `runddl32.exe` is weird to me, as its name is run**ddl**, not run**dll**.
 
 ### Overview
 
+- 143 solves / 100 points
 - Overall difficulty for me (From 1-10 stars): ★☆☆☆☆☆☆☆☆☆
 
 ### Background
@@ -229,6 +242,8 @@ Q5. What is the another process that is related to this process and it's strange
 example : crew{spotify.exe}
 
 Author : 0xSh3rl0ck
+
+![](https://github.com/siunam321/CTF-Writeups/blob/main/CrewCTF-2023/images/Pasted%20image%2020230710142844.png)
 
 ### Find the flag
 
@@ -248,6 +263,7 @@ Found it!
 
 ### Overview
 
+- 73 solves / 100 points
 - Overall difficulty for me (From 1-10 stars): ★☆☆☆☆☆☆☆☆☆
 
 ### Background
@@ -257,6 +273,8 @@ Q6. What is the full path (including executable name) of the hidden executable?
 example : `crew{C:\Windows\System32\abc.exe}`
 
 Author : 0xSh3rl0ck
+
+![](https://github.com/siunam321/CTF-Writeups/blob/main/CrewCTF-2023/images/Pasted%20image%2020230710142854.png)
 
 ### Find the flag
 
@@ -284,6 +302,7 @@ As you can see, the `runddl32.exe`'s full path is `C:\Users\0XSH3R~1\AppData\Loc
 
 ### Overview
 
+- 62 solves / 100 points
 - Overall difficulty for me (From 1-10 stars): ★★☆☆☆☆☆☆☆☆
 
 ### Background
@@ -293,6 +312,8 @@ Q7. What is the API used by the malware to retrieve the status of a specified vi
 flag format : crew{AbcDef}
 
 Author : 0xSh3rl0ck
+
+![](https://github.com/siunam321/CTF-Writeups/blob/main/CrewCTF-2023/images/Pasted%20image%2020230710142906.png)
 
 ### Find the flag
 
@@ -367,6 +388,7 @@ As you can see, the `GetKeyboardState` and `GetKeyState` looks promising.
 
 ### Overview
 
+- 46 solves / 271 points
 - Overall difficulty for me (From 1-10 stars): ★★★☆☆☆☆☆☆☆
 
 ### Background
@@ -376,6 +398,8 @@ Q8. What is the Attacker's C2 domain name and port number ? (domain name:port nu
 example : crew{abcd.com:8080}
 
 Author : 0xSh3rl0ck
+
+![](https://github.com/siunam321/CTF-Writeups/blob/main/CrewCTF-2023/images/Pasted%20image%2020230710142914.png)
 
 ### Find the flag
 
@@ -424,6 +448,7 @@ Hence, `test213.no-ip.info:1604` is the C2 server.
 
 ### Overview
 
+- 33 solves / 632 points
 - Overall difficulty for me (From 1-10 stars): ★★★★★☆☆☆☆☆
 
 ### Background
@@ -433,6 +458,8 @@ Q9. Seems that there is Keylogger, can you find it's path ?
 example : `crew{C:\Windows\System32\abc.def}`
 
 Author : 0xSh3rl0ck
+
+![](https://github.com/siunam321/CTF-Writeups/blob/main/CrewCTF-2023/images/Pasted%20image%2020230710142923.png)
 
 ### Find the flag
 
@@ -482,6 +509,7 @@ C:\Users\0xSh3rl0ck\Desktop
 
 ### Overview
 
+- 22 solves / 842 points
 - Overall difficulty for me (From 1-10 stars): ★★☆☆☆☆☆☆☆☆
 
 ### Background
@@ -491,6 +519,8 @@ Q10. we think that the malware uses persistence technique can you detect it ?
 example : crew{Scheduled_tasks} (first letter of the first word is uppercase and the first letter of other is lowercase)
 
 Author : 0xSh3rl0ck
+
+![](https://github.com/siunam321/CTF-Writeups/blob/main/CrewCTF-2023/images/Pasted%20image%2020230710142932.png)
 
 ### Find the flag
 
@@ -506,6 +536,7 @@ With that said, the persistence mechanism is modifying the registry key, so that
 
 ### Overview
 
+- 19 solves / 884 points
 - Overall difficulty for me (From 1-10 stars): ★☆☆☆☆☆☆☆☆☆
 
 ### Background
@@ -515,6 +546,8 @@ Q11. can you find the key name and it's value ?
 example : crew{CurrentVersion_ProductName}
 
 Author : 0xSh3rl0ck
+
+![](https://github.com/siunam321/CTF-Writeups/blob/main/CrewCTF-2023/images/Pasted%20image%2020230710142939.png)
 
 ### Find the flag
 
@@ -556,6 +589,7 @@ The `HKCU` `Run` key has a value called `MicroUpdate`.
 
 ### Overview
 
+- 26 solves / 775 points
 - Overall difficulty for me (From 1-10 stars): ★☆☆☆☆☆☆☆☆☆
 
 ### Background
@@ -565,6 +599,8 @@ Q12. What is the strange handle used by the malware ?
 example : crew{the name of the handle}
 
 Author : 0xSh3rl0ck
+
+![](https://github.com/siunam321/CTF-Writeups/blob/main/CrewCTF-2023/images/Pasted%20image%2020230710142946.png)
 
 ### Find the flag
 
@@ -590,6 +626,7 @@ Offset(V)     Pid     Handle     Access Type             Details
 
 ### Overview
 
+- 30 solves / 698 points
 - Overall difficulty for me (From 1-10 stars): ★☆☆☆☆☆☆☆☆☆
 
 ### Background
@@ -599,6 +636,8 @@ Q13. Now can you help us to know the Family of this malware ?
 example : crew{Malware}
 
 Author : 0xSh3rl0ck
+
+![](https://github.com/siunam321/CTF-Writeups/blob/main/CrewCTF-2023/images/Pasted%20image%2020230710142954.png)
 
 ### Find the flag
 

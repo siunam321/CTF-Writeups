@@ -9,6 +9,7 @@
 
 ## Overview
 
+- 176 solves / 100 points
 - Overall difficulty for me (From 1-10 stars): ★★★★☆☆☆☆☆☆
 
 ## Background
@@ -21,7 +22,7 @@ flag md5 : cbb510f471de8b8808890599e9893afa (example cmd: `echo -n "crew{19.3212
 
 Author : st4rn
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/CrewCTF-2023/images/Pasted%20image%2020230708165816.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/CrewCTF-2023/images/Pasted%20image%2020230710142735.png)
 
 ## Find the flag
 

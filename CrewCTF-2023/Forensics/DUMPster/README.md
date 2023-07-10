@@ -2,11 +2,14 @@
 
 ## Overview
 
+- 26 solves / 775 points
 - Overall difficulty for me (From 1-10 stars): ★★★★★★★★★★
 
 ## Background
 
 [https://mega.nz/file/nuYCwLAA#44X9MnxYu4Cjk04hhUrg2a9KBNWYkC8Hx8R04XTZYdo](https://mega.nz/file/nuYCwLAA#44X9MnxYu4Cjk04hhUrg2a9KBNWYkC8Hx8R04XTZYdo)
+
+![](https://github.com/siunam321/CTF-Writeups/blob/main/CrewCTF-2023/images/Pasted%20image%2020230710143029.png)
 
 ## Find the flag
 
