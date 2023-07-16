@@ -39,4 +39,4 @@ We offer a diverse range of enjoyable challenges across various difficulty level
 ## What I've learned in this CTF
 
 - web:
-    1. Exploiting Business Logic Vulnerability ([Warmupprofile](https://github.com/siunam321/CTF-Writeups/blob/main/zer0pts-CTF-2023/web/Warmupprofile/README.md))
+    1. Exploiting Business Logic Vulnerability ([Warmupprofile](https://github.com/siunam321/CTF-Writeups/blob/main/zer0pts-CTF-2023/web/Warmuprofile/README.md))
