@@ -27,7 +27,7 @@ We offer a diverse range of enjoyable challenges across various difficulty level
 
 - Team: ARESx
 - Team Solves: 10/27
-- Individual Solves: 6/34
+- Individual Solves: 0/27
 - Score: 1116
 - Rank: 38/476
 - Overall Difficulty To Me: ★★★★★★★★★★
@@ -39,4 +39,4 @@ We offer a diverse range of enjoyable challenges across various difficulty level
 ## What I've learned in this CTF
 
 - web:
-    1. Exploiting Business Logic Vulnerability ([Warmupprofile](https://github.com/siunam321/CTF-Writeups/blob/main/zer0pts-CTF-2023/web/Warmuprofile/README.md))
+    1. Exploiting Business Logic Vulnerability ([Warmuprofile](https://github.com/siunam321/CTF-Writeups/blob/main/zer0pts-CTF-2023/web/Warmuprofile/README.md))
