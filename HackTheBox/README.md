@@ -14,3 +14,4 @@ May 26, 2023 | Access
 June 3, 2023 | Shocker
 June 4, 2023 | Brainfuck
 July 25, 2023| Backdoor
+July 26, 2023| Pandora
