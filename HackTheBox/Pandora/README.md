@@ -20,7 +20,7 @@ Welcome to my another writeup! In this HackTheBox [Pandora](https://app.hacktheb
 
 ## Service Enumeration
 
-As usual, scan the machine for open ports via `rustscan`!
+As usual, scan the machine for open ports via `rustscan` and `nmap`!
 
 **Rustscan:**
 ```shell
@@ -171,8 +171,8 @@ In the version scan (`-sV`) on UDP port 161 in `nmap`, we know that the SNMP ver
 
 In SNMP, there's something called "**Community Strings**".
 
-- `**public**` mainly **read only** functions
-- `**private**` **Read/Write** in general
+- **`public`** mainly **read only** functions
+- **`private`** **Read/Write** in general
 
 **To brute force the `public` and `private` string, we can use `nmap`'s `snmp-brute` NSE script:**
 ```shell
@@ -187,7 +187,7 @@ PORT    STATE SERVICE
 
 - Found `public` string: `public`
 
-## Initial Foothoold
+## Initial Foothold
 
 Then, we can use that `public` string to **enumerate the entire MIB**.
 
