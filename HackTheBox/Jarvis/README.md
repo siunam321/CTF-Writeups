@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Welcome to my another writeup! In this HackTheBox [Jarvis](https://app.hackthebox.com/machines/Jarvis) machine, you'll learn: Exploiting Rejetto HTTP File Server (HFS) 2.3.x, Kernel Exploit (KE), and more! Without further ado, let's dive in.
+Welcome to my another writeup! In this HackTheBox [Jarvis](https://app.hackthebox.com/machines/Jarvis) machine, you'll learn: RCE via Union-based SQL injection with `Into outfile`, OS Command Injection, filter bypass, privilege escalation via misconfigurated `systemctl` SUID binary, and more! Without further ado, let's dive in.
 
 - Overall difficulty for me (From 1-10 stars): ★★☆☆☆☆☆☆☆☆
 
@@ -11,9 +11,8 @@ Welcome to my another writeup! In this HackTheBox [Jarvis](https://app.hackthebo
 1. **[Service Enumeration](#service-enumeration)**
 2. **[Initial Foothold](#initial-foothold)**
 3. **[Privilege Escalation: www-data to pepper](#privilege-escalation)**
-4. **[Privilege Escalation: pepper to root](#pepper-root)**
+4. **[Privilege Escalation: pepper to root](#pepper-to-root)**
 5. **[Conclusion](#conclusion)**
-
 
 ## Background
 
@@ -300,7 +299,7 @@ As you can see, it worked! This is because the backend parses parameter `cod`'s 
 Now that we confirmed there's a SQL injection in `/room.php`, we can try to determine what is the type of SQL injection, like Union-based, blind-based.
 
 **After some trial and error, I found that it's a Union-based SQL injection:**
-```http
+```
 /room.php?cod=7 UNION ALL SELECT 1,2,3,4,5,6,7-- -
 ```
 
@@ -309,7 +308,7 @@ Now that we confirmed there's a SQL injection in `/room.php`, we can try to dete
 So, there are **7 columns**, and **column 2, 3, 5 is reflected** to the page.
 
 **We can also check column 2, 3, 5 accept string data type or not:**
-```http
+```
 /room.php?cod=7 UNION ALL SELECT 1,'string2','string3',4,'string5',6,7-- -
 ```
 
@@ -322,7 +321,7 @@ They can!
 **Enumerate DBMS (Database Management System):**
 
 **After trying to show different DBMS version, MySQL's `@@version` works:**
-```http
+```
 /room.php?cod=7 UNION ALL SELECT NULL,@@version,NULL,NULL,NULL,NULL,NULL-- -
 ```
 
@@ -636,7 +635,7 @@ www-data@jarvis:/var/www/html$ find / -perm -4000 2>/dev/null
 /usr/lib/dbus-1.0/dbus-daemon-launch-helper
 ```
 
-- Non default SUID binary: `/bin/systemctl`
+- Non-default SUID binary: `/bin/systemctl`
 
 **Sudo permission:**
 ```shell
@@ -1047,7 +1046,7 @@ cat /home/pepper/user.txt
 
 That being said, we can escalate our privilege to `root`!
 
-**You could follow [GTFOBins](https://gtfobins.github.io/gtfobins/systemctl/#suid), but I found [this GitHub Gist](https://gist.github.com/A1vinSmith/78786df7899a840ec43c5ddecb6a4740) is better for me.**
+**You could follow [GTFOBins](https://gtfobins.github.io/gtfobins/systemctl/#suid), but I found [this GitHub Gist](https://gist.github.com/A1vinSmith/78786df7899a840ec43c5ddecb6a4740) is better to me.**
 
 - **Create a service file:**
 
