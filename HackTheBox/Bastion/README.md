@@ -10,7 +10,7 @@ Welcome to my another writeup! In this HackTheBox [Bastion](https://app.hacktheb
 
 1. **[Service Enumeration](#service-enumeration)**
 2. **[Initial Foothold](#initial-foothold)**
-3. **[Privilege Escalation: asterisk to root](#privilege-escalation)**
+3. **[Privilege Escalation: bastion\\l4mpje to bastion\\Administrator](#privilege-escalation)**
 4. **[Conclusion](#conclusion)**
 
 ## Background
@@ -76,25 +76,7 @@ PORT      STATE SERVICE     REASON  VERSION
 Service Info: OSs: Windows, Windows Server 2008 R2 - 2012; CPE: cpe:/o:microsoft:windows
 
 Host script results:
-|_clock-skew: mean: -39m59s, deviation: 1h09m14s, median: -1s
-| smb2-security-mode: 
-|   3:1:1: 
-|_    Message signing enabled but not required
-| p2p-conficker: 
-|   Checking for Conficker.C or higher...
-|   Check 1 (port 26941/tcp): CLEAN (Couldn't connect)
-|   Check 2 (port 14454/tcp): CLEAN (Couldn't connect)
-|   Check 3 (port 18741/udp): CLEAN (Timeout)
-|   Check 4 (port 16911/udp): CLEAN (Timeout)
-|_  0/4 checks are positive: Host is CLEAN or ports are blocked
-| smb-security-mode: 
-|   account_used: guest
-|   authentication_level: user
-|   challenge_response: supported
-|_  message_signing: disabled (dangerous, but default)
-| smb2-time: 
-|   date: 2023-08-04T05:05:45
-|_  start_date: 2023-08-04T05:03:40
+[...]
 | smb-os-discovery: 
 |   OS: Windows Server 2016 Standard 14393 (Windows Server 2016 Standard 6.3)
 |   Computer name: Bastion
@@ -136,7 +118,6 @@ According to `rustscan` and `nmap` result, the target machine has 13 port are op
 ┌[siunam♥Mercury]-(~/ctf/htb/Machines/Bastion)-[2023.08.04|13:07:18(HKT)]
 └> smbmap -H $RHOSTS -u 'Guest' -p ''   
 [+] IP: 10.10.10.134:445	Name: 10.10.10.134                                      
-[-] Work[!] Unable to remove test directory at \\10.10.10.134\Backups\CWBNTYZDXQ, please remove manually
         Disk                                                  	Permissions	Comment
 	----                                                  	-----------	-------
 	ADMIN$                                            	NO ACCESS	Remote Admin
