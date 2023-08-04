@@ -22,3 +22,4 @@ July 28, 2023| Jarvis
 August 1, 2023| Granny
 August 2, 2023| Arctic
 August 3, 2023| Beep
+August 4, 2023| Bastion
