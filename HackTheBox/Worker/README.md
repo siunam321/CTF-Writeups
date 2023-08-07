@@ -10,7 +10,7 @@ Welcome to my another writeup! In this HackTheBox [Worker](https://app.hackthebo
 
 1. **[Service Enumeration](#service-enumeration)**
 2. **[Initial Foothold](#initial-foothold)**
-3. **[Privilege Escalation (Unintended) : IIS APPPOOL\\DEFAULTAPPPOOL to NT AUTHORITY\\SYSTEM](#privilege-escalation)**
+3. **[Privilege Escalation (Unintended) : IIS APPPOOL\\DEFAULTAPPPOOL to NT AUTHORITY\\SYSTEM](#privilege-escalation-unintended)**
 4. **[Conclusion](#conclusion)**
 
 ## Background
@@ -472,7 +472,7 @@ Saved as: revshell_stageless_initial.aspx
 listening on [any] 443 ...
 ```
 
-- **Create/upload a file with the above ASP reverse shell, and repeat the previous pull request:**
+- **Create/upload a file with the above ASPX reverse shell, and repeat the previous pull request:**
 
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/HackTheBox/Worker/images/Pasted%20image%2020230805214336.png)
 
