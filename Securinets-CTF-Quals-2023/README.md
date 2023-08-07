@@ -40,4 +40,4 @@ Only 15 teams will qualify to the final CTF + top 3 Tunisians/Algerians Teams.
 ## What I've learned in this CTF
 
 - Web Exploitation:
-    Exploiting web cache poisoning in JavaScript's Service Worker to deliver XSS payload ([0 CSP](https://github.com/siunam321/CTF-Writeups/blob/main/Securinets-CTF-Quals-2023/Web-Exploitation/0-CSP/README.md))
+    1. Exploiting web cache poisoning in JavaScript's Service Worker to deliver XSS payload ([0 CSP](https://github.com/siunam321/CTF-Writeups/blob/main/Securinets-CTF-Quals-2023/Web-Exploitation/0-CSP/README.md))
