@@ -24,3 +24,4 @@ August 2, 2023| Arctic
 August 3, 2023| Beep
 August 4, 2023| Bastion
 August 7, 2023| Worker
+August 9, 2023| Timelapse
