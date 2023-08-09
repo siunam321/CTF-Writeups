@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Welcome to my another writeup! In this HackTheBox [Timelapse](https://app.hackthebox.com/machines/Timelapse) machine, you'll learn: Enumerating SMB shares, cracking password protected zip file and `pfx` certificate, privilege escalation via clear-text credentials in PowerShell history, dumping LAPS password, and more! Without further ado, let's dive in.
+Welcome to my another writeup! In this HackTheBox [Timelapse](https://app.hackthebox.com/machines/Timelapse) machine, you'll learn: Enumerating SMB shares, cracking password protected zip file and `pfx` certificate, anti-virus bypass, privilege escalation via clear-text credentials in PowerShell history, dumping LAPS password, and more! Without further ado, let's dive in.
 
 - Overall difficulty for me (From 1-10 stars): ★★★★☆☆☆☆☆☆
 
@@ -801,5 +801,6 @@ What we've learned:
 
 1. Enumerating SMB shares
 2. Cracking password protected zip file and `pfx` certificate
-3. Horizontal privilege escalation via clear-text credentials in PowerShell history
-4. Vertical privilege escalation via dumping LAPS password
+3. Anti-Virus bypass
+4. Horizontal privilege escalation via clear-text credentials in PowerShell history
+5. Vertical privilege escalation via dumping LAPS password
