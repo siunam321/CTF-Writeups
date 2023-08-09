@@ -10,8 +10,8 @@ Welcome to my another writeup! In this HackTheBox [Timelapse](https://app.hackth
 
 1. **[Service Enumeration](#service-enumeration)**
 2. **[Initial Foothold](#initial-foothold)**
-3. **[Privilege Escalation : legacyy to svc_deploy](#privilege-escalation)**
-4. **[Privilege Escalation : svc_deploy to Administrator](#svc_deploy-to-administrator)**
+3. **[Privilege Escalation: legacyy to svc_deploy](#privilege-escalation)**
+4. **[Privilege Escalation: svc_deploy to Administrator](#svc_deploy-to-administrator)**
 5. **[Conclusion](#conclusion)**
 
 ## Background
