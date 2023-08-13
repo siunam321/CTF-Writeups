@@ -11,9 +11,9 @@ Welcome to my another writeup! In this HackTheBox [Talkative](https://app.hackth
 1. **[Service Enumeration](#service-enumeration)**
 2. **[Initial Foothold](#initial-foothold)**
 3. **[Privilege Escalation: Jamovi Docker root to `172.17.0.10` Docker www-data](#privilege-escalation)**
-4. **[Privilege Escalation: `172.17.0.10` Docker `www-data` to host saul](##17217010-docker-www-data-to-host-saul)**
-5. **[Privilege Escalation: Host saul to `172.17.0.3` Docker root](##host-saul-to-1721703-docker-root)**
-6. **[Privilege Escalation: `172.17.0.3` Docker root to host `root`](##1721703-docker-root-to-host-root)**
+4. **[Privilege Escalation: `172.17.0.10` Docker `www-data` to host saul](#17217010-docker-www-data-to-host-saul)**
+5. **[Privilege Escalation: Host saul to `172.17.0.3` Docker root](#host-saul-to-1721703-docker-root)**
+6. **[Privilege Escalation: `172.17.0.3` Docker root to host `root`](#1721703-docker-root-to-host-root)**
 7. **[Conclusion](#conclusion)**
 
 ## Background
