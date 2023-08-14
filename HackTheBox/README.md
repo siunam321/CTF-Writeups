@@ -26,3 +26,4 @@ August 4, 2023| Bastion
 August 7, 2023| Worker
 August 9, 2023| Timelapse
 August 13, 2023| Talkative
+August 14, 2023| Bounty
