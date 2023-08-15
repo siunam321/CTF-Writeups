@@ -11,9 +11,9 @@ Welcome to my another writeup! In this HackTheBox [Acute](https://app.hackthebox
 1. **[Service Enumeration](#service-enumeration)**
 2. **[Initial Foothold](#initial-foothold)**
 3. **[Lateral Movement: `Acute-PC01` edavies to `ATSSERVER` imonks](#lateral-movement)**
-4. **[Privilege Escalation: `ATSSERVER` imonks to `Acute-PC01` jmorgan](#atsserver-imonks-to-acute-pc01)**
-5. **[Privilege Escalation: `Acute-PC01` jmorgan to `ATSSERVER` awallace](#acute-pc01-jmorgan-to-atsserver)**
-6. **[Privilege Escalation: `ATSSERVER` awallace to `ATSSERVER` `Domain Admins`](#atsserver-awallace-to-atsserver-domain admins)**
+4. **[Privilege Escalation: `ATSSERVER` imonks to `Acute-PC01` jmorgan](#privilege-escalation)**
+5. **[Privilege Escalation: `Acute-PC01` jmorgan to `ATSSERVER` awallace](#acute-pc01-jmorgan-to-atsserver-awallace)**
+6. **[Privilege Escalation: `ATSSERVER` awallace to `ATSSERVER` `Domain Admins`](#atsserver-awallace-to-atsserver-domain-admins)**
 7. **[Conclusion](#conclusion)**
 
 ## Background
