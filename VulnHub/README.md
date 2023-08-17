@@ -3,3 +3,4 @@ All my super doper great VulnHub writeups will be here.
 Date	 	   | Machine Title
 ---------------|------------------------
 August 17, 2023| digitalworld.local: FALL
+August 17, 2023| Hacker kid: 1.0.1
