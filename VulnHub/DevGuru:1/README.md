@@ -10,8 +10,9 @@ Welcome to my another writeup! In this VulnHub [DevGuru: 1](https://www.vulnhub.
 
 1. **[Service Enumeration](#service-enumeration)**
 2. **[Initial Foothold](#initial-foothold)**
-3. **[Privilege Escalation: qiu to root](#privilege-escalation)**
-4. **[Conclusion](#conclusion)**
+3. **[Privilege Escalation: www-data to frank](#privilege-escalation)**
+4. **[Privilege Escalation: frank to root](#frank-to-root)**
+5. **[Conclusion](#conclusion)**
 
 ## Background
 
