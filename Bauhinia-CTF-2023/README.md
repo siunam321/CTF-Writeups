@@ -36,6 +36,6 @@ There will be a number of (subjectively) fun challenges hand-crafted in Hong Kon
 
 ## What I've learned in this CTF
 
-- Web Exploitation:
+- Web:
     1. Overwriting Flask's secret via class pollution ([Hansel and Gretel](https://github.com/siunam321/CTF-Writeups/blob/main/Bauhinia-CTF-2023/Web/Hansel-and-Gretel/README.md)) (Second blooded)
     2. [Isekai Tensei Hakka](https://github.com/siunam321/CTF-Writeups/blob/main/Bauhinia-CTF-2023/Web/Isekai-Tensei-Hakka/README.md) ***(Unsolved)***
