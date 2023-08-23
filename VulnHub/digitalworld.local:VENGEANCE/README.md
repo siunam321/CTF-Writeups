@@ -54,7 +54,7 @@ As usual, scan the machine for open ports via `rustscan` and `nmap`!
 
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/VulnHub/digitalworld.local:VENGEANCE/images/Pasted%20image%2020230823105216.png)
 
-According to `rustscan` and `nmap` result, the target machine has 2 ports are opened:
+According to `rustscan` and `nmap` result, the target machine has 10 ports are opened:
 
 |Open Port         | Service                       |
 |:---:             |:---:                          |
