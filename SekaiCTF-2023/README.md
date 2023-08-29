@@ -32,7 +32,11 @@ SekaiCTF is back for its second iteration! This year’s competition takes place
 
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/SekaiCTF-2023/images/score.png)
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/SekaiCTF-2023/images/solves.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/SekaiCTF-2023/images/solves1.png)
+
+![](https://github.com/siunam321/CTF-Writeups/blob/main/SekaiCTF-2023/images/solves2.png)
+
+![](https://github.com/siunam321/CTF-Writeups/blob/main/SekaiCTF-2023/images/solves3.png)
 
 ## What I've learned in this CTF
 
