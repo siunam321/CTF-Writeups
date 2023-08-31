@@ -250,3 +250,4 @@ July 7, 2023  | Testing GraphQL APIs           | GraphQL-4          | Bypassing 
 July 7, 2023  | Testing GraphQL APIs           | GraphQL-5          | Performing CSRF exploits over GraphQL
 August 31, 2023 | Race Conditions              | Race-Conditions-1  | Limit overrun race conditions
 August 31, 2023 | Race Conditions              | Race-Conditions-2  | Bypassing rate limits via race conditions
+August 31, 2023 | Race Conditions              | Race-Conditions-3  | Multi-endpoint race conditions
