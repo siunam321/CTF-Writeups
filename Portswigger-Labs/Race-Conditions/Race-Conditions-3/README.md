@@ -110,6 +110,8 @@ It behaved as expected. In the first request, the gift card is redeemed, and the
 
 Same... Maybe `/gift-card` POST endpoint doesn't vulnerable to race condition?
 
+## Exploitation
+
 How about **the process of buying gift cards**?
 
 **In there, we can test for hidden multi-step sequences in POST endpoint `/cart` and `/cart/checkout`.**
