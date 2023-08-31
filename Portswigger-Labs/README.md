@@ -249,3 +249,4 @@ July 7, 2023  | Testing GraphQL APIs           | GraphQL-3          | Finding a 
 July 7, 2023  | Testing GraphQL APIs           | GraphQL-4          | Bypassing GraphQL brute force protections
 July 7, 2023  | Testing GraphQL APIs           | GraphQL-5          | Performing CSRF exploits over GraphQL
 August 31, 2023 | Race Conditions              | Race-Conditions-1  | Limit overrun race conditions
+August 31, 2023 | Race Conditions              | Race-Conditions-2  | Bypassing rate limits via race conditions
