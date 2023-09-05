@@ -28,7 +28,7 @@ Author: Nosurf
 
 **In this challenge, we can download a [file](https://github.com/siunam321/CTF-Writeups/blob/main/DownUnderCTF-2023/osint/Comeacroppa/ComeACroppa.png):**
 ```shell
-┌[siunam♥Mercury]-(~/ctf/DownUnderCTF-2023/Misc/Comeacroppa)-[2023.09.05|19:19:30(HKT)]
+┌[siunam♥Mercury]-(~/ctf/DownUnderCTF-2023/osint/Comeacroppa)-[2023.09.05|19:19:30(HKT)]
 └> file ComeACroppa.png    
 ComeACroppa.png: PNG image data, 1682 x 1238, 8-bit/color RGBA, non-interlaced
 ```

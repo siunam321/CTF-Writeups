@@ -28,7 +28,7 @@ Author: Yo_Yo_Bro
 
 **In this challenge, we can download a [file](https://github.com/siunam321/CTF-Writeups/blob/main/DownUnderCTF-2023/osint/Bridget's-Back!/BridgetsBack.jpg):**
 ```shell
-┌[siunam♥Mercury]-(~/ctf/DownUnderCTF-2023/Misc/Bridget's-Back!)-[2023.09.05|19:00:36(HKT)]
+┌[siunam♥Mercury]-(~/ctf/DownUnderCTF-2023/osint/Bridget's-Back!)-[2023.09.05|19:00:36(HKT)]
 └> file BridgetsBack.jpg  
 BridgetsBack.jpg: JPEG image data, JFIF standard 1.01, resolution (DPI), density 96x96, segment length 16, Exif Standard: [TIFF image data, big-endian, direntries=4, xresolution=62, yresolution=70, resolutionunit=2, software=paint.net 5.0.9], baseline, precision 8, 4000x2923, components 3
 ```
