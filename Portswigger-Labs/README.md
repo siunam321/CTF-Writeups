@@ -243,11 +243,12 @@ Feb 26, 2023  | HTTP Request Smuggling         | Smuggling-20       | Client-sid
 Feb 26, 2023  | HTTP Request Smuggling         | Smuggling-21       | Browser cache poisoning via client-side desync
 Feb 26, 2023  | HTTP Request Smuggling         | Smuggling-22       | Server-side pause-based request smuggling
 Mar 1, 2023   | Essential Skills               | Essential-Skills-1 | Discovering vulnerabilities quickly with targeted scanning
-July 5, 2023  | Testing GraphQL APIs           | GraphQL-1          | Accessing private GraphQL posts
-July 5, 2023  | Testing GraphQL APIs           | GraphQL-2          | Accidental exposure of private GraphQL fields
-July 7, 2023  | Testing GraphQL APIs           | GraphQL-3          | Finding a hidden GraphQL endpoint
-July 7, 2023  | Testing GraphQL APIs           | GraphQL-4          | Bypassing GraphQL brute force protections
-July 7, 2023  | Testing GraphQL APIs           | GraphQL-5          | Performing CSRF exploits over GraphQL
-August 31, 2023 | Race Conditions              | Race-Conditions-1  | Limit overrun race conditions
-August 31, 2023 | Race Conditions              | Race-Conditions-2  | Bypassing rate limits via race conditions
-August 31, 2023 | Race Conditions              | Race-Conditions-3  | Multi-endpoint race conditions
+Jul 5, 2023   | Testing GraphQL APIs           | GraphQL-1          | Accessing private GraphQL posts
+Jul 5, 2023   | Testing GraphQL APIs           | GraphQL-2          | Accidental exposure of private GraphQL fields
+Jul 7, 2023   | Testing GraphQL APIs           | GraphQL-3          | Finding a hidden GraphQL endpoint
+Jul 7, 2023   | Testing GraphQL APIs           | GraphQL-4          | Bypassing GraphQL brute force protections
+Jul 7, 2023   | Testing GraphQL APIs           | GraphQL-5          | Performing CSRF exploits over GraphQL
+Aug 31, 2023  | Race Conditions                | Race-Conditions-1  | Limit overrun race conditions
+Aug 31, 2023  | Race Conditions                | Race-Conditions-2  | Bypassing rate limits via race conditions
+Aug 31, 2023  | Race Conditions                | Race-Conditions-3  | Multi-endpoint race conditions
+Sept 8, 2023  | Race Conditions                | Race-Conditions-4  | Single-endpoint race conditions
