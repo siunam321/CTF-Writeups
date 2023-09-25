@@ -253,3 +253,4 @@ Aug 31, 2023  | Race Conditions                | Race-Conditions-2  | Bypassing 
 Aug 31, 2023  | Race Conditions                | Race-Conditions-3  | Multi-endpoint race conditions
 Sept 8, 2023  | Race Conditions                | Race-Conditions-4  | Single-endpoint race conditions
 Sept 19, 2023 | Race Conditions                | Race-Conditions-5  | Partial construction race conditions
+Sept 25, 2023 | Race Conditions                | Race-Conditions-6  | Exploiting time-sensitive vulnerabilities
