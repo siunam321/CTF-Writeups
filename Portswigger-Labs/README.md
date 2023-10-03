@@ -254,3 +254,4 @@ Aug 31, 2023  | Race Conditions                | Race-Conditions-3  | Multi-endp
 Sept 8, 2023  | Race Conditions                | Race-Conditions-4  | Single-endpoint race conditions
 Sept 19, 2023 | Race Conditions                | Race-Conditions-5  | Partial construction race conditions
 Sept 25, 2023 | Race Conditions                | Race-Conditions-6  | Exploiting time-sensitive vulnerabilities
+Oct 3, 2023   | NoSQL Injection                | NoSQLi-1           | Detecting NoSQL injection

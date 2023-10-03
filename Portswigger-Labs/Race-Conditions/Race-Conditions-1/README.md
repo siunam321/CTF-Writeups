@@ -172,4 +172,4 @@ The lab is solved!
 
 What we've learned:
 
-1. Enumerating GraphQL schema using introspection
+1. Limit overrun race conditions
