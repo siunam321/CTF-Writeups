@@ -255,3 +255,4 @@ Sept 8, 2023  | Race Conditions                | Race-Conditions-4  | Single-end
 Sept 19, 2023 | Race Conditions                | Race-Conditions-5  | Partial construction race conditions
 Sept 25, 2023 | Race Conditions                | Race-Conditions-6  | Exploiting time-sensitive vulnerabilities
 Oct 3, 2023   | NoSQL Injection                | NoSQLi-1           | Detecting NoSQL injection
+Oct 9, 2023   | NoSQL Injection                | NoSQLi-2           | Exploiting NoSQL operator injection to bypass authentication
