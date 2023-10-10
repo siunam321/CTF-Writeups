@@ -257,3 +257,4 @@ Sept 25, 2023 | Race Conditions                | Race-Conditions-6  | Exploiting
 Oct 3, 2023   | NoSQL Injection                | NoSQLi-1           | Detecting NoSQL injection
 Oct 9, 2023   | NoSQL Injection                | NoSQLi-2           | Exploiting NoSQL operator injection to bypass authentication
 Oct 9, 2023   | NoSQL Injection                | NoSQLi-3           | Exploiting NoSQL injection to extract data
+Oct 10, 2023  | NoSQL Injection                | NoSQLi-4           | Exploiting NoSQL operator injection to extract unknown fields
