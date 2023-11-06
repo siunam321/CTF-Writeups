@@ -2,11 +2,13 @@
 
 ## Table of Contents
 
-1. [Overview](#overview)
-2. [Background](#background)
-3. [Enumeration](#enumeration)
-4. [Exploitation](#exploitation)
-5. [Conclusion](#conclusion)
+ 1. [Overview](#overview)  
+ 2. [Background](#background)  
+ 3. [Enumeration](#enumeration)  
+ 4. [Exploitation](#exploitation)  
+    4.1. [Unintended Premium Account](#unintended-premium-account)  
+    4.2. [Geolocate the Bot With Stored XSS](#geolocate-the-bot-with-stored-xss)  
+ 5. [Conclusion](#conclusion)
 
 ## Overview
 
@@ -21,31 +23,31 @@ This is NOT an OSINT challenge :) (PS: please have a working exploit locally bef
 
 [https://chall.polygl0ts.ch:9011](https://chall.polygl0ts.ch:9011)
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/LakeCTF-Quals-23/images/%2020231106154313.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/LakeCTF-Quals-23/images/Pasted%20image%2020231106154313.png)
 
 ## Enumeration
 
 **Home page:**
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/LakeCTF-Quals-23/images/%2020231106124834.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/LakeCTF-Quals-23/images/Pasted%20image%2020231106124834.png)
 
 In here, we can either login to an account or register a new one.
 
 When we clicked the "Login" button, it brings us to `/login`:
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/LakeCTF-Quals-23/images/%2020231106124944.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/LakeCTF-Quals-23/images/Pasted%20image%2020231106124944.png)
 
 Hmm... We need a secret token to login.
 
 How about the "Register" button?
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/LakeCTF-Quals-23/images/%2020231106125140.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/LakeCTF-Quals-23/images/Pasted%20image%2020231106125140.png)
 
 When we clicked that button, it'll bring us to `/register`, which will set a new cookie called `token`, generate a random username, and a secret token.
 
 Let's click the "home" button!
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/LakeCTF-Quals-23/images/%2020231106125930.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/LakeCTF-Quals-23/images/Pasted%20image%2020231106125930.png)
 
 In here, we can see that there's a button called "Create new challenge", and a link called "Settings", which refer to `/settings`.
 
@@ -55,15 +57,15 @@ Not sure what's that "premium access". Let's move on.
 
 **In the home page after authenticated, we can create a new challenge:**
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/LakeCTF-Quals-23/images/%2020231106130342.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/LakeCTF-Quals-23/images/Pasted%20image%2020231106130342.png)
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/LakeCTF-Quals-23/images/%2020231106130354.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/LakeCTF-Quals-23/images/Pasted%20image%2020231106130354.png)
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/LakeCTF-Quals-23/images/%2020231106130416.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/LakeCTF-Quals-23/images/Pasted%20image%2020231106130416.png)
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/LakeCTF-Quals-23/images/%2020231106130429.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/LakeCTF-Quals-23/images/Pasted%20image%2020231106130429.png)
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/LakeCTF-Quals-23/images/%2020231106130513.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/LakeCTF-Quals-23/images/Pasted%20image%2020231106130513.png)
 
 **Upon the geolocation challenge creation, it'll send a POST request to `/createChallenge` with the following JSON body data:**
 ```json
@@ -80,11 +82,11 @@ Then, the web application respond us with **this challenge's ID**?
 
 Also, in here, we can send an invitation challenge link to a specific user:
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/LakeCTF-Quals-23/images/%2020231106130927.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/LakeCTF-Quals-23/images/Pasted%20image%2020231106130927.png)
 
 Umm... Can I send it to myself?
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/LakeCTF-Quals-23/images/%2020231106131032.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/LakeCTF-Quals-23/images/Pasted%20image%2020231106131032.png)
 
 **When we clicked the "Send invitation" button, it'll send a POST request to `/challengeUser` with the following JSON body data:**
 ```json
@@ -98,7 +100,7 @@ And the `duelID` looks like our challenge's ID.
 
 **After sending it, the challenged user will receive a notification:**
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/LakeCTF-Quals-23/images/%2020231106131311.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/LakeCTF-Quals-23/images/Pasted%20image%2020231106131311.png)
 
 **The notification is like this:**
 ```
@@ -109,7 +111,7 @@ And the `duelID` looks like our challenge's ID.
 
 **When the challenged user clicked the challenge link, he/she can try to solve the geolocate challenge:**
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/LakeCTF-Quals-23/images/%2020231106131607.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/LakeCTF-Quals-23/images/Pasted%20image%2020231106131607.png)
 
 **When the challenged user clicked the "Submit position", it'll send a POST request to `/solveChallenge` with the following JSON body data:**
 ```json
@@ -120,7 +122,7 @@ And the `duelID` looks like our challenge's ID.
 }
 ```
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/LakeCTF-Quals-23/images/%2020231106131816.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/LakeCTF-Quals-23/images/Pasted%20image%2020231106131816.png)
 
 Now we have a high-level overview of this web application!
 
@@ -278,7 +280,7 @@ res.render('challenge', {img, challId, iframeAttributes});
 
 **Upon researching, I found [this StackOverflow post](https://stackoverflow.com/questions/11024840/ejs-versus):**
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/LakeCTF-Quals-23/images/%2020231106134509.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/LakeCTF-Quals-23/images/Pasted%20image%2020231106134509.png)
 
 Oh!! That being said, **variable `iframeAttributes` is indeed vulnerable to stored XSS IF we can control this variable**.
 
@@ -404,7 +406,7 @@ premiumPin = process.env.PREMIUM_PIN ? process.env.PREMIUM_PIN : '123-456-012' /
 
 > Please don't try to brainless brute the 1 billion possibilities (if you try do so anyway there will be consequences >:D )
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/LakeCTF-Quals-23/images/%2020231106140338.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/LakeCTF-Quals-23/images/Pasted%20image%2020231106140338.png)
 
 Umm... So we shouldn't brute force the PIN??
 
@@ -604,19 +606,19 @@ Luckily, DOMPurify shouldn't sanitize our `<a>` tag.
 
 **Let's try to update our username to that `<a>` tag!**
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/LakeCTF-Quals-23/images/%2020231106144604.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/LakeCTF-Quals-23/images/Pasted%20image%2020231106144604.png)
 
 **Then, create a new challenge:**
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/LakeCTF-Quals-23/images/%2020231106144824.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/LakeCTF-Quals-23/images/Pasted%20image%2020231106144824.png)
 
 **Next, to get bot's new account username, we need to send an invitation challenge link to the bot:**
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/LakeCTF-Quals-23/images/%2020231106144942.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/LakeCTF-Quals-23/images/Pasted%20image%2020231106144942.png)
 
 **Finally, send an invitation challenge link to the bot's new account username:**
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/LakeCTF-Quals-23/images/%2020231106145849.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/LakeCTF-Quals-23/images/Pasted%20image%2020231106145849.png)
 
 And you should receive a GET request to your webhook link.
 
@@ -679,17 +681,17 @@ Uhh... Ultimately, we have to become a premium user...
 
 After endless of banging me and my teammates head into the wall, **we somehow... got registered a random account that is a premium account:**
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/LakeCTF-Quals-23/images/%2020231106151844.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/LakeCTF-Quals-23/images/Pasted%20image%2020231106151844.png)
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/LakeCTF-Quals-23/images/%2020231106151903.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/LakeCTF-Quals-23/images/Pasted%20image%2020231106151903.png)
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/LakeCTF-Quals-23/images/%2020231106151950.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/LakeCTF-Quals-23/images/Pasted%20image%2020231106151950.png)
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/LakeCTF-Quals-23/images/%2020231106003132.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/LakeCTF-Quals-23/images/Pasted%20image%2020231106003132.png)
 
 > Note: After the CTF ends, "strellic" posted the first part of the unintended solution:
 > 
-> ![](https://github.com/siunam321/CTF-Writeups/blob/main/LakeCTF-Quals-23/images/%2020231106152436.png)
+> ![](https://github.com/siunam321/CTF-Writeups/blob/main/LakeCTF-Quals-23/images/Pasted%20image%2020231106152436.png)
 > 
 > Maybe we just got lucky that we accidentally won the race condition during bot's premium PIN submission :D 
 
@@ -738,7 +740,7 @@ Forwarding                    https://ed80-{Redacted}.ngrok-free.app -> http://l
 
 - **Create a new challenge with the XSS payload, and grab the challenge ID:**
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/LakeCTF-Quals-23/images/%2020231106005012.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/LakeCTF-Quals-23/images/Pasted%20image%2020231106005012.png)
 
 ```json
 {
@@ -766,15 +768,15 @@ However, since the bot's Chrome profile only grant origin `https://chall.polygl0
 
 - **Create a new bot with a new account, so that we can know the bot's new account username:**
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/LakeCTF-Quals-23/images/%2020231106005135.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/LakeCTF-Quals-23/images/Pasted%20image%2020231106005135.png)
 
 - **Send the XSS payload challenge link to the bot:**
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/LakeCTF-Quals-23/images/%2020231106005341.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/LakeCTF-Quals-23/images/Pasted%20image%2020231106005341.png)
 
 - **The XSS payload should be triggered:**
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/LakeCTF-Quals-23/images/%2020231106005433.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/LakeCTF-Quals-23/images/Pasted%20image%2020231106005433.png)
 
 Therefore, we got:
 
@@ -785,11 +787,11 @@ Nice!!
 
 - **Finally, go to the bot's new account's challenge:**
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/LakeCTF-Quals-23/images/%2020231106005902.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/LakeCTF-Quals-23/images/Pasted%20image%2020231106005902.png)
 
 - **and submit the correct latitude and longitude value:**
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/LakeCTF-Quals-23/images/%2020231106005955.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/LakeCTF-Quals-23/images/Pasted%20image%2020231106005955.png)
 
 - **Flag: `EPFL{as a wise man once said, https://twitter.com/arkark_/status/1712773241218183203}`**
 
