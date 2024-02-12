@@ -138,7 +138,7 @@ Hmm... **How can we bypass the WAF to inject our SQL injection payload**??
 
 Based on my experience, **PHP is a weird language, sometimes it can do really weird stuff**, like let's say the built-in function `preg_match()`.
 
-According to [HackTricks](https://book.hacktricks.xyz/network-services-pentesting/pentesting-web/php-tricks-esp#length-error-bypass), when a **very large valid input** is being parsed to `preg_match()`, **it'll just choked to death and can't process it**. Hence, we can bypass the regular expression check by just sending a large valid input!
+According to [HackTricks](https://book.hacktricks.xyz/network-services-pentesting/pentesting-web/php-tricks-esp#length-error-bypass), when a **very large valid input** is being parsed to `preg_match()`, **it'll just hit the limit and can't process it**. Hence, we can bypass the regular expression check by just sending a large valid input!
 
 ## Exploitation
 

@@ -1311,6 +1311,8 @@ b'0xL4ugh{Ahhhhh_Hop3_U_Did_!t_by_Th3_Intended_W@@y}\n'
 
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/0xL4ugh-CTF-2024/images/leak_flag.gif)
 
+> Yes, this is a GIF image, it's slowly leaking it XD
+
 - **Flag: `0xL4ugh{Ahhhhh_Hop3_U_Did_!t_by_Th3_Intended_W@@y}`**
 
 ## Conclusion
