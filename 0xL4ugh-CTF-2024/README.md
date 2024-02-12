@@ -28,7 +28,7 @@ Stay Tunned!
 
 ## Overview
 
-- Team: ARESx
+- Team: [ARESx](https://ctftime.org/team/128734)
 - Team Solves: 22/35
 - Individual Solves: 1/35
 - Score: 3523
