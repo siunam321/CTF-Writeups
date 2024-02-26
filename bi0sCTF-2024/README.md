@@ -9,7 +9,7 @@
 - Starts: 24 February 2024, 12:00 UTC
 - Ends: 26 February 2024, 00:00 UTC
 
-LA CTF is an annual Capture the Flag (CTF) cybersecurity competition hosted by ACM Cyber at UCLA & Psi Beta Rho. LA CTF is open to all skill levels of cybersecurity! Whether you are tackling your first exploit or have professional experience, there will be challenges just right for you! There will be a variety of events ranging from the competition containing jeopardy-style cybersecurity challenges to talks from UCLA professors to fun events such as typing competitions! If you are interested in attending, join the Discord to stay up to date with the latest information about LA CTF!
+Team bi0s invites you to our prestigious bi0sCTF 2024, a premier hacking event designed for hackers of all generations. We are dedicated to crafting challenges that incorporate the latest vulnerabilities, responsibly pushing the boundaries of innovation to ensure a delightful and enriching experience for all participants.
 
 **Categories:**
 
