@@ -35,5 +35,5 @@ LA CTF is an annual Capture the Flag (CTF) cybersecurity competition hosted by A
 
 ## What I've learned in this CTF
 
-- web:
+- Web Exploitation:
     1. [required notes](https://github.com/siunam321/CTF-Writeups/blob/main/bi0sCTF-2024/Web-Exploitation/required-notes/README.md) (Server-Side Prototype Pollution in protobuf.js (CVE-2023-36665), brute forcing with error-based oracle)
