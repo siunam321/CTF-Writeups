@@ -63,7 +63,7 @@ The URL path might be broken down as follows:
 
 - `/api` is the root API endpoint.
 - `/users` represents a resource, in this case `users`.
-- `/123`represents a parameter, here an identifier for the specific user.
+- `/123` represents a parameter, here an identifier for the specific user.
 
 Consider an application that enables us to edit user profiles based on their username. Requests are sent to the following endpoint:
 
