@@ -1,4 +1,4 @@
-All my Portswigger Labs Race Conditions category writeups will be here.
+All my Portswigger Labs NoSQL Injection category writeups will be here.
 
 Date	 	  | Category                       | Directory Name     | Lab Title
 --------------|--------------------------------|--------------------|----------------------

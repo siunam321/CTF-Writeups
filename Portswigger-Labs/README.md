@@ -258,3 +258,4 @@ Oct 3, 2023   | NoSQL Injection                | NoSQLi-1           | Detecting 
 Oct 9, 2023   | NoSQL Injection                | NoSQLi-2           | Exploiting NoSQL operator injection to bypass authentication
 Oct 9, 2023   | NoSQL Injection                | NoSQLi-3           | Exploiting NoSQL injection to extract data
 Oct 10, 2023  | NoSQL Injection                | NoSQLi-4           | Exploiting NoSQL operator injection to extract unknown fields
+May 10, 2024  | API Testing                    | API-1              | Exploiting an API endpoint using documentation
