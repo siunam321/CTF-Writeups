@@ -262,3 +262,4 @@ May 10, 2024  | API Testing                    | API-1              | Exploiting
 May 10, 2024  | API Testing                    | API-2              | Finding and exploiting an unused API endpoint
 May 10, 2024  | API Testing                    | API-3              | Exploiting a mass assignment vulnerability
 May 10, 2024  | API Testing                    | API-4              | Exploiting server-side parameter pollution in a query string
+May 10, 2024  | API Testing                    | API-5              | Exploiting server-side parameter pollution in a REST URL
