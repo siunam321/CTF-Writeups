@@ -265,3 +265,4 @@ May 10, 2024  | API Testing                    | API-4              | Exploiting
 May 10, 2024  | API Testing                    | API-5              | Exploiting server-side parameter pollution in a REST URL
 May 15, 2024  | Web LLM Attacks                | LLM-1              | Exploiting LLM APIs with excessive agency
 May 15, 2024  | Web LLM Attacks                | LLM-2              | Exploiting vulnerabilities in LLM APIs
+May 15, 2024  | Web LLM Attacks                | LLM-3              | Indirect prompt injection
