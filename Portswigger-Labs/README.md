@@ -263,3 +263,4 @@ May 10, 2024  | API Testing                    | API-2              | Finding an
 May 10, 2024  | API Testing                    | API-3              | Exploiting a mass assignment vulnerability
 May 10, 2024  | API Testing                    | API-4              | Exploiting server-side parameter pollution in a query string
 May 10, 2024  | API Testing                    | API-5              | Exploiting server-side parameter pollution in a REST URL
+May 15, 2024  | Web LLM Attacks                | LLM-1              | Exploiting LLM APIs with excessive agency
