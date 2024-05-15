@@ -8,7 +8,7 @@
     3.1 [What is LLM?](#what-is-llm)  
     3.2 [LLM APIs](#llm-apis)  
     3.3 [Excessive Agency](#excessive-agency)  
-    3.4 [Exploring the Application's LLM](#exploring-the-application's-llm)  
+    3.4 [Exploring the Application's LLM](#exploring-the-applications-llm)  
   4. [Exploitation](#exploitation)  
   5. [Conclusion](#conclusion)  
 
