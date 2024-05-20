@@ -36,4 +36,4 @@ TJCTF is an international cybersecurity competition hosted by TJCSC, a group of 
 ## What I've learned in this CTF
 
 - web
-    1. [kahoot](https://github.com/siunam321/CTF-Writeups/blob/main/TJCTF-2024/web/kahoot/README.md) (Exploiting logic bug)
+    1. [kaboot](https://github.com/siunam321/CTF-Writeups/blob/main/TJCTF-2024/web/kaboot/README.md) (Exploiting logic bug)

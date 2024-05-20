@@ -7,7 +7,7 @@
   3. [Enumeration](#enumeration)  
   4. [Exploitation](#exploitation)  
     4.1. [Reset Score Logic Bug](#reset-score-logic-bug)  
-    4.2. [Race Condition in `send_time` Check](#racec-ondition-in-send_time-check)  
+    4.2. [Race Condition in `send_time` Check](#race-condition-in-send_time-check)  
   5. [Conclusion](#conclusion)  
 
 ## Overview
@@ -445,4 +445,4 @@ However, this takes a lot of attempts to gain more than `9999` score.
 
 What we've learned:
 
-1. Server-Side Prototype Pollution
+1. Exploiting logic bug
