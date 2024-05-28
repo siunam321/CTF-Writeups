@@ -5,8 +5,8 @@
   1. [Overview](#overview)  
   2. [Background](#background)  
   3. [Enumeration](#enumeration)  
-    3.1. [WordPress REST API & AJAX Action](#word-press-rest-api-ajax-action)  
-    3.2. [Plugin REST API & AJAX Actions](#plugin-rest-api-ajax-actions)  
+    3.1. [WordPress REST API & AJAX Action](#wordpress-rest-api--ajax-action)  
+    3.2. [Plugin REST API & AJAX Actions](#plugin-rest-api--ajax-actions)  
   4. [Exploitation](#exploitation)  
   5. [Conclusion](#conclusion)  
 
