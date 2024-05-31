@@ -12,8 +12,7 @@
 
 ## Overview
 
-- Solved by: @siunam
-- Contributor: @jose.fk
+- Solved by: @siunam, @jose.fk
 - 494 solves / 36 points
 - Author: Patchstack
 - Overall difficulty for me (From 1-10 stars): ★★★★★★☆☆☆☆
