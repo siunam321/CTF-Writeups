@@ -543,7 +543,7 @@ filtered = ["memccat", "memcstat", "memcdump", "nc", "bash", "/bin", "/sh", "exp
 
 As you can see, the word `memccat` and character `.` is included in the blacklist. Luckily, it's very easy to bypass it.
 
-To bypass the blacklist filter, we can **use quotes to concatenate the word `memccat`**: (From [HackTricks](https://book.hacktricks.xyz/linux-hardening/bypass-bash-restrictions#bypass-paths-and-forbidden-words)):
+To bypass the blacklist filter, we can **use quotes to concatenate the word `memccat`**: (From [HackTricks](https://book.hacktricks.xyz/linux-hardening/bypass-bash-restrictions#bypass-paths-and-forbidden-words))
 
 ```bash
 admin://"m"e"m"c"c"a"t --servers=127.0.0.1 flag
@@ -564,4 +564,4 @@ By sending this payload, we should be able to get the flag!
 
 What we've learned:
 
-1. WordPress plugin source code audit
+1. Flask misconfiguration
