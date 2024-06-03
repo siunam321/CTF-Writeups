@@ -705,4 +705,4 @@ Nice! We got the flag!!
 
 What we've learned:
 
-1. WordPress plugin source code audit
+1. Flask misconfiguration
