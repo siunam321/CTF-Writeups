@@ -564,4 +564,4 @@ By sending this payload, we should be able to get the flag!
 
 What we've learned:
 
-1. Exploiting CVE-2024-4367 (PDF.js)
+1. Flask misconfiguration

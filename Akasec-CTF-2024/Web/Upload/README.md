@@ -419,4 +419,4 @@ url=http://127.0.0.1:5000/view/file-1718000341478.pdf
 
 What we've learned:
 
-1. Flask misconfiguration
+1. Exploiting CVE-2024-4367 (PDF.js)
