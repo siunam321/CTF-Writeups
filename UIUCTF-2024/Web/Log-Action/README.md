@@ -12,6 +12,7 @@
 
 - Solved by: @siunam
 - 105 solves / 431 points
+- Author: @Minh
 - Overall difficulty for me (From 1-10 stars): ★★☆☆☆☆☆☆☆☆
 
 ## Background
