@@ -42,7 +42,7 @@ According to the challenge's description, this login page appears to be broken.
 
 There's not much we can do in here. Let's read this web application's source code!
 
-**In this challenge, we can download a file:**
+**In this challenge, we can download a [file](https://github.com/siunam321/CTF-Writeups/blob/main/UIUCTF-2024/Web/Log-Action/log-action.zip):**
 ```shell
 ┌[siunam♥Mercury]-(~/ctf/UIUCTF-2024/Web/Log-Action)-[2024.07.01|12:29:43(HKT)]
 └> file log-action.zip     
