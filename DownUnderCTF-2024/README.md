@@ -1,4 +1,4 @@
-# Akasec CTF 2024 Writeup
+# DownUnderCTF 2024 Writeup
 
 > CTFTime event link: [https://ctftime.org/event/2284](https://ctftime.org/event/2284)
 
