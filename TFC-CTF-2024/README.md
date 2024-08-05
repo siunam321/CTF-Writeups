@@ -38,8 +38,8 @@ This deliberate spectrum of difficulty ensures our CTF event is universally acce
 ## What I've learned in this CTF
 
 - Web
-    1. [GREETINGS](https://github.com/siunam321/CTF-Writeups/blob/main/TCTF-CTF-2024/Web/GREETINGS/README.md) - PugJs Server-Side Template Injection (SSTI)
-    2. [SURFING](https://github.com/siunam321/CTF-Writeups/blob/main/TCTF-CTF-2024/Web/SURFING/README.md) - Open redirect in Google Accelerated Mobile Pages (AMP) to Server-Side Request Forgery
-    3. [SAFE_CONTENT](https://github.com/siunam321/CTF-Writeups/blob/main/TCTF-CTF-2024/Web/SAFE_CONTENT/README.md) - PHP function `parse_url` host filter bypass via `data` URI scheme, blind OS command injection
-    4. [FUNNY](https://github.com/siunam321/CTF-Writeups/blob/main/TCTF-CTF-2024/Web/FUNNY/README.md) - Apache CGI misconfiguration to Remote Code Execution (RCE)
-    5. [SAGIGRAM](https://github.com/siunam321/CTF-Writeups/blob/main/TCTF-CTF-2024/Web/SAGIGRAM/README.md) - Large Language Model (LLM) prompt injection to stored XSS chained with CSP bypass
+    1. [GREETINGS](https://github.com/siunam321/CTF-Writeups/blob/main/TFC-CTF-2024/Web/GREETINGS/README.md) - PugJs Server-Side Template Injection (SSTI)
+    2. [SURFING](https://github.com/siunam321/CTF-Writeups/blob/main/TFC-CTF-2024/Web/SURFING/README.md) - Open redirect in Google Accelerated Mobile Pages (AMP) to Server-Side Request Forgery
+    3. [SAFE_CONTENT](https://github.com/siunam321/CTF-Writeups/blob/main/TFC-CTF-2024/Web/SAFE_CONTENT/README.md) - PHP function `parse_url` host filter bypass via `data` URI scheme, blind OS command injection
+    4. [FUNNY](https://github.com/siunam321/CTF-Writeups/blob/main/TFC-CTF-2024/Web/FUNNY/README.md) - Apache CGI misconfiguration to Remote Code Execution (RCE)
+    5. [SAGIGRAM](https://github.com/siunam321/CTF-Writeups/blob/main/TFC-CTF-2024/Web/SAGIGRAM/README.md) - Large Language Model (LLM) prompt injection to stored XSS chained with CSP bypass
