@@ -20,17 +20,17 @@
 
 This challenge is HILARIOUS!
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TCTF-CTF-2024/images/Pasted%20image%2020240805160704.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TFC-CTF-2024/images/Pasted%20image%2020240805160704.png)
 
 ## Enumeration
 
 Index page:
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TCTF-CTF-2024/images/Pasted%20image%2020240805160809.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TFC-CTF-2024/images/Pasted%20image%2020240805160809.png)
 
 In here, there's a button that says "Generate Joke". Let's click on it!
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TCTF-CTF-2024/images/Pasted%20image%2020240805160841.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TFC-CTF-2024/images/Pasted%20image%2020240805160841.png)
 
 When we clicked the "Generate Joke" button, it'll send a GET request to `/` with GET parameter `new_joke`.
 

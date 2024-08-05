@@ -24,21 +24,21 @@ Our site has been breached. Since then we restricted the ips we can get files fr
   
 For the source code, go to /src.php
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TCTF-CTF-2024/images/Pasted%20image%2020240805134445.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TFC-CTF-2024/images/Pasted%20image%2020240805134445.png)
 
 ## Enumeration
 
 Index page:
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TCTF-CTF-2024/images/Pasted%20image%2020240805134555.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TFC-CTF-2024/images/Pasted%20image%2020240805134555.png)
 
 In here, we can submit a URL and the web application responses back the URL's content to us.
 
 Let's try it!
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TCTF-CTF-2024/images/Pasted%20image%2020240805134757.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TFC-CTF-2024/images/Pasted%20image%2020240805134757.png)
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TCTF-CTF-2024/images/Pasted%20image%2020240805134808.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TFC-CTF-2024/images/Pasted%20image%2020240805134808.png)
 
 Hmm... Nothing happened.
 
@@ -48,7 +48,7 @@ There's not much we can do in here.
 
 In this challenge, we can go to [`/src.php`](https://github.com/siunam321/CTF-Writeups/blob/main/TFC-CTF-2024/Web/SAFE_CONTENT/src.php) to view the source code of this challenge:
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TCTF-CTF-2024/images/Pasted%20image%2020240805134929.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TFC-CTF-2024/images/Pasted%20image%2020240805134929.png)
 
 Let's read the source code and see what we can find.
 
@@ -234,7 +234,7 @@ Uhh... No?? Oh wait, the `data` URI scheme didn't start with a double slash (`//
 
 Hmm... Does the `data` URI scheme supports that? In its RFC, it doesn't mention that. However, if we look at [this note in PHP documentation about `data` URI scheme wrapper](https://www.php.net/manual/en/wrappers.data.php#85581), PHP actually supports the `data` URI scheme to start with a double slash:
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TCTF-CTF-2024/images/Pasted%20image%2020240805145923.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TFC-CTF-2024/images/Pasted%20image%2020240805145923.png)
 
 Let's test it!
 
@@ -373,7 +373,7 @@ array(4) {
 
 We should be able to see an incoming POST request in our webhook:
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TCTF-CTF-2024/images/Pasted%20image%2020240805153252.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TFC-CTF-2024/images/Pasted%20image%2020240805153252.png)
 
 Let's decode the base64 encoded result!
 

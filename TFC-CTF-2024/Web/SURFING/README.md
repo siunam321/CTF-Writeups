@@ -20,29 +20,29 @@
 
 My friend wanted a site on which he could steal other people's photos. Can you break into it ?
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TCTF-CTF-2024/images/Pasted%20image%2020240804211546.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TFC-CTF-2024/images/Pasted%20image%2020240804211546.png)
 
 ## Enumeration
 
 Index page:
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TCTF-CTF-2024/images/Pasted%20image%2020240804211632.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TFC-CTF-2024/images/Pasted%20image%2020240804211632.png)
 
 In here, we can submit a URL with domain `google.com`.
 
 Let's try it!
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TCTF-CTF-2024/images/Pasted%20image%2020240804211806.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TFC-CTF-2024/images/Pasted%20image%2020240804211806.png)
 
 Hmm... The URL must starts with `http://google.com/`. Let's try again!
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TCTF-CTF-2024/images/Pasted%20image%2020240804211851.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TFC-CTF-2024/images/Pasted%20image%2020240804211851.png)
 
 Now we get response from `http://google.com/`!
 
 Burp Suite HTTP history:
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TCTF-CTF-2024/images/Pasted%20image%2020240804211933.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TFC-CTF-2024/images/Pasted%20image%2020240804211933.png)
 
 When we clicked the "Fetch Content" button, it'll sends a GET request to `/get` with parameter `url`. After that, the server will response back to us with the provided URL's content.
 
@@ -84,7 +84,7 @@ After researching, the most common "open redirect" in `google.com` is the `/url`
 
 However, if we try this, we'll get this response:
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TCTF-CTF-2024/images/Pasted%20image%2020240804213913.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TFC-CTF-2024/images/Pasted%20image%2020240804213913.png)
 
 > Note: Behind the scenes, `google.com` will redirects us to `www.google.com`. 
 
@@ -94,7 +94,7 @@ Hmm... Looks like we'll need to find another method.
 
 If we Google "google.com open redirect", we should see [this blog post](https://www.greathorn.com/blog/google-and-open-redirects-preventing-your-users-from-becoming-a-victim-of-attacks/):
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TCTF-CTF-2024/images/Pasted%20image%2020240804214456.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TFC-CTF-2024/images/Pasted%20image%2020240804214456.png)
 
 In Google DoubleClick (`googleads.g.doubleclick.net`), it has an open redirect in route `/pcs/click` with GET parameter `adurl`.
 
@@ -104,7 +104,7 @@ Let's try it:
 http://googleads.g.doubleclick.net/pcs/click?adurl=http://example.com/
 ```
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TCTF-CTF-2024/images/Pasted%20image%2020240804214752.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TFC-CTF-2024/images/Pasted%20image%2020240804214752.png)
 
 Oh it worked! It indeed redirected us to `http://example.com/`!
 
@@ -124,7 +124,7 @@ I then Googled "google.com url redirect trusted domain", and [this blog post](ht
 
 If we scroll down a bit, we should see 3 Google platforms that are abused in phishing campaigns, one of which are "**Google Accelerated Mobile Pages (AMP)**":
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TCTF-CTF-2024/images/Pasted%20image%2020240804215626.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TFC-CTF-2024/images/Pasted%20image%2020240804215626.png)
 
 Surely, it should requires user interaction. Right?
 
@@ -134,7 +134,7 @@ Right? Oh...
 http://google.com/amp/s/example.com
 ```
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TCTF-CTF-2024/images/Pasted%20image%2020240804215820.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TFC-CTF-2024/images/Pasted%20image%2020240804215820.png)
 
 So... We can **leverage Google AMP open redirect to bypass the whitelisted domain**!
 
@@ -146,7 +146,7 @@ Armed with above information, we can try to redirect the server's request to `lo
 http://google.com/amp/s/localhost:8000
 ```
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TCTF-CTF-2024/images/Pasted%20image%2020240804220707.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TFC-CTF-2024/images/Pasted%20image%2020240804220707.png)
 
 Huh? Google respond 404 to us? Oh, I forgot the server appends `.png` to our provided URL.
 
@@ -156,7 +156,7 @@ To fix this, we can add a [URI fragment](https://en.wikipedia.org/wiki/URI_fragm
 http://google.com/amp/s/localhost:8000/%23
 ```
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TCTF-CTF-2024/images/Pasted%20image%2020240804221035.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TFC-CTF-2024/images/Pasted%20image%2020240804221035.png)
 
 Now we're getting HTTP status code "500 INTERNAL SERVER ERROR"...
 
@@ -182,7 +182,7 @@ Forwarding                    http://cc7d-{REDACTED}.ngrok-free.app -> http://lo
 
 Now we can try to send the request again:
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TCTF-CTF-2024/images/Pasted%20image%2020240804221653.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TFC-CTF-2024/images/Pasted%20image%2020240804221653.png)
 
 Tunnel not found??
 
@@ -196,7 +196,7 @@ Forwarding                    https://66ea-{REDACTED}.ngrok-free.app -> http://l
 [...]
 ```
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TCTF-CTF-2024/images/Pasted%20image%2020240804221900.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TFC-CTF-2024/images/Pasted%20image%2020240804221900.png)
 
 ```shell
 [...]
@@ -244,7 +244,7 @@ WARNING: This is a development server. Do not use it in a production deployment.
 
 Next, send the request again:
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TCTF-CTF-2024/images/Pasted%20image%2020240804224240.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TFC-CTF-2024/images/Pasted%20image%2020240804224240.png)
 
 Nice! We can now reach to the challenge's internal web application at `localhost:8000`, and it respond with this HTML content:
 
@@ -290,7 +290,7 @@ def indexRedirect():
 
 Send the request again and fingers crossed!
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TCTF-CTF-2024/images/Pasted%20image%2020240804224917.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TFC-CTF-2024/images/Pasted%20image%2020240804224917.png)
 
 Let's go!! We got the flag!
 

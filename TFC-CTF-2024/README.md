@@ -2,7 +2,7 @@
 
 > CTFTime event link: [https://ctftime.org/event/2423](https://ctftime.org/event/2423)
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TCTF-CTF-2024/images/banner.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TFC-CTF-2024/images/banner.png)
 
 ## Background
 
@@ -33,7 +33,7 @@ This deliberate spectrum of difficulty ensures our CTF event is universally acce
 - Global Rank: 24/1478
 - Overall Difficulty To Me: ★★★★★☆☆☆☆☆
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TCTF-CTF-2024/images/score.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TFC-CTF-2024/images/score.png)
 
 ## What I've learned in this CTF
 

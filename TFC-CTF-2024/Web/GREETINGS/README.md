@@ -20,25 +20,25 @@
 
 Welcome to our ctf! Hope you enjoy it! Have fun
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TCTF-CTF-2024/images/Pasted%20image%2020240804194303.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TFC-CTF-2024/images/Pasted%20image%2020240804194303.png)
 
 ## Enumeration
 
 Index page:
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TCTF-CTF-2024/images/Pasted%20image%2020240804194317.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TFC-CTF-2024/images/Pasted%20image%2020240804194317.png)
 
 In here, we can submit a form with our name.
 
 Let's try to submit a dummy name and see what will happen:
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TCTF-CTF-2024/images/Pasted%20image%2020240804194436.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TFC-CTF-2024/images/Pasted%20image%2020240804194436.png)
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TCTF-CTF-2024/images/Pasted%20image%2020240804194450.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TFC-CTF-2024/images/Pasted%20image%2020240804194450.png)
 
 Burp Suite HTTP history:
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TCTF-CTF-2024/images/Pasted%20image%2020240804194642.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TFC-CTF-2024/images/Pasted%20image%2020240804194642.png)
 
 When we clicked the "Submit" button, it'll send a GET request to `/result` with GET parameter `username`.
 
@@ -56,11 +56,11 @@ In [HackTricks about SSTI's tips and tricks](https://book.hacktricks.xyz/pentest
 
 After trying different Node.js based template engine's SSTI payloads, we see that template engine [PugJs](https://pugjs.org/api/getting-started.html) works:
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TCTF-CTF-2024/images/Pasted%20image%2020240804202144.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TFC-CTF-2024/images/Pasted%20image%2020240804202144.png)
 
 In PugJs, the template literal is `#{}`. In our case, we can try to make the server render the template `#{7*7}` to check if the server renders `49`. ($ 7 * 7 = 49 $)
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TCTF-CTF-2024/images/Pasted%20image%2020240804202545.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TFC-CTF-2024/images/Pasted%20image%2020240804202545.png)
 
 Nice! The server indeed rendered our template and returned `49`!
 
@@ -80,7 +80,7 @@ I won't go into the details of this payload, but it basically loads the [`child_
 
 However, if we send the request with the above payload, it won't display the executed OS command result:
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TCTF-CTF-2024/images/Pasted%20image%2020240804203958.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TFC-CTF-2024/images/Pasted%20image%2020240804203958.png)
 
 This is because the above payload is a function and it didn't return anything.
 
@@ -92,7 +92,7 @@ To fix this, we can simply remove the function syntax and variable declaration:
 
 Now send the new payload again:
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TCTF-CTF-2024/images/Pasted%20image%2020240804205904.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TFC-CTF-2024/images/Pasted%20image%2020240804205904.png)
 
 This time it returned `[object Object]`!
 
@@ -104,19 +104,19 @@ To solve this, we can change the `exec` function to [`execSync`](https://nodejs.
 #{global.process.mainModule.constructor._load("child_process").execSync('id')}
 ```
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TCTF-CTF-2024/images/Pasted%20image%2020240804210143.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TFC-CTF-2024/images/Pasted%20image%2020240804210143.png)
 
 Nice! Now we can find where's the flag file path and read its content!
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TCTF-CTF-2024/images/Pasted%20image%2020240804210224.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TFC-CTF-2024/images/Pasted%20image%2020240804210224.png)
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TCTF-CTF-2024/images/Pasted%20image%2020240804210243.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TFC-CTF-2024/images/Pasted%20image%2020240804210243.png)
 
 - **Flag: `TFCCTF{a6afc419a8d18207ca9435a38cb64f42fef108ad2b24c55321be197b767f0409}`**
 
 If you're curious the implementation of this vulnerable web application, we can read the source code file `app.js`:
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TCTF-CTF-2024/images/Pasted%20image%2020240804210545.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TFC-CTF-2024/images/Pasted%20image%2020240804210545.png)
 
 **`app.js`:**
 ```javascript
