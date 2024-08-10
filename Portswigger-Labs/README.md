@@ -268,3 +268,4 @@ May 15, 2024  | Web LLM Attacks                | LLM-2              | Exploiting
 May 15, 2024  | Web LLM Attacks                | LLM-3              | Indirect prompt injection
 May 15, 2024  | Web LLM Attacks                | LLM-4              | Exploiting insecure output handling in LLMs
 August 10, 2024 | Web Cache Deception          | WCD-1              | Exploiting path mapping for web cache deception
+August 10, 2024 | Web Cache Deception          | WCD-2              | Exploiting path delimiters for web cache deception
