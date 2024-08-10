@@ -6,14 +6,14 @@
   2. [Background](#background)  
   3. [Enumeration](#enumeration)  
     3.1 [Web Cache Deception](#web-cache-deception)  
-        3.1.1 [Web Caches](#web-caches)  
-        3.1.2 [Cache Keys](#cache-keys)  
-        3.1.3 [Cache Rules](#cache-rules)  
-        3.1.4 [Constructing a Web Cache Deception Attack](#constructing-a-web-cache-deception-attack)  
-        3.1.5 [Detecting Cached Responses](#detecting-cached-responses)  
-        3.1.6 [Exploiting Static Extension Cache Rules](#exploiting-static-extension-cache-rules)  
-        3.1.7 [Path Mapping Discrepancies](#path-mapping-discrepancies)  
-        3.1.8 [Exploiting Path Mapping Discrepancies](#exploiting-path-mapping-discrepancies)  
+    3.2 [Web Caches](#web-caches)  
+    3.3 [Cache Keys](#cache-keys)  
+    3.4 [Cache Rules](#cache-rules)  
+    3.5 [Constructing a Web Cache Deception Attack](#constructing-a-web-cache-deception-attack)  
+    3.6 [Detecting Cached Responses](#detecting-cached-responses)  
+    3.7 [Exploiting Static Extension Cache Rules](#exploiting-static-extension-cache-rules)  
+    3.8 [Path Mapping Discrepancies](#path-mapping-discrepancies)  
+    3.9 [Exploiting Path Mapping Discrepancies](#exploiting-path-mapping-discrepancies)  
   4. [Exploitation](#exploitation)  
   5. [Conclusion](#conclusion)  
 
@@ -68,7 +68,7 @@ In a web cache deception attack, an attacker persuades a victim to visit a malic
 >  - Web cache poisoning manipulates cache keys to inject malicious content into a cached response, which is then served to other users.
 >  - Web cache deception exploits cache rules to trick the cache into storing sensitive or private content, which the attacker can then access.
 
-#### Web Caches
+### Web Caches
 
 A web cache is a system that sits between the origin server and the user. When a client requests a static resource, the request is first directed to the cache. If the cache doesn't contain a copy of the resource (known as a cache miss), the request is forwarded to the origin server, which processes and responds to the request. The response is then sent to the cache before being sent to the user. The cache uses a preconfigured set of rules to determine whether to store the response.
 
@@ -78,13 +78,13 @@ When a request for the same static resource is made in the future, the cache ser
 
 Caching has become a common and crucial aspect of delivering web content, particularly with the widespread use of Content Delivery Networks (CDNs), which use caching to store copies of content on distributed servers all over the world. CDNs speed up delivery by serving content from the server closest to the user, reducing load times by minimizing the distance data travels.
 
-#### Cache Keys
+### Cache Keys
 
 When the cache receives an HTTP request, it must decide whether there is a cached response that it can serve directly, or whether it has to forward the request to the origin server. The cache makes this decision by generating a 'cache key' from elements of the HTTP request. Typically, this includes the URL path and query parameters, but it can also include a variety of other elements like headers and content type.
 
 If the incoming request's cache key matches that of a previous request, the cache considers them to be equivalent and serves a copy of the cached response.
 
-#### Cache Rules
+### Cache Rules
 
 Cache rules determine what can be cached and for how long. Cache rules are often set up to store static resources, which generally don't change frequently and are reused across multiple pages. Dynamic content is not cached as it's more likely to contain sensitive information, ensuring users get the latest data directly from the server.
 
@@ -96,7 +96,7 @@ Web cache deception attacks exploit how cache rules are applied, so it's importa
 
 Caches may also implement custom rules based on other criteria, such as URL parameters or dynamic analysis.
 
-#### Constructing a Web Cache Deception Attack
+### Constructing a Web Cache Deception Attack
 
 Generally speaking, constructing a basic web cache deception attack involves the following steps:
 
@@ -107,7 +107,7 @@ Generally speaking, constructing a basic web cache deception attack involves the
     - Normalize paths.
 3. Craft a malicious URL that uses the discrepancy to trick the cache into storing a dynamic response. When the victim accesses the URL, their response is stored in the cache. Using Burp, we can then send a request to the same URL to fetch the cached response containing the victim's data. Avoid doing this directly in the browser as some applications redirect users without a session or invalidate local data, which could hide a vulnerability.
 
-#### Detecting Cached Responses
+### Detecting Cached Responses
 
 During testing, it's crucial that we're able to identify cached responses. To do so, look at response headers and response times.
 
@@ -122,13 +122,13 @@ Various response headers may indicate that it is cached. For example:
 
 If we notice a big difference in response time for the same request, this may also indicate that the faster response is served from the cache.
 
-#### Exploiting Static Extension Cache Rules
+### Exploiting Static Extension Cache Rules
 
 Cache rules often target static resources by matching common file extensions like `.css` or `.js`. This is the default behavior in most CDNs.
 
 If there are discrepancies in how the cache and origin server map the URL path to resources or use delimiters, an attacker may be able to craft a request for a dynamic resource with a static extension that is ignored by the origin server but viewed by the cache.
 
-#### Path Mapping Discrepancies
+### Path Mapping Discrepancies
 
 URL path mapping is the process of associating URL paths with resources on a server, such as files, scripts, or command executions. There are a range of different mapping styles used by different frameworks and technologies. Two common styles are traditional URL mapping and RESTful URL mapping.
 
@@ -155,7 +155,7 @@ Discrepancies in how the cache and origin server map the URL path to resources c
 - An origin server using REST-style URL mapping may interpret this as a request for the `/user/123/profile` endpoint and returns the profile information for user `123`, ignoring `wcd.css` as a non-significant parameter.
 - A cache that uses traditional URL mapping may view this as a request for a file named `wcd.css` located in the `/profile` directory under `/user/123`. It interprets the URL path as `/user/123/profile/wcd.css`. If the cache is configured to store responses for requests where the path ends in `.css`, it would cache and serve the profile information as if it were a CSS file.
 
-#### Exploiting Path Mapping Discrepancies
+### Exploiting Path Mapping Discrepancies
 
 To test how the origin server maps the URL path to resources, add an arbitrary path segment to the URL of our target endpoint. If the response still contains the same sensitive data as the base response, it indicates that the origin server abstracts the URL path and ignores the added segment. For example, this is the case if modifying `/api/orders/123` to `/api/orders/123/foo` still returns order information.
 
