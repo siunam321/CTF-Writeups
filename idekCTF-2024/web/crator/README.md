@@ -236,7 +236,22 @@ def submit(problem_id):
             [...]
 ```
 
-Remember, in problem `Hello, Input!`, there's a test case that contains the flag in the `output`. However, since that test case is `hidden`, the submission case's `expected_output` is empty.
+Remember, in problem `Hello, Input!`, there's a test case that contains the flag in the `output`. However, since that test case is `hidden`, the submission case's `expected_output` is empty, which means we **can't read the flag directly** in the test case's output.
+
+If we take a look at template `attachments/app/templates/submission.html`, if the test case's `expected_output` is empty, it just renders the string "(Output Hidden)":
+
+```jinja
+[...]
+{% for row in testcases %}
+<tr>
+    <td>{{ row.testcase_id }}</td>
+    <td>{% if row.expected_output %}<pre>{{ row.expected_output }}</pre>{% else %}(Output Hidden){% endif %}</td>
+    <td>{% if row.expected_output %}<pre>{{ row.actual_output }}</pre>{% else %}(Output Hidden){% endif %}</td>
+    <td>{{ row.status }}</td>
+</tr>
+{% endfor %}
+[...]
+```
 
 During the problem test cases loop, it'll call module `subprocess`'s `run` function, which execute a shell command that runs our submitted sandbox Python code with **1 second timeout**. After running our submitted code, it captures the Python script's stdout (Standard Output) and compares the expected test case's output using shell command `diff`:
 
