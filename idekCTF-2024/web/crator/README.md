@@ -71,7 +71,7 @@ Hmm... I wonder if the code submission is really secure and sandboxed properly..
 
 To have a better understanding of this web application, we should read its source code.
 
-**In this challenge, we can download a file:**
+**In this challenge, we can download a [file](https://github.com/siunam321/CTF-Writeups/blob/main/idekCTF-2024/web/crator/crator.tar.gz):**
 ```shell
 ┌[siunam♥Mercury]-(~/ctf/idekCTF-2024/web/crator)-[2024.08.19|20:48:53(HKT)]
 └> file crator.tar.gz    
