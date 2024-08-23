@@ -1,6 +1,6 @@
 # How I Found My First Vulnerabilities In 6 Different WordPress Plugins (Part 1)
 
-## Table of Contents
+<details><summary><strong>Table of Contents</strong></summary>
 
   1. [Overview](#overview)  
   2. [Before Doing WordPress Plugin Bug Bounty](#before-doing-wordpress-plugin-bug-bounty)  
@@ -13,11 +13,11 @@
     5.2. [Timeline](#timeline-1)  
   6. [Authenticated (Administrator+) Arbitrary File Read And Deletion (CVE-2024-7777)](#authenticated-administrator-arbitrary-file-read-and-deletion-cve-2024-7777)  
     6.1. [Arbitrary File Deletion](#arbitrary-file-deletion)  
-      6.1.1 [Arbitrary File Deletion via Method `deleteBlukFormEntries`](#arbitrary-file-deletion-via-method-deleteblukformentries)  
-      6.1.2 [Arbitrary File Deletion via Method `deleteBlukForm`](#arbitrary-file-deletion-via-method-deleteblukform)  
-      6.1.3 [Arbitrary File Deletion via Method `deleteAForm`](#arbitrary-file-deletion-via-method-deleteaform)  
+        6.1.1 [Arbitrary File Deletion via Method `deleteBlukFormEntries`](#arbitrary-file-deletion-via-method-deleteblukformentries)  
+        6.1.2 [Arbitrary File Deletion via Method `deleteBlukForm`](#arbitrary-file-deletion-via-method-deleteblukform)  
+        6.1.3 [Arbitrary File Deletion via Method `deleteAForm`](#arbitrary-file-deletion-via-method-deleteaform)  
     6.2. [Arbitrary File Read](#arbitrary-file-read)  
-      6.2.1 [Arbitrary File Read Bypass via Arbitrary File Deletion](#arbitrary-file-read-bypass-via-arbitrary-file-deletion)  
+        6.2.1 [Arbitrary File Read Bypass via Arbitrary File Deletion](#arbitrary-file-read-bypass-via-arbitrary-file-deletion)  
     6.3. [The Patch](#the-patch-2)  
     6.4. [Timeline](#timeline-2)  
   7. [Authenticated (Administrator+) SQL Injection (CVE-2024-7780)](#authenticated-administrator-sql-injection-cve-2024-7780)  
@@ -30,6 +30,8 @@
     9.1. [The Patch](#the-patch-5)  
     9.2. [Timeline](#timeline-5)  
   10. [Conclusion](#conclusion)  
+
+</details>
 
 ## Overview
 
