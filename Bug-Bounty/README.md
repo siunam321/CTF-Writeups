@@ -1,0 +1,5 @@
+All of my bug bounty writeups will be here.
+
+Date             | Title                                                                          | Link
+-----------------|--------------------------------------------------------------------------------|----------------------------
+August 23, 2024  | How I Found My First Vulnerabilities In 6 Different WordPress Plugins (Part 1) | [https://github.com/siunam321/CTF-Writeups/blob/main/Bug-Bounty/Wordfence/how-i-found-my-first-vulnerabilities-in-6-different-wordpress-plugins-part-1/README.md](https://github.com/siunam321/CTF-Writeups/blob/main/Bug-Bounty/Wordfence/how-i-found-my-first-vulnerabilities-in-6-different-wordpress-plugins-part-1/README.md)
