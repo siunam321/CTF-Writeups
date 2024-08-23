@@ -110,7 +110,7 @@ class AdminAjax
   }
 ```
 
-As you can see, after verifying our nonce, our source `$input->src` is parsed to the PHP built-in function `file_get_contents` to fetch a remote resource. After reading the remote resource's contents, it'll parse the content to another PHP built-in function `file_put_contents`, which means the content will be written to path `$icnDir . '/' . $filename` (Path `/wp-content/uploads/bitforms/icons/<filename>`).
+As you can see, after verifying our nonce, our source `$input->src` is parsed to the PHP built-in function `file_get_contents` to fetch a remote resource. After reading the remote resource's contents, it'll parse the content to another PHP built-in function `file_put_contents`, which means the content will be written to path `/wp-content/uploads/bitforms/icons/<filename>`.
 
 Since there's no validation to only allow image files to be written to the `icons` directory, we can literally use this method to **fetch a remote resource that contains PHP code, and then write that PHP code into the `icons` directory**.
 
@@ -954,7 +954,7 @@ class AdminFormHandler
     [...]
 ```
 
-Next, after successfully duplicating the entry, it'll copy every files inside that form's entry ID directory to `BITFORMS_UPLOAD_DIR . "/$formID/$duplicatedEntryId`:
+Next, after successfully duplicating the entry, it'll copy every files inside that form's entry ID directory to `<BITFORMS_UPLOAD_DIR>/<formID>/<duplicatedEntryId>`:
 
 ```php
 class AdminFormHandler
