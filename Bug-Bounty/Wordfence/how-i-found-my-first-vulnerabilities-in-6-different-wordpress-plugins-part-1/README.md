@@ -4,10 +4,32 @@
 
   1. [Overview](#overview)  
   2. [Before Doing WordPress Plugin Bug Bounty](#before-doing-wordpress-plugin-bug-bounty)  
-  3. [Authenticated (Administrator+) Arbitrary File Upload (CVE-2024-6123)](#authenticated--administrator+--arbitrary-file-upload---cve-2024-6123-)  
-    3.1. [The Patch](#the-patch-1)  
+  3. [Authenticated (Administrator+) Arbitrary File Upload (CVE-2024-6123)](#authenticated-administrator-arbitrary-file-upload-cve-2024-6123)  
+    3.1. [The Patch](#the-patch)  
     3.2. [Timeline](#timeline)  
-  5. [Conclusion](#conclusion)  
+  4. [Redacted](#redacted-cve-2024-)  
+  5. [Authenticated (Administrator+) Arbitrary File Deletion (CVE-2024-7782)](#authenticated-administrator-arbitrary-file-deletion-cve-2024-7782)  
+    5.1. [The Patch](#the-patch-1)  
+    5.2. [Timeline](#timeline-1)  
+  6. [Authenticated (Administrator+) Arbitrary File Read And Deletion (CVE-2024-7777)](#authenticated-administrator-arbitrary-file-read-and-deletion-cve-2024-7777)  
+    6.1. [Arbitrary File Deletion](#arbitrary-file-deletion)  
+      6.1.1 [Arbitrary File Deletion via Method `deleteBlukFormEntries`](#arbitrary-file-deletion-via-method-deleteblukformentries)  
+      6.1.2 [Arbitrary File Deletion via Method `deleteBlukForm`](#arbitrary-file-deletion-via-method-deleteblukform)  
+      6.1.3 [Arbitrary File Deletion via Method `deleteAForm`](#arbitrary-file-deletion-via-method-deleteaform)  
+    6.2. [Arbitrary File Read](#arbitrary-file-read)  
+      6.2.1 [Arbitrary File Read Bypass via Arbitrary File Deletion](#arbitrary-file-read-bypass-via-arbitrary-file-deletion)  
+    6.3. [The Patch](#the-patch-2)  
+    6.4. [Timeline](#timeline-2)  
+  7. [Authenticated (Administrator+) SQL Injection (CVE-2024-7780)](#authenticated-administrator-sql-injection-cve-2024-7780)  
+    7.1. [The Patch](#the-patch-3)  
+    7.2. [Timeline](#timeline-3)  
+  8. [Authenticated (Administrator+) SQL Injection via getLogHistory Function (CVE-2024-7702)](#authenticated-administrator-sql-injection-via-getloghistory-function-cve-2024-7702)  
+    8.1. [The Patch](#the-patch-4)  
+    8.2. [Timeline](#timeline-4)  
+  9. [Authenticated (Administrator+) Arbitrary JavaScript File Uploads (CVE-2024-7775)](#authenticated-administrator-arbitrary-javascript-file-uploads-cve-2024-7775)  
+    9.1. [The Patch](#the-patch-5)  
+    9.2. [Timeline](#timeline-5)  
+  10. [Conclusion](#conclusion)  
 
 ## Overview
 
@@ -22,7 +44,7 @@ In this first part, I'll talk about how I found the following vulnerabilities in
 6. [Authenticated (Administrator+) SQL Injection via getLogHistory Function](https://www.wordfence.com/threat-intel/vulnerabilities/wordpress-plugins/bit-form/contact-form-by-bit-form-multi-step-form-calculation-contact-form-payment-contact-form-custom-contact-form-builder-20-2139-authenticated-administrator-sql-injection-via-getloghistory-function) ([CVE-2024-7702](https://www.cve.org/CVERecord?id=CVE-2024-7702))
 7. [Authenticated (Administrator+) Arbitrary JavaScript File Uploads](https://www.wordfence.com/threat-intel/vulnerabilities/wordpress-plugins/bit-form/contact-form-by-bit-form-multi-step-form-calculation-contact-form-payment-contact-form-custom-contact-form-builder-20-2139-authenticated-administrator-arbitrary-javascript-file-uploads) ([CVE-2024-7775](https://www.cve.org/CVERecord?id=CVE-2024-7775))
 
-> * This vulnerability was first found by researcher [István Márton](https://www.wordfence.com/threat-intel/vulnerabilities/researchers/lana-codes), then I later discovered this vulnerability.
+> \* This vulnerability was first found by researcher [István Márton](https://www.wordfence.com/threat-intel/vulnerabilities/researchers/lana-codes), then I later discovered this vulnerability.
 
 Without further ado, let's dive in!
 
