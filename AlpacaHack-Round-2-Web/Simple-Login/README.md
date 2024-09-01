@@ -8,6 +8,8 @@
 - [Exploitation](#exploitation)
 - [Conclusion](#conclusion)
 
+</details>
+
 ## Overview
 
 - 84 solves / 108 points
