@@ -1,4 +1,4 @@
-# idekCTF 2024 Writeup
+# SekaiCTF 2024 Writeup
 
 > CTFTime event link: [https://ctftime.org/event/2243](https://ctftime.org/event/2243)
 
