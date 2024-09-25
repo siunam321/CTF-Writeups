@@ -40,14 +40,8 @@ Archive:  attachment.zip
    creating: challenge-custom/jotac/
   [..]
   inflating: docker-compose.yml      
-  inflating: Do# Timberlake
-
-## Background
-
-I'm a front end designer that has some old backend experience. Wanted to put some of my skills to make a cool website that can work with templates. Still WIP but it is coming along nicely.
-
-Note: fully whiteboxckerfile              
-  inflating: Makefile                
+  inflating: Dockerfile              
+  inflating: Makefile
 ```
 
 After reading the source code a bit, this plugin, `jotac`, is kind of complex. Overall, this plugin is to automate SMS campaign, such as sending SMS messages to someone.
