@@ -316,9 +316,13 @@ cm9vdDp4OjA6MDpyb290Oi9yb290[...]
 
 Now you might be saying: Let's use this PHP wrapper to read arbitrary files!
 
-Well, nope. You can't read the contents of the file. This is because the file validation will NOT pass.
+Well, nope. You can't read the contents of the file by copying it to a readable path (`/wp-content/uploads/bitforms/icons/<filename>`). This is because the file validation will NOT pass.
 
 > Note: Before version 2.13.4, we can read the contents of the file, because there's no file validation.
+
+Plus, the contents of the file **is NOT being displayed** being displayed via `echo` or other functions.
+
+Hmm... Is this a deadend?
 
 In [0xL4ugh CTF 2024](https://ctftime.org/event/2216), I solved a web challenge called "Ghazy Corp" (Writeup [here](https://siunam321.github.io/ctf/0xL4ugh-CTF-2024/Web/Ghazy-Corp/)). The solution of this challenge is to use **PHP filter chain to leak the file contents via error-based oracle**.
 
@@ -349,9 +353,7 @@ PD9waHANCi8qKg0KICogVGh
 b'<?php\r\n/**\r\n * Th'
 ```
 
-**Video showcase:**
-
-![](https://github.com/siunam321/CTF-Writeups/blob/main/Bug-Bounty/Wordfence/how-i-found-my-first-vulnerabilities-in-6-different-wordpress-plugins-part-1/images/file_read_via_php_filter_chains.mp4)
+> Note: A video showcase can be seen in [here](https://github.com/siunam321/CTF-Writeups/raw/refs/heads/main/Bug-Bounty/Wordfence/how-i-found-my-first-vulnerabilities-in-6-different-wordpress-plugins-part-1/images/file_read_via_php_filter_chains.mp4).
 
 Nice! We found an arbitrary file read vulnerability! Let's report this!
 
