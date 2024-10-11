@@ -320,7 +320,7 @@ Well, nope. You can't read the contents of the file by copying it to a readable 
 
 > Note: Before version 2.13.4, we can read the contents of the file, because there's no file validation.
 
-Plus, the contents of the file **is NOT being displayed** being displayed via `echo` or other functions.
+Plus, the contents of the file **is NOT being displayed** via `echo` or other functions.
 
 Hmm... Is this a deadend?
 
