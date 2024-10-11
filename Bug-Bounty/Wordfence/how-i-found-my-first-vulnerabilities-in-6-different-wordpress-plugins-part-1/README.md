@@ -7,7 +7,7 @@
 - [Authenticated (Administrator+) Arbitrary File Upload (CVE-2024-6123)](#authenticated-administrator-arbitrary-file-upload-cve-2024-6123)  
     - [The Patch](#the-patch)  
     - [Timeline](#timeline)  
-- [Authenticated (Administrator+) Improper Input Validation via iconUpload Function to Arbitrary File Read (CVE-2024-9507)](#authenticated-administrator-improper-input-validation-via-icon-upload-function-to-arbitrary-file-read-cve-2024-9507)  
+- [Authenticated (Administrator+) Improper Input Validation via iconUpload Function to Arbitrary File Read (CVE-2024-9507)](#authenticated-administrator-improper-input-validation-via-iconupload-function-to-arbitrary-file-read-cve-2024-9507)  
     - [The Patch](#the-patch-1)  
     - [Timeline](#timeline-1)  
 - [Authenticated (Administrator+) Arbitrary File Deletion (CVE-2024-7782)](#authenticated-administrator-arbitrary-file-deletion-cve-2024-7782)  
