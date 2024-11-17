@@ -322,7 +322,7 @@ Armed with above information, we can read the flag file via the following HTML p
 </html>
 ```
 
-> Note: Don't forget to add prefix `pdfkit-` in the `<meta>`'s `name` attribute. See previously mentioned class `Configuration`'s `__init__` method.
+> Note: Don't forget to add prefix `pdfkit-` in the `<meta>` tag's `name` attribute. See previously mentioned class `Configuration`'s `__init__` method.
 
 Then, send the following POST request to convert the HTML payload into a PDF file:
 
