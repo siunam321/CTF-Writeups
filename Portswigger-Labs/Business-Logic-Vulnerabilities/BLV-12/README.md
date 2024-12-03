@@ -1,12 +1,14 @@
 # Bypassing access controls using email address parsing discrepancies
 
-## Table of Contents
+<details><summary><strong>Table of Contents</strong></summary>
 
-1. [Overview](#overview)
-2. [Background](#background)
-3. [Enumeration](#enumeration)
-4. [Exploitation](#exploitation)
-5. [Conclusion](#conclusion)
+- [Overview](#overview)
+- [Background](#background)
+- [Enumeration](#enumeration)
+- [Exploitation](#exploitation)
+- [Conclusion](#conclusion)
+
+</details>
 
 ## Overview
 
