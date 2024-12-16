@@ -30,7 +30,7 @@ TSG is the official computer society of The University of Tokyo, and also the na
 
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/TSG-CTF-2024/images/score.png)
 
-![](https://github.com/siunam321/CTF-Writeups/blob/main/TSG-CTF-2024/images/solves1.png)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/TSG-CTF-2024/images/solves.png)
 
 ## What I've learned in this CTF
 
