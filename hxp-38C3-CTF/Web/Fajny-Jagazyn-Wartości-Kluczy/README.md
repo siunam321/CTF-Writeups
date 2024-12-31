@@ -41,7 +41,7 @@ If we refresh the page with the cookie again, we are met with a 404 page:
 
 Not much we can do in here. Let's read this web application's source code!
 
-**In this challenge, we can download a [file](https://github.com/siunam321/CTF-Writeups/blob/main/hxp-38C3-CTF/Web/Fajny-Jagazyn-Wartości-Kluczy/Fajny Jagazyn Wartości Kluczy-ff7302985700444f.tar.xz):**
+**In this challenge, we can download a [file](https://github.com/siunam321/CTF-Writeups/blob/main/hxp-38C3-CTF/Web/Fajny-Jagazyn-Warto%C5%9Bci-Kluczy/Fajny%20Jagazyn%20Warto%C5%9Bci%20Kluczy-ff7302985700444f.tar.xz):**
 ```shell
 ┌[siunam♥Mercury]-(~/ctf/hxp-38C3-CTF/Web/Fajny-Jagazyn-Wartości-Kluczy)-[2024.12.31|13:11:13(HKT)]
 └> file Fajny\ Jagazyn\ Wartości\ Kluczy-ff7302985700444f.tar.xz 
