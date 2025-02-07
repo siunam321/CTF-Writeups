@@ -1,5 +1,19 @@
 # How I Found My First Vulnerabilities In 6 Different WordPress Plugins (Part 2)
 
+<details><summary><strong>Table of Contents</strong></summary>
+
+- [Overview](#overview)
+- [Flawed/Missing Permission Check - Bit File Manager: RCE via Race Condition](#flawedmissing-permission-check---bit-file-manager-rce-via-race-condition)
+- [Arbitrary File Upload](#arbitrary-file-upload)
+    - [Flawed/Missing MIME Type Checking - Bit File Manager](#flawedmissing-mime-type-checking---bit-file-manager)
+    - [Flawed/Missing Filename Validation - Advanced File Manager With Premium Add-on Advanced File Manager Shortcodes](#flawedmissing-filename-validation---advanced-file-manager-with-premium-add-on-advanced-file-manager-shortcodes)
+    - [Writable `.htaccess` in "attributes" Option - Advanced File Manager](#writable-htaccess-in-attributes-option---advanced-file-manager)
+- [No Path Validation in Loading elFinder Locale Script - FileOrganizer: Local JavaScript File Inclusion](#no-path-validation-in-loading-elfinder-locale-script---fileorganizer-local-javascript-file-inclusion)
+- [Allowing JavaScript and/or CSS Files Upload - Bit File Manager: Limited File Upload](#allowing-javascript-andor-css-files-upload---bit-file-manager-limited-file-upload)
+- [Conclusion](#conclusion)
+
+</details>
+
 ## Overview
 
 Welcome to the second and the final part of this writeup! [Previously](https://siunam321.github.io/ctf/Bug-Bounty/Wordfence/how-i-found-my-first-vulnerabilities-in-6-different-wordpress-plugins-part-1/), I mentioned I found 7 vulnerabilities in WordPress plugin "[Bit Form](https://wordpress.org/plugins/bit-form/)", 1 of which was duplicated. In this part, I'll share some **common misconfiguration/mistakes in PHP library "[elFinder](https://github.com/Studio-42/elFinder)"**, which ultimately led me to find **15+ vulnerabilities across 5 plugins** that use the same PHP library.
@@ -435,11 +449,11 @@ By setting up the guess user access and the shortcode, we as an unauthenticated 
 
 Ok... To sum up, in order to exploit this unauthenticated RCE via race condition vulnerability, we need to:
 - Prerequisite: Guess user access and shortcode `file-manager` must already been setup by the adminsitrator
-- Steps:
-    1. Get a valid nonce in from shortcode page/post
-    2. Keep editing a random file via elFinder command `put` with content that contains `<?php` and whatever PHP code we want to execute
-    3. Keep accessing the temporary file at path `wp-content/uploads/file-managertemp.php`
-    4. Profit!
+
+1. Get a valid nonce in from shortcode page/post
+2. Keep editing a random file via elFinder command `put` with content that contains `<?php` and whatever PHP code we want to execute
+3. Keep accessing the temporary file at path `wp-content/uploads/file-managertemp.php`
+4. Profit!
 
 To automate the above steps, I published a Proof-of-Concept Python script on my GitHub repository [CVE-2024-7627 PoC](https://github.com/siunam321/CVE-2024-7627-PoC):
 
@@ -1133,10 +1147,13 @@ In here, since CSS doesn't allow us to directly select hidden element, we need t
 
 By default, WordPress nonces' length are 10, and the character set is lowercase hexadecimal. In the above approach, if we try to exfiltrate the nonce, we need to have **29,059,430,400 permutations** of CSS rules:
 
-$$ P(n,r) = \frac{n!}{(n - r)! } $$
-$$ P(n,r) = P(16,10) $$
-$$ = \frac{16!}{( 16 - 10)! } $$
-$$ = 29059430400 $$
+```math
+\begin{aligned}
+P(n,r) & = \frac{n!}{(n - r)!} \\
+& = \frac{16!}{(16 - 10)!} \\
+& = 29059430400
+\end{aligned}
+```
 
 Which means the CSS file size has at least 1 GB in size! There's no way that the browser can load that giant CSS file. (If you try to load a 1 GB CSS file, your browser will very likely hang and crash.)
 
@@ -1148,6 +1165,7 @@ But wait, if we got 2 characters from the contains selector, how can we know the
 
 After exfiltrating the correct nonce, we can continue our CSRF attack! Here's the high-level overview of the entire exploitation steps:
 - Prerequisite: Subscriber or above user access and shortcode `file-manager` must already been setup by the adminsitrator
+
 1. Login as a subscriber or above WordPress user
 2. Edit/overwrite the CSS file (such as `wp-includes/css/dashicons.min.css`) content with the one-shot CSS injection payload
 3. Wait for the admin victim visit our attacker website's endpoint `/leaknonce`, which opens a new window with URL `http://<WordPress_site_domain>/wp-admin/user-new.php` to exfiltrate the nonce to our attacker web server via the CSS injection payload
