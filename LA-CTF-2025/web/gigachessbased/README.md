@@ -217,7 +217,7 @@ According to the module's description, it said:
 >   
 > For example, if your SPA is in a static file called `index.html`, your URLs for navigating within the app look something like `index.html#/profile`, `index.html#/book/42`, etc. (The `index.html` part can usually be omitted for the index file, so you can just create URLs that look like `http://example.com/#/profile`).
 >   
-> - [https://www.npmjs.com/package/svelte-spa-router#hash-based-routing](https://www.npmjs.com/package/svelte-spa-router#hash-based-routing)
+> \- [https://www.npmjs.com/package/svelte-spa-router#hash-based-routing](https://www.npmjs.com/package/svelte-spa-router#hash-based-routing)
 
 Nothing weird, how about the `Search` component?
 
@@ -374,7 +374,7 @@ There must be another way to detect the oracle... How about [server-side maximum
 > 2. If the browser threw a network error, at least one redirect occurred. Repeat the process with 18 redirects.
 > 3. If the browser didn’t threw a network error, the number of redirects is known as `20 - issued_redirects`.
 >   
-> - [https://xsleaks.dev/docs/attacks/navigations/#max-redirects](https://xsleaks.dev/docs/attacks/navigations/#max-redirects)
+> \- [https://xsleaks.dev/docs/attacks/navigations/#max-redirects](https://xsleaks.dev/docs/attacks/navigations/#max-redirects)
 
 With that said, we should be able to detect an oracle by redirecting the browser to our attacker website 18 times. Then, the 19th redirect to `https://gigachessbased.chall.lac.tf/#/search?q=lactf{a`. If the `moves` is correct, the browser should throw a network error.
 
