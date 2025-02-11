@@ -2,7 +2,7 @@
 
 > CTFTime event link: [https://ctftime.org/event/2592](https://ctftime.org/event/2592)
 
-![](https://github.com/siunam321/CTF-Writeups/main/LA-CTF-2024/images/banner.gif)
+![](https://github.com/siunam321/CTF-Writeups/blob/main/LA-CTF-2024/images/banner.gif)
 
 ## Background
 
