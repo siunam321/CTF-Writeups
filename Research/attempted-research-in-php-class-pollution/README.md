@@ -7,7 +7,7 @@
     - [Built-in Functions](#built-in-functions)
     - [Other Object Merge Methods](#other-object-merge-methods)
 - [Overwriting Object's Methods?](#overwriting-objects-methods)
-- [Merging on Object Attributes/Associative Array Keys](#merging-on-object-attributes--associative-array-keys)
+- [Merging on Object Attributes/Associative Array Keys](#merging-on-object-attributesassociative-array-keys)
 - [Conclusion](#conclusion)
 
 </details>
