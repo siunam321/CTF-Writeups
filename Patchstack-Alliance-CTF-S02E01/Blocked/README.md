@@ -201,7 +201,7 @@ But why the second validation, callback function `upload_something`, also bypass
 
 If we setup our own WordPress site, install the `test-plugin`, and start debugging with [Xdebug](https://xdebug.org/), we can see that WordPress function `get_option` is basically calling WordPress function `get_row`, which ultimately calling PHP function [`mysqli_query`](https://www.php.net/manual/en/function.mysql-query.php):
 
-https://github.com/user-attachments/assets/e45793eb-a718-425d-b11b-c2ffab8b0856
+<video src="https://github.com/user-attachments/assets/e45793eb-a718-425d-b11b-c2ffab8b0856" controls="controls" muted="muted" style="max-height:640px; min-height: 200px"></video>
 
 Turns out, in MySQL, if a string contains null byte(s) (`\0`), it'll have this very interesting behavior:
 
