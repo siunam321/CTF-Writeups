@@ -113,7 +113,7 @@ According to [Gotenberg's documentation](https://gotenberg.dev/docs/routes#html-
     <title>Flag</title>
 </head>
 <body>
-  <h1>Very private information!</h1>
+    <h1>Very private information!</h1>
     <h2>kalmar{test_flag}</h2>
 </body>
 </html>
@@ -129,21 +129,21 @@ In [`pkg/modules/chromium/routes.go` line 382 - 412](https://github.com/gotenber
 
 ```go
 func convertHtmlRoute(chromium Api, engine gotenberg.PdfEngine) api.Route {
-  return api.Route{
-    Method:      http.MethodPost,
-    Path:        "/forms/chromium/convert/html",
-    IsMultipart: true,
-    Handler: func(c echo.Context) error {
-      ctx := c.Get("context").(*api.Context)
-      [...]
-      err = convertUrl(ctx, chromium, engine, url, options, mode, pdfFormats, metadata)
-      if err != nil {
-        return fmt.Errorf("convert HTML to PDF: %w", err)
-      }
+    return api.Route{
+        Method:      http.MethodPost,
+        Path:        "/forms/chromium/convert/html",
+        IsMultipart: true,
+        Handler: func(c echo.Context) error {
+            ctx := c.Get("context").(*api.Context)
+            [...]
+            err = convertUrl(ctx, chromium, engine, url, options, mode, pdfFormats, metadata)
+            if err != nil {
+                return fmt.Errorf("convert HTML to PDF: %w", err)
+            }
 
-      return nil
-    },
-  }
+            return nil
+        },
+    }
 }
 ```
 
@@ -151,8 +151,8 @@ In function `convertUrl`, it'll generate a path with extension `.pdf` by calling
 
 ```go
 func convertUrl(ctx *api.Context, chromium Api, engine gotenberg.PdfEngine, url string, options PdfOptions, mode gotenberg.SplitMode, pdfFormats gotenberg.PdfFormats, metadata map[string]interface{}) error {
-  outputPath := ctx.GeneratePath(".pdf")
-  [...]
+    outputPath := ctx.GeneratePath(".pdf")
+    [...]
 }
 ```
 
@@ -162,7 +162,7 @@ Method `GeneratePath`: ([`pkg/modules/api/context.go` line 406 - 410](https://gi
 // GeneratePath generates a path within the context's working directory.
 // It generates a new UUID-based filename. It does not create a file.
 func (ctx *Context) GeneratePath(extension string) string {
-  return fmt.Sprintf("%s/%s%s", ctx.dirPath, uuid.New().String(), extension)
+    return fmt.Sprintf("%s/%s%s", ctx.dirPath, uuid.New().String(), extension)
 }
 ```
 
@@ -176,9 +176,9 @@ When a new `Context` object is initialized, it'll call method `newContext`, whic
 func newContext(echoCtx echo.Context, logger *zap.Logger, fs *gotenberg.FileSystem, timeout time.Duration, bodyLimit int64, downloadFromCfg downloadFromConfig, traceHeader, trace string) (*Context, context.CancelFunc, error) {
     [...]
     dirPath, err := fs.MkdirAll()
-  [...]
-  ctx.dirPath = dirPath
-  [...]
+    [...]
+    ctx.dirPath = dirPath
+    [...]
 }
 ```
 
@@ -188,35 +188,35 @@ In function `MkdirAll`, it basically creates a temporary directory at path `/tmp
 // NewFileSystem initializes a new [FileSystem] instance with a unique working
 // directory.
 func NewFileSystem(mkdirAll MkdirAll) *FileSystem {
-  return &FileSystem{
-    workingDir: uuid.NewString(),
-    mkdirAll:   mkdirAll,
-  }
+    return &FileSystem{
+        workingDir: uuid.NewString(),
+        mkdirAll:   mkdirAll,
+    }
 }
 [...]
 // WorkingDirPath constructs and returns the full path to the working directory
 // inside the system's temporary directory.
 func (fs *FileSystem) WorkingDirPath() string {
-  return fmt.Sprintf("%s/%s", os.TempDir(), fs.workingDir)
+    return fmt.Sprintf("%s/%s", os.TempDir(), fs.workingDir)
 }
 
 // NewDirPath generates a new unique path for a directory inside the working
 // directory.
 func (fs *FileSystem) NewDirPath() string {
-  return fmt.Sprintf("%s/%s", fs.WorkingDirPath(), uuid.NewString())
+    return fmt.Sprintf("%s/%s", fs.WorkingDirPath(), uuid.NewString())
 }
 
 // MkdirAll creates a new unique directory inside the working directory and
 // returns its path. If the directory creation fails, an error is returned.
 func (fs *FileSystem) MkdirAll() (string, error) {
-  path := fs.NewDirPath()
+    path := fs.NewDirPath()
 
-  err := fs.mkdirAll.MkdirAll(path, 0o755)
-  if err != nil {
-    return "", fmt.Errorf("create directory %s: %w", path, err)
-  }
+    err := fs.mkdirAll.MkdirAll(path, 0o755)
+    if err != nil {
+        return "", fmt.Errorf("create directory %s: %w", path, err)
+    }
 
-  return path, nil
+    return path, nil
 }
 ```
 
@@ -247,24 +247,24 @@ Back in the function `convertHtmlRoute`, the convert URL is actually `file://ind
 
 ```go
 func convertHtmlRoute(chromium Api, engine gotenberg.PdfEngine) api.Route {
-  return api.Route{
-    Method:      http.MethodPost,
-    Path:        "/forms/chromium/convert/html",
-    IsMultipart: true,
-    Handler: func(c echo.Context) error {
-      [...]
-      var inputPath string
-      err := form.
-        MandatoryPath("index.html", &inputPath).
-        Validate()
-      if err != nil {
-        return fmt.Errorf("validate form data: %w", err)
-      }
+    return api.Route{
+        Method:      http.MethodPost,
+        Path:        "/forms/chromium/convert/html",
+        IsMultipart: true,
+        Handler: func(c echo.Context) error {
+            [...]
+            var inputPath string
+            err := form.
+                MandatoryPath("index.html", &inputPath).
+                Validate()
+            if err != nil {
+                return fmt.Errorf("validate form data: %w", err)
+            }
 
-      url := fmt.Sprintf("file://%s", inputPath)
-      [...]
-    },
-  }
+            url := fmt.Sprintf("file://%s", inputPath)
+            [...]
+        },
+    }
 }
 ```
 
@@ -390,19 +390,19 @@ Turns out, **Gotenberg will run each process in a queue**:
 
 ```go
 func convertUrl(ctx *api.Context, chromium Api, engine gotenberg.PdfEngine, url string, options PdfOptions, mode gotenberg.SplitMode, pdfFormats gotenberg.PdfFormats, metadata map[string]interface{}) error {
-  [...]
-  err := chromium.Pdf(ctx, ctx.Log(), url, outputPath, options)
-  [...]
+    [...]
+    err := chromium.Pdf(ctx, ctx.Log(), url, outputPath, options)
+    [...]
 }
 ```
 
 ```go
 // Pdf converts a URL to PDF.
 func (mod *Chromium) Pdf(ctx context.Context, logger *zap.Logger, url, outputPath string, options PdfOptions) error {
-  [...]
-  return mod.supervisor.Run(ctx, logger, func() error {
     [...]
-  })
+    return mod.supervisor.Run(ctx, logger, func() error {
+        [...]
+    })
 }
 ```
 
@@ -410,12 +410,12 @@ func (mod *Chromium) Pdf(ctx context.Context, logger *zap.Logger, url, outputPat
 func (s *processSupervisor) Run(ctx context.Context, logger *zap.Logger, task func() error) error {
     [...]
     currentQueueSize := s.reqQueueSize.Load()
-  if s.maxQueueSize > 0 && currentQueueSize >= s.maxQueueSize {
-    return ErrMaximumQueueSizeExceeded
-  }
+    if s.maxQueueSize > 0 && currentQueueSize >= s.maxQueueSize {
+        return ErrMaximumQueueSizeExceeded
+    }
 
-  s.reqQueueSize.Add(1)
-  [...]
+    s.reqQueueSize.Add(1)
+    [...]
 }
 ```
 
