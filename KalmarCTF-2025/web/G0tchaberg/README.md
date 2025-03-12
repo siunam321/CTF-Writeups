@@ -125,7 +125,7 @@ Since service `gotenberg` and `flagbot` are different Docker container, we shoul
 
 Huh, maybe we can leak the file **during the conversion**?? Let's read Gotenberg's source code to have a better understanding in this!
 
-In [`pkg/modules/chromium/routes.go` line 382 - 412](https://github.com/gotenberg/gotenberg/blob/85eaef05ad0cf60917cd234f72433bcf85ef2f27/pkg/modules/chromium/routes.go#L382-L412), POST route `/forms/chromium/convert/html` will a new API `Context` object instance and call function `convertUrl`:
+In [`pkg/modules/chromium/routes.go` line 382 - 412](https://github.com/gotenberg/gotenberg/blob/85eaef05ad0cf60917cd234f72433bcf85ef2f27/pkg/modules/chromium/routes.go#L382-L412), POST route `/forms/chromium/convert/html` will create a new API `Context` object instance and call function `convertUrl`:
 
 ```go
 func convertHtmlRoute(chromium Api, engine gotenberg.PdfEngine) api.Route {
@@ -268,7 +268,7 @@ func convertHtmlRoute(chromium Api, engine gotenberg.PdfEngine) api.Route {
 }
 ```
 
-Now, instead of reading the source code to figure where does that `index.html` file is, we can just use `grep` in the container:
+Now, instead of reading the source code to figure the `index.html` file's path, we can just use `grep` in the container:
 
 ```shell
 gotenberg@ebfb21d3ddb9:/tmp$ while true; do grep -r "kalmar{" 2>/dev/null; done
@@ -299,7 +299,7 @@ If we convert the above `index.html` file into a PDF file via POST route `/forms
 
 ```shell
 ┌[siunam♥Mercury]-(~/ctf/KalmarCTF-2025/web/G0tchaberg)-[2025.03.11|22:33:40(HKT)]
-└> curl -s \        
+└> curl -s \
 --request POST http://localhost:8642/forms/chromium/convert/html \
 --form files=@index.html \
 -o output.pdf
