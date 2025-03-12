@@ -14,7 +14,7 @@
 
 - Contributor: @ozetta, @viky, @YMD, @Fai, @Ja5on, @Kaiziron
 - Solved by: @siunam
-- 51 solves / 197 points
+- 25 solves / 278 points
 - Overall difficulty for me (From 1-10 stars): ★★★★★☆☆☆☆☆
 
 ## Background
