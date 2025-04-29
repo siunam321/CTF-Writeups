@@ -336,7 +336,7 @@ uid=0(root) gid=0(root) groups=0(root),1(bin),2(daemon),3(sys),4(adm),6(disk),10
 
 One thing that sticks out in the above approach is that it requires reading the bytecode file in order to **get the correct magic number and modification date timestamp**. Also, we'll need a certain level of source code access in order to get the **dynamically imported module's name**.
 
-In section [Limitation](#limitation), I mentioned that we can have a "workaround" for this situation by leveraging an arbitrary file read vulnerability in the application. But what if we don't have it?
+In section [Limitations](#limitations), I mentioned that we can have a "workaround" for this situation by leveraging an arbitrary file read vulnerability in the application. But what if we don't have it?
 
 Let's start with getting the correct magic tag and magic number. If you are in a black-box scenario, you may or may not be able to get the server's Python version via the `Server` response header. In the above demonstration, by default, Flask will reflect the Python version in the `Server` response header:
 
