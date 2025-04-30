@@ -418,6 +418,15 @@ Now, with those dirty AFW and arbitrary file read vulnerability in mind, we need
 
 If we Google something like "Python dirty arbitrary file write", we should be able to find [this Git Book by Jorian Woltjer](https://book.jorianwoltjer.com/web/server-side/arbitrary-file-write). In there, we can find some known techniques about dirty AFW to RCE. For example, we can write or overwrite exisiting source code. In Python, we can write [`.py` or `.pyc` files](https://book.jorianwoltjer.com/web/server-side/arbitrary-file-write#python-.py-.pyc) to execute arbitrary Python code. Unfortunately, we can't write `.py` files, as we've seen the validation in function `isFilenameValid`. Maybe writing `.pyc` file can help us? We'll talk about this later.
 
+We could also perform Jinja SSTI (Server-Side Template Injection) to RCE by writing a template file in directory `/app/templates`. However, in `app/Dockerfile`, we can see that directory `/app/templates` has permission `755`, which means we can't write nor modify files inside it:
+
+```bash
+[...]
+# user www-data can only write files into path `/app/uploads`
+RUN chmod -R 1777 /app && \
+    chmod -R 755 /app/templates /app/static /app/app.py /app/utils.py
+```
+
 Another example is that we can try to [write or overwrite configuration files](https://book.jorianwoltjer.com/web/server-side/arbitrary-file-write#configuration-files), such as [write our own SSH public key](https://book.jorianwoltjer.com/web/server-side/arbitrary-file-write#ssh-authorized_keys-dirty), [environment files](https://book.jorianwoltjer.com/web/server-side/arbitrary-file-write#environment-and-settings), and more. Again, unfortunately, we can only write files inside the `/app/` directory.
 
 Hmm... It seems like writing or overwriting `.pyc` file is the only way to potentially gain RCE. In [the Git Book example](https://book.jorianwoltjer.com/web/server-side/arbitrary-file-write#python-.py-.pyc), it just says this:
@@ -496,6 +505,8 @@ Armed with above information and [my research about Python dirty AFW to RCE](htt
 4. Overwrite the compiled bytecode file
 5. Execute our written bytecode file by uploading a dummy file again
 6. Execute binary `/readflag` and get the flag
+
+> Note: Since the web server is running on Python version 3.11 (Defined in the `app/Dockerfile`), we need to confirm our Python version is also on 3.11. Otherwise our malicious bytecode file's header section will not match to the web server one. We can do so by switching our Python version using tools like [pyenv](https://github.com/pyenv/pyenv).
 
 To automate the above steps, I've written the following Python solve script:
 
@@ -602,10 +613,10 @@ b"\xa7\r\r\n\x00\x00\x00\x00Y\xe5\x11h\x84\x00\x00\x00\xe3\x00\x00\x00\x00\x00\x
 
 - Flag: **`PUCTF25{wheN_bY7eCodE_Bi7e5_B4CK_8c531a651dd37d09b4b70dd619374a7b}`**
 
-> Note: There is another unintended solution. Feel free to read [my research](https://siunam321.github.io/research/python-dirty-arbitrary-file-write-to-rce-via-writing-shared-object-files-or-overwriting-bytecode-files/) for more on that.
+> Note: There is another unintended solution. For more on that, feel free to read [my research](https://siunam321.github.io/research/python-dirty-arbitrary-file-write-to-rce-via-writing-shared-object-files-or-overwriting-bytecode-files/).
 
 ## Conclusion
 
 What we've learned:
 
-1. Python airty arbitrary file write to RCE via overwriting bytecode files
+1. Python dirty arbitrary file write to RCE via overwriting bytecode files
