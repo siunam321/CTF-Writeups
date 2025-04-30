@@ -10,7 +10,6 @@
     - [mXSS for the Win](#mxss-for-the-win)
     - [CSP Bypass](#csp-bypass)
 - [Exploitation](#exploitation)
-- [Why I Made This Challenge](#why-i-made-this-challenge)
 - [Conclusion](#conclusion)
 
 </details>
