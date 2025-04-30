@@ -26,6 +26,7 @@
 NuttyShell File Manager Alpha version is now released! Feel free to give it a try! (Note: Many features are still in development. Stay tuned!)
 
 Note 1: It is highly recommended you try this challenge in a local environment first. The remote challenge instance will clean up all the files in directory `/app` periodically.
+
 Note 2: When testing your payload locally, please make sure your Python version is 3.11.
 
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/PUCTF-2025/images/Pasted%20image%2020250429152520.png)
