@@ -371,7 +371,7 @@ Similar to the source modification date timestamp and source file size, if we co
 
 > Note: This technique was found by @[tournip](https://qiita.com/tournip) who solved my [NuttyShell File Manager](https://github.com/siunam321/My-CTF-Challenges/tree/main/PUCTF-2025/web/NuttyShell-File-Manager) web challenge in PUCTF25 using an unintended solution. Kudos to him! His writeup for this challenge can be seen in here: [https://qiita.com/tournip/items/90da8ff66d2113c08ce8](https://qiita.com/tournip/items/90da8ff66d2113c08ce8).
 
-If you don't want to brute force the header fields or perform race condition, you can just upload a **shared object (`.so`) file, `.pyd` file if the application runs on Windows, or [`.fwork` on iOS](https://docs.python.org/3/library/importlib.html#importlib.machinery.AppleFrameworkLoader)**. According to [PEP 420 – Implicit Namespace Packages](https://peps.python.org/pep-0420/) section "[Specification](https://peps.python.org/pep-0420/#specification)", it says:
+If you don't want to brute force the header fields, you can just upload a **shared object (`.so`) file, `.pyd` file if the application runs on Windows, or [`.fwork` on iOS](https://docs.python.org/3/library/importlib.html#importlib.machinery.AppleFrameworkLoader)**. According to [PEP 420 – Implicit Namespace Packages](https://peps.python.org/pep-0420/) section "[Specification](https://peps.python.org/pep-0420/#specification)", it says:
 
 > "During import processing, the import machinery will continue to iterate over each directory in the parent path as it does in Python 3.2. While looking for a module or package named “foo”, for each directory in the parent path:
 > - If `<directory>/foo/__init__.py` is found, a regular package is imported and returned.
