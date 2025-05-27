@@ -1,6 +1,6 @@
 # NahamCon CTF 2025 Writeup
 
-> CTFTime event link: [https://ctftime.org/event/2599](https://ctftime.org/event/2599)
+> CTFTime event link: [https://ctftime.org/event/2782](https://ctftime.org/event/2782)
 
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/NahamCon-CTF-2025/images/banner.png)
 
