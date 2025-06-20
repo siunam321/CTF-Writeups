@@ -19,7 +19,7 @@
 
 - Contributor: @Colonneil, @four0four, @sebsrt
 - Solved by: @m0z, @siunam
-- 14 solves / 366 points
+- 28 solves / 497 points
 - Overall difficulty for me (From 1-10 stars): ★★★☆☆☆☆☆☆☆
 
 ## Background
