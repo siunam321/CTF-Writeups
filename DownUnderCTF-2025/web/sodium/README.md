@@ -13,7 +13,7 @@
     - [Service "Domain Scanner"](#service-domain-scanner)
     - [Bypassing `authorized_ips` allow list](#bypassing-authorized_ips-allow-list)
         - [Unintended: Just Add More `X-Forwarded-For` Headers](#unintended-just-add-more-x-forwarded-for-headers)
-        - [Intended: SPILL.TERM HTTP/1.1 Request Smuggling](#intended-spill-term-http-1.1-request-smuggling)
+        - [Intended: SPILL.TERM HTTP/1.1 Request Smuggling](#intended-spillterm-http11-request-smuggling)
 - [Exploitation](#exploitation)
 - [Conclusion](#conclusion)
 
@@ -912,7 +912,7 @@ add_forwarded_headers (POUND_HTTP *phttp)
 {
   [...]
   stringbuf_printf (&sb, "X-Forwarded-For: %s",
-		    addr2str (caddr, sizeof (caddr), &phttp->from_host, 1));
+            addr2str (caddr, sizeof (caddr), &phttp->from_host, 1));
   if ((str = stringbuf_finish (&sb)) == NULL
       || http_header_list_append (&phttp->request.headers, str, H_APPEND))
     {
@@ -961,17 +961,17 @@ save_forwarded_header (POUND_HTTP *phttp)
   [...]
   hname = get_forwarded_header_name (phttp);
   if ((hdr = http_header_list_locate_name (&phttp->request.headers,
-					   hname, strlen (hname))) != NULL)
+                       hname, strlen (hname))) != NULL)
     {
       if (is_combinable_header (hdr))
-	{
-	  if ((val = http_header_get_value (hdr)) != NULL)
-	    phttp->orig_forwarded_header = xstrdup (val);
-	}
+    {
+      if ((val = http_header_get_value (hdr)) != NULL)
+        phttp->orig_forwarded_header = xstrdup (val);
+    }
   [...]
 ```
 
-If the `X-Forwarded-For` header is found and is combinable (as determined by `is_combinable_header`, and headers are defined in `src/mvh.inc`), the value of the header is obtained using `http_header_get_value` and copied to `orig_forwarded_header` after duplicating it with `xstrdup`.
+If the `X-Forwarded-For` header is found and is combinable (as determined by `is_combinable_header`, and headers are defined in [`src/mvh.inc`](https://github.com/graygnuorg/pound/blob/a10ab292c12667374a24c0215d0eabee4138eb51/src/mvh.inc)), the value of the header is obtained using `http_header_get_value` and copied to `orig_forwarded_header` after duplicating it with `xstrdup`.
 
 Now, what will happen if we add another `X-Forwarded-For` header? It should be combined as `X-Forwarded-For: <IP_1>, <IP_2>, <IP_3>`, right?
 
