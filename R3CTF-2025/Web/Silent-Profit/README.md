@@ -8,8 +8,8 @@
   - [Explore Functionalities](#explore-functionalities)
   - [Source Code Review](#source-code-review)
   - [Insecure Deserialization Without Gadget?](#insecure-deserialization-without-gadget)
-  - [PHP Universal XSS Gadget (If Error Reporting Is On)](#php-universal-xss-gadget--if-error-reporting-is-on)
-    - [Do Not Use `zend_error`?](#do-not-use-zend-error)
+  - [PHP Universal XSS Gadget (If Error Reporting Is On)](#php-universal-xss-gadget-if-error-reporting-is-on)
+    - [Do Not Use `zend_error`?](#do-not-use-zend_error)
 - [Exploitation](#exploitation)
 - [Conclusion](#conclusion)
 
@@ -48,7 +48,7 @@ show_source(__FILE__);
 unserialize($_GET['data']);
 ```
 
-In this challenge, we can download a file:
+In this challenge, we can download a [file](https://github.com/siunam321/CTF-Writeups/blob/main/R3CTF-2025/Web/Silent-Profit/web-silent-profit.zip):
 
 ```shell
 ┌[siunam♥Mercury]-(~/ctf/R3CTF-2025/Web/Silent-Profit)-[2025.07.06|19:12:21(HKT)]
