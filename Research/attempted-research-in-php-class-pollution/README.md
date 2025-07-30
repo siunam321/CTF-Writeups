@@ -14,6 +14,16 @@
 
 ## Overview
 
+*Update: (30/7/2025)*
+
+I gave a talk about this attempted research in BSides Hong Kong 2025. If you preferred video to text format, try to watch the following video!
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/DVHRZcPGCBg?si=n-oE4_p6tkR0l60B" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+The above slides is also available in [https://github.com/siunam321/My-Conference-Talks/tree/main](https://github.com/siunam321/My-Conference-Talks/tree/main).
+
+* * *
+
 After reading the [Ruby class pollution research](https://blog.doyensec.com/2024/10/02/class-pollution-ruby.html) from [Doyensec](https://blog.doyensec.com/) and re-read [the blog post about class pollution in Python](https://blog.abdulrah33m.com/prototype-pollution-in-python/), I started to think this research question:
 - If class pollution is possible in Python and Ruby, does that mean **other programming languages that support OOP** (Object-Oriented Programming) is inherently vulnerable to class pollution?
 
