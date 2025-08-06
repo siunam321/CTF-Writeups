@@ -10,12 +10,11 @@
     - [Leak the Flag](#leak-the-flag)
     - [Leak `SECRET` Environment Variable](#leak-secret-environment-variable)
         - [HTTP Protocol: SSRF and Side Channel?](#http-protocol-ssrf-and-side-channel)
-        - [JavaScript Protocol: Arbitrary Code Execution?](#java-script-protocol-arbitrary-code-execution)
+        - [JavaScript Protocol: Arbitrary Code Execution?](#javascript-protocol-arbitrary-code-execution)
 - [Exploitation](#exploitation)
 - [Conclusion](#conclusion)
 
 </details>
-
 
 ## Overview
 
@@ -828,3 +827,9 @@ javascript:
 ```
 
 - **Flag: `idek{oops_nuclei_leaked_my_secret_and_now_i_am_very_sad_2e315d_:(}`**
+
+## Conclusion
+
+What we've learned:
+
+1. Dirty arbitrary file read via Nuclei template

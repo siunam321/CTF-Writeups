@@ -37,4 +37,4 @@ idekCTF is an information security competition organized by the idek team and is
 ## What I've learned in this CTF
 
 - web
-    1. [scanme](https://github.com/siunam321/CTF-Writeups/blob/main/idekCTF-2025/web/scanme/README.md) - 
+    1. [scanme](https://github.com/siunam321/CTF-Writeups/blob/main/idekCTF-2025/web/scanme/README.md) - Dirty arbitrary file read via Nuclei template
