@@ -24,4 +24,4 @@ openECSC is a cybersecurity competition open to everyone that invites enthusiast
 ## What you'll learned in this CTF
 
 - World Wide Web
-    1. [kv-messenger](https://github.com/siunam321/CTF-Writeups/blob/main/openECSC-2025/web/kv-messenger/README.md) - 
+    1. [kv-messenger](https://github.com/siunam321/CTF-Writeups/blob/main/openECSC-2025/web/kv-messenger/README.md) - CSP bypass via a CRLF injection to response splitting CSP gadget and `Transfer-Encoding` trick in HTTP/1.1 to truncate invalid JavaScript syntax

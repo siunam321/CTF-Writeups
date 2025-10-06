@@ -9,12 +9,12 @@
   - [Source Code Review](#source-code-review)
     - [Stored XSS](#stored-xss)
     - [CSP Bypass](#csp-bypass)
-    - [CRLF Injection -> Response Splitting](#crlf-injection-->-response-splitting)
-    - [Intended: `Transfer-Encoding` Trick in HTTP/1.1](#intended:-transfer-encoding-trick-in-http-1.1)
-    - [Unintended: Fixed `Content-Length` Value](#unintended:-fixed-content-length-value)
+    - [CRLF Injection -> Response Splitting](#crlf-injection---response-splitting)
+    - [Intended: `Transfer-Encoding` Trick in HTTP/1.1](#intended-transfer-encoding-trick-in-http11)
+    - [Unintended: Fixed `Content-Length` Value](#unintended-fixed-content-length-value)
 - [Exploitation](#exploitation)
-- [Conclusion](#conclusion)
 - [Why I Made This Challenge](#why-i-made-this-challenge)
+- [Conclusion](#conclusion)
 
 </details>
 
@@ -919,3 +919,10 @@ Also in that tweet, @[m0z](https://x.com/LooseSecurity) [suggested that](https:/
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/openECSC-2025/images/Pasted%20image%2020251003213227.png)
 
 After some testing, this theory turned out to be true!
+
+## Conclusion
+
+What we've learned:
+
+1. CSP bypass via a CRLF injection to response splitting CSP gadget
+2. `Transfer-Encoding` trick in HTTP/1.1 to truncate invalid JavaScript syntax
