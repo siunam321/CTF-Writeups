@@ -914,7 +914,7 @@ This challenge was inspired from a 0-day web challenge in corCTF 2025, web/git. 
 
 In those CRLF injection vulnerabilities, I was able to gain reflected XSS via response splitting. However, the CSP has directive `script-src` and its source is `self`. Luckily, the response doesn't have `Content-Length` header and the web server uses HTTP/0.9, it's possible to bypass the CSP by injecting a new `Content-Length`  header. See [my tweet for more details](https://x.com/siunam321/status/1962525358680604980).
 
-Also in that tweet, @[m0z](https://x.com/LooseSecurity) [suggested that](https://x.com/LooseSecurity/status/1963183777003237427) it might be possible to achieve the same goal by injecting `Transfer-Encoding` response header with `chunked` encoding:
+Also in that tweet, [@m0z](https://x.com/LooseSecurity) [suggested that](https://x.com/LooseSecurity/status/1963183777003237427) it might be possible to achieve the same goal by injecting `Transfer-Encoding` response header with `chunked` encoding:
 
 ![](https://github.com/siunam321/CTF-Writeups/blob/main/openECSC-2025/images/Pasted%20image%2020251003213227.png)
 
